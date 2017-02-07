@@ -1,0 +1,184 @@
+.l-header
+  position fixed
+  z-index 100
+  width 100%
+  height 73px
+  background rgba(255, 255, 255, .5)
+  border-bottom 1px solid #61ced2
+  transition background 0.8s ease
+  &__white
+    background rgba(255, 255, 255, 1)
+    transition background 0.8s ease
+  +below(1200px)
+    height 43px
+  
+.b-header
+  position relative
+  height inherit
+  &__menu
+    col(1/12)
+    height inherit
+    +below(1200px)
+      col(1/6)
+  &__logo
+    col(6/12)
+    +below(1200px)
+      col(3/6)
+  &__contacts
+    height inherit
+    position fixed
+    right 1px
+    col(5/12)
+    width 41%
+    +below(1200px)
+      position fixed
+      col(2/6)
+.menu
+  
+  &__button
+    position relative
+    height 30px
+    border none
+    background none
+    
+  &__border
+    position absolute
+    top 0
+    height 4px
+    width 30px
+    
+.logo
+  &__link
+    margin-top: 23px
+    display inline-block
+    color #333333
+    +below(1200px)
+      margin-top 10px
+  &__img
+    +below(1200px)
+      width 130px
+      height 100%
+    
+.contacts__col
+  height inherit
+  span(1/2)
+  border-left 1px solid #61ced2
+  font-family 'lora'
+    
+.mail
+  &__link
+    display inline-block
+    text-align center
+    margin-top 26px
+    text-align center
+    width 100%
+    transition all 0.2s ease-out
+    +below(1200px)
+      margin-top 10px
+    &:hover
+      transition all 0.2s ease-out
+      color #37beca
+  &__icon
+    width 32px
+    height 23px
+    background url('../images/icon/mail.png') no-repeat
+    display inline-block
+    margin-right 3px
+    vertical-align middle
+  &__title
+    font-size 14px
+    display inline-block
+    vertical-align middle
+    +below(1200px)
+      display none
+    
+    
+.tel
+  &__link
+    display inline-block
+    text-align center
+    margin-top: 22px
+    text-align center
+    width 100%
+    transition all 0.2s ease-out
+    +below(1200px)
+      margin-top 8px
+    
+    &:hover
+      transition all 0.2s ease-out
+      color #37beca
+    
+  &__icon
+    width 25px
+    height 28px
+    background url('../images/icon/tel.png') no-repeat
+    display inline-block
+    margin-right 3px
+    vertical-align middle
+  &__title
+    font-size 14px
+    display inline-block
+    vertical-align middle
+    +below(1200px)
+      display none
+.cd-menu-trigger 
+  position relative
+  margin-top 23px
+  border none
+  background none
+  outline none
+  display inline-block
+  +below(1200px)
+    margin-top 10px
+  
+  // font-size 14px
+
+  & span 
+    /* hamburger icon */
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 4px;
+    background-color: #283172;
+    border-radius 4px
+    transition all 0.2s ease-out
+    transform: translateY(2px);
+
+    &::before, &::after 
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      border-radius 4px
+      transition all 0.2s ease-out
+    
+
+    &::before 
+      top: -10px;
+    
+
+    &::after 
+      bottom: -10px;
+    
+    
+  
+
+  &:hover span::before 
+    top: -12px;
+  
+
+  &:hover span::after 
+    bottom: -12px;
+  
+  &:hover span,
+  &:hover span::before,
+  &:hover span::after
+    background: #37beca
+  
+
+  
+.aside_menu
+  background #fff

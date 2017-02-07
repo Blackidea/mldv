@@ -1,0 +1,32 @@
+$title
+  text-align center
+  color #696969
+  font-size 36px
+  font-weight 400
+
+
+$center
+  center($mainWidth, pad: 10px)
+
+$container
+  &__container
+    @extend $center
+    
+
+
+.container
+  width $mainWidth
+  margin 0 auto
+  padding 0 15px
+  +above(1600px)
+    width $secondWidth
+  +below(1200px)
+    width 750px
+  +below(750px)
+    width 100%
+    // margin 0 15px
+
+.fl-container
+  width $mainWidth
+  margin 0 auto
+  display flex

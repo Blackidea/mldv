@@ -1,0 +1,26 @@
+{
+  "esnext": true,
+  "curly": false,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "browser": true,
+  "globals": {
+    "$": true,
+    "jQuery": true,
+    "define": true,
+    "requirejs":true,
+    "require": true,
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "before": true
+  }
+}

@@ -1,0 +1,60 @@
+- var bem_settings_prefix = ''
+- var bem_settings_element = '__'
+- var bem_settings_default_tag = 'div'
+
+- var block_chain = []
+- var parent_block = ''
+
+mixin new_tag(tag)
+  - var newTag = tag || bem_settings_default_tag
+  
+  if !tag
+    if attributes.href
+      - newTag = 'a'
+    if attributes.for
+      - newTag = 'label'
+    if attributes.type
+      - newTag = 'input'
+    if attributes.src
+      - newTag = 'img'
+  
+  #{newTag}&attributes(attributes): block
+  
+  
+mixin b(tag, isElement)
+  - var block_classes = attributes.class.split(' ')
+  - var current_block = block_classes[0]
+    
+  if !tag
+    if current_block === 'btn'
+      - tag = 'button'
+    if current_block === 'description'
+      - tag = 'p'
+    if current_block === 'headline'
+      - tag = 'h1'
+        
+  if !isElement
+    - block_chain.push(current_block)
+
+  if block_chain.length > 1 && !isElement
+    - block_classes[0] = block_chain[block_chain.length-2] + bem_settings_element + block_classes[0]
+    - block_classes.push(current_block)
+  
+  if isElement
+    - block_classes[0] = block_chain[block_chain.length-1] + bem_settings_element + block_classes[0]
+  
+  //- Доделать... (модификаторы)
+  //- - var block_classes = block_classes.map(function(name, i) { if(i>0) return block_classes[0] + name; else return name; })
+    
+  //- Write modified classes to attributes in the correct order
+  - attributes.class = block_classes.sort().reverse().join(' ') // .sort().join(' ')
+    
+  +new_tag(tag)&attributes(attributes)
+    block
+
+  if !isElement
+    - block_chain = block_chain.splice(0, block_chain.length-1)
+
+
+mixin e(tag)
+  +b(tag, true)&attributes(attributes): block

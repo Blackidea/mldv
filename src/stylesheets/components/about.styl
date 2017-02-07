@@ -1,0 +1,83 @@
+.l-about
+  position relative
+  height 540px
+.b-about
+  &__title
+    color #283172
+    font-size 50px
+    font-weight normal
+    text-align center
+    margin-top 50px
+  &__info
+    border 1px solid #dcdcdc
+    height 355px
+    overflow hidden
+    +below(1200px)
+      height auto
+    
+  &__left
+    col(5/12)
+    // overflow hidden
+    height 100%
+    +below(1200px)
+      stack()
+  &__right
+    col(7/12)
+    font-family 'GothamProRegular'
+    padding-right 10px
+    +below(1200px)
+      stack()
+      padding 0 10px
+  &__images
+    background url('../images/bg/about.jpg') no-repeat center
+    background-size cover
+    height 100%
+    width 100%
+    +below(1200px)
+      height 350px
+  &__name
+    color #283172
+    font-family 'GothamProRegular'
+    font-weight 600
+    font-size 22px
+  &__text
+    font-size 14px
+    line-height 1.2
+    font-weight normal
+    
+.visible
+  position: fixed;
+  z-index: 10100;
+  top: 0;
+  left: 0;
+  width: 475px;
+  height: 100%;
+  padding: 23px 0 20px 88px;
+  background-color: rgba(242,243,248,0.96);
+  box-shadow: 3px 0 25px 0 rgba(0,0,0,0.42);
+  -webkit-transform: translateX(0); 
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); 
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+.invisible
+  position: fixed;
+  z-index: 10100;
+  top: 0;
+  left: 0;
+  width: 475px;
+  height: 100%;
+  padding: 23px 0 20px 88px;
+  background-color: rgba(242,243,248,0.96);
+  box-shadow: 3px 0 25px 0 rgba(0,0,0,0.42);
+  -webkit-transform: translateX(-105%); 
+  -moz-transform: translateX(-105%);
+  -ms-transform: translateX(-105%);
+  -o-transform: translateX(-105%);
+  transform: translateX(-105%); 
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
