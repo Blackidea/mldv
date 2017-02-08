@@ -1,7 +1,7 @@
 var config = require('../../config');
 var filter = require('gulp-filter');
 var gulp   = require('gulp');
-var minify = require('gulp-minify-css');
+var minify = require('gulp-clean-css');
 var rev    = require('gulp-rev');
 var uglify = require('gulp-uglify');
 
