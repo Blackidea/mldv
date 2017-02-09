@@ -1,0 +1,604 @@
+//----------------------------------------------------//
+// LAYOUT                                             //
+//----------------------------------------------------//
+*,
+*:before,
+*:after
+  box-sizing: border-box
+body
+  height: 100%
+  min-height: 320px
+.container
+  padding: 0 15px
+  max-width: 1170px
+  width: 100%
+  margin: 0 auto
+  clearfix()
+$footerHeight = 329px
+.wrapper
+  min-height: 100%
+  margin: 0 0 (-$footerHeight)
+  padding: 0 0 $footerHeight
+  overflow: hidden
+  b(tablet)
+  b(mobile)
+//----------------------------------------------------//
+// HEADER                                             //
+//----------------------------------------------------//
+.header
+  //overflow: hidden;
+  .container
+    position: relative
+  &__top
+    clearfix()
+  &__logo
+    display: block
+    float: left
+    padding: 5px 0
+    &-icon
+      width: 256px
+      height: 38px
+  .phone-list
+    padding: 18px 0 0 0
+    float: left
+    &__city
+      padding-left: 60px
+    &__number
+      padding-right: 10px
+    @media (max-width: 1120px)
+      &__city
+        padding-left: 10px
+  &__currency
+    position: absolute
+    padding: 16px 0 15px
+    top: 0
+    right: 15px
+    &:hover
+      .header__currency-link
+        color: $mainFontColor
+      .header__currency-icon
+        fill: $secondFontColor
+      .dropdown__box
+        display: block
+    &-icon
+      width: 12px
+      height: 7px
+      margin: 0 0 0 12px
+    &-link
+      color: $mainFontColor
+      text-decoration: none
+    .dropdown__box
+      display: none
+      position: absolute
+      top: 100%
+      right: 9px
+      padding: 20px
+  &__bottom
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
+    transition: top 0.2s ease
+    padding: 0 10000px
+    margin: 0 -10000px
+    .container
+      position: static
+      padding: 0
+  &__small-logo
+    display: none
+    svg
+      width: 89px
+      height: 27px
+  &__nav
+    padding: 0 280px 0 0
+    clearfix()
+    &-btn
+      display: none
+    .nav
+      &__list
+        float: left
+        &-item
+          position: relative
+          padding: 0 10px
+          &:hover
+            .dropdown__box
+              display: block
+          .dropdown__box
+            display: none
+            min-width: 200px
+          .dropdown__btn-back
+            display: none
+          &--big-drop
+            position: static
+            .dropdown
+              &--tour
+                .dropdown__triangle
+                  left: 55px
+                  margin: 0
+              &--hotels
+                .dropdown__triangle
+                  left: 138px
+                  margin: 0
+              &__box
+                margin: 0 0 0 -15px
+                padding: 0
+                left: 0
+                @media (max-width: 1170px)
+                  margin: 0
+              &__list
+                &-item
+                  line-height: 18px
+              &__col
+                height: 205px
+                padding: 25px 5px 20px 35px
+                border-left: 1px solid #d1d1d1
+                width: 190px
+                &:last-child
+                  padding-left: 20px
+                &:nth-of-type(1)
+                  border: none
+                @media (max-width: 1170px)
+                  width: 20%
+      &__link
+      &__sign
+        padding: 12px 0 0 0
+        margin: 0 -270px 0 0
+        float: right
+  &__bottom
+    &--fixed
+      width: 100%
+      background: #fff
+      position: fixed
+      top: 0
+      left: 0
+      z-index: 999
+      bottom: auto
+      padding: 0
+      margin: 0
+      clearfix()
+      .header__currency
+        display: none
+      .header__small-logo
+        display: block
+        float: left
+        margin: 0 0 0 -95px
+      .nav
+        transition: height 0.2s
+        height: 35px
+        line-height: 35px
+        padding-left: 95px
+        position: relative
+        &__link
+          height: 35px
+          line-height: 35px
+          font-size: 14px
+          font-weight: 600
+        &__sign
+          padding: 0
+          line-height: 35px
+          &-link
+            font-size: 14px
+        &__list
+          position: static
+          &-item
+            &--big-drop
+              .dropdown
+                &--tour
+                  .dropdown__triangle
+                    left: 120px
+                    margin: 0
+                &--hotels
+                  .dropdown__triangle
+                    left: 200px
+                    margin: 0
+  b(tablet)
+  b(mobile)
+//header backup
+/*
+.header {
+  
+  &__top {
+    @include clearfix;
+  }
+  &__logo {
+    display: block;
+    float: left;
+    padding: 5px 0;
+    &-icon {
+      width: 256px;
+      height: 38px;
+    }
+  }
+  .phone-list {
+    padding: 18px 0 0 0;
+    float: left;
+    &__city {
+      padding-left: 55px;
+    }
+    &__number {
+      padding-right: 10px;
+    }
+    @media (max-width: 1120px) {
+      &__city {
+        padding-left: 10px;
+      }
+    }
+  }
+  &__currency {
+    float: right;
+    position: relative;
+    padding: 19px 0 12px;
+    &:hover {
+      .header__currency-link {
+        color: $mainFontColor;
+      }
+      .header__currency-icon {
+        fill: $secondFontColor;
+      }
+      .dropdown__box {
+        display: block;
+      }
+    }
+    &-icon {
+      width: 12px;
+      height: 7px;
+      margin: 0 0 0 12px;
+    }
+    &-link {
+      color: $mainFontColor;
+      text-decoration: none;
+    }
+    .dropdown__box {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 9px;
+      padding: 20px;
+    }
+  }
+  &__bottom {
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3);
+    transition: top 0.2s ease;
+    bottom: 100%;
+  }
+  &__small-logo {
+    display: none;
+    svg {
+      width: 89px;
+      height: 27px;
+    }
+  }
+  //header top mobile
+  @include b(tablet) {
+    position: relative;
+    .phone-list {
+      display: none;
+    }
+    &__currency {
+      float: left;
+      padding-left: 30px;
+    }
+  }
+  &__nav {
+    padding: 0 260px 0 0;
+    @include clearfix;
+    &__btn {
+      display: none;
+    }
+    .nav {
+      &__list {
+        position: relative;
+        float: left;
+        &-item {
+          position: relative;
+          &:hover {
+            .dropdown__box {
+              display: block;
+            } 
+          }
+          .dropdown__box {
+            display: none;
+          }
+          &--big-drop {
+            position: static;
+            .dropdown {
+              &--tour {
+                .dropdown__triangle {
+                  left: 30px;
+                  margin: 0;
+                }
+              }
+              &--hotels {
+                .dropdown__triangle {
+                  left: 110px;
+                  margin: 0;
+                }
+              }
+              
+              &__box {
+                margin: 0 0 0 -15px;
+                padding: 0;
+                left: 0;
+              }
+              &__col {
+                height: 205px;
+                padding: 20px;
+                border-left: 1px solid #d1d1d1;
+                &:nth-of-type(1) {
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__link {
+        
+      }
+      &__sign {
+        padding: 12px 0 0 0;
+        margin: 0 -260px 0 0;
+        float: right;
+      }
+    }
+    @include b(tablet) {
+      padding: 0;
+      .nav {
+        &__sign {
+          margin: 0;
+          position: absolute;
+          top: 0;
+          right: 15px;
+          &-entered {
+            .nav__sign-link {
+              max-width: 150px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              &--exit {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include b(mobile) {
+      .nav {
+        &__list {
+          display: block;
+          float: none;
+          &-item {
+            display: block;
+            text-align: left;
+          }
+        }
+        &__sign {
+          .hide {
+            display: none;
+          }
+          &-icon {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  &__bottom {
+    &--fixed {
+      width: 100%;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      bottom: auto;
+      
+      .header__small-logo {
+        display: block;
+        float: left;
+        margin: 0 0 0 -95px;
+      }
+      .nav {
+        
+        height: 35px;
+        line-height: 35px;
+        padding-left: 95px;
+        &__link {
+          height: 35px;
+          line-height: 35px;
+          font-size: 14px;
+          font-weight: 600;
+          
+        }
+        &__sign {
+          padding: 0;
+          line-height: 35px;
+          &-link {
+            font-size: 14px;
+          }
+        }
+        &__list {
+          position: static;
+          &-item {
+            &--big-drop {
+            .dropdown {
+              &--tour {
+                .dropdown__triangle {
+                  left: 120px;
+                  margin: 0;
+                }
+              }
+              &--hotels {
+                .dropdown__triangle {
+                  left: 200px;
+                  margin: 0;
+                }
+              }
+              }
+            }
+          }
+        }
+      }
+      @include b(tablet) {
+        padding-right: 35px;
+        .nav__sign {
+          .hide {
+            display: none;
+          }
+          &-icon {
+            margin: 0;
+          }
+          
+        }
+      }
+    }
+  }
+  @include b(mobile) {
+    &__top {
+      text-align: center;
+    }
+    &__small-logo {
+      display: none !important;
+    }
+    &__logo {
+      padding: 12px 0;
+      display: inline-block;
+      float: none;
+      &-icon {
+        width: 162px;
+        height: 24px;
+      }
+    }
+    
+  }
+}
+*/
+//----------------------------------------------------//
+// FOOTER                                             //
+//----------------------------------------------------//
+.footer
+  height: $footerHeight
+  background: $darkColor
+  color: #fff
+  padding: 25px 0 0 0
+  clearfix()
+  &__right
+    width: 75%
+    float: right
+    padding: 0 0 0 15px
+  &__left
+    width: 25%
+    float: left
+    padding: 0 38px 0 0
+  b(tablet)
+  &__bottom
+    clear: both
+    background: #acadaf
+    margin: 24px 0 0 0
+    padding: 11px 0
+    clearfix()
+    .copyright
+      float: left
+    .developer-info
+      float: right
+  &__title
+    display: block
+    font-weight: 700
+    padding: 0 0 14px 0
+  &__mob-dropdown
+    .footer__title
+      svg
+        display: none
+  &__nav-list
+    padding-bottom: 48px
+    letter-spacing: -5px
+    clearfix()
+    &-item
+      letter-spacing: normal
+      display: inline-block
+      width: 33.333%
+    b(tablet)
+    b(mobile)
+  &__col
+    width: 33.333%
+    float: left
+    padding: 0 0 0 15px
+    &:nth-of-type(1)
+      padding: 0
+    b(tablet)
+    b(mobile)
+  &__payment-list
+    padding: 9px 0 0 0
+    &-item
+      display: inline-block
+      padding: 0 5px 5px 0
+      vertical-align: middle
+      line-height: 0
+      [class*="icon-"]
+        fill: #fff !important
+      .icon
+        &-visa
+          width: 49px
+          height: 15px
+        &-master-card
+          width: 37px
+          height: 23px
+        &-paypal
+          width: 67px
+          height: 18px
+        &-yandex-money
+          width: 77px
+          height: 20px
+  &__social-list
+    &-item
+      display: inline-block
+      padding: 0 7px 0 0
+    &-icon
+      width: 34px
+      height: 34px
+      transition: opacity .2s ease
+      &:hover
+        opacity: .8
+  &__logo
+    display: block
+    padding: 7px 0 13px 0
+    &-icon
+      width: 250px
+      height: 91px
+  .short-form
+    padding: 0 40px 0 0
+    input
+      padding: 10px 14px
+      max-height: 40px
+    button
+      margin: 0 -40px 0 0
+      width: 40px
+      height: 40px
+  .phone-list
+    padding: 0 0 18px 0
+    &__city
+      color: #fff
+    &__number
+      color: #fff
+  &__address
+    padding: 20px 0 0 0
+    border-top: 1px solid #f0f0f0
+    font-weight: 700
+    line-height: 16px
+    span
+      display: block
+  b(tablet)
+  b(mobile)
+// developer info
+//----------------------------------------------------//
+.developer-info
+  svg
+    transition: fill 0.2s
+  &:hover
+    svg
+      fill: #fff
+// dropdown
+//----------------------------------------------------//
+.dropdown
+  &--regular
+    left: 50%
+    transform: translateX(-50%)
+  b(mobile)

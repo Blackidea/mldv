@@ -51,7 +51,7 @@
     "require-dir": "^0.3.0",
     "rupture": "^0.6.1",
     "vinyl-source-stream": "~1.1.0",
-    "webpack": "*"
+    "webpack": "2.1.0-beta.21"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
