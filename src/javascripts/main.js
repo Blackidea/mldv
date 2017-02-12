@@ -3,11 +3,12 @@
 //menu aside init
 // require('jquery.mmenu');
 
-var form = require('./libs/form.js');
+// var form = require('./libs/form.js');
 // var aside_menu = require('./libs/aside_menu.js');
-
+// require('jquery/dist/jquery.min.js');
 require('jquery-ui/ui/widgets/tabs');
 $('#tabs').tabs();
+
 
 
 // menu for testJob
