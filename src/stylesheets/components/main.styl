@@ -1,6 +1,6 @@
 // @import 'sprite.scss'
 // @import 'normalize&reset.scss'
-
+@import '../base/mixins&includes.styl'
 // main
 //----------------------------------------------------//
 .main
@@ -8,7 +8,9 @@
   padding: 0 3px 0 30px
   &.sidebar-is-fixed
     margin-left: 264px
-  b(tablet)
+  +b(tablet)
+    margin: 0;
+    padding: 0;
 // catalog-page
 //----------------------------------------------------//
 .catalog-page
@@ -151,8 +153,29 @@
     position: absolute
     top: auto
     bottom: 0
-  b(tablet)
-  b(mobile)
+  +b(tablet)
+    //position: absolute;
+    position: fixed;
+    z-index: 100;
+    top: 46px;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s;
+    transform: translateX(-100%);
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+
+    .tabs__list {
+      display: none;
+    }
+
+    &.active {
+      display: block;
+      transform: translateX(0);
+    }
+  +b(mobile)
+    //top:0
 // tabs
 //----------------------------------------------------//
 .tabs
@@ -233,7 +256,10 @@
           margin-right: 0
   &__li
     margin-bottom: 4px
-  b(tablet)
+  +b(tablet)
+    &__back {
+      display: block;
+    }
 // range
 //----------------------------------------------------//
 .range
@@ -311,7 +337,17 @@
   overflow: hidden
   img
     width: 100%
-  b(mobile)
+  +b(mobile)
+    max-height: 460px;
+
+    .slick-dots {
+      display: none !important;
+    }
+
+    img {
+      min-height: 460px;
+      width: auto;
+    }
 // slick-dots
 //----------------------------------------------------//
 .slick-dots
@@ -386,7 +422,44 @@
     &.active
       transform: translateY(0)
       position: relative
-  b(mobile)
+  +b(mobile)
+    &__inner {
+      margin: 0 -15px;
+      background-color: transparent;
+    }
+
+    &__list {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0;
+    }
+
+    &__li {
+      width: 33.33%;
+    }
+
+    &__link {
+      min-height: 76px;
+      text-transform: none;
+      font-size: 16px;
+
+      [class^="icon-"],
+      [class*="icon-"] {
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    &__view {
+      padding: 0;
+    }
+
+    &__content {
+      background-color: transparent;
+    }
 // top
 //----------------------------------------------------//
 .top
@@ -396,7 +469,19 @@
     position: absolute
     width: 100%
     bottom: 70px
-  b(mobile)
+  +b(mobile)
+    &__switch {
+      position: relative;
+      bottom: auto;
+    }
+
+    &__slider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
 // search
 //----------------------------------------------------//
 .search
@@ -475,7 +560,130 @@
       font-weight: 400
       padding-top: 2px
       padding-bottom: 2px
-  b(mobile)
+  +b(mobile)
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 15px 0;
+
+    &__items {
+      padding-right: 0;
+    }
+
+    &__item {
+      float: none;
+      width: 100%;
+      margin-bottom: 16px;
+      background-color: #fff;
+      border-left: none;
+
+      &--people {
+        display: none;
+      }
+    }
+
+    &__button {
+      margin: 0;
+      display: block;
+      float: none;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      font-size: 20px;
+      height: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__icon {
+      left: 10px;
+
+      &.icon-compass {
+        width: 18px;
+        height: 18px;
+      }
+
+      &.icon-calendar {
+        width: 19px;
+        height: 19px;
+      }
+
+      &.icon-geo {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__controls {
+      display: block;
+    }
+
+    &__back {
+      display: block;
+    }
+
+    &--lg {
+      .people-drop {
+        color: #fff;
+
+        [class^="icon-"],
+        [class*="icon-"] {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
+
+    &--sm {
+      display: none;
+      background-color: #fff;
+      position: absolute !important;
+      z-index: 100;
+      display: block !important;
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0;
+      width: 100%;
+      transform: translateX(-100%);
+      transition: all 0.2s;
+      margin-bottom: 0;
+      padding-top: 0;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      .search__items {
+        padding-left: 0;
+      }
+
+      .search__arrow {
+        width: 9px;
+        height: 5px;
+        right: 12px;
+      }
+
+      .people {
+        padding-bottom: 0;
+      }
+
+      .people__item {
+        border-color: #a1a3a5;
+      }
+
+      .people__plus,
+      .people__minus {
+        stroke: #c7c8cb;
+      }
+
+      input.search__input {
+        border: 1px solid #dddddd;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-weight: 700;
+      }
+    }
 input.search__input
   border: none
   font-weight: 700
@@ -488,7 +696,9 @@ input.search__input
   padding-bottom: 9px
   cursor: pointer
   placeholderColor(#040404)
-  b(mobile)
+  +b(mobile)
+    padding-left: 37px; 
+    
 // autocomplete
 //----------------------------------------------------//
 .ui-autocomplete
@@ -533,7 +743,25 @@ input.search__input
     margin: 0 auto 15px
     .dropdown__triangle
       display: none
-  b(mobile)
+  +b(mobile)
+    width: 100%;
+    display: block !important;
+    top: 45px !important;
+    left: 0 !important;
+    position: absolute !important;
+    bottom: 0;
+    border-radius: 0 !important;
+    transform: translateX(-100%);
+    transition: all 0.2s;
+    box-shadow: none !important;
+
+    .dropdown__triangle {
+      display: none;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
 .calendar-drop
   display: none
   width: 558px
@@ -542,7 +770,20 @@ input.search__input
   padding: 0 !important
   &.active
     display: block
-  b(mobile)
+  +b(mobile)
+    padding-top: 5px;
+
+    &__item {
+      padding: 10px 45px 3px 0;
+
+      &:last-child {
+        padding: 10px 0 3px 45px;
+      }
+    }
+
+    &__top {
+      margin-bottom: 8px;
+    }
 // people
 //----------------------------------------------------//
 .people
@@ -578,7 +819,35 @@ input.search__input
     right: 0
   &__value
     display: block
-  b(mobile)
+  +b(mobile)
+    padding: 18px 25px 25px;
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__left,
+    &__right {
+      width: 100%;
+      float: none;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    &__left {
+      margin-bottom: 14px;
+    }
+
+    &__datepicker {
+      padding-top: 5px;
+      margin-bottom: 25px;
+    }
+
+    &__button {
+      display: block;
+    }
+
+  
 input.people__input
   border: none
   display: inline-block
@@ -641,7 +910,8 @@ input.people__input
     margin: 0 auto
     padding-top: 12px
     padding-bottom: 12px
-  b(mobile)
+  +b(mobile)
+    color: #000000;
 input.calendar__nights
   text-align: center
   border-color: #dddddd
@@ -660,7 +930,10 @@ input.calendar__nights
   color: #24b3fd
   text-align: center
   margin-bottom: 5px
-  b(mobile)
+  +b(mobile)
+    td {
+      padding: 1px;
+    }
 .ui-datepicker-calendar
   text-align: center
   thead
@@ -677,7 +950,8 @@ input.calendar__nights
     text-decoration: none
     &:hover
       color: #24b3fd
-  b(mobile)
+  +b(mobile)
+    display: block;
 .ui-datepicker-today
   a
     color: #24b3fd
@@ -698,11 +972,11 @@ input.calendar__nights
 .ui-datepicker-prev
   float: left
   margin-left: -10px
-  background-image: url("../img/arrow-left.svg")
+  background-image: url("../images/arrow-left.svg")
 .ui-datepicker-next
   float: right
   margin-right: -10px
-  background-image: url("../img/arrow-right.svg")
+  background-image: url("../images/arrow-right.svg")
 // value
 //----------------------------------------------------//
 .value
@@ -721,7 +995,7 @@ input.calendar__nights
     vertical-align: middle
     margin: 0 20px 0 13px
   &__value
-  b(mobile)
+  +b(mobile)
     display block
 // controls
 //----------------------------------------------------//
@@ -742,8 +1016,14 @@ input.calendar__nights
     margin: 0 10px
     &--sort
       display: none
-  b(tablet)
-  b(mobile)
+  +b(tablet)
+    display: block;
+  +b(mobile)
+    &__button {
+      &--sort {
+        display: inline-block;
+      }
+    }
 #facebook
   .ajcls-2
     fill: #3a559f !important
@@ -786,9 +1066,9 @@ input.calendar__nights
     text-decoration: none
     &:hover
       color: $secondFontColor
-    line-height: 51px
-    height: 51px
-    display: inline-block
+      line-height: 51px
+      height: 51px
+      display: inline-block
   //nav sign in
   &__sign
     &-icon
@@ -890,7 +1170,8 @@ input.calendar__nights
         background: $secondFontColor
         font-weight: 600
         color: #fff
-    b(mobile)
+    +b(mobile)
+      display: none;
   &-slider
     position: relative
     padding: 0 45px
@@ -910,7 +1191,20 @@ input.calendar__nights
       left: 0
   &__select
     display: none
-    b(mobile)
+    +b(mobile)
+      background: url('../images/carret-down-sm.svg') right center no-repeat;
+      text-align: center;
+      display: inline-block;
+      padding: 5px 20px 5px 5px;
+      select {
+        padding: 0;
+        text-align: center;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        color: $darkBlueColor;
+        width: auto;
+      }
 //country list end ---------------
 //phone list -----------------
 .phone-list
@@ -927,7 +1221,13 @@ input.calendar__nights
     display: inline-block
     vertical-align: middle
     padding: 0 7px
-  b(tablet)
+  +b(tablet)
+    &__number {
+      font-size: 16px;
+    }
+    &__city {
+      padding-right: 0;
+    }
 //phone list end ---------------------
 //footer nav list -----------------
 .footer
@@ -1025,7 +1325,23 @@ input.calendar__nights
     margin: 0 0 4px 0
     background: #f0f0f0
     border-radius: 7px
-  b(mobile)
+  +b(mobile)
+    &__img-box {
+      height: 119px;
+    }
+    &__title {
+      border: none;
+      padding: 0;
+    }
+    &__content {
+      padding: 5px 22px 10px;
+    }
+    &__description {
+      display: none;
+    }
+    &__tag-box {
+      display: none;
+    }
 //card end -------------
 //help card ------------------
 .help-card
@@ -1080,10 +1396,10 @@ input.calendar__nights
     font-weight: 400
     text-transform: none
   &--email
-    background: url("../pic/help-card-img/help-card-img-01.jpg") center no-repeat
+    background: url("../images/help-card-img/help-card-img-01.jpg") center no-repeat
     background-size: cover
   &--phone
-    background: url("../pic/help-card-img/help-card-img-02.jpg") center no-repeat
+    background: url("../images/help-card-img/help-card-img-02.jpg") center no-repeat
     background-size: cover
   &--subscribe
     padding: 0 19px
@@ -1102,7 +1418,7 @@ input.calendar__nights
     width: 238px
     margin: auto
   &--more
-    background: url("../pic/help-card-img/help-card-img-03.jpg") center no-repeat
+    background: url("../images/help-card-img/help-card-img-03.jpg") center no-repeat
     background-size: cover
     height: 195px
     &:before
@@ -1116,7 +1432,8 @@ input.calendar__nights
       bottom: 17px
       right: 13px
       z-index: 1
-  b(mobile)
+  +b(mobile)
+    min-height: 0;
 //help card end ------------------
 //category card ----------------------
 .category-card
@@ -1205,8 +1522,46 @@ input.calendar__nights
     overflow: hidden
   &__link
     float: right
-  b(mobile)
-  b(mobile)
+  +b(mobile)
+    &__item {
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    &__title {
+      height: 44px;
+      padding: 0 0 0 0;;
+      a {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    &__content {
+      padding: 0;
+    }
+    &__img-box {
+      display: none;
+    }
+    &__description {
+      display: none;
+    } 
+    &__link {
+      display: none;
+    }
+  +b(mobile)
+    .simple-slider {
+      margin: 0;
+      &__item {
+        padding: 13px 0 13px 0;
+        &:nth-child(1n+5) {
+          display: none;
+        }
+        border-top: 1px solid $mainFontColor;
+        &:first-child {
+          border: none;
+        }
+      }
+    }
 //news end -------------------
 //feedback ---------------
 .feedback
@@ -1265,7 +1620,12 @@ input.calendar__nights
       width: 16px
       height: 16px
       border: 2px solid $secondFontColor
-  b(mobile)
+  +b(mobile)
+    .slick-dots {
+      position: static;
+      margin: 0 0 17px 0;
+    }
+    
 //feedback and news slider -------------
 //short form
 .short-form
@@ -1309,7 +1669,13 @@ input.calendar__nights
 //catalog list ---------
 .catalog
   &__list
-    b(mobile)
+    +b(mobile)
+      .catalog__list-item {
+        padding: 0 0 30px 0;
+      }
+      .mob-hide {
+        display: none;
+      }
     @media (min-width: 768px)
       &--tiles-view
         margin: 0 -15px
@@ -1431,7 +1797,34 @@ input.calendar__nights
   &__checkboxes
     li
       margin-bottom: 14px
-  b(mobile)
+  +b(mobile)
+    position: fixed;
+    transform: translateX(-100%);
+    bottom: 0;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all 0.2s;
+
+    &__back {
+      display: block;
+    }
+
+    &__desctop {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
 //catalog sort end ---------------
 //view-toggle ------------
 .view-toggle
@@ -1464,14 +1857,25 @@ input.calendar__nights
       vertical-align: top
       width: 33.3333%
       padding: 0 15px 30px
+      
     .help-card
       min-height: 350px
       &:before
         min-height: 350px
       .short-form
         width: 100%
-    b(tablet)
-    b(mobile)
+    +b(tablet)
+      &-item {
+        width: 50%;
+      }
+    +b(mobile)
+      &-item {
+        width: 100%;
+        &:nth-child(1n+6) {
+          display: none;
+        }
+      }
+    
 //product list end --------------
 //category list -------------
 .category
@@ -1483,6 +1887,7 @@ input.calendar__nights
     flex-flow: row wrap
     letter-spacing: -5px
     clearfix()
+    
     &-item
       display: inline-block
       letter-spacing: normal
@@ -1490,14 +1895,25 @@ input.calendar__nights
       padding: 0 15px 30px
     .slick-list
       padding: 0 50px 0 0 !important
-    b(tablet)
-    b(mobile)
+    +b(tablet)
+      &-item {
+        width: 50%;
+      }
+    +b(mobile)
+      padding: 0;
+    
+    
 //category list end ------------
 //button more
 .button-more-box
   .button
     float: right
-  b(mobile)
+  +b(mobile)
+    text-align: center;
+    .button {
+      float: none;
+      padding: 10px 44px;
+    }
 //section
 .section
   padding: 0 0 30px 0
@@ -1548,7 +1964,11 @@ input.calendar__nights
         font-weight: 400
       .dropdown__list-item
         font-size: 12px
-      b(mobile)
+      +b(mobile)
+        display: block;
+        font-size: 16px;
+        display: none;
+        
   &__subtitle
     display: block
     text-align: center
@@ -1556,8 +1976,15 @@ input.calendar__nights
     padding: 0 0 20px 0
   &.news,&.feedback
     padding-bottom: 45px
-  b(mobile)
-    display block
+  +b(mobile)
+    &__title {
+      &:before {
+        display: none;
+      }
+    }
+    &__subtitle {
+      display: none;
+    }
 //popup
 .subscribe-popup
   display: none

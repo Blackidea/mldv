@@ -1,6 +1,9 @@
 //----------------------------------------------------//
 // LAYOUT                                             //
 //----------------------------------------------------//
+
+@import 'mixins&includes.styl'
+
 *,
 *:before,
 *:after
@@ -20,8 +23,11 @@ $footerHeight = 329px
   margin: 0 0 (-$footerHeight)
   padding: 0 0 $footerHeight
   overflow: hidden
-  b(tablet)
-  b(mobile)
+  +b(tablet)
+    margin: 0;
+    padding: 0;
+  +b(mobile)
+    padding-top: 46px;
 //----------------------------------------------------//
 // HEADER                                             //
 //----------------------------------------------------//
@@ -136,7 +142,7 @@ $footerHeight = 329px
                   border: none
                 @media (max-width: 1170px)
                   width: 20%
-      &__link
+      &__link{}
       &__sign
         padding: 12px 0 0 0
         margin: 0 -270px 0 0
@@ -188,8 +194,247 @@ $footerHeight = 329px
                   .dropdown__triangle
                     left: 200px
                     margin: 0
-  b(tablet)
-  b(mobile)
+  +b(tablet)
+    position: relative;
+    .phone-list {
+      display: none;
+    }
+    &__currency {
+      right: auto;
+      left: 286px;
+    }
+    &__nav {
+      padding: 0;
+      .nav {
+        &__sign {
+          margin: 0;
+          position: absolute;
+          top: 0;
+          right: 5px;
+          &-entered {
+            .nav__sign-link {
+              max-width: 150px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              &--exit {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__bottom {
+      &--fixed {
+        padding-right: 35px;
+        .nav__sign {
+          right: -20px;
+          .hide {
+            display: none;
+          }
+          &-icon {
+            margin: 0;
+          }
+          
+        }
+      }
+    }
+  +b(mobile)
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3);
+    &__top {
+      text-align: center;
+      height: 46px;
+    }
+    &__small-logo {
+      display: none !important;
+    }
+    &__logo {
+      padding: 12px 0;
+      display: inline-block;
+      float: none;
+      &-icon {
+        width: 162px;
+        height: 24px;
+      }
+    }
+    &__currency {
+      position: static;
+      .dropdown {
+        &__box {
+          position: static;
+          width: 100%;
+          border-radius: 0;
+          background: none;
+          box-shadow: none;
+          padding: 10px 15px;
+          display: none;
+        }
+        &__link {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        &__triangle {
+          display: none;
+        }
+      }
+      &:hover {
+        .dropdown__box {
+          display: none;
+        }
+        .header__currency-icon {
+          fill: $darkBlueColor;
+        }
+      }
+      &.active {
+        .dropdown__box {
+          display: block;
+        }
+        .header__currency-icon {
+          fill: $secondFontColor;
+        }
+      }
+    }
+    &__nav {
+      &-btn {
+        display: block;
+        padding: 12px 13px 10px 14px;
+        background: #f4f4f4;
+        position: absolute;
+        top: 0;
+        left: 0;
+        svg {
+          width: 32px;
+          height: 24px;
+          fill: $secondFontColor;
+          display: block;
+        }
+      }
+      .nav {
+        &__list {
+          display: block;
+          float: none;
+          position: fixed;
+          top: 46px;
+          background: #fff;
+          z-index: 9999;
+          left: -100%;
+          padding: 0 15px;
+          height: calc(100% - 46px);
+          overflow-y: auto;
+          transition: all .2s ease;
+          &.active {
+            left: 0;
+          }
+          &-item {
+            display: block;
+            text-align: left;
+            border-top: 1px solid #acadaf;
+            &--big-drop {
+              .dropdown__col {
+                &:last-child {
+                  padding-left: 0;
+                }
+              }
+            }
+            .dropdown {
+              
+              &__btn-back {
+                display: block;
+                background: #f4f4f4;
+                color: #677e8a;
+                font-size: 16px;
+                padding: 10px 15px;
+                svg {
+                  width: 14px;
+                  height: 8px;
+                  transform: rotate(90deg);
+                  fill: #748893;
+                  margin: 0 10px 0 0;
+                }
+              }
+              &__triangle {
+                display: none;
+              }
+
+              &__box {
+                margin: 0;
+                position: fixed;
+                display: block;
+                top: 46px;
+                left: auto;
+                right: -100%;
+                border-radius: 0;
+                padding: 0;
+                width: 100%;
+                transition: all .2s ease;
+                box-shadow: none;
+                height: calc(100% - 46px);
+                .scroll-wrapper {
+                  height: calc(100% - 40px); 
+                  overflow-y: auto;
+                }               
+              }
+              &__col {
+                height: auto;
+                padding: 10px 0;
+                border-left: none;
+                border-bottom: 1px solid #d1d1d1;
+                float: none;
+                width: 100%;
+                &:nth-of-type(1) {
+                  border-bottom: 1px solid #d1d1d1;
+                }
+                &:last-child {
+                  border: none;
+                }
+              }
+              &__title {
+                font-size: 16px;
+                padding: 0 15px;
+                min-height: auto;
+                line-height: 29px;
+              }
+              &__list {
+                padding: 0 15px;
+              }
+              &__link {
+                font-size: 16px;
+                line-height: 29px;
+              }
+            }
+          }
+          &.active {
+            .dropdown {
+              &__box {
+                &.active {
+                  right: 0;
+                }
+              }
+            }
+          }
+        }
+        &__sign {
+          top: 0;
+          right: 15px;
+          .hide {
+            display: none;
+          }
+          &-icon {
+            margin: 0;
+          }
+        }
+      }
+    }
+    &__bottom {
+      
+    }
 //header backup
 /*
 .header {
@@ -489,6 +734,7 @@ $footerHeight = 329px
     float: left
     padding: 0 38px 0 0
   b(tablet)
+
   &__bottom
     clear: both
     background: #acadaf
@@ -515,16 +761,30 @@ $footerHeight = 329px
       letter-spacing: normal
       display: inline-block
       width: 33.333%
-    b(tablet)
-    b(mobile)
+    +b(tablet)
+      &-item {
+        width: 50%;
+      }
+    +b(mobile)
+      &-item {
+        width: 100%;
+      }
   &__col
     width: 33.333%
     float: left
     padding: 0 0 0 15px
     &:nth-of-type(1)
       padding: 0
-    b(tablet)
-    b(mobile)
+    +b(tablet)
+      &.tab-hide {
+        display: none;
+      }
+      width: 50%;
+      padding: 0;
+    +b(mobile)
+      &.mob-hide {
+        display: none;
+      }
   &__payment-list
     padding: 9px 0 0 0
     &-item
@@ -585,8 +845,125 @@ $footerHeight = 329px
     line-height: 16px
     span
       display: block
-  b(tablet)
-  b(mobile)
+  +b(tablet)
+    height: auto;
+    &__right {
+      width: 66.6667%;
+    }
+    &__left {
+      width: 33.3333%;
+      padding: 0 20px 0 0 ;
+    }
+  +b(mobile)
+    &__left {
+      float: none;
+      width: 100%;
+    }
+    &__right {
+      float: none;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+    &__col {
+      float: none;
+      width: 100%;
+    }
+    &__nav {
+      position: relative;
+      margin: 0 0 20px 0;
+      
+      &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: rgba(244, 244, 244, 0.29);
+        right: 0;
+        margin: 0 -15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &__nav-list {
+      text-align: left;
+      padding: 0 0 20px 50px;
+    }
+    &__mob-dropdown {
+      .footer__title {
+        font-size: 16px;
+        font-weight: 400;
+        svg {
+          width: 14px;
+          height: 8px;
+          display: inline-block;
+          fill: #fff;
+          margin: 0 0 0 5px;
+          // transform: rotate(180deg);
+          transition: transform .2s ease;
+        }
+      }
+      .footer__nav-list {
+        display: none;
+      }
+      &.active {
+        .footer__title {
+          svg {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+    &__logo {
+      display: none;
+    }
+    &__social-list {
+      padding: 0 0 5px 0;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: rgba(244, 244, 244, 0.29);
+        right: 0;
+        margin: 0 -15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &__address {
+      display: none;
+    }
+    .phone-list {
+      letter-spacing: -5px;
+      padding: 20px 0;
+      &__number {
+        letter-spacing: normal;
+        width: 60%;
+        text-align: right;
+      }
+      &__city {
+        width: 40%;
+        letter-spacing: normal;
+        text-align: left;
+      }
+    }
+    &__bottom {
+      margin: 0;
+      .copyright {
+        font-size: 9px;
+        color: #000;
+      }
+      .developer-info {
+        font-size: 9px;
+        color: #000;
+        &__logo {
+          width: 77px;
+          height: 10px;
+        }
+      }
+    }
 // developer info
 //----------------------------------------------------//
 .developer-info
@@ -601,4 +978,8 @@ $footerHeight = 329px
   &--regular
     left: 50%
     transform: translateX(-50%)
-  b(mobile)
+  +b(mobile)
+    &--regular {
+      left: 0;
+      transform: translateX(0);
+    }
