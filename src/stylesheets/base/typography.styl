@@ -1,6 +1,9 @@
 //----------------------------------------------------//
 // TYPOGRAPHY                                         //
 //----------------------------------------------------//
+
+@import 'mixins&includes.styl'
+
 body
   background: #fff
   color: $mainFontColor
@@ -18,7 +21,9 @@ h1
   font-size: 35px
   font-weight: 700
   line-height: 45px
-  b(mobile)
+  +b(mobile)
+    font-size: 22px;
+    line-height: 30px;
 h2
   color: #010101
   font-size: 22px
