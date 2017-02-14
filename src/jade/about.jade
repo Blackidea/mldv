@@ -1,0 +1,69 @@
+extends layouts/application.jade
+
+
+
+block content
+  .wrapper
+    include layouts/header.jade
+    .l-about
+      .container.b-about
+        h2.b-about__title О компании
+        .b-about__info
+          .row
+            .span-5
+              p.b-about__description Мы <span style="color:blue;">команда </span> профессионалов в сфере туризма
+            .span-7
+              .b-about__photo-up
+                img.span-4(src="images/img_1.jpg", alt="")
+                img.span-4(src="images/img_2.jpg", alt="")
+                img.span-4(src="images/img_3.jpg", alt="")
+          .row
+            .span-5(style="height:4px;")
+            .span-7.b-about__middle
+              .span-4.b-about__age
+                p.b-about__value Более 20 лет на рынке
+                  span.b-about__border
+
+              img.span-8(src="images/img_4.jpg" alt="")
+          .row(style="overflow:inherit;height:799px;padding-top:40px;")
+            .col-3(style="height:inherit;")
+              .b-about__position.__1
+                .b-about__vertical-border
+                  .vertical-border__circle
+                  .vertical-border__line
+                .b-about__history
+                  p.history__name test
+                  p.history__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, veritatis ipsum officiis rerum ex repudiandae totam distinctio.
+          
+            .col-3(style="height:inherit;")
+              .b-about__position.__2
+                .b-about__vertical-border
+                  .vertical-border__circle
+                  .vertical-border__line
+                .b-about__history
+                  p.history__name test
+                  p.history__text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam odit tempora dolor explicabo.
+          
+            .col-3(style="height:inherit;")
+              .b-about__position.__3
+                .b-about__vertical-border
+                  .vertical-border__circle
+                  .vertical-border__line
+                .b-about__history
+                  p.history__name test
+                  p.history__text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor porro maxime dolorum voluptatum, at molestias deserunt nulla quasi vel iusto, provident illo? Nesciunt natus facilis, impedit vero. Eum magnam, architecto.
+
+            .col-3(style="height:inherit;")
+              .b-about__position.__4
+                .b-about__vertical-border
+                  .vertical-border__circle
+                  .vertical-border__line
+                .b-about__history
+                  p.history__name test
+                  p.history__text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eos, nobis consequatur, ipsa facere fuga, quia voluptates exercitationem, assumenda illum sapiente. Mollitia veritatis, ad, suscipit blanditiis ullam nisi! Aliquid, quos?
+        img.b-about__photo-down(src="images/photodown.png", alt="")
+            
+            
+
+
+  include layouts/footer.jade

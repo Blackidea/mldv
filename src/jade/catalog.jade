@@ -5,9 +5,9 @@ extends layouts/application.jade
 block content
 
   .wrapper
-    // HEADER
+    //- // HEADER
     include layouts/header.jade
-    // HEADER [END]
+    //- // HEADER [END]
     main.content.catalog-page
       .container.columns
         aside.sidebar.tabs.js-init-tabs.js-mobile-screen
@@ -367,7 +367,7 @@ block content
               .search__controls
                 button.search__control.button.js-close-mobile-screen(type='submit') Найдено 146
                 a.search__reset(href='#') Сбросить фильтр
-          // people-drop
+          //- // people-drop
           .people-drop.dropdown__box
             .dropdown__triangle
             .people
@@ -393,8 +393,8 @@ block content
                 strong.people__value
                   | Детей: 
                   input#input-child.people__input(data-min='0', data-max='10', value='0')
-          // people-drop end
-          // calendar-drop
+          //- // people-drop end
+          //- // calendar-drop
           .calendar-drop.dropdown__box
             .dropdown__triangle
             .calendar
@@ -419,7 +419,7 @@ block content
                 strong.calendar__title Выберите дату вылета
                 .calendar__datepicker
                 button.calendar__button.button Сохранить
-          // calendar-drop end
+          //- // calendar-drop end
           .catalog-sort.js-mobile-screen
             a.catalog-sort__back.back.js-close-mobile-screen(href='#')
               svg.icon-arrow-left
@@ -813,12 +813,12 @@ block content
           .small-text
             p
               | ООО Мальдивиана лучший сервис по подбору туров онлайн! Мы динамичная команда профессионалов, работающих на московском рынке международного выездного туризма с 1994 года. Возможно, вы знали нас раньше как компанию "Aitken Spenсe Ceylon". За долгие годы работы в туризме мы пришли к выводу, что для организации успешного путешествия. необходимо слаженное взаимодействие всех сторон причастных к нему.
-      // controls
+      //- // controls
       .controls
         a.controls__button.controls__button--filter.button.js-call-mobile-screen(href='.sidebar') Фильтр
         a.controls__button.controls__button--sort.button.js-call-mobile-screen(href='.catalog-sort') Сотрировать
-      // controls end
-    // MAIN CONTENT [END]
-  // FOOTER FIX [END]
-  // FOOTER
+      //- // controls end
+    //- // MAIN CONTENT [END]
+  //- // FOOTER FIX [END]
+  //- FOOTER
   include layouts/footer.jade

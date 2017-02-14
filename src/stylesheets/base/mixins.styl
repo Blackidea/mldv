@@ -18,7 +18,11 @@ b($point)
     @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx), only screen and (min-resolution: 350dpi)
       {block}
 
-
+clearfix()
+  &:after
+    content: " "
+    display: block
+    clear: both
 
 font-smoothing()
   -moz-osx-font-smoothing: grayscale
