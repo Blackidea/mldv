@@ -5,7 +5,7 @@ extends layouts/application.jade
 block content
   .wrapper
     include layouts/header.jade
-    .l-about
+    .section.l-about
       .container.b-about
         h2.b-about__title О компании
         .b-about__info
@@ -61,7 +61,29 @@ block content
                 .b-about__history
                   p.history__name test
                   p.history__text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eos, nobis consequatur, ipsa facere fuga, quia voluptates exercitationem, assumenda illum sapiente. Mollitia veritatis, ad, suscipit blanditiis ullam nisi! Aliquid, quos?
+          .b-about__text-bottom Мы растем <br> дальше!
+            span.b-about__border
         img.b-about__photo-down(src="images/photodown.png", alt="")
+    section.section.l-companies
+      .section__title
+          h2.h2 Группа компаний
+      .container.b-companies
+        .row.b-companiesInfo
+          .col-6
+            h3.b-companiesInfo__title  Lorem ipsum dolor.
+            p.b-companiesInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, neque.
+          .col-6
+            h3.b-companiesInfo__title  Lorem ipsum dolor.
+            p.b-companiesInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, fugiat.
+        .row
+          .col-4
+            img.b-(src="", alt="")
+
+          .col-4
+            img.b-(src="", alt="")
+          .col-4
+            img.b-(src="", alt="")
+
             
             
 
