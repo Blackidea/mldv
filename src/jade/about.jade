@@ -84,12 +84,18 @@ block content
 
           .col-4.colt-12
             .b-companiesFeatures__image-container
-              img.b-companiesFeatures__image.__2(src="images/palma.png", alt="")
+              //- img.b-companiesFeatures__image.__2(src="images/palma.png", alt="")
+              svg.b-companiesFeatures__image.__2()
+                use(xlink:href='#elefan' x="0" y="0")
+              
+
             h3.b-companiesFeatures__title lorem
             p.b-companiesFeatures__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus tempora ullam delectus repellendus cum illo quaerat perspiciatis error aut ratione totam rem in, pariatur placeat velit, asperiores illum doloremque qui!
           .col-4.colt-12
             .b-companiesFeatures__image-container
-              img.b-companiesFeatures__image.__3(src="images/slon.png", alt="")
+              //- img.b-companiesFeatures__image.__3(src="images/slon.png", alt="")
+              svg.b-companiesFeatures__image.__3()
+                use(xlink:href='#palma' )
             h3.b-companiesFeatures__title lorem
             p.b-companiesFeatures__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam hic nam magni deserunt tempora debitis eos asperiores expedita a quae sunt explicabo libero fugit omnis, assumenda praesentium amet ea earum?
 
@@ -126,7 +132,8 @@ block content
               h3.b-cultureInfo__title loremasdsadsad
               p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa!
             
-            
+  
+
             
 
 
