@@ -25,8 +25,13 @@
     border-bottom 1px solid #b9b9b9
     font-weight 300
     font-size 20px
+    margin-top 30px
   &__data
     margin-top: 40px
+    &.upload 
+      overflow hidden
+    &.last
+      margin-bottom 30px
   &__label
     text-align right
     display inline-block
@@ -40,11 +45,86 @@
     width 30% !important
     display inline-block !important
     vertical-align middle !important
+  &__checkbox
+    // text-align center
+    width 33%
+    float none
+    margin 30px auto 30px
+    // margin-top 30px
+    & > li 
+      list-style none
+      & > label
+        padding-left 20px !important
+        font-size 16px        
+        margin-top 15px
+        margin-bottom 15px
+  &__button
+    display block
+    width 55%
+    margin 0 auto
     
-  &__file-upload{
-      position: relative;
-      overflow: hidden;
-      font-size: 1em;        /* example */
-      height: 2em;           /* example */
-      line-height: 2em       /* the same as height */
-  }
+.file_upload{
+    position: relative;
+    border-radius 0 !important
+    overflow: hidden;
+    font-size: 1em;        /* example */
+    width:100%;
+          /* the same as height */
+}
+.file_upload > button{
+  float: right;
+  background: none;
+  // border: 1px solid #bcbcbc;
+  height: 100%
+  padding 0
+  width 100%
+  
+}
+.file_upload > button > div{
+  float: left;
+  background: none;
+  border: 1px solid #bcbcbc;
+  height: 100%
+  padding 0
+  width 80%
+  margin-right 7%
+  border-radius 4px
+}
+.file_upload > button > svg{
+  float: left;
+  background: #24b3fd;
+  height: 100%
+  width 13%
+  padding-top 10px
+  padding-bottom 10px
+  fill #fff
+  margin-top 1px
+  margin-bottom 1px
+  transition all 0.2s ease-in-out
+}
+.file_upload > button > svg:hover{
+  background #677e8a
+  transition all 0.2s ease-in-out
+}
+
+.file_upload input[type=file]{
+  display block
+  position: absolute !important
+  left: 0 !important
+  top: 0 !important
+  width: 100% !important
+  height: 100% !important
+  transform: scale(20) !important
+  letter-spacing: 10em; !important    /* IE 9 fix */
+  -ms-transform: scale(20) !important /* IE 9 fix */
+  opacity: 0 !important
+  cursor: pointer !important
+}
+.file-upload__text{
+
+  col(4/12,offset:5/12)
+  color #999999
+  font-size 12px
+  font-weight 400
+  
+}

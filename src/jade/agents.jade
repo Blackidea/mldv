@@ -39,9 +39,51 @@ block content
           .b-agentsForm__data
               label.b-agentsForm__label data<br>data<br>data
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+          .b-agentsForm__data.upload
               label.b-agentsForm__label data<br>data<br> data
-              input.b-agentsForm__input(type="file")
+              .file_upload.b-agentsForm__input
+                //- div(style="float:right;width:30px;border-radius:4px;border:1px solid #000;height:100%;")
+                button(type="button")
+                  div
+                  svg
+                    use(xlink:href="#screpka")
+                input(type="file")
+              .file-upload__text  Lorem ipsum dolor sit amet.
+
+          h3.b-agentsForm__title test:
+          .b-agentsForm__data
+              label.b-agentsForm__label data lorem<br> data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__data
+              label.b-agentsForm__label data<br>data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__data
+              label.b-agentsForm__label data<br>data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__data.last
+              label.b-agentsForm__label data<br>data<br>data
+              input.b-agentsForm__input(type="text")
+
+          h3.b-agentsForm__title  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .b-agentsForm__data
+              label.b-agentsForm__label data lorem<br> data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__data
+              label.b-agentsForm__label data<br>data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__data
+              label.b-agentsForm__label data<br>data<br>data
+              input.b-agentsForm__input(type="text")
+          .b-agentsForm__title
+          .row.b-agentsForm__checkbox
+            li
+              input#license1.checkbox--inline(type='checkbox')
+              label(for='license1') Я согласен с условиями публичной оферты
+            li.filter__li
+              input#license2.checkbox--inline(type='checkbox')
+              label(for='license2') Получать уведомления по email
+            button.b-agentsForm__button(type="submit") test
+              
           
 
   include layouts/footer.jade
