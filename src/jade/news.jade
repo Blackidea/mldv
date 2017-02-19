@@ -13,40 +13,40 @@ block content
           use(xlink:href="#arrowLeft")
         a(href="").breadcrumbs__item Все новости
 
-    h2.news__h2 Путешествие на яхте
+    h2.dNews__h2 Путешествие на яхте
     .container
-      .news__main-banner
+      .dNews__main-banner
         img(src="images/news/main-banner.jpg", alt="")
-      .news__article
-        p.news__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum! Suscipit aliquid similique, vitae reiciendis ipsa error, deserunt nam eligendi cupiditate quam repellat obcaecati, fugiat soluta blanditiis tempore minus, dolores.
+      .dNews__article
+        p.dNews__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum! Suscipit aliquid similique, vitae reiciendis ipsa error, deserunt nam eligendi cupiditate quam repellat obcaecati, fugiat soluta blanditiis tempore minus, dolores.
 
-        p.news__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum! Suscipit aliquid similique, vitae reiciendis ipsa error, deserunt nam eligendi cupiditate quam repellat obcaecati, fugiat soluta blanditiis tempore minus, dolores.
+        p.dNews__text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum! Suscipit aliquid similique, vitae reiciendis ipsa error, deserunt nam eligendi cupiditate quam repellat obcaecati, fugiat soluta blanditiis tempore minus, dolores.
 
-        ul.news__ul 
+        ul.dNews__ul 
           span В стоимость включено
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
 
-        ul.news__ul 
+        ul.dNews__ul 
           span В стоимость включено
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
 
-        ul.news__ul 
+        ul.dNews__ul 
           span В стоимость включено
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
-          li.news__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
+          li.dNews__li трансфер
 
-        .news__data 18/09/2017
+        .dNews__data 18/09/2017
       .border-hor
       .social-share
         .social-share__description
@@ -55,11 +55,38 @@ block content
           .ya-share2( data-services="vkontakte,facebook,odnoklassniki,moimir" data-counter="")          
       .border-hor
       .dSubscribe
-        .dSubscribe__title Хочу!
+        .dSubscribe__title Хотите следить за нашими новостями?
         form.short-form.dSubscribe__form
           input(type='text', placeholder='Ваш E-mail')
           button.subscribe-button(type='submit', data-href='#subscribe-popup')
-            | text
+            | Хочу!
+    .section__title
+      h2.h2 Другие новости
+    .container
+      .other-news
+        
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .clearfix
+      .stockBanners
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-1.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-2.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-3.jpg", alt="")
+        .clearfix
+
+
 
       
   include layouts/footer.jade
