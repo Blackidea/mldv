@@ -1,0 +1,44 @@
+@import '../base/mixins&includes.styl'
+.wrapper
+  &.__heigth
+    // background #000
+    margin: 0 0 -329px;
+    padding: 0 0 329px;
+.l-404
+  background url('../images/bg/404.jpg') no-repeat center
+.b-404
+  padding-top 100px
+  padding-bottom 108px
+  font-family 'Roboto'
+  &__info
+    margin 0 auto
+    width 100%
+    text-align center
+    +b(tablet)
+      width 100%
+  &__title    
+    & > span
+      // display inline-block
+      font-size 210px
+      line-height 210px
+      color #fff
+      position relative
+      // margin-top 140px
+      &:nth-child(1)
+        z-index 100
+        left -3%
+      &:nth-child(3)
+        z-index 100
+        right 0%
+      & > img
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+  &__description
+    font-size 25px
+    color #fff
+  &__link
+    display block
+    margin-top 20px
+        

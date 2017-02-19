@@ -1,3 +1,5 @@
+@import '../base/mixins&includes.styl'
+
 .l-agents
   position relative
   &__title 
@@ -39,18 +41,29 @@
     width 40%
     font-size 16px    
     margin-right 30px
+    +b(tablet)
+      display block
+      width 100%
+      text-align left
+      padding-bottom 15px
   &__input
     border-radius 4px !important
     height 40px
     width 30% !important
     display inline-block !important
     vertical-align middle !important
+    +b(tablet)
+      display block
+      width 100% !important
   &__checkbox
     // text-align center
     width 33%
     float none
     margin 30px auto 30px
     // margin-top 30px
+    +b(tablet)
+      width 100%
+    
     & > li 
       list-style none
       & > label
@@ -62,6 +75,9 @@
     display block
     width 55%
     margin 0 auto
+    +b(tablet)
+      width 100%
+      
     
 .file_upload{
     position: relative;

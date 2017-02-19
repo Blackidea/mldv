@@ -1,0 +1,20 @@
+extends layouts/application.jade
+
+
+
+block content
+  .wrapper.__heigth
+    //- // HEADER
+    include layouts/header.jade
+    .l-404
+      .container.b-404
+        .b-404__info
+          .b-404__title
+            span 4
+            span 
+              img(src="images/404-cocs.png", alt="")
+            span 4
+          .b-404__description Страница отдыхает на Мальдивах
+          a.b-404__link(href="")
+            button На главную
+  include layouts/footer.jade
