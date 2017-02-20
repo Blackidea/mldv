@@ -1,0 +1,81 @@
+extends layouts/application.jade
+
+
+
+block content
+
+  .wrapper
+    //- // HEADER
+    include layouts/header.jade
+    .container.breadcrumbs
+
+        svg.breadcrumbs__icon
+          use(xlink:href="#arrowLeft")
+        a(href="").breadcrumbs__item Все новости
+
+    h2.dNews__h2 Путешествуйте на автобусе по Европе
+    .container
+      .dNews__main-banner
+        img(src="images/news/main-banner2.jpg", alt="")
+      .dNews__article-2
+
+        .dNews__article-2__collumn
+          p.dNews__text  Мальдивские острова, известные «резиденты» экваториальных вод Индийского океана, с полным правом считаются одним из лучших экзотических направлений. Здесь 1190 островов (вернее, атоллов) и все они — как на подбор: с голубыми лагунами, песчаными пляжами и уникальной растительностью. Для достойного отдыха на них есть все: тишина и спокойствие, красивая природа, богатый подводный мир. А еще то, без чего любые достоинства любого курорта тут же меркнут в глазах современных избалованных «туриков» — хорошие отели и высокий уровень сервиса.
+
+          p.dNews__text  Цены, надо сказать, на Мальдивах тоже вполне «на уровне»: отдых здесь могут себе позволить главным образом представители той прослойки путешественников, уровень доходов которой маркетологи определяют словами «выше среднего». Выложив за поездку на Мальдивы кругленькую сумму, будут довольны отпуском на все 100 % следующие категории путешественников: дайверы-маньяки, погружающиеся по три раза на дню (им, скорее всего, будет интересен материал про дайвинг на Мальдивских островах). 
+
+          p.dNews__text  Мальдивские острова, известные «резиденты» экваториальных вод Индийского океана, с полным правом считаются одним из лучших экзотических направлений. Здесь 1190 островов (вернее, атоллов) и все они — как на подбор: с голубыми лагунами, песчаными пляжами и уникальной растительностью. Для достойного отдыха на них есть все: тишина и спокойствие, красивая природа, богатый подводный мир. А еще то, без чего любые достоинства любого курорта тут же меркнут в глазах современных избалованных «туриков» — хорошие отели и высокий уровень сервиса.
+
+          p.dNews__text  Цены, надо сказать, на Мальдивах тоже вполне «на уровне»: отдых здесь могут себе позволить главным образом представители той прослойки путешественников, уровень доходов которой маркетологи определяют словами «выше среднего». Выложив за поездку на Мальдивы кругленькую сумму, будут довольны отпуском на все 100 % следующие категории путешественников: дайверы-маньяки, погружающиеся по три раза на дню (им, скорее всего, будет интересен материал про дайвинг на Мальдивских островах). 
+
+        .dNews__article-2__collumn
+          img.dNews__image(src="images/news/news-1.png", alt="")
+          img.dNews__image(src="images/news/news-2.png", alt="")
+        .clearfix
+
+        
+
+      .dNews__data 18/09/2017
+      .border-hor
+      .social-share
+        .social-share__description
+          span Поделиться с друзьями:
+        .social-share__icons
+          .ya-share2( data-services="vkontakte,facebook,odnoklassniki,moimir" data-counter="")          
+      .border-hor
+      .dSubscribe
+        .dSubscribe__title Хотите следить за нашими новостями?
+        form.short-form.dSubscribe__form
+          input(type='text', placeholder='Ваш E-mail')
+          button.subscribe-button(type='submit', data-href='#subscribe-popup')
+            | Хочу!
+    .section__title
+      h2.h2 Другие новости
+    .container
+      .other-news
+        
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .clearfix
+      .stockBanners
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-1.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-2.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-3.jpg", alt="")
+        .clearfix
+
+
+
+      
+  include layouts/footer.jade

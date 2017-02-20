@@ -1,3 +1,5 @@
+@import '../base/mixins&includes.styl'
+
 .dNews
   &__h2
     font-family: "Roboto";
@@ -10,8 +12,8 @@
     margin: 30px 0;
     
   &__main-banner
-    height 310px
-    border-radius 30px
+    height auto
+    border-radius 8px
   
     & > img
       height inherit
@@ -19,6 +21,26 @@
   &__article
     width 66%
     margin 30px auto 0
+    +b(tablet)
+      width 100%
+  &__article-2
+    width 100%
+    margin 30px auto 0
+    &__collumn
+      col(1/2,cycle:2)
+      +b(mobile)
+        col(1)
+  &__article-3
+    width 100%
+    margin 30px auto 0
+    &__collumn
+      col(1,cycle:2)
+      +b(mobile)
+        col(1)
+  &__image
+    width 100%
+    height auto
+    
   &__ul
     
     & > span

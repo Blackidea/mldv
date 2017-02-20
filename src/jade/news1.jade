@@ -1,0 +1,96 @@
+extends layouts/application.jade
+
+
+
+block content
+
+  .wrapper
+    //- // HEADER
+    include layouts/header.jade
+    .container.breadcrumbs
+
+        svg.breadcrumbs__icon
+          use(xlink:href="#arrowLeft")
+        a(href="").breadcrumbs__item Все новости
+
+    h2.dNews__h2 Путешествие на яхте
+    .container
+      .dNews__main-banner
+        img(src="images/news/main-banner.jpg", alt="")
+      .dNews__article
+        p.dNews__text  Компания «Мальдивиана» представляет Вашему вниманию cамое интересное и веселое. «Ritrella» Альтернативный вариант отдыха на Мальдивских островах!
+
+        p.dNews__text  Путешествие на яхте - это современно, доступно, увлекательно и разнообразно , отличная возможность совместить интересное путешествие и комфортное проживание!
+
+        ul.dNews__ul 
+          span В стоимость включено
+          li.dNews__li трансфер аэропорт-яхта-аэропорт
+          li.dNews__li медицинская страховка
+          li.dNews__li проживание на яхте с питанием по системе FB+, включающее завтрак, обед, ужин, воду, чай, кофе
+          li.dNews__li снорклинг
+          li.dNews__li рыбалка
+          li.dNews__li BBQ на необитаемом острове
+          li.dNews__li новогодний ужин
+          li.dNews__li экскурсия в Мале
+
+        ul.dNews__ul 
+          span Дополнительно оплачивается:
+          li.dNews__li международный авиаперелет
+          li.dNews__li алкогольные напитки и свежевыжатые соки
+          li.dNews__li чаевые команде
+          li.dNews__li green tax (оплачивается при выезде из страны в аэропорту Мале из расчета 6$ с человека в сутки)
+
+        ul.dNews__ul 
+          span Технические характеристики:
+          li.dNews__li Длина: 58.0M
+          li.dNews__li Ширина: 9.20M
+          li.dNews__li Моторы: CAT 1000hpX 2
+          li.dNews__li Генераторы: 125KWX 2 CAT
+          li.dNews__li Генератор: 51KW X 1 Cat
+          li.dNews__li Генератор: 22,5kwX 1 Onan
+          li.dNews__li Производство питьевой воды в объеме 18 тонн / сутки осуществляется с помощью двух компрессоров Coltrinо
+
+        .dNews__data 18/09/2017
+      .border-hor
+      .social-share
+        .social-share__description
+          span Поделиться с друзьями:
+        .social-share__icons
+          .ya-share2( data-services="vkontakte,facebook,odnoklassniki,moimir" data-counter="")          
+      .border-hor
+      .dSubscribe
+        .dSubscribe__title Хотите следить за нашими новостями?
+        form.short-form.dSubscribe__form
+          input(type='text', placeholder='Ваш E-mail')
+          button.subscribe-button(type='submit', data-href='#subscribe-popup')
+            | Хочу!
+    .section__title
+      h2.h2 Другие новости
+    .container
+      .other-news
+        
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .clearfix
+      .stockBanners
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-1.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-2.jpg", alt="")
+        .stockBanners__collumn
+          a(href="#")
+            img.stockBanners__images(src="images/stock/stock-3.jpg", alt="")
+        .clearfix
+
+
+
+      
+  include layouts/footer.jade

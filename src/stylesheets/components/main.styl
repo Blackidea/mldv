@@ -2036,6 +2036,7 @@ input.calendar__nights
   background url('../images/bg/bg-subcribe.jpg') no-repeat center
   border-radius 12px
   margin-top 40px
+  margin-bottom 40px
   padding-top 30px
   padding-bottom 30px
   &__title
@@ -2065,9 +2066,15 @@ input.calendar__nights
     +b(tablet)      
       col(1/2, cycle:2)
       margin-top 30px
+      & > div > a 
+        overflow hidden
+        & > img 
+          min-height 100%
+          min-width 100%
     +b(mobile)
       col(1)
       margin-top 30px
+    
 .stockBanners
   overflow hidden
   margin-top 30px
