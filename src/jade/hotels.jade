@@ -1,0 +1,69 @@
+extends layouts/application.jade
+
+
+
+block content
+  //- include layouts/header.jade
+  //- include layouts/main.jade
+  //- include layouts/about.jade
+  //- include layouts/consultate.jade
+  
+  .wrapper
+    //- // HEADER
+    include layouts/header.jade
+
+
+    .sliderMain
+      .sliderMain-bg(style="background:url('images/slider/slider-hotels-1.jpg') no-repeat center;min-height: 400px;")
+        .container.sliderMain-wrapper
+          .sliderMain-info
+            p.sliderMain-price от 5500 $
+            .sliderMain-name
+              span test1
+              span.sliderMain-star text
+      .sliderMain-bg(style="background:url('images/slider/slider-hotels-1.jpg') no-repeat center;min-height: 400px;")
+        .container.sliderMain-wrapper
+          .sliderMain-info
+            p.sliderMain-price от 5500 $
+            .sliderMain-name
+              span test2
+              span.sliderMain-star text
+      .sliderMain-bg(style="background:url('images/slider/slider-hotels-1.jpg') no-repeat center;min-height: 400px;")
+        .container.sliderMain-wrapper
+          .sliderMain-info
+            p.sliderMain-price от 5500 $
+            .sliderMain-name
+              span test3
+              span.sliderMain-star text
+    .sliderMain-nav
+      //- a.sliderMain-nav__controlPrev(href="")
+      //- a.sliderMain-nav__controlNext(href="")
+      a(href="")
+        .sliderMain-nav__video
+          img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+      a(href="")
+        img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
+    .calendar-price
+      .section__title
+        h2.h2 Календарь цен
+      
+
+
+
+  include layouts/footer.jade

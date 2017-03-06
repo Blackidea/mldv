@@ -1,0 +1,66 @@
+extends layouts/application.jade
+
+
+
+block content
+
+  .wrapper
+    //- // HEADER
+    include layouts/header.jade
+    h2.dNews__h2 Cерфинг на море
+    .container
+      .catalog-sort.js-mobile-screen
+        a.catalog-sort__back.back.js-close-mobile-screen(href='#')
+          svg.icon-arrow-left
+            use(xlink:href='#arrow-left')
+          | Назад
+        .catalog-sort__desctop
+          span.catalog-sort__title Сортировать по:
+          ul.catalog-sort__list.js-sort
+            li.catalog-sort__list-item.active
+              a.catalog-sort__link(href='#') Новые
+            li.catalog-sort__list-item
+              a.catalog-sort__link(href='#') Последние
+            
+          form.catalog-sort__view-toggle(action="")
+            span.catalog-sort__title Поиск по новостям
+            
+            input.dNews__search(type="text" placeholder="Например, путешествия")
+            button.dNews__button
+              svg
+                use(xlink:href='#button__search' )
+        .catalog-sort__mobile
+          form(action='')
+            strong.catalog-sort__mobile-title Сортировать по
+            ul.catalog-sort__checkboxes
+              li
+                input#sort-1.checkbox--lg(type='checkbox')
+                label(for='sort-1') новые
+              li
+                input#sort-2.checkbox--lg(type='checkbox')
+                label(for='sort-2') последние
+
+                  
+      include layouts/other__news.jade
+      .stockBanners
+        img(src="images/stock/big.png", alt="")
+      .other-news        
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          include layouts/news__item.jade
+        .other-news__collumn
+          img.stockBanners__right(src="images/stock/right.png", alt="")
+        .clearfix
+      include layouts/other__news.jade
+      .center-text
+        a.button.button--more(href='#') Загрузить еще
+      .dSubscribe
+        .dSubscribe__title Хотите следить за нашими новостями?
+        form.short-form.dSubscribe__form
+          input(type='text', placeholder='Ваш E-mail')
+          button.subscribe-button(type='submit', data-href='#subscribe-popup')
+            | Хочу! 
+  include layouts/footer.jade
