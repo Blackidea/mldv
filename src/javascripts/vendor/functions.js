@@ -1290,4 +1290,93 @@ $(document).ready(function(){
   $('.sliderMain-nav a').click(function(e){
     e.preventDefault();
   });
+  
+
+  // for calendar-price
+  var maxCalendarPrice = 10000;
+  var minCalendarPrice = 1000;
+
+  function getRandomInt(minCalendarPrice, maxCalendarPrice) {
+    return Math.floor(Math.random() * (maxCalendarPrice - minCalendarPrice)) + minCalendarPrice;
+  }
+
+  function calendarPrice(){
+    var calendarPriceHash = {};
+    var calendarPriceMonths = [
+      'январь',
+      'февраль',
+      'март',
+      'апрель',
+      'май',
+      'июнь',
+      'июль',
+      'август',
+      'сентябрь',
+      'октябрь',
+      'ноябрь',
+      'декабрь'
+    ];
+    $.each(calendarPriceMonths, function(index, month) {
+      $('.calendarSlider').append('<div class="calendar-charts calendarIndex-'+ index +'"></div>');
+      console.log(month);
+      for (var i = 1; i <= 30; i++) {
+          var randomCalendarPrice = getRandomInt(minCalendarPrice, maxCalendarPrice);
+          console.log(randomCalendarPrice);
+          var calendarPriceHeight = (randomCalendarPrice / maxCalendarPrice) * 100;
+          calendarPriceHash[i] = calendarPriceHeight;
+          $('.calendarIndex-' + index).append('<div class="calendar-charts__item"><div class="calendar-charts__column" style="height:' + calendarPriceHeight +'%;"></div><div class="calendar-charts__number">'+ i +'</div></div>');
+          
+      };
+    });
+      
+    console.log(calendarPriceHash);
+    $('.calendarSlider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      centerMode: false,
+      infinite: false,
+      fade: false,
+      asNavFor: ''
+    });
+  }
+  calendarPrice();
+  
+
+    google.maps.event.addDomListener(window, 'load', mapPrice);
+
+    ///stules for map blue water
+    function mapPrice() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 11,
+
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('mapPrice');
+
+        // Create the Google Map using our element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        // Let's also add a marker while we're at it
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+
+
+    $('#hotelsTabs').tabs();
+  
 });

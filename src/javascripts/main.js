@@ -8,7 +8,7 @@
 // require('jquery/dist/jquery.min.js');
 require('jquery-ui/ui/widgets/tabs');
 $('#tabs').tabs();
-
+  
 
 
 // menu for testJob
