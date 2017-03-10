@@ -1023,7 +1023,7 @@ function categorySlider() {
   }
 }
 
-//feedback slider 
+// feedback slider 
 
 function feedBackSlider() {
   var $slider = $('.feedback__list'),
@@ -1390,7 +1390,38 @@ function mapPrice() {
   $('#hotelsTabs').tabs();
   // $( '#hotelsTabs' ).on( "tabsload", mapPrice() );
 
-  ///Error with Jquery Tabs and Google Maps - gray background and not load maps , Than  i call function after click init Maps
+  ///Error with Jquery Tabs and Google Maps - gray background and not load maps , Than i call function after click init Maps
   $('#map-link').click(function(){
     mapPrice();
+  });
+  $('#sliderFeedback').click(function(){
+    // feedBackSlider();
+    
+    $('.feedback__list2').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+        slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+        slidesToShow: 1
+        }
+      }
+      ]
+    });
+    console.log("click for init feedBackSlider success");
   });

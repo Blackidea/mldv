@@ -81,8 +81,8 @@ block content
             a#map-link(style="height:20px;width:20px;" href="#hotelsTabs-2") Отель на карте
           li
             a(style="height:20px;width:20px;" href="#hotelsTabs-3") Бонусы и акции
-          li
-            a(style="height:20px;width:20px;" href="#hotelsTabs-4") Отзывы
+          li 
+            a#sliderFeedback(style="height:20px;width:20px;" href="#hotelsTabs-4") Отзывы
         #hotelsTabs-1.hotelsTabs__block
           .hotelsDescription
             .hotelsDescription__column
@@ -167,9 +167,26 @@ block content
         #hotelsTabs-2.hotelsTabs__block
           #mapPrice(style="height:400px;width:100%;border-radius:12px;")
         #hotelsTabs-3.hotelsTabs__block
-          p test
+          .hotelsTabs__bonus
+            a.hotelsBonus__column(style="background:url(images/bonus/bonus-1.jpg) no-repeat 50%;" href="")
+              .hotelsBonus__name 20% скидка на проживание
+              .hotelsBonus__info  Бесплатное проживание и питание для детей до 7 лет в номере с двумя оплаченными взрослыми. 
+              .hotelsBonus__info  Бесплатная вода в главном ресторане отеля во время завтраков, обедов и ужинов (согласно оплаченному типу питания).
+              .hotelsBonus__border-bottom
+              .hotelsBonus__date 
+                p.hotelsBonus__date-name Период действия
+                p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+            a.hotelsBonus__column(style="background:url(images/bonus/bonus-2.jpg) no-repeat 50%;" href="")
+              .hotelsBonus__name Бонус молодоженам, а также отмечающим "серебряную" и "золотую" свадьбу
+              .hotelsBonus__info  Бутылка вина
+              .hotelsBonus__info  Корзина фруктов
+              .hotelsBonus__border-bottom 
+              .hotelsBonus__date 
+                p.hotelsBonus__date-name Период действия
+                p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
         #hotelsTabs-4.hotelsTabs__block
-          p test
+          include layouts/feedback.jade
+
       
               
         

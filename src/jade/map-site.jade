@@ -1,0 +1,33 @@
+extends layouts/application.jade
+
+
+
+block content
+
+  .wrapper
+    //- // HEADER
+    include layouts/header.jade
+    ul.container
+      li
+        a(href="./index.html" target="_blank") index
+      li
+        a(href="./about.html" target="_blank") about
+      li
+        a(href="/agents.html" target="_blank") agents
+      li
+        a(href="/catalog.html" target="_blank") catalog
+      li
+        a(href="/hotels.html" target="_blank") hotels
+      li
+        a(href="/news.html" target="_blank") news
+      li
+        a(href="/news1.html" target="_blank") news1
+      li
+        a(href="/news2.html" target="_blank") news2
+      li
+        a(href="/news3.html" target="_blank") news3
+      li
+        a(href="/not-found.html" target="_blank") not-found
+      li
+        a(href="/index.html")
+  include layouts/footer.jade
