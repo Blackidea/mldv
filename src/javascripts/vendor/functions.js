@@ -1425,3 +1425,4 @@ function mapPrice() {
     });
     console.log("click for init feedBackSlider success");
   });
+  // $('.holidayCreate__selectors select').selectmenu({ icons:{ button:"ui-icon-circle-minus" }});
