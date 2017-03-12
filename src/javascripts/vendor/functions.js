@@ -1426,3 +1426,21 @@ function mapPrice() {
     console.log("click for init feedBackSlider success");
   });
   // $('.holidayCreate__selectors select').selectmenu({ icons:{ button:"ui-icon-circle-minus" }});
+
+
+  //// slider for Numbers on Hotels page
+  function sliderNumbers(){
+    $('#sliderNumbers').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: false,
+      arrows: false,
+      infinite: false,
+      focusOnSelect: true
+    });
+  }
+
+
+  sliderNumbers();
+
