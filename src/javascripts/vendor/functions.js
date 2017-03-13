@@ -1333,7 +1333,8 @@ $(document).ready(function(){
     $('.calendarSlider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: true,
+      prevArrow: '<div class="calendarSlider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+      nextArrow: '<div class="calendarSlider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
       centerMode: false,
       infinite: false,
       fade: false,
@@ -1434,13 +1435,30 @@ function mapPrice() {
       slidesToShow: 4,
       slidesToScroll: 1,
       dots: false,
+      touchMove: false,
       centerMode: false,
-      arrows: false,
+      prevArrow: '<div class="holidayCreate__slider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+      nextArrow: '<div class="holidayCreate__slider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',  
       infinite: false,
-      focusOnSelect: true
+      focusOnSelect: false
     });
   }
-
+  function sliderNumber(){
+    $('.sliderNumber').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: false,
+      prevArrow: '<div class="numbersSlider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+      nextArrow: '<div class="numbersSlider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',                 
+      infinite: false,
+      focusOnSelect: false
+    });
+  }
+  $('.numbersSlider__form').click(function(){
+    $(this).find('.numbersSlider__checkbox').toggleClass('checkboxActive');
+  });
 
   sliderNumbers();
+  sliderNumber();
 
