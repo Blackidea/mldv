@@ -320,6 +320,143 @@ block content
             form.numbersSlider__form(action="")
               .numbersSlider__checkbox
               .numbersSlider__labelCheckbox номер выбран
+      
+      .holidayCreate__result
+        .container
+          .numberResult
+            //- block 1
+            .numberResult__sum
+              .numberResult__sumTitle Сумма
+              .numberResult__sumValue 1 390 $
+              .numberResult__sumBonus
+                .numberResult__sumIcon
+                  svg
+                    use(xlink:href='#palma2')
+
+                .numberResult__sumText TextBonus<br> <strong>TextBonus</strong>
+              a.numberResult__sumLink(href="") Подробнее о бонусной программе
+            .numberResult__payment
+              .numberResult__paymentDescription
+                | Вы можете внести предоплату 50% 
+                | <br>Оставшуюся сумму не поздней, чем за 14 дней 
+                | <br>до начала тура.
+              a.numberResult__paymentLink(href="") Список документов для визы
+              .numberResult__paymentMethods
+                .numberResult__paymentIcon
+                  svg
+                    use(xlink:href='#monets')
+                .numberResult__paymentText
+                  | <strong>Способы оплаты:</strong> банковской картой онлайн, 
+                  | <br>наличными или картой в офисе, а также 
+                  | <br>оформить кредит от Сбербанка
+            .numberResult__buy
+              button.numberResult__buyButton Купить
+
+      .hotelsTours
+        .section__title
+          h2.h2 Туры с вылетом из 
+          .pick-up
+            | Москвы
+            svg.pick-up__icon
+              use(xlink:href='#caret-down')
+            .dropdown__box
+              span.dropdown__triangle
+              ul.dropdown__list
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Шри-Ланка
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Доминикана
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Сейшелы
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Маврикий
+        .container
+          .hotelsTours__sorting
+            .hotelsTours__sortingSelectors.__food
+              label(for="test") 
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option test1
+                option test2
+                option test3
+                option test4
+            .hotelsTours__sortingSelectors.__typeNumbers
+              label(for="test2") 
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test2")
+                option test1
+                option test2
+                option test3
+                option test4
+            .hotelsTours__sortingSelectors.__airCompanie
+              label(for="test3") 
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test3")
+                option test1
+                option test2
+                option test3
+                option test4
+            .hotelsTours__sortingSwitch
+              //- .catalog-sort__desctop.holidayCreate__sort-inner
+              span.hotelsTours__sortingTitle Сортировать по:
+              ul.hotelsTours__sortingList.js-sort
+                li.hotelsTours__sortingListItem.active
+                  a.hotelsTours__sortingLink(href='#') цене
+                li.hotelsTours__sortingListItem
+                  a.hotelsTours__sortingLink(href='#') дате
+                li.hotelsTours__sortingListItem
+                  a.hotelsTours__sortingLink(href='#') названию
+          .hotelsTours__table
+            .hotelsTours__tableTitles
+              .hotelsTours__tableTitle.__tour Тур
+              .hotelsTours__tableTitle.__duration Продолжительность
+              .hotelsTours__tableTitle.__numbers Номер в отеле
+              .hotelsTours__tableTitle.__food Питание
+              .hotelsTours__tableTitle.__airCompanie Авиакомпания
+              .hotelsTours__tableTitle.__price Цена
+            .hotelsTours__tableCells
+              .hotelsTours__tableRow
+                .hotelsTours__tableCell.__tour 
+                  a(href="") Мальдивские острова Qatar Airways
+                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
+                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__food Все включено
+                .hotelsTours__tableCell.__airCompanie Emirates
+                .hotelsTours__tableCell.__price 1360 $
+
+              .hotelsTours__tableRow
+                .hotelsTours__tableCell.__tour 
+                  a(href="") Мальдивские острова Qatar Airways
+                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
+                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__food Все включено
+                .hotelsTours__tableCell.__airCompanie Emirates
+                .hotelsTours__tableCell.__price 1360 $
+
+              .hotelsTours__tableRow
+                .hotelsTours__tableCell.__tour 
+                  a(href="") Мальдивские острова Qatar Airways
+                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
+                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__food Все включено
+                .hotelsTours__tableCell.__airCompanie Emirates
+                .hotelsTours__tableCell.__price 1360 $
+
+              .hotelsTours__tableRow
+                .hotelsTours__tableCell.__tour 
+                  a(href="") Мальдивские острова Qatar Airways
+                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
+                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__food Все включено
+                .hotelsTours__tableCell.__airCompanie Emirates
+                .hotelsTours__tableCell.__price 1360 $
+                
+
+
+
           
           
           
