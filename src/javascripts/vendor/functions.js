@@ -1317,7 +1317,7 @@ $(document).ready(function(){
       'декабрь'
     ];
     $.each(calendarPriceMonths, function(index, month) {
-      $('.calendarSlider').append('<div class="calendar-charts calendarIndex-'+ index +'"><p>'+ month +'</p></div>');
+      $('.calendarSlider').append('<div class="calendar-charts calendarIndex-'+ index +'"></div>');
       console.log(month);
       for (var i = 1; i <= 30; i++) {
           var randomCalendarPrice = getRandomInt(minCalendarPrice, maxCalendarPrice);
@@ -1327,6 +1327,7 @@ $(document).ready(function(){
           $('.calendarIndex-' + index).append('<div class="calendar-charts__item"><div class="calendar-charts__column" style="height:' + calendarPriceHeight +'%;"></div><div class="calendar-charts__number">'+ i +'</div></div>');
           
       };
+      $('.calendarIndex-' + index).append('<p class="calendar-charts__month">'+ month +'</p>');
     });
       
     console.log(calendarPriceHash);
@@ -1523,18 +1524,18 @@ function mapPrice() {
 
   function showWishList(){
     $('.js-wishlist').click(function(){      
-      $('.popup__compare').show();
-    });
-    $('.popup__close').click(function(){
-      $('.popup__compare').hide();
-    });
-  }
-  function showCompare(){
-    $('.js-compare').click(function(){      
       $('.popup__wishlist').show();
     });
     $('.popup__close').click(function(){
       $('.popup__wishlist').hide();
+    });
+  }
+  function showCompare(){
+    $('.js-compare').click(function(){      
+      $('.popup__compare').show();
+    });
+    $('.popup__close').click(function(){
+      $('.popup__compare').hide();
     });
   }
 

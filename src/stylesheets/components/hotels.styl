@@ -22,6 +22,20 @@
     max-width 180px
 .calendarSlider
   position relative
+  &:before
+    content ''
+    position absolute
+    border-top 1px solid #cccccc
+    width 100%
+    bottom 50px
+    left 0
+  &:after
+    content ''
+    position absolute
+    border-top 1px solid #cccccc
+    width 100%
+    bottom 69px
+    left 0
   &__arrow
     position absolute
     height 20px
@@ -45,12 +59,12 @@
     position relative
     width 15px
     height 150px
-    margin 0 10px
+    margin 0 11px
     float left      
   &__column
     position absolute
-    bottom 20px
-    background #9f9fa0
+    bottom 24px
+    background #e6e6e7
     height 10px
     width 100%
     &:hover
@@ -61,6 +75,9 @@
     text-align center
     bottom 0
     left 0
+  &__month
+    padding 0 !important
+    color #cccccc
 #mapPrice
   max-height: 100%;
   max-width: 100%;
@@ -574,6 +591,19 @@
 .sliderHotelsAround
   position relative
   height 415px
+  .slick-dots
+    bottom: auto
+    top: 100%
+    margin: 16px 0 0 0
+    button
+      width: 16px
+      height: 16px
+      border: 2px solid $secondFontColor
+  +b(mobile)
+    .slick-dots {
+      position: static;
+      margin: 0 0 17px 0;
+    }
   &__list
     +b(mobile)
       .sliderHotelsAround__list-item {
@@ -670,6 +700,19 @@
 .sliderHotelsSimilar
   position relative
   height 415px
+  .slick-dots
+    bottom: auto
+    top: 100%
+    margin: 16px 0 0 0
+    button
+      width: 16px
+      height: 16px
+      border: 2px solid $secondFontColor
+  +b(mobile)
+    .slick-dots {
+      position: static;
+      margin: 0 0 17px 0;
+    }
   &__list
     +b(mobile)
       .sliderHotelsSimilar__list-item {
@@ -782,6 +825,12 @@
     &.active
       height 100%
       transition all 0.6s ease-in-out 0s
+  &__history-column
+    float left
+    width 46%
+    margin-right 3%
+    line-height 30px
+    font-size 14px
       
   &__blockOpacity
     position absolute
@@ -791,6 +840,10 @@
     bottom 0
     background: rgba(255,255,255,0.61);    
     background: linear-gradient(to bottom, rgba(255,255,255,0.61) 37%, rgba(255,255,255,0.61) 86%, rgba(255,255,255,1) 100%);
+  &__button
+    display block
+    margin 0 auto
+    width 17%
 .svg__compare
   display inline-block
   vertical-align middle
@@ -835,7 +888,7 @@
   position fixed
   display none
   background #24b3fd
-  z-index 100
+  z-index 1000
   top 0
   left 0
   height 60px
@@ -845,7 +898,7 @@
   position fixed
   display none
   background #24b3fd
-  z-index 100
+  z-index 1000
   top 0
   left 0
   height 60px
