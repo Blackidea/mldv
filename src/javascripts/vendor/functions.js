@@ -1347,15 +1347,6 @@ $(document).ready(function(){
     mapPrice();
   });
 
-  
-  
-
-
-  
-
-
-    
-  
 });
 function mapPrice() {
     // debugger;
@@ -1459,6 +1450,99 @@ function mapPrice() {
     $(this).find('.numbersSlider__checkbox').toggleClass('checkboxActive');
   });
 
+
+
+  //// slider for #sliderHotelsAround
+  function sliderHotelsAround(){
+    $('.sliderHotelsAround').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+        slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+        slidesToShow: 1
+        }
+      }
+      ]
+    });
+  }
+
+  //// slider for #sliderHotelsAround
+  function sliderHotelsSimilar(){
+    $('.sliderHotelsSimilar').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+        slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+        slidesToShow: 1
+        }
+      }
+      ]
+    });
+  }
+
+  /// hide and show content in hotelsArticle
+  function hotelsArticleShow(){
+    $('.hotelsArticle__button').click(function(){
+      var currentBlock = $(this).parent();
+      $(currentBlock).find('.hotelsArticle__content').toggleClass('active');
+      $(currentBlock).find('.hotelsArticle__blockOpacity').toggle();
+    });
+  }
+
+  function showWishList(){
+    $('.js-wishlist').click(function(){      
+      $('.popup__compare').show();
+    });
+    $('.popup__close').click(function(){
+      $('.popup__compare').hide();
+    });
+  }
+  function showCompare(){
+    $('.js-compare').click(function(){      
+      $('.popup__wishlist').show();
+    });
+    $('.popup__close').click(function(){
+      $('.popup__wishlist').hide();
+    });
+  }
+
   sliderNumbers();
   sliderNumber();
+  sliderHotelsAround();
+  sliderHotelsSimilar();
+  hotelsArticleShow();
+  showWishList();
+  showCompare();
 

@@ -11,7 +11,54 @@ block content
   .wrapper
     //- // HEADER
     include layouts/header.jade
+    .popup__wishlist
+      .container
+        .popup__column.__title
+          .popup__title Отель добавлен в избранное
+        .popup__column.__middle
+          .popup__middle
+            svg.svg__wishlist.__popup
+              use(xlink:href='#wishlist')
+            a.popup__link(href="") Перейти в избранное
+        .popup__column.__close
+          .popup__close
+            svg.svg__close
+              use(xlink:href='#closeButton')
 
+    .popup__compare
+      .container
+        .popup__column.__title
+          .popup__title Отель добавлен в сравнение
+        .popup__column.__middle
+          .popup__middle
+            svg.svg__compare.__popup
+              use(xlink:href='#compare')
+            a.popup__link(href="") Перейти в сравнение
+        .popup__column.__close
+          .popup__close
+            svg.svg__close
+              use(xlink:href='#closeButton')
+
+
+    .hotelsHeader
+      .container
+        .hotelsHeader__column.__panel
+          .hotelsHeader__button-wishlist.js-wishlist
+            //- img(src="images/icon/wishlist.png", alt="")
+            svg.svg__wishlist.js-wishlist
+              use(xlink:href='#wishlist' )
+            span В избранное
+          .hotelsHeader__button-compare.js-compare
+            svg.svg__compare
+              use(xlink:href='#compare' )
+            span В сравнение
+        .hotelsHeader__column.__title
+          .hotelsHeader__nameHotel  Sol Cayo Largo 4*
+          .hotelsHeader__geo  Мальдивы, Атолл Фелиху
+        .hotelsHeader__column.__rating
+          svg.svg__rating
+            use(xlink:href='#rating' )
+          .hotelsHeader__value 9.3 / 10
 
     .sliderMain
       .sliderMain-bg(style="background:url('images/slider/slider-hotels-1.jpg') no-repeat center;min-height: 400px;")
@@ -453,7 +500,30 @@ block content
                 .hotelsTours__tableCell.__food Все включено
                 .hotelsTours__tableCell.__airCompanie Emirates
                 .hotelsTours__tableCell.__price 1360 $
-                
+      .hotelsAround
+        .section__title.hotelsAround__title
+          h2.h2 Отели рядом
+        .container
+          include layouts/hotels__around.jade
+
+      .hotelsSimilar
+        .section__title.hotelsSimilar__title
+          h2.h2 Отели рядом
+        .container
+          include layouts/hotels__similar.jade
+
+      .hotelsArticle
+        .section__title.hotelsArticle__title
+          h2.h2 История Мальдивских островов
+        .container.hotelsArticle__wrapper
+          .hotelsArticle__content
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas et accusamus quaerat fugiat illum nobis asperiores sequi mollitia repellat, unde nostrum error earum laudantium, ab esse odio est quibusdam quos voluptas eveniet aspernatur quod possimus ullam libero! Excepturi rem quod autem, incidunt ad, quas laboriosam laudantium, temporibus, cum voluptates accusamus.
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas et accusamus quaerat fugiat illum nobis asperiores sequi mollitia repellat, unde nostrum error earum laudantium, ab esse odio est quibusdam quos voluptas eveniet aspernatur quod possimus ullam libero! Excepturi rem quod autem, incidunt ad, quas laboriosam laudantium, temporibus, cum voluptates accusamus.
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas et accusamus quaerat fugiat illum nobis asperiores sequi mollitia repellat, unde nostrum error earum laudantium, ab esse odio est quibusdam quos voluptas eveniet aspernatur quod possimus ullam libero! Excepturi rem quod autem, incidunt ad, quas laboriosam laudantium, temporibus, cum voluptates accusamus.
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas et accusamus quaerat fugiat illum nobis asperiores sequi mollitia repellat, unde nostrum error earum laudantium, ab esse odio est quibusdam quos voluptas eveniet aspernatur quod possimus ullam libero! Excepturi rem quod autem, incidunt ad, quas laboriosam laudantium, temporibus, cum voluptates accusamus.
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas et accusamus quaerat fugiat illum nobis asperiores sequi mollitia repellat, unde nostrum error earum laudantium, ab esse odio est quibusdam quos voluptas eveniet aspernatur quod possimus ullam libero! Excepturi rem quod autem, incidunt ad, quas laboriosam laudantium, temporibus, cum voluptates accusamus.
+            .hotelsArticle__blockOpacity
+          button.hotelsArticle__button test
 
 
 
