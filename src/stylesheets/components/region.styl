@@ -10,7 +10,6 @@
     height 180px
     border-radius 12px
     width 100%
-    background url('../images/region/country-1.jpg') no-repeat 50%
   &__name
     display table-cell
     text-align center
@@ -22,6 +21,8 @@
     text-transform uppercase
 .regionArticle
   &__content
+    margin-top 20px
+    margin-bottom 20px
     overflow hidden
   &__text
     col(8/12)
@@ -52,16 +53,20 @@
     height auto
   &__border
     display table
+    col(5/12)
     position relative
     margin-top 50px
     border-radius 12px
-    border 10px solid #24b3fd
-    &Text
-      display table-cell
-      font-size 24px
-      font-weight bold
-      font-family 'Roboto'
+    border 7px solid #24b3fd
+    height 300px
+    &Text      
+      padding 85px 10px 0
       & > span
+        font-size: 26px;
+        font-weight: normal;
+        font-family: Roboto;
+        display block
+        line-height normal
         text-align center
         &:after
           content ''
@@ -71,15 +76,142 @@
           margin 30px auto
           border-bottom 1px solid #000
     &Quotes
-      position absolute
-      top 0
-      left 10%
-      height 30px
-      width 30px
+      position absolute      
+      height 40px
+      width 60px
       & > svg
+        padding 0 5px
+        background #fff
         width 100%
         height 100%
+        fill #24b3fd        
+      &.__top
+        top 0
+        left 10%
+        transform translateY(-50%) rotate(180deg)
+      &.__bottom
+        bottom 0
+        right 10%
+        transform translateY(50%)
+  &__text-2
+    col(7/12)
     
+    
+.regionHotelsSlider
+  margin-bottom 30px
+  &__title
+    margin-bottom 50px
+
+#specialOffers__map
+  height 530px
+  width 100%
+  
+.otherRegions
+  margin-top 20px
+  margin-bottom 40px
+  &Slider   
+    &__layout
+      position relative
+  &__bg
+    display table
+    height 200px
+    width 100%
+    border-radius 12px
+  &__name
+    display table-cell
+    text-align center
+    vertical-align middle
+    color #fff
+    font-family 'Roboto'
+    font-weight bold
+    font-size 25px
+    text-transform uppercase
+    
+
+.contactForm
+  position relative
+  background url('../images/bg/contactform.jpg') no-repeat 50%
+  &__inner
+    margin-left 15.5%
+    margin-right 8%
+    padding-bottom 45px
+    padding-top 46px
+  &__textTitle
+    display block
+    color #fff
+    text-align center
+    font-family 'Roboto'
+    font-size 26px   
+    & > span
+      &:after
+        content ''
+        display block
+        height 1px
+        width 30%
+        margin 30px auto
+        border-bottom 1px solid #fff
+  &__description
+    color #fff
+    text-align center
+    font-size 14px
+    margin-bottom 20px
+  &__row
+    margin-top 30px
+    overflow hidden
+  &__input
+    col(1/3)
+    & > label
+      font-size 16px
+      color #fff
+      margin-bottom 10px
+      & > span
+        color #fd2424
+    & > input
+      height 40px
+      border-radius 4px
+      border 1px solid #fff
+      background rgba(10,45,64,0.5)
+  &__textarea
+    width 100%
+    & > label
+      font-size 16px
+      color #fff
+      margin-bottom 10px
+      
+    & > textarea
+      width 100%
+      height 80px
+      border-radius 4px
+      border 1px solid #fff
+      background rgba(10,45,64,0.5)
+      &:focus
+        background #fff
+  &__button
+    width 20%
+    text-align center
+    margin: 0 auto;
+    display: block;
+.featuresHoliday
+  &__title
+    margin-top 20px
+    margin-bottom 20px
+  &__column
+    col(1/3)
+  &__item
+    margin-top 30px
+    height 180px
+  &__icon
+    height 95px
+    & > svg
+      fill #07405e
+      width 100%
+      height 100%
+  &__description
+    color #07405e
+    font-size 14px
+    text-align center
+    margin-top 20px
+    margin-bottom 20px
     
     
     
