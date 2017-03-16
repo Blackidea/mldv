@@ -1755,6 +1755,145 @@ input.calendar__nights
           min-height: 194px
           &:before
             min-height: 194px
+
+.js-showHotelsOnMap__inner
+  width:100%;
+  height:526px;
+  background:#000;
+  display:none;
+  margin-bottom 30px
+.infoWindow
+  width 260px
+  list-style-type none
+  background #fff
+  border-radius 12px
+  &Marker
+    position relative
+    width 90px
+    height 45px
+    & > span
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%,-75%)
+      font-size 14px
+      font-weight bold
+    & > svg
+      stroke #24b3fd
+      stroke-width 1
+      fill #fff
+      width 88px
+      height 44px
+  &Card
+    border-radius: 10px
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
+    transition: box-shadow .2s ease
+    overflow: hidden
+    height: 100%
+    & h3
+      font-size: 14px;
+      line-height: 20px;
+    &:hover
+      box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3)
+    a
+      text-decoration: none
+      color: $mainFontColor
+      display: block
+    &__img-box
+      height: 115px
+      position: relative
+      overflow: hidden
+      img
+        min-width: 100%
+        min-height: 100%
+        position: relative
+    &__price
+      position: absolute
+      display: inline-block
+      font-size: 16px
+      font-weight: 700
+      color: $secondFontColor
+      bottom: 0
+      left: 0
+      padding: 5px 47px 6px 23px
+      background: rgba(0, 0, 0, 0.72)
+      line-height: 16px
+    &__offer
+      font-size: 11px
+      height: 20px
+      line-height: 20px
+      background-color: #24b3fd
+      text-align: center
+      padding: 0 9px
+      position: absolute
+      top: 7px
+      right: 5px
+      color: #fff
+      border-radius: 10px
+    &__content
+      padding: 4px 15px 18px;
+    &__country
+      color: #acadaf
+      display: block
+      font-size: 11px;
+      line-height: 15px;
+    &__title
+      clearfix()
+      border-bottom: 1px solid #898989
+      padding: 0 0 3px 0
+      margin: 0 0 3px 0
+      a
+        &:hover
+          color: $secondFontColor
+    &__rating
+      color: $secondFontColor
+      font-size: 15px
+      font-weight: 700
+      float: right
+      padding: 5px 0 0 0
+      &-star
+        width: 13px;
+        height: 13px;
+        fill: $secondFontColor
+    &__description
+      font-size: 14px
+      display: block
+      padding: 5px 0 0 0
+      &-icon
+        width: 20px;
+        height: 20px;
+        fill: $secondFontColor
+        display: inline-block
+        vertical-align: middle
+        margin: 0 5px 0 0
+    &__tag
+      display: inline-block
+      font-size: 14px
+      padding: 0 5px
+      margin: 0 0 4px 0
+      background: #f0f0f0
+      border-radius: 7px
+      &-box
+        padding: 10px 0 0 0
+        
+    +b(mobile)
+      &__img-box {
+        height: 119px;
+      }
+      &__title {
+        border: none;
+        padding: 0;
+      }
+      &__content {
+        padding: 5px 22px 10px;
+      }
+      &__description {
+        display: none;
+      }
+      &__tag-box {
+        display: none;
+      }
+  
 //catalog list end --------------
 //catalog sort ------------------
 .catalog-sort

@@ -1539,6 +1539,199 @@ function mapPrice() {
     });
   }
 
+
+  function mapCatalog() {
+    // debugger;
+    // Basic options for a simple Google Map
+    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 11,
+
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(1.979990, 73.535506), // New York
+
+        // How you would like to style the map. 
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+    };
+
+    // Get the HTML DOM element that will contain your map 
+    // We are using a div with id="map" seen below in the <body>
+    var mapElement = document.getElementById('mapCatalog');
+
+    // Create the Google Map using our element and options defined above
+    var map = new google.maps.Map(mapElement, mapOptions);
+
+    var marker1 = {
+      'lat': '1.979990',
+      'lang': '73.535506',
+      'title': 'testTitle'
+    };
+    var marker2 = {
+      'lat': '1.981047',
+      'lang': '73.535559',
+      'title': 'testTitle'
+    };
+    var marker3 = {
+      'lat': '1.975831',
+      'lang': '73.536821',
+      'title': 'testTitle'
+    };
+    var marker4 = {
+      'lat': '1.980980',
+      'lang': '73.535727',
+      'title': 'testTitle'
+    };
+    
+    var markers = [
+      marker1,
+      marker2,
+      marker3,
+      marker4
+    ];
+
+    var marker;
+    // var ibLabel;
+
+    $.each(markers, function(index, value){
+      console.log(value.lat);
+      console.log(value.lang);
+      console.log(value.title);
+
+
+      ///label start
+      // var labelText = value.title;
+
+      // var myOptionsMarker = {
+      //    content: labelText
+      //   ,boxStyle: {
+      //      border: "1px solid black"
+      //     ,textAlign: "center"
+      //     ,fontSize: "8pt"
+      //     ,width: "50px"
+      //    }
+      //   ,disableAutoPan: true
+      //   ,pixelOffset: new google.maps.Size(-25, 0)
+      //   ,position: new google.maps.LatLng(parseFloat(value.lat), parseFloat(value.lang))
+      //   ,closeBoxURL: ""
+      //   ,isHidden: false
+      //   ,pane: "mapPane"
+      //   ,enableEventPropagation: true
+      // };
+
+      // ibLabel = new InfoBox(myOptionsMarker);
+      // ibLabel.open(map);
+      ///label end
+
+      marker = new RichMarker({
+          position: new google.maps.LatLng(parseFloat(value.lat), parseFloat(value.lang)),
+          map: map,
+          flat: true,
+          draggable: false,          
+          content: '<div class="infoWindowMarker">' +
+                '<svg>' +
+                  '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#markersMap"></use>' +
+                '</svg><span>test</span>' +
+              '</div>'
+          });
+
+      
+    });
+
+    
+
+    var contentString = '<li class="infoWindow __big">' +
+                '<div class="infoWindowCard"><a href="#">' +
+                     '<div class="infoWindowCard__img-box"><img src="images/card-image/card-image-01.jpg" alt=""><span class="infoWindowCard__price">от 5 500 USD</span><span class="infoWindowCard__offer">Спец. предложений: 5</span></div>' +
+                    '<div class="infoWindowCard__content"><span class="infoWindowCard__country">Мальдивы</span>' +
+                      '<div class="infoWindowCard__title"><span class="infoWindowCard__rating">5' +
+                          '<svg class="infoWindowCard__rating-star">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-fill"></use>' +
+                          '</svg></span>' +
+                        '<h3>Kurumba Village</h3>' +
+                      '</div>' +
+                      '<div class="infoWindowCard__description-box"><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#night"></use>' +
+                          '</svg>                      7 ночей на двоих</span><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>' +
+                          '</svg>                      с 25.09 - по 10.10</span><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#food"></use>' +
+                          '</svg>                      завтраки и обеды</span></div>' +
+                      '<div class="infoWindowCard__tag-box"><span class="infoWindowCard__tag">эксклюзив</span><span class="infoWindowCard__tag">семейный отдых</span><span class="infoWindowCard__tag">LUXE  коллекция</span><span class="infoWindowCard__tag">экономичный отдых</span></div>' +
+                    '</div></a></div>' +
+              '</li>';
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+    ////info start
+    var myOptions = {
+       content: contentString
+      ,disableAutoPan: false
+      ,maxWidth: 0
+      ,pixelOffset: new google.maps.Size(-140, 0)
+      ,zIndex: null
+      ,boxStyle: { 
+        background: ""
+        ,opacity: 1
+        ,width: "280px"
+        ,'border-radius':'12px'
+       }
+      ,closeBoxMargin: "10px 2px 2px 2px"
+      ,closeBoxURL: ""
+      ,infoBoxClearance: new google.maps.Size(1, 1)
+      ,isHidden: false
+      ,pane: "floatPane"
+      ,enableEventPropagation: false
+    };
+
+
+    function toggleVisible(marker) {
+        marker.setVisible(!marker.getVisible());
+    }
+
+    google.maps.event.addListener(marker, "click", function (e) {
+      ib.open(map, this);
+      toggleVisible(this);
+      console.log('click success');
+    });
+
+    
+
+    var ib = new InfoBox(myOptions);
+
+    // ib.open(map, marker);
+    ////info end
+
+    
+
+    // google.maps.event.addListener(map, 'click', function() {
+    //   ib.close();
+    // });
+
+    // Let's also add a marker while we're at it
+ 
+  }
+
+  function showHotelsOnMap(){
+    $('#js-showHotelsOnMap').click(function(){
+      $('.catalog__list').hide();
+      $('.js-showHotelsOnMap__inner').show();
+      mapCatalog();
+    });
+    $('#js-tilesView').click(function(){
+      $('.catalog__list').css({'display' : 'flex'});
+      $('.js-showHotelsOnMap__inner').hide();
+    });
+    $('#js-linesView').click(function(){
+      $('.catalog__list').css({'display' : 'block'});
+      $('.js-showHotelsOnMap__inner').hide();
+    });
+  }
+
   sliderNumbers();
   sliderNumber();
   sliderHotelsAround();
@@ -1546,4 +1739,5 @@ function mapPrice() {
   hotelsArticleShow();
   showWishList();
   showCompare();
+  showHotelsOnMap();
 

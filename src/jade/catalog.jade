@@ -439,14 +439,18 @@ block content
               .catalog-sort__view-toggle
                 span.catalog-sort__title Вид
                 ul.view-toggle
-                  li.view-toggle__item.active
+                  li#js-tilesView.view-toggle__item.active
                     a(href='#')
                       svg.view-toggle__icon
-                        use(xlink:href='#squares')
-                  li.view-toggle__item
+                        use(xlink:href='#squaresicon')
+                  li#js-linesView.view-toggle__item
                     a(href='#')
                       svg.view-toggle__icon
                         use(xlink:href='#list')
+                  li#js-showHotelsOnMap.view-toggle__item
+                    a(href='#')
+                      svg.view-toggle__icon
+                        use(xlink:href='#mapiconcatalog')
             .catalog-sort__mobile
               form(action='')
                 strong.catalog-sort__mobile-title Сортировать по
@@ -460,7 +464,49 @@ block content
                   li
                     input#sort-3.checkbox--lg(type='checkbox')
                     label(for='sort-3') Поплурятности
+          .testDiv(style="width:100%; height:400px;")
+            .infoWindowMarker
+              svg
+                use(xlink:href="#markersMap")
+              span test
+          .testBlock(style="width:100%; height:400px;")
+
+            li.infoWindow.__big
+              .infoWindowCard
+                a(href='#')
+                  .infoWindowCard__img-box
+                    img(src='images/card-image/card-image-01.jpg', alt='')
+                    span.infoWindowCard__price от 5 500 USD
+                    span.infoWindowCard__offer Спец. предложений: 5
+                  .infoWindowCard__content
+                    span.infoWindowCard__country Мальдивы
+                    .infoWindowCard__title
+                      span.infoWindowCard__rating
+                        | 5
+                        svg.infoWindowCard__rating-star
+                          use(xlink:href='#star-fill')
+                      h3 Kurumba Village
+                    .infoWindowCard__description-box
+                      span.infoWindowCard__description
+                        svg.infoWindowCard__description-icon
+                          use(xlink:href='#night')
+                        |                       7 ночей на двоих
+                      span.infoWindowCard__description
+                        svg.infoWindowCard__description-icon
+                          use(xlink:href='#calendar')
+                        |                       с 25.09 - по 10.10
+                      span.infoWindowCard__description
+                        svg.infoWindowCard__description-icon
+                          use(xlink:href='#food')
+                        |                       завтраки и обеды
+                    .infoWindowCard__tag-box
+                      span.infoWindowCard__tag эксклюзив
+                      span.infoWindowCard__tag семейный отдых
+                      span.infoWindowCard__tag LUXE  коллекция
+                      span.infoWindowCard__tag экономичный отдых
+          #mapCatalog.js-showHotelsOnMap__inner
           ul.catalog__list.catalog__list--tiles-view
+            
             li.catalog__list-item
               .card
                 a(href='#')

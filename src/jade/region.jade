@@ -1,0 +1,55 @@
+extends layouts/application.jade
+
+
+
+block content
+  .wrapper
+    include layouts/header.jade
+
+    include layouts/slider__main.jade
+
+    .regionCountry
+      .section__title
+        h2.h2 Страны в этом регионе
+      .container.regionCountry__inner
+        .regionCountry__column
+          .regionCountry__bg(style="background:url('./images/region/country-1.jpg') no-repeat 50%")
+            .regionCountry__name  Мальдивы
+        .regionCountry__column
+          .regionCountry__bg(style="background:url('./images/region/country-2.jpg') no-repeat 50%")
+            .regionCountry__name  шри-ланка
+        .regionCountry__column
+          .regionCountry__bg(style="background:url('./images/region/country-3.jpg') no-repeat 50%")
+            .regionCountry__name  сейшелы
+        .regionCountry__column
+          .regionCountry__bg(style="background:url('./images/region/country-4.jpg') no-repeat 50%")
+            .regionCountry__name  дайвинг-сафари
+
+    .regionArticle
+      .container
+        .regionArticle__content
+          .regionArticle__text
+            .regionArticle__textTitle 
+              span
+                |Выберите страну по вкусу
+            .regionArticle__textDescription  
+              p <strong>Африка и Индийский окена</strong>– это 1 192 коралловых острова, из которых постоянно заселено лишь порядка 200.Здесь вас ждут Лазурь неба и моря, яркое солнце, песчаные роскошные пляжи, тропическая зелень, спокойствие и умиротворение. Оформлять визу заранее не требуется, поэтому купить горящую путевку на Мальдивы можно без долгих размышлений.
+              p Когда лучше ехать на Мальдивы? Больше всего туристов на островах с ноября по апрель – в это время здесь температура воды поднимается до 26-28 °С, а воздуха – до 31-32°С. Это период самых высоких цен.
+              p Стоимость тура на Мальдивы в «не сезон» (май-октябрь) самая низкая. Любители серфинга и люди, плохо переносящие жару, предпочитают отдых в это время: температура воздуха редко поднимается выше 30°С, а ветер создает условия для хорошей волны. Дожди, как правило, кратковременные, но море может не порадовать прозрачной голубизной – из-за ветров вода иногда становится мутной. Впрочем, судя по отзывам отдыхающих, опасения касательно ветров и дождей обычно преувеличены.
+              p Возможно, тем, кто впервые решил купить путевки на Мальдивы, цена покажется довольно высокой. Но вы получаете по-настоящему шикарный отдых. Длительность туров – от 5-ти до 15-ти дней и, соответственно, от 6-ти до 16-ти ночей. Если вы предпочитаете проводить отдых более разнообразно, можно подобрать комбинированные туры. Это либо Шри-Ланка + Мальдивы, либо ОАЭ + Мальдивы, либо Турция + Мальдивы.
+          .regionArticle__images
+            img.regionArticle__image(src="images/region/banner-1.png", alt="")
+            img.regionArticle__image(src="images/region/banner-1.png", alt="")
+
+        .regionArticle__content
+          .regionArticle__border
+            span.regionArticle__borderQuotes.__top
+              svg
+                  use(xlink:href="#quotes")
+            span.regionArticle__borderQuotes.__bottom
+            .regionArticle__borderText
+              span
+                |  Lorem ipsum dolor <br/>sit amet, consectetur <br/>adipisicing elit. Doloremque?
+                
+
+  include layouts/footer.jade
