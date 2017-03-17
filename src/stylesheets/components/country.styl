@@ -1,0 +1,87 @@
+.countryTabs
+  &__layout
+    margin-top 65px
+    margin-bottom: 30px;
+  &__nav
+    padding 25px 0
+    margin-bottom 50px
+    border-top 1px solid #9f9fa0
+    border-bottom 1px solid #9f9fa0
+    & > li
+      position relative
+      display inline-block
+      width 19%
+      text-align center
+      font-size 22px
+      font-weight 300
+      & > a
+        text-decoration none
+        color #677e8a !important
+        height 20px
+        width 20px
+  
+        &:hover
+          color #24b3fd !important
+          font-weight 600
+          font-size 22px
+    
+          &:after
+            position absolute
+            content url('../images/icon/arrow-down.png')    
+            height 100% 
+            width 80%
+            top 25px
+            left 50%
+            transform translate(-50%, 50%)
+            background #fff
+  &__sorting
+    &Title
+      display inline-block
+      vertical-align middle
+      font-weight bold
+      color #000
+      padding-right 30px
+    &List
+      display inline-block
+      vertical-align middle
+    &ListItem
+      display inline-block
+      vertical-align middle     
+      & > a
+        text-decoration none
+        color #999
+        padding 0 10px
+        border-radius 12px
+      &.active > a
+        background #f4f4f4
+        color #000
+        
+.excursionTab
+  margin-top 60px
+  &__item
+    border-bottom 1px solid #999
+    margin-bottom 20px
+    
+    clearfix()
+    padding-bottom: 20px;
+  &__image
+    col(3/12)
+  &__description
+    col(9/12)
+    margin-right 0
+    &Title
+      margin-top 10px
+      margin-bottom 10px
+      color #07405e
+      font-weight bold
+      font-size 25px
+    &SubTitle
+      margin-top 10px
+      margin-bottom 10px
+      font-size 20px
+      color #07405e
+      font-weight 300
+    &Text
+      margin-top 10px
+      margin-bottom 10px
+      font-size 14px
