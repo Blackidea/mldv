@@ -34,8 +34,15 @@ block content
                 li.countryTabs__sortingListItem
                   a.countryTabs__sortingLink(href='#') все
 
-
-                         
+            .hotelsArticle__wrapper.excursionTab              
+              .excursionTab__item.__type-2
+                .excursionTab__image
+                  img(src="images/country/countrynew.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle test
+                  .excursionTab__descriptionText
+                    |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                  
             .hotelsArticle__wrapper.excursionTab
               .hotelsArticle__content
                 .excursionTab__item
@@ -150,11 +157,77 @@ block content
                 .hotelsArticle__blockOpacity
               button.hotelsArticle__button Подробно
 
+    .filterCountry
+      .section__title.filterCountry__title
+        h2.h2 Подобрать тур
+      .container 
+        include layouts/filter__base.jade
+      .container
+        .filterCountry__options
+          .filterCountry__optionsColumn
+            li
+              input#countryOption-1.checkbox--inline(type='checkbox')
+              label(for='#countryOption-1') Все включено
+            li
+              input#countryOption-2.checkbox--inline(type='checkbox')
+              label(for='#countryOption-2') Пляж
+            li
+              input#countryOption-3.checkbox--inline(type='checkbox')
+              label(for='#countryOption-3') Город
+            li
+              input#countryOption-4.checkbox--inline(type='checkbox')
+              label(for='#countryOption-4') Семейный отдых
+
+          .filterCountry__optionsColumn
+            li
+              input#countryOption-5.checkbox--inline(type='checkbox')
+              label(for='#countryOption-5') Отдых с детьми
+            li
+              input#countryOption-6.checkbox--inline(type='checkbox')
+              label(for='#countryOption-6') Молодожены
+            li
+              input#countryOption-7.checkbox--inline(type='checkbox')
+              label(for='#countryOption-7') Экономичный отдых
+            li
+              input#countryOption-8.checkbox--inline(type='checkbox')
+              label(for='#countryOption-8') LUXE коллекция
+
+          .filterCountry__optionsColumn
+            li
+              input#countryOption-9.checkbox--inline(type='checkbox')
+              label(for='#countryOption-9') Эксклюзив
+            li
+              input#countryOption-10.checkbox--inline(type='checkbox')
+              label(for='#countryOption-10') Только для взрослых
+            li
+              input#countryOption-11.checkbox--inline(type='checkbox')
+              label(for='#countryOption-11') SPA
+            li
+              input#countryOption-12.checkbox--inline(type='checkbox')
+              label(for='#countryOption-12') Автобусные туры 
+
+          .filterCountry__optionsColumn
+            li
+              input#countryOption-13.checkbox--inline(type='checkbox')
+              label(for='#countryOption-13') ЯХТА
+            li
+              input#countryOption-14.checkbox--inline(type='checkbox')
+              label(for='#countryOption-14') Рекомендованные отели
+            li
+              input#countryOption-15.checkbox--inline(type='checkbox')
+              label(for='#countryOption-15') Виллы и Сьюты
+
+      .container
+        include layouts/hotels__around.jade
+           
     .typesHoliday
       .section__title
         h2.h2 Типы отдыха
       .container
         include layouts/types__holiday.jade
+
+        
+
 
     .regionCountry
       .section__title

@@ -60,14 +60,23 @@
   margin-top 60px
   &__item
     border-bottom 1px solid #999
-    margin-bottom 20px
-    
-    clearfix()
-    padding-bottom: 20px;
+    margin-bottom 20px    
+    clearfix()    
+    &.__type-2
+      overflow: hidden;
+      box-shadow 1px 1px 3px #999,
+                  -1px -1px 3px #999
+      border-radius 12px
   &__image
-    col(3/12)
+    col(3/12)    
+    overflow hidden    
+    & > img
+      display block
+      width 100%
+      
   &__description
     col(9/12)
+    padding-right 6%
     margin-right 0
     &Title
       margin-top 10px
@@ -85,3 +94,21 @@
       margin-top 10px
       margin-bottom 10px
       font-size 14px
+
+.filterCountry
+  
+  margin-top 30px
+  margin-bottom 30px
+  
+  &__title
+    margin-bottom 20px
+  &__options
+    margin-top 30px
+    margin-bottom 70px
+    clearfix()
+    &Column
+      col(1/4)
+      & > li
+        list-style-type none
+        & > label
+          padding-left 27px !important
