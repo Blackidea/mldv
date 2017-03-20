@@ -1363,29 +1363,10 @@ $(document).ready(function(){
   }
   calendarPrice();
 
-  function checkWindowWidthForTabs(){
-    var windowWidth = $(window).width();
-
-    if (windowWidth <= 767){
-      $('#hotelsTabs').tabs('destroy'); 
-      $('.js-accordion').accordion({
-        header: 'p',
-        heightStyle: 'content',
-        collapsible: true
-      });     
-    }
-    else{
-      $('#hotelsTabs').tabs('enable');
-      $('.js-accordion').accordion('destroy');
-    }
-  }
+  
 
   
-  $(window).resize(function(){
-    // showFeedbackSlider();
-    checkWindowWidthForTabs();
-    
-  });
+  
   
   
 
@@ -1440,37 +1421,8 @@ function mapPrice() {
   });
 
 
-  function showFeedbackSlider(){
-    $('.feedback__list2').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-          slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 767,
-          settings: {
-          slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-          slidesToShow: 1
-          }
-        }
-      ]
-    });
-
-  }
+  
   $('#sliderFeedback').click(function(){
-    // feedBackSlider();
     
     showFeedbackSlider();
     console.log("click for init feedBackSlider success");
@@ -1984,6 +1936,94 @@ function mapPrice() {
   /// tabs for country page
   $('#countryTabs').tabs();
 
+  function checkWindowWidthForTabs(){
+    var windowWidth = $(window).width();
+
+    if (windowWidth <= 767){
+      $('#hotelsTabs').tabs();
+      $('#hotelsTabs').tabs('disable');
+      // $('.js-accordion').accordion();
+      $('.js-accordion').accordion({
+        
+        header: 'p' ,
+        heightStyle: 'content'
+      }).accordion('enable');
+      
+      // $('.js-accordion').accordion();
+
+      
+    }
+    else{
+      $('#hotelsTabs').tabs();
+      $('#hotelsTabs').tabs('enable');
+      // $('.js-accordion').accordion();
+      $('.js-accordion').accordion('disable');      
+    }
+  }
+
+  function FeedbackSliderInit(){
+    $('.feedback__list2').not('.slick-initialized').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+          slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+          slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+          slidesToShow: 1
+          }
+        }
+      ]
+    });
+  }
+  function showFeedbackSlider(){
+    $('.feedback__list2').not('.slick-initialized').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+          slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+          slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+          slidesToShow: 1
+          }
+        }
+      ]
+    });
+
+  }
+
+  $(window).resize(function(){
+    // showFeedbackSlider();
+    checkWindowWidthForTabs();
+    
+  });
 
 
   sliderNumbers();
@@ -1993,6 +2033,7 @@ function mapPrice() {
   checkWindowWidthForTabs();
   $(document).ready(function(){
     showFeedbackSlider();
+    FeedbackSliderInit();
   });
   
   sliderHotelsAround();
@@ -2001,6 +2042,6 @@ function mapPrice() {
   showWishList();
   showCompare();
   showHotelsOnMap();
-  specialOffersMap();
+  // specialOffersMap();
   otherRegionsSlider();
 
