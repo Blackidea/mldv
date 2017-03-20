@@ -106,7 +106,12 @@ block content
         img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
       a(href="")
         img.sliderMain-nav__images(src="images/slider/sliderNav-video.jpg", alt="")
-          
+    
+    .hotelsHeader__button-wishlistMob.js-wishlist
+      //- img(src="images/icon/wishlist.png", alt="")
+      svg.svg__wishlist.js-wishlist
+        use(xlink:href='#wishlist' )
+      span Добавить в избранное
     .calendar-price
       .section__title
         h2.h2 Календарь цен
@@ -121,7 +126,7 @@ block content
             svg
                 use(xlink:href='#arrow-right' )
     .container
-      #hotelsTabs
+      #hotelsTabs.js-accordion
         ul.hotelsTabs__nav
           li
             a(href="#hotelsTabs-1") Описание тура
@@ -131,9 +136,11 @@ block content
             a(href="#hotelsTabs-3") Бонусы и акции
           li 
             a#sliderFeedback(href="#hotelsTabs-4") Отзывы
-            
+        p.mobShow.hotelsDescription__accordTitle test  
         #hotelsTabs-1.hotelsTabs__block
+
           .hotelsDescription
+            
             .hotelsDescription__column
               .hotelsDescription__info
                 .hotelsDescription__icon
@@ -213,10 +220,14 @@ block content
                   .hotelsDescription__name В отеле:
                   li.hotelsDescription__li завтраки, обеды, ужины;
                   li.hotelsDescription__li закуски;
+        p.mobShow.hotelsDescription__accordTitle test
         #hotelsTabs-2.hotelsTabs__block
+          
           #mapPrice(style="height:400px;width:100%;border-radius:12px;")
+        p.mobShow.hotelsDescription__accordTitle test
         #hotelsTabs-3.hotelsTabs__block
           .hotelsTabs__bonus
+            
             a.hotelsBonus__column(style="background:url(images/bonus/bonus-1.jpg) no-repeat 50%;" href="")
               .hotelsBonus__name 20% скидка на проживание
               .hotelsBonus__info  Бесплатное проживание и питание для детей до 7 лет в номере с двумя оплаченными взрослыми. 
@@ -233,8 +244,12 @@ block content
               .hotelsBonus__date 
                 p.hotelsBonus__date-name Период действия
                 p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+                
+        p.mobShow.hotelsDescription__accordTitle test
         #hotelsTabs-4.hotelsTabs__block
+          
           include layouts/feedback.jade
+
     .holidayCreate
       .section__title
         h2.h2 Создай свой идеальный отдых

@@ -55,7 +55,15 @@
       &.active > a
         background #f4f4f4
         color #000
-        
+.historyTab
+  &__item
+    clearfix()
+  &__image
+    col(5/12)
+    & > img
+      margin-bottom 30px
+  &__description
+    col(7/12)
 .excursionTab
   margin-top 60px
   &__item
@@ -112,3 +120,4 @@
         list-style-type none
         & > label
           padding-left 27px !important
+          

@@ -1275,7 +1275,19 @@ $(document).ready(function(){
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    asNavFor: '.sliderMain-nav'
+    asNavFor: '.sliderMain-nav',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+          nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>'  
+        }
+      }
+    ]
   });
   $('.sliderMain-nav').slick({
     slidesToShow: 6,
@@ -1283,9 +1295,16 @@ $(document).ready(function(){
     asNavFor: '.sliderMain',
     dots: false,
     centerMode: false,
-    arrows: false,
+    prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+    nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',  
     infinite: false,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: 'unslick'
+      }
+    ]
   });
   $('.sliderMain-nav a').click(function(e){
     e.preventDefault();
@@ -1343,10 +1362,42 @@ $(document).ready(function(){
     });
   }
   calendarPrice();
-  $('#hotelsTabs').tabs();
+
+  function checkWindowWidthForTabs(){
+    var windowWidth = $(window).width();
+
+    if (windowWidth <= 767){
+      $('#hotelsTabs').tabs('destroy'); 
+      $('.js-accordion').accordion({
+        header: 'p',
+        heightStyle: 'content',
+        collapsible: true
+      });     
+    }
+    else{
+      $('#hotelsTabs').tabs('enable');
+      $('.js-accordion').accordion('destroy');
+    }
+  }
+
+  
+  $(window).resize(function(){
+    // showFeedbackSlider();
+    checkWindowWidthForTabs();
+    
+  });
+  
+  
+
+
+  
+
+  // $('#hotelsTabs').tabs('destroy');
   $('#hotelsTabs').click(function(){
     mapPrice();
   });
+
+  
 
 });
 function mapPrice() {
@@ -1380,42 +1431,48 @@ function mapPrice() {
     });
 
 }
-  $('#hotelsTabs').tabs();
+  // $('#hotelsTabs').tabs();
   // $( '#hotelsTabs' ).on( "tabsload", mapPrice() );
 
   ///Error with Jquery Tabs and Google Maps - gray background and not load maps , Than i call function after click init Maps
   $('#map-link').click(function(){
     mapPrice();
   });
-  $('#sliderFeedback').click(function(){
-    // feedBackSlider();
-    
+
+
+  function showFeedbackSlider(){
     $('.feedback__list2').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
       arrows: false,
       dots: true,
       responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-        slidesToShow: 3
+        {
+          breakpoint: 1024,
+          settings: {
+          slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+          slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+          slidesToShow: 1
+          }
         }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-        slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-        slidesToShow: 1
-        }
-      }
       ]
     });
+
+  }
+  $('#sliderFeedback').click(function(){
+    // feedBackSlider();
+    
+    showFeedbackSlider();
     console.log("click for init feedBackSlider success");
   });
   // $('.holidayCreate__selectors select').selectmenu({ icons:{ button:"ui-icon-circle-minus" }});
@@ -1924,10 +1981,20 @@ function mapPrice() {
       focusOnSelect: false
     });
   }
+  /// tabs for country page
+  $('#countryTabs').tabs();
+
 
 
   sliderNumbers();
   sliderNumber();
+  mapPrice();
+  
+  checkWindowWidthForTabs();
+  $(document).ready(function(){
+    showFeedbackSlider();
+  });
+  
   sliderHotelsAround();
   sliderHotelsSimilar();
   hotelsArticleShow();
