@@ -351,6 +351,10 @@
   &__result
     +b(mobile)
       display none
+  &__sliderMob
+    display none
+    +b(mobile)
+      display block
   &__slider
     position relative
     margin-top 20px
@@ -549,7 +553,10 @@
       
 .hotelsTours
   &__sortingMob
-    margin-top 30px
+    display none
+    +b(mobile)
+      display block
+      margin-top 30px
     &Title
       display block
       
