@@ -1944,7 +1944,7 @@ function mapPrice() {
       $('#hotelsTabs').tabs('disable');
       // $('.js-accordion').accordion();
       $('.js-accordion').accordion({
-        
+        collapsible: true,
         header: 'p' ,
         heightStyle: 'content'
       }).accordion('enable');
@@ -1961,34 +1961,20 @@ function mapPrice() {
     }
   }
 
-  function FeedbackSliderInit(){
-    $('.feedback__list2').not('.slick-initialized').slick({
-      slidesToShow: 4,
+  function feedbackSliderInit(){
+    $('.feedback__listMobile').slick({
+      slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-          slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 767,
-          settings: {
-          slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-          slidesToShow: 1
-          }
-        }
-      ]
+      dots: true
+      
     });
   }
+  $('#sliderFeedbackMobile').click(function(){
+    
+    feedbackSliderInit();
+    console.log("click for init feedBackSlider success");
+  });
   function showFeedbackSlider(){
     $('.feedback__list2').not('.slick-initialized').slick({
       slidesToShow: 4,
@@ -2031,10 +2017,10 @@ function mapPrice() {
   mapPrice();
   
   checkWindowWidthForTabs();
-  $(document).ready(function(){
-    showFeedbackSlider();
-    FeedbackSliderInit();
-  });
+  // $(document).ready(function(){
+  //   showFeedbackSlider();
+  //   feedbackSliderInit();
+  // });
   
   sliderHotelsAround();
   sliderHotelsSimilar();
