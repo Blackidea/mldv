@@ -11,6 +11,7 @@
     display none
     +b(mobile)
       position absolute
+      z-index 99
       display block
       background url('../images/card-image/icon-rating.png') no-repeat 50%
       top 0
@@ -314,13 +315,26 @@
   &__switch-view
     border 1px solid #fff
     // border-radius 4px
+      
+.filterMob
+  &__search
+    +b(mobile)
+      float none !important
+      margin-top 10px !important
+      width 100% !important
+      margin-bottom 10px !important
+      background-color #fff !important
+      border 1px solid #999 !important
+      border-left 1px solid #999 !important
+      border-radius 8px !important
+    
 .holidayCreate
   +b(mobile)
     margin-top 30px
   &__filterMob
     position fixed
     top 0
-    padding-top 100px
+    padding-top 47px
     z-index 300
     height 100%
     width 100%
@@ -332,6 +346,7 @@
     +b(mobile)
       background none
       height auto
+      display none
   &__selectors
     overflow hidden
     width 50%
@@ -1218,4 +1233,10 @@
       font-size 24px
       font-weight bold
       margin-top 10px
-    
+.filter__buttonMob
+  display none
+  +b(mobile)
+    width 100%
+    display block
+    margin-top 30px
+    margin-bottom 20px

@@ -2046,6 +2046,10 @@ function mapPrice() {
   }
 
   $('.filter__buttonMob').click(holidayCreateFilterMob);
+  $('.js-close-filterMob').click(function(e){
+    e.preventDefault();
+    holidayCreateFilterMob();
+  });
   
   function countryTabs(){
     $('#countryTabs').tabs();
