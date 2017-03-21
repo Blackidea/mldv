@@ -1358,9 +1358,7 @@ $(document).ready(function(){
   }
   calendarPrice();
   $('#hotelsTabs').tabs();
-  $('#hotelsTabs').click(function(){
-    mapPrice();
-  });
+  
 
 });
 function mapPrice() {
@@ -1448,6 +1446,12 @@ function mapPrice() {
       infinite: false,
       focusOnSelect: false,
       responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2
+          }
+        },
         {
           breakpoint: 767,
           settings: 'unslick'
@@ -1949,14 +1953,106 @@ function mapPrice() {
       prevArrow: '<div class="holidayCreate__slider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
       nextArrow: '<div class="holidayCreate__slider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',  
       infinite: false,
-      focusOnSelect: false
+      focusOnSelect: false,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false
+          }
+      }]
     });
   }
 
   /// drop for tabs
+  /// drop for tabs
+  $('.hotelsTabsDrop-1').click(function(){
+    if(!$(this).hasClass('active')) {
+      $('#hotelsTabs-1').slideDown();
+      $(this).addClass('active');
+      console.log('show Tab');
+      
+    }
+    else{
+      $('#hotelsTabs-1').slideUp();
+      $(this).removeClass('active');
+      console.log('hide Tab');
+    }  
+    
+  });
+  $('.hotelsTabsDrop-2').click(function(){
+    if(!$(this).hasClass('active')) {
+      $('#hotelsTabs-2').show();
+      $(this).addClass('active');
+      mapPrice();
+      console.log('show Tab2');
+      
+    }
+    else{
+      $('#hotelsTabs-2').slideUp();
+      $(this).removeClass('active');
+      console.log('hide Tab2');
+    }  
+    
+  });
+  
+  $('.hotelsTabsDrop-3').click(function(){
+    if(!$(this).hasClass('active')) {
+      $('#hotelsTabs-3').slideDown();
+      $(this).addClass('active');
+      
+      console.log('show Tab');
+      
+    }
+    else{
+      $('#hotelsTabs-3').slideUp();
+      $(this).removeClass('active');
+      console.log('hide Tab');
+    }  
+    
+  });
+  $('.hotelsTabsDrop-4').click(function(){
 
+    if(!$(this).hasClass('active')) {
+      $('#hotelsTabs-4').slideDown();
+      $(this).addClass('active');
+      console.log('show Tab');
+      
+    }
+    else{
+      $('#hotelsTabs-4').slideUp();
+      $(this).removeClass('active');
+      console.log('hide Tab');
+    }  
+    
+  });
+  function holidayCreateFilterMob(){
+
+    var filterBlock = $('.holidayCreate__filterMob');
+    
+   
+    if (!filterBlock.hasClass('active')){
+      filterBlock.addClass('active');
+      filterBlock.toggle('slide');
+      console.log('filter active');
+    }
+    else{
+      filterBlock.removeClass('active');
+      filterBlock.toggle('slide');
+      console.log('filter disable');
+    }
+    console.log('filter button click success');
+   
+  }
+
+  $('.filter__buttonMob').click(holidayCreateFilterMob);
+  
+  function countryTabs(){
+    $('#countryTabs').tabs();
+  }
   sliderNumbers();
   sliderNumber();
+  countryTabs();
   sliderHotelsAround();
   sliderHotelsSimilar();
   hotelsArticleShow();
@@ -1965,3 +2061,4 @@ function mapPrice() {
   showHotelsOnMap();
   specialOffersMap();
   otherRegionsSlider();
+  holidayCreateFilterMob();

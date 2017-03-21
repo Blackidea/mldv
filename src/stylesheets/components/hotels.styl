@@ -270,18 +270,26 @@
     
     &:hover
       color #fff
+      
     +b(mobile)
       unstack()
+      padding 20px 20px 0
+      margin-top 10px
+      margin-bottom 10px
   &__name
     text-align center
     font-weight bold    
     font-size 22px
     margin-bottom 24px
     line-height 30px
+    
+    +b(mobile)
+      font-size 18px
   &__info
     text-align center
     margin-bottom 25px
-    font-size 14px      
+    font-size 14px  
+        
   &__border-bottom
     height 1px
     width 30%
@@ -309,6 +317,14 @@
 .holidayCreate
   +b(mobile)
     margin-top 30px
+  &__filterMob
+    position fixed
+    top 0
+    padding-top 100px
+    z-index 300
+    height 100%
+    width 100%
+    background #fff
   &__filter
     background url('../images/bg/filter-hotels.jpg') no-repeat 50%
     height 200px
@@ -482,11 +498,15 @@
   margin-bottom 90px
   padding-top 40px
   padding-left 68px
+  +b(tablet)
+    padding-left 1%
   &__sum
     color #fff
     width 225px
     display inline-block
-    vertical-align middle 
+    vertical-align middle
+    +b(tablet)
+      width 27%
     &Title
       color #fff
       font-size 14px
@@ -522,6 +542,10 @@
     font-size 13px
     line-height 18px
     width 440px
+    +b(tablet)
+      width 50%
+      padding-left 1%
+      margin-left 2% 
     &Link
       display block
       margin-top 23px
@@ -546,10 +570,15 @@
   &__buy
     display inline-block
     vertical-align middle
-    &Button
+    +b(tablet)
+      width 20%
+    &Button 
       color #fff
       margin-left 45px
       width 260px
+      +b(tablet)
+        width 100%
+        margin-left 0
       
 .hotelsTours
   &__sortingMob
