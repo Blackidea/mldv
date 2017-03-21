@@ -7,13 +7,29 @@
     position relative
     min-height initial
     
-    
+  &__rating-icon
+    display none
+    +b(mobile)
+      position absolute
+      display block
+      background url('../images/card-image/icon-rating.png') no-repeat 50%
+      top 0
+      color #fff
+      text-align center
+      padding-top 10px
+      font-size 13px
+      font-weight bold
+      left 15px
+      width 27px
+      height 39px
   &-wrapper
     position relative
     min-height inherit    
   &-info
     position absolute
-    bottom 30px 
+    bottom 30px
+    +b(mobile)
+      display none
   &-price
     font-weight bold
     font-size 24px
@@ -291,10 +307,15 @@
     border 1px solid #fff
     // border-radius 4px
 .holidayCreate
+  +b(mobile)
+    margin-top 30px
   &__filter
     background url('../images/bg/filter-hotels.jpg') no-repeat 50%
     height 200px
     padding-top 20px
+    +b(mobile)
+      background none
+      height auto
   &__selectors
     overflow hidden
     width 50%
@@ -327,11 +348,17 @@
     padding-top 10px
     border-top 1px solid #9e9e9c
     margin 0 auto
+  &__result
+    +b(mobile)
+      display none
   &__slider
     position relative
     margin-top 20px
     margin-bottom 30px
     min-height 700px
+    +b(mobile)
+      min-height auto
+      display none
     &__arrow
       position absolute
       height 40px
@@ -365,6 +392,10 @@
       height 150px
       transition background-size 0.4s ease-in-out 0s,
                 height 0.2s ease-in-out 0s
+      +b(mobile)
+        transition none
+        height 115px
+        
       
   &__images
     position relative
@@ -393,11 +424,16 @@
     &.__right
       top 50%
       right 10px
-      
+  &__type
+    margin 0 15px
+    border-bottom 1px solid #999
+    height 85px
   &__info
     margin 0 15px
     border-bottom 1px solid #999
     height 85px
+    +b(mobile)
+      display none
   &__propertie
     margin-top 20px
     font-size 12px
@@ -512,18 +548,40 @@
       width 260px
       
 .hotelsTours
+  &__sortingMob
+    margin-top 30px
+    &Title
+      display block
+      
+      font-weight bold
+      color #000
+      padding-right 30px
+    &List
+      margin-top 30px
+      display block
+      vertical-align middle
+      & > li
+        margin-top 10px
+        margin-bottom 10px
+    
   &__sorting
     display inline-block
     vertical-align middle
     margin-bottom 26px
+    +b(mobile)
+      width 100%
     &Selectors
       position relative
       display inline-block
       vertical-align middle
       border-right 1px solid #e8e8e8
       height 30px
+      +b(mobile)
+        border-right none
       &.__food
         width 218px
+        +b(mobile)
+          width 100%
         & > label
           position absolute
           z-index 1
@@ -545,6 +603,8 @@
           border none
       &.__typeNumbers
         width 260px
+        +b(mobile)
+          width 100%
         & > label
           position absolute
           z-index 1
@@ -566,6 +626,8 @@
           border none
       &.__airCompanie
         width 240px
+        +b(mobile)
+          width 100%
         & > label
           position absolute
           z-index 1
@@ -590,6 +652,8 @@
       vertical-align middle
       width 400px
       padding-left 30px
+      +b(mobile)
+        display none
     &Title
       display inline-block
       vertical-align middle
@@ -610,8 +674,13 @@
       &.active > a
         background #f4f4f4
         color #000
-        
+  &__tableMob
+    display none
+    +b(mobile)
+      display block
   &__table
+    +b(mobile)
+      display none
     &Titles
       display table
       height 50px
@@ -666,11 +735,15 @@
 .hotelsAround
   margin-top 40px
   margin-bottom 40px
+  +b(mobile)
+    display none
   &__title
     margin-bottom 50px
 .sliderHotelsAround
   position relative
   height 415px
+  +b(mobile)
+    height auto
   .slick-dots
     bottom: auto
     top: 90%
@@ -774,6 +847,8 @@
 .hotelsSimilar
   margin-top 40px
   margin-bottom 40px
+  +b(mobile)
+    display none
   &__title
     margin-bottom 50px
 .sliderHotelsSimilar
@@ -884,6 +959,8 @@
   position relative
   margin-top 40px
   margin-bottom 40px
+  +b(mobile)
+    display none
   &__title
     margin-bottom 50px
   &__wrapper
@@ -1088,9 +1165,21 @@
     line-height normal
     font-size 40px
     color #24b3fd
+    +b(mobile)
+      font-size 30px
   &__geo
     font-family 'Roboto'
     font-weight 300
     color #acadaf
     font-size 14px
+    +b(mobile)
+      font-size 12px
+  &__priceMob
+    display none
+    +b(mobile)
+      display block
+      text-align center
+      font-size 24px
+      font-weight bold
+      margin-top 10px
     

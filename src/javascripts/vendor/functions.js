@@ -1277,17 +1277,16 @@ $(document).ready(function(){
     fade: true,
     asNavFor: '.sliderMain-nav',
     responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
-          nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>'  
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow:1,
+            arrows: true,
+            prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
+            nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>'
+          }
         }
-      }
-    ]
+      ]
   });
   $('.sliderMain-nav').slick({
     slidesToShow: 6,
@@ -1295,16 +1294,12 @@ $(document).ready(function(){
     asNavFor: '.sliderMain',
     dots: false,
     centerMode: false,
+    arrows: true,
     prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
-    nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',  
+    nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
     infinite: false,
-    focusOnSelect: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: 'unslick'
-      }
-    ]
+    focusOnSelect: true
+
   });
   $('.sliderMain-nav a').click(function(e){
     e.preventDefault();
@@ -1362,23 +1357,10 @@ $(document).ready(function(){
     });
   }
   calendarPrice();
-
-  
-
-  
-  
-  
-  
-
-
-  
-
-  // $('#hotelsTabs').tabs('destroy');
+  $('#hotelsTabs').tabs();
   $('#hotelsTabs').click(function(){
     mapPrice();
   });
-
-  
 
 });
 function mapPrice() {
@@ -1412,19 +1394,42 @@ function mapPrice() {
     });
 
 }
-  // $('#hotelsTabs').tabs();
+  $('#hotelsTabs').tabs();
   // $( '#hotelsTabs' ).on( "tabsload", mapPrice() );
 
   ///Error with Jquery Tabs and Google Maps - gray background and not load maps , Than i call function after click init Maps
   $('#map-link').click(function(){
     mapPrice();
   });
-
-
-  
   $('#sliderFeedback').click(function(){
+    // feedBackSlider();
     
-    showFeedbackSlider();
+    $('.feedback__list2').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+        slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+        slidesToShow: 1
+        }
+      }
+      ]
+    });
     console.log("click for init feedBackSlider success");
   });
   // $('.holidayCreate__selectors select').selectmenu({ icons:{ button:"ui-icon-circle-minus" }});
@@ -1441,7 +1446,13 @@ function mapPrice() {
       prevArrow: '<div class="holidayCreate__slider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
       nextArrow: '<div class="holidayCreate__slider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',  
       infinite: false,
-      focusOnSelect: false
+      focusOnSelect: false,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: 'unslick'
+        }
+      ]
     });
   }
   function sliderNumber(){
@@ -1453,7 +1464,15 @@ function mapPrice() {
       prevArrow: '<div class="numbersSlider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
       nextArrow: '<div class="numbersSlider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',                 
       infinite: false,
-      focusOnSelect: false
+      focusOnSelect: false,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
     });
   }
   $('.numbersSlider__form').click(function(){
@@ -1933,101 +1952,16 @@ function mapPrice() {
       focusOnSelect: false
     });
   }
-  /// tabs for country page
-  $('#countryTabs').tabs();
 
-  function checkWindowWidthForTabs(){
-    var windowWidth = $(window).width();
-
-    if (windowWidth <= 767){
-      $('#hotelsTabs').tabs();
-      $('#hotelsTabs').tabs('disable');
-      // $('.js-accordion').accordion();
-      $('.js-accordion').accordion({
-        collapsible: true,
-        header: 'p' ,
-        heightStyle: 'content'
-      }).accordion('enable');
-      
-      // $('.js-accordion').accordion();
-
-      
-    }
-    else{
-      $('#hotelsTabs').tabs();
-      $('#hotelsTabs').tabs('enable');
-      // $('.js-accordion').accordion();
-      $('.js-accordion').accordion('disable');      
-    }
-  }
-
-  function feedbackSliderInit(){
-    $('.feedback__listMobile').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true
-      
-    });
-  }
-  $('#sliderFeedbackMobile').click(function(){
-    
-    feedbackSliderInit();
-    console.log("click for init feedBackSlider success");
-  });
-  function showFeedbackSlider(){
-    $('.feedback__list2').not('.slick-initialized').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-          slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 767,
-          settings: {
-          slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-          slidesToShow: 1
-          }
-        }
-      ]
-    });
-
-  }
-
-  $(window).resize(function(){
-    // showFeedbackSlider();
-    checkWindowWidthForTabs();
-    
-  });
-
+  /// drop for tabs
 
   sliderNumbers();
   sliderNumber();
-  mapPrice();
-  
-  checkWindowWidthForTabs();
-  // $(document).ready(function(){
-  //   showFeedbackSlider();
-  //   feedbackSliderInit();
-  // });
-  
   sliderHotelsAround();
   sliderHotelsSimilar();
   hotelsArticleShow();
   showWishList();
   showCompare();
   showHotelsOnMap();
-  // specialOffersMap();
+  specialOffersMap();
   otherRegionsSlider();
-

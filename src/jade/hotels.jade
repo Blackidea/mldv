@@ -55,13 +55,16 @@ block content
         .hotelsHeader__column.__title
           .hotelsHeader__nameHotel  Sol Cayo Largo 4*
           .hotelsHeader__geo  Мальдивы, Атолл Фелиху
+          .hotelsHeader__priceMob от 5 500 $
         .hotelsHeader__column.__rating
           svg.svg__rating
             use(xlink:href='#rating' )
           .hotelsHeader__value 9.3 / 10
 
     .sliderMain
+
       .sliderMain-bg(style="background:url('images/slider/slider-hotels-1.jpg') no-repeat center;min-height: 400px;")
+        .sliderMain__rating-icon 7.3
         .container.sliderMain-wrapper
           .sliderMain-info
             p.sliderMain-price от 5500 $
@@ -136,7 +139,7 @@ block content
             a(href="#hotelsTabs-3") Бонусы и акции
           li 
             a#sliderFeedback(href="#hotelsTabs-4") Отзывы
-        p.mobShow.hotelsDescription__accordTitle test  
+        p.mobShow.hotelsDescription__accordTitle.hotelsTabDrop-1 Описание отеля 
         #hotelsTabs-1.hotelsTabs__block
 
           .hotelsDescription
@@ -220,11 +223,11 @@ block content
                   .hotelsDescription__name В отеле:
                   li.hotelsDescription__li завтраки, обеды, ужины;
                   li.hotelsDescription__li закуски;
-        p.mobShow.hotelsDescription__accordTitle test
+        p.mobShow.hotelsDescription__accordTitle Отель на карте
         #hotelsTabs-2.hotelsTabs__block
           
           #mapPrice(style="height:400px;width:100%;border-radius:12px;")
-        p.mobShow.hotelsDescription__accordTitle test
+        p.mobShow.hotelsDescription__accordTitle Бонусы и акции
         #hotelsTabs-3.hotelsTabs__block
           .hotelsTabs__bonus
             
@@ -245,7 +248,7 @@ block content
                 p.hotelsBonus__date-name Период действия
                 p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
                 
-        p#sliderFeedbackMobile.mobShow.hotelsDescription__accordTitle test
+        p#sliderFeedbackMobile.mobShow.hotelsDescription__accordTitle Отзывы
         #hotelsTabs-4.hotelsTabs__block
           
           include layouts/feedback.jade
@@ -256,6 +259,9 @@ block content
       .holidayCreate__filter
         
         include layouts/filter__hotels.jade
+      .holidayCreate__sliderMob
+        .container
+          include layouts/slider__catalog.jade
       .holidayCreate__slider
         
         #sliderNumbers.container
@@ -264,7 +270,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -285,7 +291,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -306,7 +312,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -327,7 +333,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -348,7 +354,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -369,7 +375,7 @@ block content
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
               .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__info
+            .numbersSlider__type
               .numbersSlider__propertie test
               .numbersSlider__value test
             .numbersSlider__info
@@ -473,6 +479,21 @@ block content
                   a.hotelsTours__sortingLink(href='#') дате
                 li.hotelsTours__sortingListItem
                   a.hotelsTours__sortingLink(href='#') названию
+            .hotelsTours__sortingMob
+              //- .catalog-sort__desctop.holidayCreate__sort-inner
+              span.hotelsTours__sortingMobTitle Сортировать по:
+              ul.hotelsTours__sortingMobList
+                li
+                  input#countryOption-1.checkbox--inline(type='checkbox')
+                  label(for='countryOption-1') Цене
+                li
+                  input#countryOption-2.checkbox--inline(type='checkbox')
+                  label(for='countryOption-2') Дате
+                li
+                  input#countryOption-3.checkbox--inline(type='checkbox')
+                  label(for='countryOption-3') Названию
+          .hotelsTour__tableMob
+            include layouts/slider__catalog.jade
           .hotelsTours__table
             .hotelsTours__tableTitles
               .hotelsTours__tableTitle.__tour Тур
