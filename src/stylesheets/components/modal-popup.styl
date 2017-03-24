@@ -1,0 +1,82 @@
+@import '../base/mixins&includes.styl'
+
+.modal-popup
+  position fixed
+  top 0
+  left 0
+  display none
+  width 100%
+  min-height 100%
+  z-index 9998
+  background-color rgba(0, 0, 0, .8)
+
+  &__container
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    width 750px
+    min-height 260px
+    z-index 9999
+    background-color #ffffff
+    border-radius 10px
+
+    +b(mobile)
+      width 100%
+      min-height 180px
+      border-radius 0
+
+  &__header
+    display flex
+    flex-direction column
+
+  &__close
+    margin 15px
+    display block
+    width 16px
+    height 16px
+    align-self flex-end
+    cursor pointer
+
+  &__title
+    display flex
+    justify-content center
+    align-items center
+    font-family Roboto, sans-serif
+    font-size em(35px, 16px)
+    font-weight bold
+    color #24b3fd
+
+    +b(mobile)
+      font-size em(22, 16px)
+
+      &::before, &::after
+        display none
+
+    &::before, &::after
+      content ''
+      flex 1
+      height 1px
+      background-color #c6c6c6
+
+    &::before
+      margin-right 11px
+
+    &::after
+      margin-left 11px
+
+  &__content
+    padding 16px
+    font-family "Myriad Pro", sans-serif
+    font-size 16px
+    color #252525
+
+    +b(mobile)
+      font-size 14px
+
+
+  &__link
+    font-family "Open Sans", sans-serif
+    font-weight 700
+    color inherit
+    text-decoration underline dashed

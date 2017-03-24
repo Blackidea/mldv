@@ -620,3 +620,16 @@ block content
   //- // FOOTER FIX [END]
   //- // FOOTER
   include layouts/footer.jade
+
+  //- Test popups
+  //-button(data-modal-popup='.js-thanks-for-an-order-popup').js-open-modal-popup thanks-for-an-order
+  //-button(data-modal-popup='.js-thanks-for-registration-popup').js-open-modal-popup thanks-for-registration
+  //-button(data-modal-popup='.js-create-a-password-popup').js-open-modal-popup create-a-password
+  //-button(data-modal-popup='.js-change-password-popup').js-open-modal-popup change-password
+
+  include layouts/modal-popups/thanks-for-an-order
+  include layouts/modal-popups/thanks-for-registration
+  include layouts/modal-popups/create-a-password
+  include layouts/modal-popups/change-password
+  //include layouts/modal-popups/signup
+  //include layouts/modal-popups/signin

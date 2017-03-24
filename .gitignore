@@ -1,6 +1,8 @@
 .DS_Store
 .sass-cache
 .publish
+npm-debug.log
+.idea
 public
 Desktop.ini
 node_modules
