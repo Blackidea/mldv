@@ -1,0 +1,142 @@
+include ../icon-input
+
+.modal-popup.js-signup-or-signin-popup
+    .modal-popup__container.signup-or-signin-popup__container
+        header.modal-popup__header
+            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.79 14.79").modal-popup__close.js-modal-popup__close
+                title Close popup
+                line(x1="2" y1="2" x2="12.79" y2="12.79" fill="none" stroke="#24b3fd" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4")
+                line(x1="2" y1="12.79" x2="12.79" y2="2" fill="none" stroke="#24b3fd" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4")
+
+            ul.modal-popup__title.signup-or-signin-popup__title
+                li
+                    a(href='#signup-or-signin-tab-1').signup-or-signin-popup__link Войти
+                li или
+                li
+                    a(href='#signup-or-signin-tab-2').signup-or-signin-popup__link зарегистрироваться
+
+        //- SIGNIN
+        #signup-or-signin-tab-1.modal-popup__content.signup-or-signin-popup__content
+            form.signup-or-signin-popup__form
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label E-mail:
+                    input(type='text').signup-or-signin-popup__input.signup-or-signin-popup__input_default
+
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label Пароль:
+                    .signup-or-signin-popup__input
+                        +icon-input()(type='password')
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 479.4 512').signup-or-signin-popup__icon
+                                title eye
+                                path(d='M471.16,232.09a12.22,12.22,0,0,0-19.27,15,14.42,14.42,0,0,1,0,17.76A268.33,268.33,0,0,1,339.81,349.4a136.7,136.7,0,0,0,.31-186.48,268.1,268.1,0,0,1,70,41.37c2.63,2.15,5.25,4.39,7.79,6.64a12.22,12.22,0,1,0,16.2-18.29c-2.77-2.46-5.63-4.89-8.5-7.24A293.9,293.9,0,0,0,239.7,119c-91,0-175.41,41.22-231.46,113.09a38.83,38.83,0,0,0,0,47.82C64.29,351.78,148.65,393,239.7,393S415.1,351.78,471.16,279.91A38.83,38.83,0,0,0,471.16,232.09ZM27.5,264.88a14.42,14.42,0,0,1,0-17.76,268.32,268.32,0,0,1,112.06-84.5,136.71,136.71,0,0,0,0,186.77A268.32,268.32,0,0,1,27.5,264.88ZM239.85,368.57h-.3a112.57,112.57,0,0,1,0-225.13h.26a112.57,112.57,0,0,1,0,225.13Z')
+                                path(d='M239.7,204.16A51.84,51.84,0,1,0,291.54,256,51.9,51.9,0,0,0,239.7,204.16Zm0,79.25A27.41,27.41,0,1,1,267.1,256,27.44,27.44,0,0,1,239.7,283.41Z')
+                                path(d='M239.7,0a12.22,12.22,0,0,0-12.22,12.22V58a12.22,12.22,0,0,0,24.43,0V12.22A12.22,12.22,0,0,0,239.7,0Z')
+                                path(d='M239.7,441.75A12.22,12.22,0,0,0,227.48,454v45.81a12.22,12.22,0,1,0,24.43,0V454A12.22,12.22,0,0,0,239.7,441.75Z')
+                                path(d='M420.72,75a12.22,12.22,0,0,0-17.28,0l-22.8,22.79a12.22,12.22,0,0,0,17.28,17.28l22.8-22.79A12.22,12.22,0,0,0,420.72,75Z')
+                                path(d='M98.75,396.95a12.22,12.22,0,0,0-17.28,0l-22.8,22.8A12.22,12.22,0,0,0,76,437l22.8-22.8A12.22,12.22,0,0,0,98.75,396.95Z')
+                                path(d='M98.75,97.78,76,75A12.22,12.22,0,0,0,58.68,92.26l22.8,22.79A12.22,12.22,0,1,0,98.75,97.78Z')
+                                path(d='M420.72,419.74l-22.8-22.8a12.22,12.22,0,0,0-17.28,17.28l22.8,22.8a12.22,12.22,0,1,0,17.28-17.28Z')
+                .signup-or-signin-popup__field.signup-or-signin-popup__field_aligned.signup-or-signin-popup__field_wrap_mobile
+                    button(type='submit').signup-or-signin-popup__button.signup-or-signin-popup__button_signin Войти
+                    a(href='#').signup-or-signin-popup__link.signup-or-signin-popup__link_small Забыли пароль?
+
+            .signup-or-signin-popup__social
+                span.signup-or-signin-popup__social-title Войти через соц. сети
+
+                ul.signup-or-signin-popup__social-items
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_facebook
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 10.27 19').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_facebook
+                                title facebook
+                                path(d='M9.89,0H7.42A4.33,4.33,0,0,0,2.86,4.68V6.83H.39A.39.39,0,0,0,0,7.22v3.12a.39.39,0,0,0,.39.39H2.86v7.88a.39.39,0,0,0,.39.39H6.48a.39.39,0,0,0,.39-.39V10.73h2.9a.39.39,0,0,0,.39-.39V7.22A.39.39,0,0,0,10,6.95a.39.39,0,0,0-.27-.11H6.87V5c0-.88.21-1.32,1.35-1.32H9.89a.39.39,0,0,0,.39-.39V.39A.39.39,0,0,0,9.89,0Zm0,0')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_twitter
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 28.1 22.7').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_twitter
+                                title twitter
+                                path(d='M25.1,5.7v.7c0,7.6-5.7,16.3-16.3,16.3A15.93,15.93,0,0,1,0,20.1a6.15,6.15,0,0,0,1.4.1,11.69,11.69,0,0,0,7.1-2.4,5.58,5.58,0,0,1-5.3-4,3.75,3.75,0,0,0,1.1.1,7.72,7.72,0,0,0,1.5-.2A5.7,5.7,0,0,1,1.2,8.1V8a5.94,5.94,0,0,0,2.6.7A5.78,5.78,0,0,1,1.3,3.9,6,6,0,0,1,2.1,1,16.24,16.24,0,0,0,13.9,7a5.7,5.7,0,0,1-.1-1.3A5.7,5.7,0,0,1,19.5,0a6,6,0,0,1,4.2,1.8A11.25,11.25,0,0,0,27.3.4a5.69,5.69,0,0,1-2.5,3.2,9,9,0,0,0,3.3-.9A14.21,14.21,0,0,1,25.1,5.7Z', fill='#020608')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_vkontakte
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 22 12.55').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_vkontakte
+                                title vkontakte
+                                path(d='M21.88,11.34l-.07-.14a11.41,11.41,0,0,0-2.19-2.53l0,0h0q-.73-.7-.93-.94a.88.88,0,0,1-.16-.93,8.65,8.65,0,0,1,1-1.5l.74-1q2-2.64,1.72-3.37L21.9.79A.67.67,0,0,0,21.55.6a1.79,1.79,0,0,0-.73,0l-3.3,0a.43.43,0,0,0-.23,0l-.15,0-.06,0,0,0a.5.5,0,0,0-.13.12.79.79,0,0,0-.11.2A18.73,18.73,0,0,1,15.57,3.6q-.42.71-.78,1.23a6,6,0,0,1-.6.77,4.12,4.12,0,0,1-.44.39c-.13.1-.23.14-.3.13l-.19,0A.75.75,0,0,1,13,5.79a1.25,1.25,0,0,1-.13-.45q0-.27,0-.46c0-.13,0-.31,0-.55s0-.4,0-.48q0-.44,0-.95t0-.81q0-.3,0-.63a2.64,2.64,0,0,0,0-.52,1.77,1.77,0,0,0-.12-.37.61.61,0,0,0-.23-.27,1.32,1.32,0,0,0-.38-.16A7.68,7.68,0,0,0,10.58,0,7.52,7.52,0,0,0,7.85.28a1.54,1.54,0,0,0-.44.34Q7.21.87,7.35.9a1.41,1.41,0,0,1,1,.49l.07.14a2.16,2.16,0,0,1,.16.53,5.29,5.29,0,0,1,.1.84,8.83,8.83,0,0,1,0,1.43q-.06.59-.11.93a1.86,1.86,0,0,1-.15.54A2.18,2.18,0,0,1,8.26,6L8.2,6.1a.85.85,0,0,1-.31.06A.73.73,0,0,1,7.5,6,2.75,2.75,0,0,1,7,5.55a5.89,5.89,0,0,1-.56-.78q-.31-.5-.64-1.19l-.18-.33q-.17-.32-.47-.93T4.65,1.12A.76.76,0,0,0,4.38.76l-.06,0L4.14.63A1.22,1.22,0,0,0,3.87.55L.73.57A.8.8,0,0,0,.08.79L0,.86A.37.37,0,0,0,0,1a.91.91,0,0,0,.07.31Q.76,3,1.56,4.47T3,6.89q.6.92,1.21,1.73t.82,1l.32.34.29.28a6.73,6.73,0,0,0,.81.66,13.76,13.76,0,0,0,1.18.76,6.41,6.41,0,0,0,1.51.61,5.19,5.19,0,0,0,1.67.19h1.32a.91.91,0,0,0,.61-.25l0-.06a.76.76,0,0,0,.09-.21,1.16,1.16,0,0,0,0-.31,3.8,3.8,0,0,1,.07-.89,2.33,2.33,0,0,1,.2-.6,1.44,1.44,0,0,1,.25-.34,1,1,0,0,1,.19-.17l.09,0a.73.73,0,0,1,.65.18,3.84,3.84,0,0,1,.7.66q.33.4.78.89a5.47,5.47,0,0,0,.8.73l.23.14a2.77,2.77,0,0,0,.6.25,1.28,1.28,0,0,0,.64.06l2.93,0a1.33,1.33,0,0,0,.68-.14A.57.57,0,0,0,22,12a.89.89,0,0,0,0-.39,1.49,1.49,0,0,0-.08-.3Zm0,0')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_odnoklassniki
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 12.01 20').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_odnoklassniki
+                                title odnoklassniki
+                                path(d='M5,14.09A7.78,7.78,0,0,1,.87,12.61c-.15-.12-.3-.23-.44-.36a1.18,1.18,0,0,1-.16-1.67,1.18,1.18,0,0,1,1.57-.35,2.49,2.49,0,0,1,.34.2,6.8,6.8,0,0,0,7.53.07,2,2,0,0,1,.73-.38,1.15,1.15,0,0,1,1.32.53,1.12,1.12,0,0,1-.08,1.47A6.1,6.1,0,0,1,9.5,13.53,10.34,10.34,0,0,1,7,14.09l.27.29,3.46,3.47A1.15,1.15,0,0,1,11,19.19a1.37,1.37,0,0,1-1.28.8,1.25,1.25,0,0,1-.81-.41C8,18.7,7.15,17.84,6.3,16.95c-.25-.26-.37-.21-.58,0-.87.9-1.76,1.79-2.66,2.67a1.11,1.11,0,0,1-1.34.24,1.36,1.36,0,0,1-.79-1.25,1.25,1.25,0,0,1,.42-.84l3.41-3.42L5,14.09Zm0,0', fill-rule='evenodd')
+                                path(d='M6,10.12a5.06,5.06,0,1,1,5.09-5,5.06,5.06,0,0,1-5.09,5ZM8.48,5.06A2.48,2.48,0,1,0,6,7.54,2.47,2.47,0,0,0,8.48,5.06Zm0,0', fill-rule='evenodd')
+
+        //- SIGNUP
+        #signup-or-signin-tab-2.modal-popup__content.signup-or-signin-popup__content
+            form.signup-or-signin-popup__form
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label Имя:
+                    input(type='text').signup-or-signin-popup__input.signup-or-signin-popup__input_default
+
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label.signup-or-signin-popup__label_required E-mail:
+                    input(type='text').signup-or-signin-popup__input.signup-or-signin-popup__input_default
+
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label Телефон:
+                    input(type='text').signup-or-signin-popup__input.signup-or-signin-popup__input_default
+
+                label.signup-or-signin-popup__field
+                    span.signup-or-signin-popup__label Придумайте пароль:
+                    .signup-or-signin-popup__input
+                        +icon-input()(type='password')
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 479.4 512').signup-or-signin-popup__icon
+                                title eye
+                                path(d='M471.16,232.09a12.22,12.22,0,0,0-19.27,15,14.42,14.42,0,0,1,0,17.76A268.33,268.33,0,0,1,339.81,349.4a136.7,136.7,0,0,0,.31-186.48,268.1,268.1,0,0,1,70,41.37c2.63,2.15,5.25,4.39,7.79,6.64a12.22,12.22,0,1,0,16.2-18.29c-2.77-2.46-5.63-4.89-8.5-7.24A293.9,293.9,0,0,0,239.7,119c-91,0-175.41,41.22-231.46,113.09a38.83,38.83,0,0,0,0,47.82C64.29,351.78,148.65,393,239.7,393S415.1,351.78,471.16,279.91A38.83,38.83,0,0,0,471.16,232.09ZM27.5,264.88a14.42,14.42,0,0,1,0-17.76,268.32,268.32,0,0,1,112.06-84.5,136.71,136.71,0,0,0,0,186.77A268.32,268.32,0,0,1,27.5,264.88ZM239.85,368.57h-.3a112.57,112.57,0,0,1,0-225.13h.26a112.57,112.57,0,0,1,0,225.13Z')
+                                path(d='M239.7,204.16A51.84,51.84,0,1,0,291.54,256,51.9,51.9,0,0,0,239.7,204.16Zm0,79.25A27.41,27.41,0,1,1,267.1,256,27.44,27.44,0,0,1,239.7,283.41Z')
+                                path(d='M239.7,0a12.22,12.22,0,0,0-12.22,12.22V58a12.22,12.22,0,0,0,24.43,0V12.22A12.22,12.22,0,0,0,239.7,0Z')
+                                path(d='M239.7,441.75A12.22,12.22,0,0,0,227.48,454v45.81a12.22,12.22,0,1,0,24.43,0V454A12.22,12.22,0,0,0,239.7,441.75Z')
+                                path(d='M420.72,75a12.22,12.22,0,0,0-17.28,0l-22.8,22.79a12.22,12.22,0,0,0,17.28,17.28l22.8-22.79A12.22,12.22,0,0,0,420.72,75Z')
+                                path(d='M98.75,396.95a12.22,12.22,0,0,0-17.28,0l-22.8,22.8A12.22,12.22,0,0,0,76,437l22.8-22.8A12.22,12.22,0,0,0,98.75,396.95Z')
+                                path(d='M98.75,97.78,76,75A12.22,12.22,0,0,0,58.68,92.26l22.8,22.79A12.22,12.22,0,1,0,98.75,97.78Z')
+                                path(d='M420.72,419.74l-22.8-22.8a12.22,12.22,0,0,0-17.28,17.28l22.8,22.8a12.22,12.22,0,1,0,17.28-17.28Z')
+
+                .signup-or-signin-popup__field.signup-or-signin-popup__field_aligned
+                    small.signup-or-signin-popup__hint.signup-or-signin-popup__label_required - поля обязательные для заполнения
+
+                label.signup-or-signin-popup__field.signup-or-signin-popup__field_aligned
+                    input(type='checkbox').signup-or-signin-popup__checkbox
+                    span.signup-or-signin-popup__label.signup-or-signin-popup__label_checkbox я согласен на обработку персональных данных
+
+                label.signup-or-signin-popup__field.signup-or-signin-popup__field_aligned
+                    input(type='checkbox').signup-or-signin-popup__checkbox
+                    span.signup-or-signin-popup__label.signup-or-signin-popup__label_checkbox я согласен с условиями публичной оферты
+
+                button(type='submit').signup-or-signin-popup__button Сохранить
+
+            .signup-or-signin-popup__social
+                span.signup-or-signin-popup__social-title Регистрация через соц. сети
+
+                ul.signup-or-signin-popup__social-items
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_facebook
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 10.27 19').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_facebook
+                                title facebook
+                                path(d='M9.89,0H7.42A4.33,4.33,0,0,0,2.86,4.68V6.83H.39A.39.39,0,0,0,0,7.22v3.12a.39.39,0,0,0,.39.39H2.86v7.88a.39.39,0,0,0,.39.39H6.48a.39.39,0,0,0,.39-.39V10.73h2.9a.39.39,0,0,0,.39-.39V7.22A.39.39,0,0,0,10,6.95a.39.39,0,0,0-.27-.11H6.87V5c0-.88.21-1.32,1.35-1.32H9.89a.39.39,0,0,0,.39-.39V.39A.39.39,0,0,0,9.89,0Zm0,0')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_twitter
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 28.1 22.7').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_twitter
+                                title twitter
+                                path(d='M25.1,5.7v.7c0,7.6-5.7,16.3-16.3,16.3A15.93,15.93,0,0,1,0,20.1a6.15,6.15,0,0,0,1.4.1,11.69,11.69,0,0,0,7.1-2.4,5.58,5.58,0,0,1-5.3-4,3.75,3.75,0,0,0,1.1.1,7.72,7.72,0,0,0,1.5-.2A5.7,5.7,0,0,1,1.2,8.1V8a5.94,5.94,0,0,0,2.6.7A5.78,5.78,0,0,1,1.3,3.9,6,6,0,0,1,2.1,1,16.24,16.24,0,0,0,13.9,7a5.7,5.7,0,0,1-.1-1.3A5.7,5.7,0,0,1,19.5,0a6,6,0,0,1,4.2,1.8A11.25,11.25,0,0,0,27.3.4a5.69,5.69,0,0,1-2.5,3.2,9,9,0,0,0,3.3-.9A14.21,14.21,0,0,1,25.1,5.7Z', fill='#020608')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_vkontakte
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 22 12.55').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_vkontakte
+                                title vkontakte
+                                path(d='M21.88,11.34l-.07-.14a11.41,11.41,0,0,0-2.19-2.53l0,0h0q-.73-.7-.93-.94a.88.88,0,0,1-.16-.93,8.65,8.65,0,0,1,1-1.5l.74-1q2-2.64,1.72-3.37L21.9.79A.67.67,0,0,0,21.55.6a1.79,1.79,0,0,0-.73,0l-3.3,0a.43.43,0,0,0-.23,0l-.15,0-.06,0,0,0a.5.5,0,0,0-.13.12.79.79,0,0,0-.11.2A18.73,18.73,0,0,1,15.57,3.6q-.42.71-.78,1.23a6,6,0,0,1-.6.77,4.12,4.12,0,0,1-.44.39c-.13.1-.23.14-.3.13l-.19,0A.75.75,0,0,1,13,5.79a1.25,1.25,0,0,1-.13-.45q0-.27,0-.46c0-.13,0-.31,0-.55s0-.4,0-.48q0-.44,0-.95t0-.81q0-.3,0-.63a2.64,2.64,0,0,0,0-.52,1.77,1.77,0,0,0-.12-.37.61.61,0,0,0-.23-.27,1.32,1.32,0,0,0-.38-.16A7.68,7.68,0,0,0,10.58,0,7.52,7.52,0,0,0,7.85.28a1.54,1.54,0,0,0-.44.34Q7.21.87,7.35.9a1.41,1.41,0,0,1,1,.49l.07.14a2.16,2.16,0,0,1,.16.53,5.29,5.29,0,0,1,.1.84,8.83,8.83,0,0,1,0,1.43q-.06.59-.11.93a1.86,1.86,0,0,1-.15.54A2.18,2.18,0,0,1,8.26,6L8.2,6.1a.85.85,0,0,1-.31.06A.73.73,0,0,1,7.5,6,2.75,2.75,0,0,1,7,5.55a5.89,5.89,0,0,1-.56-.78q-.31-.5-.64-1.19l-.18-.33q-.17-.32-.47-.93T4.65,1.12A.76.76,0,0,0,4.38.76l-.06,0L4.14.63A1.22,1.22,0,0,0,3.87.55L.73.57A.8.8,0,0,0,.08.79L0,.86A.37.37,0,0,0,0,1a.91.91,0,0,0,.07.31Q.76,3,1.56,4.47T3,6.89q.6.92,1.21,1.73t.82,1l.32.34.29.28a6.73,6.73,0,0,0,.81.66,13.76,13.76,0,0,0,1.18.76,6.41,6.41,0,0,0,1.51.61,5.19,5.19,0,0,0,1.67.19h1.32a.91.91,0,0,0,.61-.25l0-.06a.76.76,0,0,0,.09-.21,1.16,1.16,0,0,0,0-.31,3.8,3.8,0,0,1,.07-.89,2.33,2.33,0,0,1,.2-.6,1.44,1.44,0,0,1,.25-.34,1,1,0,0,1,.19-.17l.09,0a.73.73,0,0,1,.65.18,3.84,3.84,0,0,1,.7.66q.33.4.78.89a5.47,5.47,0,0,0,.8.73l.23.14a2.77,2.77,0,0,0,.6.25,1.28,1.28,0,0,0,.64.06l2.93,0a1.33,1.33,0,0,0,.68-.14A.57.57,0,0,0,22,12a.89.89,0,0,0,0-.39,1.49,1.49,0,0,0-.08-.3Zm0,0')
+
+                    li.signup-or-signin-popup__social-item
+                        a.signup-or-signin-popup__social-link.signup-or-signin-popup__social-link_odnoklassniki
+                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 12.01 20').signup-or-signin-popup__social-icon.signup-or-signin-popup__social-icon_odnoklassniki
+                                title odnoklassniki
+                                path(d='M5,14.09A7.78,7.78,0,0,1,.87,12.61c-.15-.12-.3-.23-.44-.36a1.18,1.18,0,0,1-.16-1.67,1.18,1.18,0,0,1,1.57-.35,2.49,2.49,0,0,1,.34.2,6.8,6.8,0,0,0,7.53.07,2,2,0,0,1,.73-.38,1.15,1.15,0,0,1,1.32.53,1.12,1.12,0,0,1-.08,1.47A6.1,6.1,0,0,1,9.5,13.53,10.34,10.34,0,0,1,7,14.09l.27.29,3.46,3.47A1.15,1.15,0,0,1,11,19.19a1.37,1.37,0,0,1-1.28.8,1.25,1.25,0,0,1-.81-.41C8,18.7,7.15,17.84,6.3,16.95c-.25-.26-.37-.21-.58,0-.87.9-1.76,1.79-2.66,2.67a1.11,1.11,0,0,1-1.34.24,1.36,1.36,0,0,1-.79-1.25,1.25,1.25,0,0,1,.42-.84l3.41-3.42L5,14.09Zm0,0', fill-rule='evenodd')
+                                path(d='M6,10.12a5.06,5.06,0,1,1,5.09-5,5.06,5.06,0,0,1-5.09,5ZM8.48,5.06A2.48,2.48,0,1,0,6,7.54,2.47,2.47,0,0,0,8.48,5.06Zm0,0', fill-rule='evenodd')

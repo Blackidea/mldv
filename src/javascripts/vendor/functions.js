@@ -2054,9 +2054,15 @@ function mapPrice() {
   function countryTabs(){
     $('#countryTabs').tabs();
   }
+
+  function signupOrSigninTabs() {
+    $('.js-signup-or-signin-popup').tabs({ fx: { opacity: 'toggle' }});
+  }
+
   sliderNumbers();
   sliderNumber();
   countryTabs();
+  signupOrSigninTabs();
   sliderHotelsAround();
   sliderHotelsSimilar();
   hotelsArticleShow();

@@ -109,3 +109,253 @@
       width 100%
       text-align center
       transform translateX(0)
+
+//////////////////////////////////////////////////////////
+// signup or signin
+//////////////////////////////////////////////////////////
+.signup-or-signin-popup
+  display inherit
+
+  &__container
+    +b(mobile)
+      top 85px
+      left 0
+      transform translate(0, 0)
+
+  &__title
+    display flex
+    font-family "Open Sans"
+    font-size em(22px, 16px)
+
+    +b(mobile)
+      font-size 1em
+
+    li:not(:last-child)::after
+      content ''
+      margin-right .3rem
+
+
+    .ui-tabs-active .signup-or-signin-popup__link
+      color #000
+      text-decoration none
+
+    &::before, &::after
+      display none
+
+  &__link
+    color #24b3fd
+    text-decoration underline dashed
+
+    &_small
+      font-family "Open Sans"
+      font-size em(12px, 16px)
+      color #000
+      text-decoration underline dashed
+
+      +b(mobile)
+        margin-top 14px
+        display block
+        text-align center
+        width 100%
+        text-decoration underline dashed
+
+  &__content
+    display flex
+    flex-flow row wrap
+    justify-content center
+    align-items center
+    height 100%
+
+  &__form
+    margin-top 30px
+    display flex
+    flex-direction column
+    align-items center
+
+    +b(mobile)
+      width 100%
+      margin-top 10px
+
+  &__field
+    display flex
+    align-items center
+    justify-content flex-end
+    width 100%
+
+    +b(mobile)
+      justify-content space-between
+
+    &_aligned
+      margin-left auto
+      width 260px
+      justify-content space-between
+
+      +b(mobile)
+        width 100%
+        margin-left 0
+        justify-content flex-start
+
+    &_wrap_mobile
+      flex-wrap nowrap
+
+      +b(mobile)
+        flex-wrap wrap
+
+    &:not(:first-child)
+      margin-top 20px
+
+  &__label
+    margin-right 29px
+    font-family "Open Sans", sans-serif !important
+    font-size em(16px, 14px) !important
+    color #000
+
+    +b(mobile)
+      margin 0
+      font-size em(14px, 16px) !important
+
+    &_required::before
+      content '*'
+      color #fd4141
+
+    &_checkbox
+      font-size em(12px, 16px) !important
+      margin-right 0
+      margin-left 10px
+      line-height 1.2
+
+  &__input
+    width 260px
+    height 40px
+
+    +b(mobile)
+      width 200px
+      flex-shrink 0
+
+    &_default
+      width 260px !important
+      padding 13px 16px !important
+      border 1px solid #ddd !important
+      border-radius 5px !important
+      font-family "Open Sans", sans-serif
+      font-weight 700
+      font-size 1em
+
+      +b(mobile)
+        width 200px !important
+
+    +b(mobile)
+      width 200px
+
+  &__checkbox
+    display block !important
+
+  &__icon
+    width 21px
+    height 21px
+    fill #ddd
+
+  &__button
+    display flex
+    align-items center
+    align-self flex-end
+    margin-top 25px
+    height 40px
+    padding 0 24px
+    box-sizing border-box
+    transform translateX(calc(-260px + 100%)) // - &__input width + &__button width
+
+    +b(mobile)
+      width 100%
+      text-align center
+      justify-content center
+      transform translateX(0)
+
+    &_signin
+      margin-top 0
+      min-width 138px
+      transform translateX(0)
+
+      +b(mobile)
+        margin-top 0 !important
+
+  &__hint
+    font-family "Open Sans"
+    font-size em(12px, 16px)
+    color #999
+
+  &__social
+    display flex
+    flex-direction column
+    margin-top 32px
+    padding 23px 0
+    min-width 560px
+    border-top 1px solid #ccc
+    box-sizing border-box
+
+    +b(mobile)
+      margin 25px 14px 0 14px
+      padding 14px
+
+    &-title
+      font-family "Open Sans"
+      font-weight 700
+      font-size em(22px, 16px)
+      text-align center
+
+      +b(mobile)
+        font-size 1em
+
+    &-items
+      display inline-flex
+      justify-content space-between
+      margin 10px auto 0 auto
+
+    &-item
+      display block
+
+      &:not(:last-child)
+        margin-right 32px
+
+    &-link
+      display flex
+      justify-content center
+      align-items center
+      width 40px
+      height 40px
+      transition all .25s ease-in-out
+
+      &_facebook
+        background-color #1b579d
+
+      &_twitter
+        background-color #00acf5
+
+      &_vkontakte
+        background-color #20658d
+
+      &_odnoklassniki
+        background-color #ff9200
+
+    &-icon *
+      fill #fff
+
+    &-icon
+      fill #fff
+
+      &_facebook
+        width 17px
+        height 28px
+
+      &_twitter
+        width 29px
+        height 23px
+
+      &_vkontakte
+        width 31px
+        height 18px
+
+      &_odnoklassniki
+        width 20px
+        height 31px
+
