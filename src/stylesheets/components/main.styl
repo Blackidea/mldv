@@ -600,8 +600,7 @@
       margin: 0;
       display: block;
       float: none;
-      width: calc(100% + 30px);
-      margin-left: -15px;
+      width: 100%;
       font-size: 20px;
       height: auto;
       padding-top: 20px;
@@ -1274,6 +1273,18 @@ input.calendar__nights
       min-width: 100%
       min-height: 100%
       position: relative
+
+    &::after
+      content ''
+      position absolute
+      bottom 0
+      left 0
+      display block
+      width 100%
+      height 60%
+      background-image linear-gradient(transparent, #07405e)
+      opacity .86
+
   &__gradient-bottom
     position absolute
     left 0
@@ -1294,6 +1305,20 @@ input.calendar__nights
     left 15px
     width 27px
     height 39px
+
+  &__icon-heart
+    position: absolute
+    z-index: 1
+    right: 0
+    bottom: 0
+    margin-right: 13px
+    margin-bottom: 8px
+    width: 22px
+    height: 19px
+
+    & > *
+      stroke: #fff
+
   &__icon-wishlist
     position absolute
     z-index 1
@@ -1312,12 +1337,13 @@ input.calendar__nights
     position: absolute
     z-index 1
     display: inline-block
-    font-size: 16px
-    font-weight: 700
+    font-family: "Open Sans", sans-serif
+    font-weight: normal
+    font-size: em(22px, 16px)
     color: #fff
     bottom: 0
     left: 0
-    padding: 5px 47px 6px 23px
+    padding: 5px 47px 8px 23px
     // background: rgba(0, 0, 0, 0.72)
     line-height: 16px
   &__offer
@@ -1380,18 +1406,38 @@ input.calendar__nights
     &__img-box {
       height: 119px;
     }
+    &__country {
+      font-size: 11px;
+    }
     &__title {
       border: none;
       padding: 0;
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+    &__rating {
+      font-size: 14px;
+
+      .card__rating-star {
+        width: 13px
+        height: 13px
+        margin-left: 5px
+      }
     }
     &__content {
-      padding: 5px 22px 10px;
+      padding: 5px 22px 0 10px;
     }
     &__description {
       display: none;
     }
     &__tag-box {
       display: none;
+    }
+
+    &__price {
+      padding: 5px 47px 10px 23px;
     }
 //card end -------------
 //help card ------------------
@@ -1600,6 +1646,9 @@ input.calendar__nights
       display: none;
     }
   +b(mobile)
+    &__list {
+      padding-bottom: 20px;
+    }
     .simple-slider {
       margin: 0;
       &__item {
@@ -2100,9 +2149,11 @@ input.calendar__nights
     float: right
   +b(mobile)
     text-align: center;
+
     .button {
       float: none;
       padding: 10px 44px;
+      width: 100%
     }
 //section
 .section
@@ -2169,6 +2220,12 @@ input.calendar__nights
     padding-bottom: 45px
   +b(mobile)
     &__title {
+
+      h1 {
+        padding 0 40px
+        text-align center
+      }
+
       &:before {
         display: none;
       }
