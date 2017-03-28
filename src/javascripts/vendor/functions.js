@@ -1268,43 +1268,42 @@ $(document).on('ready', function() {
 });
 
 
-
 $(document).ready(function(){
-  $('.sliderMain').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.sliderMain-nav',
-    responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow:1,
-            arrows: true,
-            prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
-            nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>'
-          }
-        }
-      ]
-  });
-  $('.sliderMain-nav').slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    asNavFor: '.sliderMain',
-    dots: false,
-    centerMode: false,
-    arrows: true,
-    prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
-    nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
-    infinite: false,
-    focusOnSelect: true
+  // $('.sliderMain').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: false,
+  //   fade: true,
+  //   asNavFor: '.sliderMain-nav',
+  //   responsive: [
+  //       {
+  //         breakpoint: 767,
+  //         settings: {
+  //           slidesToShow:1,
+  //           arrows: true,
+  //           prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',
+  //           nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>'
+  //         }
+  //       }
+  //     ]
+  // });
+  // $('.sliderMain-nav').slick({
+  //   slidesToShow: 6,
+  //   slidesToScroll: 1,
+  //   asNavFor: '.sliderMain',
+  //   dots: false,
+  //   centerMode: false,
+  //   arrows: true,
+  //   prevArrow: '<div class="sliderMain-nav__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',
+  //   nextArrow: '<div class="sliderMain-nav__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
+  //   infinite: false,
+  //   focusOnSelect: true
+  //
+  // });
+  // $('.sliderMain-nav a').click(function(e){
+  //   e.preventDefault();
+  // });
 
-  });
-  $('.sliderMain-nav a').click(function(e){
-    e.preventDefault();
-  });
-  
 
   // for calendar-price
   var maxCalendarPrice = 10000;
