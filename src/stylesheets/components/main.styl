@@ -497,6 +497,8 @@
     bottom: 65px
     .container
       padding: 0
+      +b(mobile)
+        padding: 0 15px
 
   &__slider .slider__li::after
     content ''
@@ -1133,6 +1135,8 @@ input.calendar__nights
     float: left
     margin-left: 24px
     padding-top: 10px
+    +b(mobile)
+      display: none
     img
       display: inline-block
       vertical-align: middle

@@ -60,6 +60,8 @@ $footerHeight = 329px
     padding: 16px 0 15px
     top: 0
     right: 15px
+    +b(mobile)
+      display: none
     &:hover
       .header__currency-link
         color: $mainFontColor
@@ -334,6 +336,7 @@ $footerHeight = 329px
           transition: all .2s ease;
           &.active {
             left: 0;
+            width: 100%;
           }
           &-item {
             display: block;
