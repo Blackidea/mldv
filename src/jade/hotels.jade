@@ -154,39 +154,49 @@ block content
             
             .hotelsDescription__column
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#geo-island' x="0" y="0")
-                .hotelsDescription__title Месторасположение:
-                .hotelsDescription__value остров Эллайду в Ари Атолле 
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#geo-island' x="0" y="0")
+                  .hotelsDescription__title Месторасположение:
+                .hotelsDescription__value остров Эллайду в Ари Атолле
                 .hotelsDescription__value Расстояние до международного аэропорта<br/> IBRAHIM Nasir: 42 км
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#size-island' x="0" y="0")
-                .hotelsDescription__title Размеры острова:
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#size-island' x="0" y="0")
+                  .hotelsDescription__title Размеры острова:
                 .hotelsDescription__value остров Эллайду в Ари Атолле
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#transfer' x="0" y="0")
-                .hotelsDescription__title Трансфер:
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#transfer' x="0" y="0")
+                  .hotelsDescription__title Трансфер:
                 .hotelsDescription__value остров Эллайду в Ари Атолле
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#hotel-house' x="0" y="0")
-                .hotelsDescription__title В отеле:
-                ul.hotelsDescription__list 
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#hotel-house' x="0" y="0")
+                  .hotelsDescription__title В отеле:
+                ul.hotelsDescription__list
                   li.hotelsDescription__li бассейн
                   li.hotelsDescription__li SPA
                   
             .hotelsDescription__column
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#food-hotels' x="0" y="0")
-                .hotelsDescription__title Питание:
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#food-hotels' x="0" y="0")
+                  .hotelsDescription__title Питание:
 
                 ul.hotelsDescription__list
                   .hotelsDescription__name Пакет "All Inclusive": 
@@ -206,10 +216,12 @@ block content
                   li.hotelsDescription__li 60-минутный массаж.
             .hotelsDescription__column
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#aqua-mask' x="0" y="0")
-                .hotelsDescription__title Спорт и развлечения
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#aqua-mask' x="0" y="0")
+                  .hotelsDescription__title Спорт и развлечения
 
                 ul.hotelsDescription__list
                   
@@ -220,10 +232,12 @@ block content
                   li.hotelsDescription__li дайвинг-центр
                   li.hotelsDescription__li волейбол
               .hotelsDescription__info
-                .hotelsDescription__icon
-                  svg
-                    use(xlink:href='#compass-hotel' x="0" y="0")
-                .hotelsDescription__title Экскурсии
+                .hotelsDescription__heading
+                  .hotelsDescription__icon-wrapper
+                    .hotelsDescription__icon
+                      svg
+                        use(xlink:href='#compass-hotel' x="0" y="0")
+                  .hotelsDescription__title Экскурсии
 
                 ul.hotelsDescription__list
                   
@@ -246,22 +260,27 @@ block content
         #hotelsTabs-3.hotelsTabs__block
           .hotelsTabs__bonus
             
-            a.hotelsBonus__column(style="background:url(images/bonus/bonus-1.jpg) no-repeat 50%;" href="")
-              .hotelsBonus__name 20% скидка на проживание
-              .hotelsBonus__info  Бесплатное проживание и питание для детей до 7 лет в номере с двумя оплаченными взрослыми. 
-              .hotelsBonus__info  Бесплатная вода в главном ресторане отеля во время завтраков, обедов и ужинов (согласно оплаченному типу питания).
-              .hotelsBonus__border-bottom
-              .hotelsBonus__date 
-                p.hotelsBonus__date-name Период действия
-                p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
-            a.hotelsBonus__column(style="background:url(images/bonus/bonus-2.jpg) no-repeat 50%;" href="")
-              .hotelsBonus__name Бонус молодоженам, а также отмечающим "серебряную" и "золотую" свадьбу
-              .hotelsBonus__info  Бутылка вина
-              .hotelsBonus__info  Корзина фруктов
-              .hotelsBonus__border-bottom 
-              .hotelsBonus__date 
-                p.hotelsBonus__date-name Период действия
-                p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+            a.hotelsBonus__column
+              img(src='images/bonus/bonus-1.jpg' alt='').hotelsBonus__image
+              .hotelsBonus__content
+                .hotelsBonus__name 20% скидка на проживание
+                .hotelsBonus__info Бесплатное проживание и питание для детей до 7 лет в номере с двумя оплаченными взрослыми.
+                .hotelsBonus__info Бесплатная вода в главном ресторане отеля во время завтраков, обедов и ужинов (согласно оплаченному типу питания).
+                .hotelsBonus__border-bottom
+                .hotelsBonus__date
+                  p.hotelsBonus__date-name Период действия
+                  p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+
+            a.hotelsBonus__column
+              img(src='images/bonus/bonus-2.jpg' alt='').hotelsBonus__image
+              .hotelsBonus__content
+                .hotelsBonus__name Бонус молодоженам, а также отмечающим "серебряную" и "золотую" свадьбу
+                .hotelsBonus__info Бутылка вина
+                .hotelsBonus__info Корзина фруктов
+                .hotelsBonus__border-bottom
+                .hotelsBonus__date
+                  p.hotelsBonus__date-name Период действия
+                  p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
                 
         p#sliderFeedbackMobile.mobShow.hotelsDescription__accordTitle.hotelsTabsDrop-4 Отзывы
         #hotelsTabs-4.hotelsTabs__block
