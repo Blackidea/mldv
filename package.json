@@ -61,6 +61,7 @@
     "magnific-popup": "^1.1.0",
     "nib": "^1.1.2",
     "normalize.css": "^4.0.0",
+    "swiper": "^3.4.2",
     "toastr": "^2.1.2"
   }
 }

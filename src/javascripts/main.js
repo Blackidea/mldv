@@ -3,7 +3,6 @@ require('./libs/modal-popup')();
 const Swiper = require('swiper/dist/js/swiper.jquery');
 
 $(() => {
-
     const mainHotelSlider = new Swiper('.js-main-hotel-slider', {
         onSlideChangeEnd(s) {
             const current = $('.js-main-hotel-slider .swiper-slide').eq(s.realIndex);
@@ -28,7 +27,9 @@ $(() => {
         centeredSlides: true,
         slidesPerView: 'auto',
         touchRatio: 0.2,
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        nextButton: '.js-thumbs-hotel-slider__button_next',
+        prevButton: '.js-thumbs-hotel-slider__button_prev'
     });
 
     mainHotelSlider.params.control = thumbsHotelSlider;

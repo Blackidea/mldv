@@ -62,11 +62,27 @@ block content
           .hotelsHeader__value 9.3 / 10
 
     .main-hotel-slider.swiper-container.js-main-hotel-slider
+      .main-hotel-slider__description-wrapper
+        .main-hotel-slider__description.container
+          span.main-hotel-slider__price От 5 500 $
+          .main-hotel-slider__info
+            .main-hotel-slider__title Sol Cayo Largo
+            .main-hotel-slider__stars
+              svg.icon-star-fill.main-hotel-slider__star
+                use(xlink:href='#star-fill')
+              svg.icon-star-fill.main-hotel-slider__star
+                use(xlink:href='#star-fill')
+              svg.icon-star-fill.main-hotel-slider__star
+                use(xlink:href='#star-fill')
+              svg.icon-star-fill.main-hotel-slider__star
+                use(xlink:href='#star-fill')
+              svg.icon-star-fill.main-hotel-slider__star
+            use(xlink:href='#star-fill')
+
       ul.main-hotel-slider__items.swiper-wrapper
         - for (var i = 0, j = 1; i < 10; i++, j++)
             li.main-hotel-slider__item.swiper-slide
               - var src = 'images/slider/slider-0' + j + '.jpg';
-              - var price = 'от ' + i + ' 500 $';
 
               - if (j < 5)
                   img(src=src alt='').main-hotel-slider__image
@@ -74,22 +90,6 @@ block content
                   video.main-hotel-slider__video.js-main-hotel-slider__video
                     source(src='videos/slider/slide.mp4' type='video/mp4')
                   - j = 0
-
-              .main-hotel-slider__description.container
-                span.main-hotel-slider__price #{price}
-                .main-hotel-slider__info
-                  .main-hotel-slider__title Sol Cayo Largo
-                  .main-hotel-slider__stars
-                    svg.icon-star-fill.main-hotel-slider__star
-                      use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-hotel-slider__star
-                      use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-hotel-slider__star
-                      use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-hotel-slider__star
-                      use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-hotel-slider__star
-                  use(xlink:href='#star-fill')
 
     .swiper-container.thumbs-hotel-slider.js-thumbs-hotel-slider
       ul.swiper-wrapper.thumbs-hotel-slider__items
@@ -104,6 +104,13 @@ block content
               li.swiper-slide.thumbs-hotel-slider__item.thumbs-hotel-slider__item_video
                 img(src='images/slider/hotels-video.jpg' alt='').thumbs-hotel-slider__image
 
+      div.thumbs-hotel-slider__button.thumbs-hotel-slider__button_prev.js-thumbs-hotel-slider__button_prev
+        svg.thumbs-hotel-slider__button-icon
+          use(xlink:href="#arrow-left")
+
+      div.thumbs-hotel-slider__button.thumbs-hotel-slider__button_next.js-thumbs-hotel-slider__button_next
+        svg.thumbs-hotel-slider__button-icon
+          use(xlink:href="#arrow-right")
 
 
     .hotelsHeader__button-wishlistMob.js-wishlist
