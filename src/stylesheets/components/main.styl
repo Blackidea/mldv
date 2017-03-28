@@ -337,10 +337,13 @@
 // slider
 //----------------------------------------------------//
 .slider
-  max-height: 498px
+  height: 510px
   overflow: hidden
+  &__list
+    height: 100%
   img
     width: 100%
+    height: 100%
   +b(mobile)
     max-height: 460px;
 
@@ -352,6 +355,12 @@
       min-height: 460px;
       width: auto;
     }
+    
+.slick-list
+  height: 100%
+  
+.slick-track
+  height: 100%
 // slick-dots
 //----------------------------------------------------//
 .slick-dots
@@ -364,7 +373,7 @@
   margin-bottom: 27px
   li
     display: inline-block
-    margin: 0 3px
+    margin: 0 4px
     &.slick-active
       button
         background-color: #24b3fd
@@ -383,10 +392,11 @@
   &__list
     font-size: 0
     text-align: center
-    padding: 0 15px
+    padding: 0 172px 0 208px
   &__li
     display: inline-block
     vertical-align: top
+    width: 33.3333%
     &.active
       .switch__link
         font-weight: 700
@@ -412,10 +422,22 @@
       margin-bottom: 3px
     &:hover
       color: #fff
+    &_tours
+      padding: 3px 37px 3px 15px
+      .icon-tour
+        margin-right: 20px
+    &_hotels
+      padding: 3px 15px 3px 18px
+      .icon-hotel
+        margin-right: 30px
+    &_tickets
+      padding: 3px 15px 3px 25px
+      .icon-plane
+        margin-right: 20px
   &__view
     position: relative
     overflow: hidden
-    padding: 0 15px 15px
+    padding: 0 15px 13px
   &__content
     transform: translateY(-100%)
     transition: all 0.4s
@@ -472,7 +494,9 @@
   &__switch
     position: absolute
     width: 100%
-    bottom: 70px
+    bottom: 65px
+    .container
+      padding: 0
 
   &__slider .slider__li::after
     content ''
@@ -509,15 +533,17 @@
     padding-right: 168px
   &__item
     float: left
-    width: 22%
+    width: 24.5%
     position: relative
     padding: 6px 0 5px 0
     border-left: 1px solid #dcdcdc
     height: 50px
     &:first-child
       border-left: none
+    &:last-child
+      width: 25.3%
     &--lg
-      width: 28%
+      width: 25.1%
   &__icon
     cursor: pointer
     position: absolute
@@ -538,6 +564,7 @@
     width: 168px
     margin-left: -168px
     height: 50px
+    font-size: 20px
   &__label
     width: 86px
     float: left
@@ -717,6 +744,10 @@ input.search__input
     padding-left: 37px;
     padding-top: 5px;
     padding-bottom: 5px;
+  &_calendar
+    padding-left: 55px
+  &_location
+    padding-left: 46px
     
 // autocomplete
 //----------------------------------------------------//
@@ -1055,6 +1086,11 @@ input.calendar__nights
 //----------------------------------------------------//
 // MAIN                                               //
 //----------------------------------------------------//
+.main-page
+  & + .hotelsArticle
+  margin-top: 8px
+    .hotelsArticle__title
+      margin-bottom: 39px
 .temprow
   margin: 0 0 30px 0
   position: relative
@@ -1074,16 +1110,16 @@ input.calendar__nights
   //nav list
   &__list
     display: table
-    width: 100%
     &-item
       display: table-cell
       text-align: center
       &:first-child
         text-align: left
+        padding-left: 0
       & *
         text-align: left
   &__link
-    font-size: 16px
+    font-size: 15px
     font-weight: 600
     color: #0e0e0e
     text-decoration: none
@@ -1092,6 +1128,20 @@ input.calendar__nights
     line-height: 51px
     height: 51px
     display: inline-block
+  //nav compare
+  &__compare
+    float: left
+    margin-left: 24px
+    padding-top: 10px
+    img
+      display: inline-block
+      vertical-align: middle
+    &-link
+      display: inline-block
+      vertical-align: middle
+      color: #252525
+      margin-left: 15px
+      text-decoration: none
   //nav sign in
   &__sign
     &-icon
@@ -1102,6 +1152,13 @@ input.calendar__nights
       vertical-align: middle
     &-enter
       display: none
+    &-entered
+      img
+        vertical-align: middle
+        margin-right: 10px
+        margin-bottom: 1px
+      span
+        vertical-align: middle
     &-link
       text-decoration: none
       display: inline-block
@@ -1112,8 +1169,8 @@ input.calendar__nights
         .nav__sign-icon
           fill: $darkBlueColor
       &--exit
-        margin: 0 0 0 7px
-        padding: 0 0 0 12px
+        margin: 0 0 0 18px
+        padding: 0 0 0 16px
         border-left: 1px solid #d1d1d1
 // nav end ------------------------
 //dropdown ---------------------------
@@ -1172,6 +1229,7 @@ input.calendar__nights
 .country
   text-align: center
   margin: 0 0 20px 0
+  padding-right: 5px
   &__list
     &-item
       display: inline-block
@@ -1187,7 +1245,7 @@ input.calendar__nights
       text-decoration: none
       text-align: center
       &:hover
-        background: $darkBlueColor
+        background: $secondFontColor
         color: #fff
       &.active
         background: $secondFontColor
@@ -1197,7 +1255,7 @@ input.calendar__nights
       display: none;
   &-slider
     position: relative
-    padding: 0 45px
+    padding: 0 55px 0 45px
     .slick-next,.slick-prev
       cursor: pointer
       width: 17px
@@ -1274,7 +1332,7 @@ input.calendar__nights
     color: $mainFontColor
     display: block
   &__img-box
-    height: 156px
+    height: 115px
     position: relative
     overflow: hidden
     img
@@ -1326,14 +1384,13 @@ input.calendar__nights
     font-size: 11px
     background-color: #24b3fd
     border-radius: 10px
-    display: none
 
   &__icon-heart
     position: absolute
     z-index: 1
     right: 0
     bottom: 0
-    margin-right: 13px
+    margin-right: 18px
     margin-bottom: 8px
     width: 22px
     height: 19px
@@ -1361,13 +1418,12 @@ input.calendar__nights
     display: inline-block
     font-family: "Open Sans", sans-serif
     font-weight: normal
-    font-size: em(22px, 16px)
+    font-size: 22px
     color: #fff
     bottom: 0
     left: 0
-    padding: 5px 47px 8px 23px
+    padding: 5px 47px 9px 14px
     // background: rgba(0, 0, 0, 0.72)
-    line-height: 16px
   &__offer
     font-size: 11px
     height: 20px
@@ -1381,46 +1437,50 @@ input.calendar__nights
     color: #fff
     border-radius: 10px
   &__content
-    padding: 19px 22px 22px
+    padding: 2px 13px 13px
   &__country
     color: #acadaf
     display: block
-    line-height: 19px
+    font-size: 11px
   &__title
     clearfix()
     border-bottom: 1px solid #898989
-    padding: 0 0 3px 0
-    margin: 0 0 3px 0
+    padding: 0 0 1px 0
+    margin: -8px 0 0 0
     a
       &:hover
         color: $secondFontColor
+    h3
+      font-size: 14px
   &__rating
     color: $secondFontColor
-    font-size: 20px
+    font-size: 14px
     font-weight: 700
     float: right
     padding: 5px 0 0 0
+    margin-right: 5px
     &-star
-      width: 18px
-      height: 18px
+      width: 13px
+      height: 13px
       fill: $secondFontColor
   &__description
-    font-size: 16px
+    font-size: 14px
     display: block
-    padding: 5px 0 0 0
+    padding: 7px 0 0 0
     &-icon
-      width: 28px
-      height: 28px
+      width: 20px
+      height: 23px
       fill: $secondFontColor
       display: inline-block
       vertical-align: middle
-      margin: 0 5px 0 0
+      margin: 0 8px 0 0
+      padding-bottom: 4px
   &__tag
     display: inline-block
     padding: 0 4px
 
     &-items
-      padding-top: 27px
+      padding-top: 23px
 
     &-box
       display: inline-block
@@ -1511,12 +1571,13 @@ input.calendar__nights
     position: relative
     z-index: 1
     max-width: 100%
+    margin-bottom: 20px
   &__title
     font-size: 16px
     font-weight: 700
     text-transform: uppercase
     display: block
-    padding: 0 0 30px 0
+    padding: 0 0 20px 0
     color: #fff
   &__subtitle
     font-size: 16px
@@ -1533,9 +1594,10 @@ input.calendar__nights
     .help-card__title
       text-align: left
       font-size: 18px
+      padding-right: 34px
     .short-form
       max-width: 100%
-      padding-right: 103px
+      padding-right: 106px
       input
         height: 50px
       button
@@ -1618,13 +1680,14 @@ input.calendar__nights
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
     overflow: hidden
   &__img-box
-    height: 205px
+    height: 203px
+    display: block
     overflow: hidden
     img
       // min-width: 100%;
       // min-height: 100%;
   &__content
-    padding: 11px 9px 8px 12px
+    padding: 11px 9px 8px 10px
     clearfix()
   &__date
     color: #b3adad
@@ -1634,7 +1697,7 @@ input.calendar__nights
     padding: 0 0 4px 0
   &__title
     display: block
-    height: 38px
+    line-height: 1em
     overflow: hidden
     padding: 0 0 8px 0
     a
@@ -1649,6 +1712,7 @@ input.calendar__nights
     overflow: hidden
   &__link
     float: right
+    margin-right: 3px
   +b(mobile)
     &__item {
       width: 100%;
@@ -1695,6 +1759,9 @@ input.calendar__nights
 //news end -------------------
 //feedback ---------------
 .feedback
+  &__list
+    padding-top: 6px
+    padding-bottom: 5px
   &__item
     border-radius: 10px
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
@@ -1703,7 +1770,7 @@ input.calendar__nights
     clearfix()
     a
       float: right
-      margin: 0 -5px 0 0
+      margin: 0 -2px 0 0
     h5
       padding: 0 0 12px 0
   &__head
@@ -1714,9 +1781,11 @@ input.calendar__nights
   &__subhead
     h5
       display: inline-block
+      min-width: 80px
   &__tripadviser
     display: inline-block
     vertical-align: middle
+    margin-left: 10px
   &__rating
     display: block
     float: right
@@ -1729,12 +1798,15 @@ input.calendar__nights
     border-radius: 50%
     font-weight: 700
     text-align: center
+    margin-top: -3px
   &__description
     padding: 14px 0 25px 0
     height: 139px
     border-top: 1px solid #191919
   .button
     float: right
+    margin-top: -2px
+    padding: 17px 23px
 
   +b(mobile)
     &__item
@@ -1748,7 +1820,7 @@ input.calendar__nights
   margin: 0 -15px
   position: relative
   &__item
-    padding: 20px 15px
+    padding: 18px 15px
   .slick-dots
     bottom: auto
     top: 100%
@@ -1772,7 +1844,7 @@ input.calendar__nights
   input
     border: none
     font-size: 16px
-    padding: 15px 13px
+    padding: 15px 7px
     float: left
     max-height: 50px
   button
@@ -2127,17 +2199,18 @@ input.calendar__nights
     flex-flow: row wrap
     margin: 0 -15px
     letter-spacing: -5px
+    padding-bottom: 7px
     &-item
       letter-spacing: normal
       display: inline-block
       vertical-align: top
-      width: 33.3333%
+      width: 25%
       padding: 0 15px 30px
       
     .help-card
-      min-height: 350px
+      min-height: 327px
       &:before
-        min-height: 350px
+        min-height: 327px
       .short-form
         width: 100%
     +b(tablet)
@@ -2156,7 +2229,7 @@ input.calendar__nights
 //category list -------------
 .category
   &__list
-    padding: 30px 0 0 0
+    padding: 10px 0 0 0
     margin: 0 -15px
     display: block
     display: flex
@@ -2168,7 +2241,7 @@ input.calendar__nights
       display: inline-block
       letter-spacing: normal
       width: 33.3333%
-      padding: 0 15px 30px
+      padding: 0 15px 29px
     .slick-list
       padding: 0 50px 0 0 !important
     +b(tablet)
@@ -2206,12 +2279,12 @@ input.calendar__nights
       width: 100%
       background: #c6c6c6
       position: absolute
-      top: 40%
+      top: 42%
       left: 0
     h1,h2
       background: #fff
       position: relative
-      padding: 0 5px
+      padding: 0 15px
       display: inline-block
     
     .pick-up
@@ -2238,8 +2311,8 @@ input.calendar__nights
       .dropdown__box
         display: none
         text-align: left
-        padding: 20px 40px
-        width: 100%
+        padding: 20px 38px 20px 55px
+        min-width: 95%
         font-weight: 400
       .dropdown__list-item
         font-size: 12px

@@ -11,6 +11,7 @@
 body
   height: 100%
   min-height: 320px
+  min-width: 1600px
 .container
   padding: 0 15px
   max-width: 1170px
@@ -45,12 +46,13 @@ $footerHeight = 329px
       width: 256px
       height: 38px
   .phone-list
-    padding: 18px 0 0 0
+    padding: 13px 0 0 0
     float: left
     &__city
-      padding-left: 60px
+      padding-top: 4px
+      padding-left: 56px
     &__number
-      padding-right: 10px
+      padding-right: 16px
     @media (max-width: 1120px)
       &__city
         padding-left: 10px
@@ -69,7 +71,7 @@ $footerHeight = 329px
     &-icon
       width: 12px
       height: 7px
-      margin: 0 0 0 12px
+      margin: 0 4px 0 8px
     &-link
       color: $mainFontColor
       text-decoration: none
@@ -102,7 +104,7 @@ $footerHeight = 329px
         float: left
         &-item
           position: relative
-          padding: 0 10px
+          padding: 0 26px
           &:hover
             .dropdown__box
               display: block
@@ -145,7 +147,7 @@ $footerHeight = 329px
       &__link{}
       &__sign
         padding: 12px 0 0 0
-        margin: 0 -270px 0 0
+        margin: 0 -278px 0 0
         float: right
   &__bottom
     &--fixed
@@ -176,6 +178,8 @@ $footerHeight = 329px
           line-height: 35px
           font-size: 14px
           font-weight: 600
+        &__compare
+          display: none
         &__sign
           padding: 0
           line-height: 35px

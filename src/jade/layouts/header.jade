@@ -15,6 +15,21 @@ header.header
                   dt.phone-list__city
                     | Регионы
                     dd.phone-list__number +7 (800) 234-34-40
+            .header__currency
+              a.header__currency-link(href='#')
+                b Валюта 
+                | US Dollar (курс 65.10)
+                svg.header__currency-icon
+                  use(xlink:href='#caret-down')
+              .dropdown__box
+                span.dropdown__triangle
+                ul.dropdown__list
+                  li.dropdown__list-item
+                    a.dropdown__link(href='#') US Dollar
+                  li.dropdown__list-item
+                    a.dropdown__link(href='#') Рубль
+                  li.dropdown__list-item
+                    a.dropdown__link(href='#') Евро
           nav.header__bottom
             .container
               nav.header__nav.nav
@@ -22,21 +37,6 @@ header.header
                   svg
                     use(xlink:href='#logo-small')
                 ul.nav__list
-                  li.header__currency
-                    a.header__currency-link(href='#')
-                      b Валюта 
-                      | US Dollar (курс 65.10)
-                      svg.header__currency-icon
-                        use(xlink:href='#caret-down')
-                    .dropdown__box
-                      span.dropdown__triangle
-                      ul.dropdown__list
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') US Dollar
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Рубль
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Евро
                   li.nav__list-item.nav__list-item--big-drop
                     a.nav__link(href='#') Туры
                     .dropdown__box.dropdown--tour
@@ -159,29 +159,6 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Французская Полинезия
                   li.nav__list-item
-                    a.nav__link(href='#') Яхты
-                  li.nav__list-item
-                    a.nav__link(href='#') Агентствам
-                    .dropdown__box.dropdown--regular
-                      span.dropdown__triangle
-                      span.dropdown__btn-back
-                        svg
-                          use(xlink:href='#caret-down')
-                        |                     Назад
-                      ul.dropdown__list
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Сотрудничкество
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Регистрация агенства
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Бонусная программа
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Оперативная информация
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Обучения
-                        li.dropdown__list-item
-                          a.dropdown__link(href='#') Рекламные туры
-                  li.nav__list-item
                     a.nav__link(href='#') О компании
                     .dropdown__box.dropdown--regular
                       span.dropdown__triangle
@@ -203,9 +180,12 @@ header.header
                   li.nav__list-item
                     a.nav__link(href='#') Новости
                   li.nav__list-item
-                    a.nav__link(href='#') Отзывы
-                  li.nav__list-item
                     a.nav__link(href='#') Контакты
+                  li.nav__list-item
+                    a.nav__link(href='#') MasterWeb
+                .nav__compare
+                  img(src='images/icons/svg/compare.svg', alt='@@', width='23')
+                  a.nav__compare-link Сравнение
                 .nav__sign
                   span.nav__sign-enter
                     a.nav__sign-link(href='#')
@@ -214,7 +194,6 @@ header.header
                       span.hide Войти в личный кабинет
                   span.nav__sign-entered
                     a.nav__sign-link(href='#')
-                      svg.nav__sign-icon
-                        use(xlink:href='#user')
+                      img(src='images/icons/svg/user-entered.svg', alt='@@', width='22')
                       span.hide Konstantinova Valentina
                     a.nav__sign-link.nav__sign-link--exit.hide(href='#') Выход
