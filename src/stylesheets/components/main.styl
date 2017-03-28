@@ -587,9 +587,12 @@
     &__item {
       float: none;
       width: 100%;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       background-color: #fff;
       border-left: none;
+      border-radius: 5px;
+      height: 40px
+      overflow: hidden
       //
       //&--people {
       //  display: none;
@@ -597,14 +600,13 @@
     }
 
     &__button {
-      margin: 0;
+      margin: 20px 0;
       display: block;
       float: none;
       width: 100%;
-      font-size: 20px;
-      height: auto;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      font-size: 16px;
+      height: 40px
+      padding: 0;
     }
 
     &__icon {
@@ -712,7 +714,9 @@ input.search__input
   cursor: pointer
   placeholderColor(#040404)
   +b(mobile)
-    padding-left: 37px; 
+    padding-left: 37px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     
 // autocomplete
 //----------------------------------------------------//
@@ -758,6 +762,7 @@ input.search__input
     margin: 0 auto 15px
     .dropdown__triangle
       display: none
+
   +b(mobile)
     width: 100%;
     display: block !important;
@@ -773,6 +778,9 @@ input.search__input
     .dropdown__triangle {
       display: none;
     }
+
+    &.clone
+      display: none
 
     &.active {
       transform: translateX(0);
