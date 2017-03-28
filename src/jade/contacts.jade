@@ -1,0 +1,53 @@
+extends layouts/application.jade
+
+
+
+block content
+  .wrapper
+    
+    include layouts/header.jade    
+    .contacts
+      .container
+        .contacts__title
+          h1 Контакты
+        .contacts__content
+          .contacts__item.contacts__item_adress
+            h2 Адрес:
+            p 101000, г.Москва, ул. Маросейка, д. 2/15 (м. «Китай-город»)
+          .contacts__item.contacts__item_worktime
+            h2 Часы работы:
+            p пн-пт 10.00-19.00 
+            p сб 11.00-18.00
+          .contacts__item.contacts__item_phone
+            h2 Телефон:
+            a(href="tel:+74959251111") +7 (495) 925-11-11
+          .contacts__item.contacts__item_email
+            h2 E-mail:
+            a(href="mailto:info@maldiviana.com") info@maldiviana.com      
+    .map    
+    form.contact-us(action="")
+      .container
+        .contact-us__title
+          h2 Свяжитесь с нами
+        .contact-us__fields
+          .contact-us__item
+            label.contact-us__label(for="name")
+              span *
+              |Имя:
+            input#name(type="text" placeholder="Мария")  
+          .contact-us__item
+            label.contact-us__label(for="phone")
+              span *
+              |Телефон:
+            input#phone(type="tel" placeholder="+7 (925) 123 23 55")
+          .contact-us__item
+            label.contact-us__label(for="email")
+              span *  
+              |E-mail
+            input#email(type="email" placeholder="ksenia@mail")
+        .contact-us__message
+          label.contact-us__label(for="message") Сообщение:
+          textarea#message(placeholder="Напишите текст Вашего сообщения")
+        .contact-us__submit
+          button.contact-us__btn(type="submit") Отправить        
+    include layouts/footer.jade
