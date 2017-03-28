@@ -30,17 +30,17 @@ block content
             .switch__inner
               ul.switch__list
                 li.switch__li.active
-                  a.switch__link(href='#', data-tab='1')
+                  a.switch__link.switch__link_tours(href='#', data-tab='1')
                     svg.icon-tour
                       use(xlink:href='#tour')
                     span Туры
                 li.switch__li
-                  a.switch__link(href='#', data-tab='2')
+                  a.switch__link.switch__link_hotels(href='#', data-tab='2')
                     svg.icon-hotel
                       use(xlink:href='#hotel')
                     span Отели
                 li.switch__li
-                  a.switch__link(href='#', data-tab='3')
+                  a.switch__link.switch__link_tickets(href='#', data-tab='3')
                     svg.icon-plane
                       use(xlink:href='#plane')
                     span Билеты
@@ -62,13 +62,13 @@ block content
                         .search__item.search__item--lg
                           svg.search__icon.icon-calendar
                             use(xlink:href='#calendar')
-                          input.search__input.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
+                          input.search__input.search__input_calendar.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
                           svg.search__arrow
                             use(xlink:href='#caret-down')
                         .search__item
                           svg.search__icon.icon-location
                             use(xlink:href='#location')
-                          input.search__input.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
+                          input.search__input.search__input_location.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
                           svg.search__arrow
                             use(xlink:href='#caret-down')
                       button.search__button.button(type='submit') Поиск
@@ -196,7 +196,7 @@ block content
                     img(src='images/card-image/card-image-01.jpg', alt='')
                     span.card__rating-icon 7,4
                     span.card__bonuses Бонусы отелей: 5
-                    span.card__price от 5 500 USD
+                    span.card__price от 5 500 $
                     svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
                       title heart
                       path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
@@ -216,13 +216,8 @@ block content
                         |                       7 ночей на двоих
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#calendar')
-                        |                       с 25.09 - по 10.10
-                      span.card__description
-                        svg.card__description-icon
-                          use(xlink:href='#food')
-                        |                       завтраки и обеды
-
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
                     ul.card__tag-items
                       li.card__tag-box
                         a(href='#').card__tag эксклюзив
@@ -240,7 +235,7 @@ block content
                     img(src='images/card-image/card-image-01.jpg', alt='')
                     span.card__rating-icon 7,4
                     span.card__bonuses Бонусы отелей: 5
-                    span.card__price от 5 500 USD
+                    span.card__price от 5 500 $
                     svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
                       title heart
                       path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
@@ -260,13 +255,8 @@ block content
                         |                       7 ночей на двоих
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#calendar')
-                        |                       с 25.09 - по 10.10
-                      span.card__description
-                        svg.card__description-icon
-                          use(xlink:href='#food')
-                        |                       завтраки и обеды
-
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
                     ul.card__tag-items
                       li.card__tag-box
                         a(href='#').card__tag эксклюзив
@@ -284,7 +274,7 @@ block content
                     img(src='images/card-image/card-image-01.jpg', alt='')
                     span.card__rating-icon 7,4
                     span.card__bonuses Бонусы отелей: 5
-                    span.card__price от 5 500 USD
+                    span.card__price от 5 500 $
                     svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
                       title heart
                       path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
@@ -304,13 +294,8 @@ block content
                         |                       7 ночей на двоих
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#calendar')
-                        |                       с 25.09 - по 10.10
-                      span.card__description
-                        svg.card__description-icon
-                          use(xlink:href='#food')
-                        |                       завтраки и обеды
-
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
                     ul.card__tag-items
                       li.card__tag-box
                         a(href='#').card__tag эксклюзив
@@ -328,7 +313,7 @@ block content
                     img(src='images/card-image/card-image-01.jpg', alt='')
                     span.card__rating-icon 7,4
                     span.card__bonuses Бонусы отелей: 5
-                    span.card__price от 5 500 USD
+                    span.card__price от 5 500 $
                     svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
                       title heart
                       path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
@@ -348,13 +333,8 @@ block content
                         |                       7 ночей на двоих
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#calendar')
-                        |                       с 25.09 - по 10.10
-                      span.card__description
-                        svg.card__description-icon
-                          use(xlink:href='#food')
-                        |                       завтраки и обеды
-
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
                     ul.card__tag-items
                       li.card__tag-box
                         a(href='#').card__tag эксклюзив
@@ -372,7 +352,7 @@ block content
                     img(src='images/card-image/card-image-01.jpg', alt='')
                     span.card__rating-icon 7,4
                     span.card__bonuses Бонусы отелей: 5
-                    span.card__price от 5 500 USD
+                    span.card__price от 5 500 $
                     svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
                       title heart
                       path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
@@ -392,13 +372,86 @@ block content
                         |                       7 ночей на двоих
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#calendar')
-                        |                       с 25.09 - по 10.10
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
+                    ul.card__tag-items
+                      li.card__tag-box
+                        a(href='#').card__tag эксклюзив
+                      li.card__tag-box
+                        a(href='#').card__tag семейный отдых
+                      li.card__tag-box
+                        a(href='#').card__tag LUXE коллекция
+                      li.card__tag-box
+                        a(href='#').card__tag экономичный отдых
+                        
+            li.product__list-item
+              .card
+                a(href='#')
+                  .card__img-box
+                    img(src='images/card-image/card-image-01.jpg', alt='')
+                    span.card__rating-icon 7,4
+                    span.card__bonuses Бонусы отелей: 5
+                    span.card__price от 5 500 $
+                    svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
+                      title heart
+                      path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
+
+                  .card__content
+                    span.card__country Мальдивы
+                    .card__title
+                      span.card__rating
+                        | 5
+                        svg.card__rating-star
+                          use(xlink:href='#star-fill')
+                      h3 Kurumba Village
+                    .card__description-box
                       span.card__description
                         svg.card__description-icon
-                          use(xlink:href='#food')
-                        |                       завтраки и обеды
+                          use(xlink:href='#night')
+                        |                       7 ночей на двоих
+                      span.card__description
+                        svg.card__description-icon
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
+                    ul.card__tag-items
+                      li.card__tag-box
+                        a(href='#').card__tag эксклюзив
+                      li.card__tag-box
+                        a(href='#').card__tag семейный отдых
+                      li.card__tag-box
+                        a(href='#').card__tag LUXE коллекция
+                      li.card__tag-box
+                        a(href='#').card__tag экономичный отдых
+                        
+            li.product__list-item
+              .card
+                a(href='#')
+                  .card__img-box
+                    img(src='images/card-image/card-image-01.jpg', alt='')
+                    span.card__rating-icon 7,4
+                    span.card__bonuses Бонусы отелей: 5
+                    span.card__price от 5 500 $
+                    svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
+                      title heart
+                      path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
 
+                  .card__content
+                    span.card__country Мальдивы
+                    .card__title
+                      span.card__rating
+                        | 5
+                        svg.card__rating-star
+                          use(xlink:href='#star-fill')
+                      h3 Kurumba Village
+                    .card__description-box
+                      span.card__description
+                        svg.card__description-icon
+                          use(xlink:href='#night')
+                        |                       7 ночей на двоих
+                      span.card__description
+                        svg.card__description-icon
+                          use(xlink:href='#breakfest')
+                        |                       только завтраки
                     ul.card__tag-items
                       li.card__tag-box
                         a(href='#').card__tag эксклюзив
@@ -590,14 +643,14 @@ block content
             li.simple-slider__item
               .feedback__item
                 .feedback__head
-                  span.feedback__rating 4,5
-                  h3 Kurumba Village
+                  span.feedback__rating 2,5
+                  h3 West Beach отель
                 .feedback__subhead
-                  h5 Алексей
+                  h5 Мария
                   .feedback__tripadviser
                     img(src='images/tripadvisor.jpg', alt='')
                 p.feedback__description
-                  | Отличный отель. Прекрасный персонал, который стерпел все мои прихоти. Просто супер! Буду рад поехать отдыхать сюда ...
+                  | Если честно обслуживающий персонал хамил и неуважительно ко мне относился. Никому не посоветую ехать сюда ...
                 a(href='#') Подробнее
             li.simple-slider__item
               .feedback__item
@@ -614,14 +667,14 @@ block content
             li.simple-slider__item
               .feedback__item
                 .feedback__head
-                  span.feedback__rating 4,5
-                  h3 Kurumba Village
+                  span.feedback__rating 2,5
+                  h3 West Beach отель
                 .feedback__subhead
-                  h5 Алексей
+                  h5 Мария
                   .feedback__tripadviser
                     img(src='images/tripadvisor.jpg', alt='')
                 p.feedback__description
-                  | Отличный отель. Прекрасный персонал, который стерпел все мои прихоти. Просто супер! Буду рад поехать отдыхать сюда ...
+                  | Если честно обслуживающий персонал хамил и неуважительно ко мне относился. Никому не посоветую ехать сюда ...
                 a(href='#') Подробнее
             li.simple-slider__item
               .feedback__item
