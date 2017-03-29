@@ -330,132 +330,36 @@ block content
       .holidayCreate__slider
         
         #sliderNumbers.container
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-          
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-          
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-          
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-          
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-          
-          .numbersSlider__item
-            .sliderNumber.numbersSlider__images
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-              .numbersSlider__image(style="background-image:url(images/numbers/image-1.jpg);" alt="")
-            .numbersSlider__type
-              .numbersSlider__propertie test
-              .numbersSlider__value test
-            .numbersSlider__info
-              .numbersSlider__propertie test
-              .numbersSlider__value test2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__value tests2
-            .numbersSlider__info
-              .numbersSlider__propertie test2
-              .numbersSlider__price 2350$
-            form.numbersSlider__form(action="")
-              .numbersSlider__checkbox
-              .numbersSlider__labelCheckbox номер выбран
-      
+          - for (var i = 0; i < 10; i++)
+            .numbersSlider__item
+              svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 19.28 20').numbersSlider__zoom
+                title zoom
+                path(d='M19.09,18.8,13.9,13.4a8,8,0,1,0-1,1l5.21,5.42a.7.7,0,0,0,.51.22.71.71,0,0,0,.51-1.2ZM8,14.58A6.58,6.58,0,1,1,14.58,8,6.59,6.59,0,0,1,8,14.58Z', fill='#fff')
+                path(d='M11,7.35H8.65V5a.65.65,0,0,0-1.3,0V7.35H5a.65.65,0,0,0,0,1.3H7.35V11a.65.65,0,1,0,1.3,0V8.65H11a.65.65,0,1,0,0-1.3Z', fill='#fff')
+
+              .sliderNumber.numbersSlider__images
+                img(src='images/numbers/image-1.jpg' alt='').numbersSlider__image
+                img(src='images/numbers/image-1.jpg' alt='').numbersSlider__image
+                img(src='images/numbers/image-1.jpg' alt='').numbersSlider__image
+              .numbersSlider__type
+                .numbersSlider__propertie Тип номера
+                .numbersSlider__value Улучшенный двухместный номер с видом на море
+              .numbersSlider__info
+                .numbersSlider__propertie Продолжительность
+                .numbersSlider__value 12 дн. / 10 н.
+              .numbersSlider__info
+                .numbersSlider__propertie Питание
+                .numbersSlider__value Все включено
+              .numbersSlider__info
+                .numbersSlider__propertie Условия
+                .numbersSlider__value Скидка при раннем бронировании
+              .numbersSlider__info
+                .numbersSlider__propertie Цена
+                .numbersSlider__price 1 270 $
+              form.numbersSlider__form(action="")
+                .numbersSlider__checkbox
+                .numbersSlider__labelCheckbox(data-active-text='Номер выбран') Выбрать номер
+
       .holidayCreate__result
         .container
           .numberResult
