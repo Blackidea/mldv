@@ -18,15 +18,15 @@ block content
                 img.span-4(src="images/img_2.jpg", alt="")
                 img.span-4(src="images/img_3.jpg", alt="")
           .row
-            .span-5(style="height:4px;")
+            .span-5.b-about__empty
             .span-7.b-about__middle
               .span-4.b-about__age
                 p.b-about__value Более 20 лет на рынке
                   span.b-about__border
 
               img.span-8(src="images/img_4.jpg" alt="")
-          .row(style="overflow:inherit;height:799px;padding-top:40px;")
-            .col-3(style="height:inherit;")
+          .row.b-about__chronicle
+            .col-3
               .b-about__position.__1
                 .b-about__vertical-border
                   .vertical-border__circle
@@ -36,7 +36,7 @@ block content
                   p.history__text  Динамичная команда профессионалов, работающих на московском рынке международного выездного туризма с 1994 года. 
                     |Возможно, вы знали нас раньше как компанию "Aitken Spenсe Ceylon".
           
-            .col-3(style="height:inherit;")
+            .col-3
               .b-about__position.__2
                 .b-about__vertical-border
                   .vertical-border__circle
@@ -45,7 +45,7 @@ block content
                   p.history__name 2002
                   p.history__text  В августе 2002 году в воды Индийского океана сошла со стапелей белоснежная туристическая яхта Maldiviana, наши чувства к Мальдивам взяли верх и появилась группа компаний Мальдивиана.
           
-            .col-3(style="height:inherit;")
+            .col-3
               .b-about__position.__3
                 .b-about__vertical-border
                   .vertical-border__circle
@@ -57,7 +57,7 @@ block content
                     | Офис по обслуживанию дайверов и продаже дайвинг-туров на яхту Maldiviana находится там же.пакеты по данным направлениям, так и реализацию отдельных туристских услуг.
                     | Миссия компании - продвижение и популяризация отдыха на Мальдивских островах и в Шри Ланке путем качественно оформленных предложений с учётом нашего многолетнего опыта работы на этих направлениях, понимания философии и особенностей каждой страны, что является гарантией успеха! 
 
-            .col-3(style="height:inherit;")
+            .col-3
               .b-about__position.__4
                 .b-about__vertical-border
                   .vertical-border__circle
@@ -98,34 +98,38 @@ block content
       .container.b-companies
         .row.b-companiesInfo
           .col-6.colm-12
-            h3.b-companiesInfo__title  Lorem ipsum dolor.
-            p.b-companiesInfo__description   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iste libero beatae consequuntur officia! Facere nemo harum ipsa omnis modi nulla veritatis ex aspernatur quaerat, natus laboriosam tenetur, facilis distinctio saepe consequatur voluptatem similique autem ipsam at ea, commodi molestiae.
+            h3.b-companiesInfo__title  Почему Группа Компаний?
+            p.b-companiesInfo__description   За долгие годы работы в туризме мы пришли к выводу, что для организации успешного путешествия необходимо слаженное взаимодействие всех сторон причастных к нему. Наиболее эффективным способом для достижения такой цели является создание независимых компаний и объединение их в единую группу.
           .col-6.colm-12
-            h3.b-companiesInfo__title  Lorem ipsum dolor.
-            p.b-companiesInfo__description   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum soluta doloremque, saepe quod totam vel, eveniet deserunt quas repellendus reprehenderit, rem voluptate. Ratione, fugit earum.
+            h3.b-companiesInfo__title  Почему Мальдивиана?
+            p.b-companiesInfo__description   Потому что мы любим МАЛЬДИВЫ и считаем их лучшим местом для отдыха на Земле. «Мальдивиана» - это Мальдивы! Мальдивы - это «Мальдивиана»!
         .row.b-companiesFeatures
           .col-4.colt-12
             .b-companiesFeatures__image-container
-              img.b-companiesFeatures__image.__1(src="images/cremle.png", alt="")
-            h3.b-companiesFeatures__title lorem
-            p.b-companiesFeatures__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima itaque quas exercitationem obcaecati accusamus quibusdam iusto eos eveniet, numquam, culpa totam nostrum deleniti quia saepe placeat ducimus ipsa libero quis.
+              img.b-companiesFeatures__image.__1(src="images/cremle.png", alt="")              
+            h3.b-companiesFeatures__title В России:
+            p.b-companiesFeatures__description  Главный офис продаж - м. "Китай-город". Офис по обслуживанию дайверов и продаже дайвинг-туров на яхту Maldiviana находится там же.
 
           .col-4.colt-12
             .b-companiesFeatures__image-container
               //- img.b-companiesFeatures__image.__2(src="images/palma.png", alt="")
               svg.b-companiesFeatures__image.__2()
-                use(xlink:href='#elefan' x="0" y="0")
+                use(xlink:href='#palma' )
               
 
-            h3.b-companiesFeatures__title lorem
-            p.b-companiesFeatures__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus tempora ullam delectus repellendus cum illo quaerat perspiciatis error aut ratione totam rem in, pariatur placeat velit, asperiores illum doloremque qui!
+            h3.b-companiesFeatures__title На Мальдивах:
+            ul.b-companiesFeatures__description.b-companiesFeatures__list
+              li.b-companiesFeatures__item прием и обслуживание прибывающих туристов, эксплуатация яхты для дайвинг-сафари Maldiviana.
+              li.b-companiesFeatures__item обслуживание рейсов в аэропорту Мале, бронирование и продажа пассажирских и грузовых авиаперевозок.
           .col-4.colt-12
             .b-companiesFeatures__image-container
               //- img.b-companiesFeatures__image.__3(src="images/slon.png", alt="")
               svg.b-companiesFeatures__image.__3()
-                use(xlink:href='#palma' )
-            h3.b-companiesFeatures__title lorem
-            p.b-companiesFeatures__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam hic nam magni deserunt tempora debitis eos asperiores expedita a quae sunt explicabo libero fugit omnis, assumenda praesentium amet ea earum?
+                use(xlink:href='#elefan' x="0" y="0")
+            h3.b-companiesFeatures__title На Шри Ланке:
+            ul.b-companiesFeatures__description.b-companiesFeatures__list
+              li.b-companiesFeatures__item прием и обслуживание прибывающих туристов 
+              li.b-companiesFeatures__item обслуживание рейсов в аэропорту Коломбо, бронирование и продажа пассажирских и грузовых авиаперевозок.
 
     section.section.l-culture
       .section__title
@@ -134,31 +138,31 @@ block content
         .row
           .col-6.colm-12
             .b-cultureInfo.__1
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, accusantium.
+              h3.b-cultureInfo__title Доброжелательность
+              p.b-cultureInfo__description  Мы всегда открыты для обсуждения любых вопросов, настроены на их позитивное обсуждение и решение.
             .b-cultureInfo.__2
-              h3.b-cultureInfo__title test2
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, accusantium.
+              h3.b-cultureInfo__title Последовательность
+              p.b-cultureInfo__description  Мы - приверженцы исполнения принятых решений.
             .b-cultureInfo.__3
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, accusantium.
+              h3.b-cultureInfo__title Профессионализм
+              p.b-cultureInfo__description  Мы ожидаем от всех членов Команды эффективного выполнения поставленных задач, основанных на знаниях и опыте наших сотрудников и их стремлении к обучению.
             .b-cultureInfo.__4
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, accusantium.
+              h3.b-cultureInfo__title Командность
+              p.b-cultureInfo__description  Мы - приверженцы командных принципов работы, таких как, общая цель, сопричастность и взаимовыручка.
             
           .col-6.colm-12
             .b-cultureInfo.__5
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa!
+              h3.b-cultureInfo__title Порядочность
+              p.b-cultureInfo__description  Мы поощряем честность, способность понимать и соблюдать правила Компании, уважение к делам Компании и её сотрудников.
             .b-cultureInfo.__6
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa!
+              h3.b-cultureInfo__title Конструктивность
+              p.b-cultureInfo__description  Мы - приверженцы конструктивного решения вопросов.
             .b-cultureInfo.__7
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa!
+              h3.b-cultureInfo__title Лояльность
+              p.b-cultureInfo__description  Все наши устремления направлены на создание актуального туристского продукта, востребованного Заказчиком, при этом, интересы Заказчика всегда приоритетны.
             .b-cultureInfo.__8
-              h3.b-cultureInfo__title loremasdsadsad
-              p.b-cultureInfo__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa!
+              h3.b-cultureInfo__title Ответственность
+              p.b-cultureInfo__description  Мы всегда в ответе за взятые на себя обязательства.
             
   
 
