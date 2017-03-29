@@ -26,6 +26,7 @@
     +b(tablet)
       font-size 30px
     +b(mobile)
+      margin 16px 0 10px
       line-height 40px
   &__description
     margin-top -10px
@@ -38,6 +39,9 @@
     +b(tablet)
       font-size 22px
       text-align center
+    +b(mobile)
+      padding-bottom 0
+      margin-top 0
     & > span
       color #24b3fd    
   &__photo-up
@@ -69,6 +73,8 @@
     margin-top 30px
     +b(tablet)
       width 40%
+    +b(mobile)
+      margin-top 24px
   &__age
     margin-left -10px
     height 228px
@@ -121,6 +127,8 @@
       margin-top 30px
       position static
       font-size 22px
+    +b(mobile)
+      margin-top 34px
       
 
     
@@ -150,21 +158,28 @@
     font-weight bold
     +b(tablet)
       font-size 18px
+    +b(mobile)
+      padding-top 10px
+      padding-bottom 6px
   &__text
     font-size 14px
     line-height 22px
-    widht 70%
+    +b(mobile)
+      padding-bottom 0
     &.__last
       font-family 'Roboto'
 
 section.l-companies
-  padding-top 10px      
+  padding-top 10px    
+  +b(mobile)
+    padding-top 2px
+    padding-bottom 0
 .b-companies
   &Info
     margin-top 60px
     font-family 'Roboto'
     +b(tablet)
-      margin-top 30px
+      margin-top 24px
     &__title
       font-family $secondFont
       font-size 25px
@@ -177,17 +192,25 @@ section.l-companies
     &__description
       line-height 22px
       text-align left  
+      +b(mobile)
+        padding-bottom 30px
       
 
 .b-companies
   &Features
     margin-top 40px
     font-family 'Roboto'
+    +b(mobile)
+      margin-top 2px
     &__image-container
       position relative
       height 260px
       width 100%
       border 1px solid #e6e7e8
+      border-radius 5px
+      +b(mobile)
+        height 140px
+        border-radius 2px
     &__image
       fill #24b3fd
       &.__1
@@ -195,9 +218,12 @@ section.l-companies
         bottom 40px
         left calc(50% - 10px)
         transform translate(-50%,0)
-        +b(tablet)
+        +b(mobile)
+          top 50%
+          left 50%
           width 87px
           height 111px
+          transform translate(-50%, -50%)
       &.__2
         position absolute
         bottom 40px
@@ -205,9 +231,12 @@ section.l-companies
         transform translate(-50%,0)
         width 151px
         height 161px
-        +b(tablet)
+        +b(mobile)
+          top 50%
+          left 50%
           width 94px
           height 100px
+          transform translate(-50%, -50%)
       &.__3
         position absolute
         bottom 40px
@@ -215,9 +244,12 @@ section.l-companies
         width 185px
         height 132px
         transform translate(-50%,0)
-        +b(tablet)
+        +b(mobile)
+          top 50%
+          left 50%
           width 127px
           height 90px
+          transform translate(-50%, -50%)
     &__title
       margin-top 48px
       font-family $secondFont
@@ -227,6 +259,8 @@ section.l-companies
       color #07405e
       +b(tablet)
         font-size 18px
+      +b(mobile)
+        margin-top 24px
     &__description
       font-family $secondFont
       font-size 14px
@@ -234,50 +268,56 @@ section.l-companies
       padding-top 10px
       font-weight normal
       +b(tablet)
-        line-height 25px
+        padding-top 6px
+        padding-bottom 28px
+    &__list
+      +b(tablet)
+        padding-bottom 30px
     &__item 
       position relative
-      padding-left 5px
       &::before 
-        position absolute
+        float: left
         content ''
-        top 9px
-        left 0
+        margin-top 9px
+        margin-right 3px
         width 4px
         height 4px
         border-radius 50%
-        background-color #677e8a 
+        background-color #677e8a
+        +b(mobile)
+          margin-right 10px
 section.l-culture
   padding-top 30px
+  +b(mobile)
+    padding-top 0
+    padding-bottom 22px
 .b-culture
   margin-top 62px
   margin-bottom 36px
+  +b(mobile)
+    margin-top 18px
+    margin-bottom 0
+  &__flex
+    display flex
+    flex-direction row
+    justify-content space-between
+    align-items flex-start
+    align-content flex-start
+    flex-wrap wrap
+    +b(mobile)
+      flex-direction column
+      justify-content flex-start
   &Info
+    box-sizing border-box
+    width 48.5%
     font-family 'Roboto'
     padding-left 95px
     position relative
     +b(tablet)
       padding-left 80px
-    &.__1
-      margin-bottom 20px
-      +b(tablet)
-        margin-bottom 0
-    &.__2
-      margin-bottom 10px
-      +b(tablet)
-        margin-bottom 0
-    &.__3
-      margin-bottom 5px
-      +b(tablet)
-        margin-bottom 0
-    &.__6
-      margin-bottom 10px
-      +b(tablet)
-        margin-bottom 0
-    &.__7
-      margin-bottom 5px
-      +b(tablet)
-        margin-bottom 0
+    +b(mobile)
+      width 100%
+      padding-left 52px
     &__title
       color #07405e
       font-family $mainFont
@@ -290,57 +330,116 @@ section.l-culture
       padding-top 12px
       font-weight normal
       +b(tablet)
-        font-size 14px    
-    &.__1:before
+        font-size 14px 
+      +b(mobile)
+        padding-top 2px
+        padding-bottom 28px
+        line-height 22px
+    &:before 
       position absolute
-      content url('../images/icon1.png')
-      display inline-block
-      left 8px 
-      top 4px
-    &.__2:before
-      position absolute
-      content url('../images/icon2.png')
-      display inline-block
-      left 8px 
+      content ''
+      left 0
       top 6px
-    &.__3:before
-      position absolute
-      content url('../images/icon3.png')
-      display inline-block
-      left 4px 
-      top 4px
-    &.__4:before
-      position absolute
-      content url('../images/icon4.png')
-      display inline-block
-      left 0px 
-      top 6px
-    &.__5:before
-      position absolute
-      content url('../images/icon5.png')
-      display inline-block
-      left 0px 
-      top 6px
-    &.__6:before
-      position absolute
-      content url('../images/icon6.png')
-      display inline-block
-      left 0px 
-      top 6px
-    &.__7:before
-      position absolute
-      content url('../images/icon7.png')
-      display inline-block
-      left 0px 
-      top 6px
-    &.__8:before
-      position absolute
-      content url('../images/icon8.png')
-      display inline-block
-      left 10px 
-      top 6px
+      background-repeat no-repeat
+      background-position 50% 50%
+      background-size contain
+      display block
+      +b(mobile)
+        left 1px
+    &.__1
+      +b(mobile)  
+        order: 1  
+      &:before
+        background-image  url('../images/icon1.png')
+        width 44px
+        height 51px
+        left 8px
+        +b(mobile)
+          left 3px
+          width 28px
+          height 32px
+    &.__2
+      +b(mobile)  
+        order: 2    
+      &:before
+        background-image url('../images/icon2.png')
+        width 49px
+        height 49px
+        left 7px
+        +b(mobile)
+          left 1px
+          width 30px
+          height 30px
+    &.__3
+      +b(mobile)  
+        order: 3   
+      &:before    
+        background-image url('../images/icon3.png')
+        width 53px
+        height 53px
+        left 4px
+        +b(mobile)
+          left 1px
+          width 33px
+          height 33px
+    &.__4
+      +b(mobile)  
+        order: 4    
+      &:before    
+        background-image url('../images/icon4.png')
+        width 59px
+        height 59px
+        +b(mobile)
+          left 0
+          width 37px
+          height 37px
+    &.__5
+      +b(mobile)  
+        order: 5    
+      &:before
+        background-image url('../images/icon5.png')
+        width 54px
+        height 46px
+        +b(mobile)
+          left 0
+          width 39px
+          height 32px
+    &.__6
+      +b(mobile)  
+        order: 6   
+      &:before    
+        background-image url('../images/icon6.png')
+        width 54px
+        height 54px
+        +b(mobile)
+          left -2px
+          width 39px
+          height 38px
+    &.__7
+      +b(mobile)  
+        order: 7   
+      &:before    
+        background-image url('../images/icon7.png')
+        width 56px
+        height 58px
+        +b(mobile)
+          left -2px
+          width 40px
+          height 41px
+    &.__8
+      +b(mobile)  
+        order: 8
+      &:before
+        background-image url('../images/icon8.png')
+        width 38px
+        height 48px
+        left 10px
+        +b(mobile)
+          left 5px
+          width 27px
+          height 34px
     
-      
+    
     
       
 
