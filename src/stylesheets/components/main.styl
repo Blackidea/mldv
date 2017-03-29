@@ -345,7 +345,7 @@
     width: 100%
     height: 100%
   +b(mobile)
-    max-height: 460px;
+    max-height: 409px;
 
     .slick-dots {
       display: none !important;
@@ -491,6 +491,8 @@
 .top
   position: relative
   margin: 0 0 30px 0
+  +b(mobile)
+    margin-bottom: 23px;
   &__switch
     position: absolute
     width: 100%
@@ -611,6 +613,7 @@
 
     &__items {
       padding-right: 0;
+      padding-bottom: 56px;
     }
 
     &__item {
@@ -813,7 +816,7 @@ input.search__input
     }
 
     &.clone
-      display: none
+      display: none !important;
 
     &.active {
       transform: translateX(0);
@@ -1247,6 +1250,8 @@ input.calendar__nights
   text-align: center
   margin: 0 0 20px 0
   padding-right: 5px
+  +b(mobile)
+    margin-bottom: 11px;
   &__list
     &-item
       display: inline-block
@@ -1498,6 +1503,8 @@ input.calendar__nights
 
     &-items
       padding-top: 23px
+      +b(mobile)
+        display: none;
 
     &-box
       display: inline-block
@@ -1507,9 +1514,6 @@ input.calendar__nights
       border-radius: 7px
 
   +b(mobile)
-    &__img-box {
-      height: 119px;
-    }
     &__bonuses {
       display: inline-block
     }
@@ -1661,6 +1665,8 @@ input.calendar__nights
       transform: scale(1.05)
     .category-card__count
       opacity: 1
+  +b(mobile)
+    height: 283px;
   a
     text-decoration: none
   &__title
@@ -1763,7 +1769,10 @@ input.calendar__nights
     .simple-slider {
       margin: 0;
       &__item {
-        padding: 13px 0 13px 0;
+        padding: 10px 0 11px 0;
+        &:first-child {
+          padding-top: 2px;
+        }
         &:nth-child(1n+5) {
           display: none;
         }
@@ -1779,6 +1788,8 @@ input.calendar__nights
   &__list
     padding-top: 6px
     padding-bottom: 5px
+    +b(mobile)
+      padding-top: 0;
   &__item
     border-radius: 10px
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
@@ -1820,6 +1831,8 @@ input.calendar__nights
     padding: 14px 0 25px 0
     height: 139px
     border-top: 1px solid #191919
+    +b(mobile)
+      height: 125px;
   .button
     float: right
     margin-top: -2px
@@ -1838,6 +1851,8 @@ input.calendar__nights
   position: relative
   &__item
     padding: 18px 15px
+    +b(mobile)
+      padding-top: 10px;
   .slick-dots
     bottom: auto
     top: 100%
@@ -1849,7 +1864,7 @@ input.calendar__nights
   +b(mobile)
     .slick-dots {
       position: static;
-      margin: 0 0 17px 0;
+      margin: 6px 0 16px 0;
     }
     
 //feedback and news slider -------------
@@ -2259,6 +2274,8 @@ input.calendar__nights
       letter-spacing: normal
       width: 33.3333%
       padding: 0 15px 29px
+      +b(mobile)
+        padding-bottom: 0;
     .slick-list
       padding: 0 50px 0 0 !important
     +b(tablet)
@@ -2267,6 +2284,7 @@ input.calendar__nights
       }
     +b(mobile)
       padding: 0;
+      margin-top: 15px;
     
     
 //category list end ------------
@@ -2345,6 +2363,9 @@ input.calendar__nights
     padding: 0 0 20px 0
   &.news,&.feedback
     padding-bottom: 45px
+  &.feedback
+    +b(mobile)
+      padding-bottom: 52px;
   +b(mobile)
     &__title {
 
@@ -2360,6 +2381,11 @@ input.calendar__nights
     &__subtitle {
       display: none;
     }
+    
+.restoffer
+  +b(mobile)
+    margin-top: -31px;
+    padding-bottom: 20px;
 //popup
 .subscribe-popup
   display: none
@@ -2543,7 +2569,8 @@ input.calendar__nights
     margin-top 0
   &__collumn
     col(1/4,cycle:4)
-    margin-top 30px
+    margin-top 10px
+    margin-bottom 22px
     +b(tablet)      
       col(1/2, cycle:2)
       margin-top 30px

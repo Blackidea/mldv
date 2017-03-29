@@ -61,57 +61,7 @@ block content
             use(xlink:href='#rating' )
           .hotelsHeader__value 9.3 / 10
 
-    .main-hotel-slider.swiper-container.js-main-hotel-slider
-      .main-hotel-slider__description-wrapper
-        .main-hotel-slider__description.container
-          span.main-hotel-slider__price От 5 500 $
-          .main-hotel-slider__info
-            .main-hotel-slider__title Sol Cayo Largo
-            .main-hotel-slider__stars
-              svg.icon-star-fill.main-hotel-slider__star
-                use(xlink:href='#star-fill')
-              svg.icon-star-fill.main-hotel-slider__star
-                use(xlink:href='#star-fill')
-              svg.icon-star-fill.main-hotel-slider__star
-                use(xlink:href='#star-fill')
-              svg.icon-star-fill.main-hotel-slider__star
-                use(xlink:href='#star-fill')
-              svg.icon-star-fill.main-hotel-slider__star
-            use(xlink:href='#star-fill')
-
-      ul.main-hotel-slider__items.swiper-wrapper
-        - for (var i = 0, j = 1; i < 10; i++, j++)
-            li.main-hotel-slider__item.swiper-slide
-              - var src = 'images/slider/slider-0' + j + '.jpg';
-
-              - if (j < 5)
-                  img(src=src alt='').main-hotel-slider__image
-              - else
-                  video.main-hotel-slider__video.js-main-hotel-slider__video
-                    source(src='videos/slider/slide.mp4' type='video/mp4')
-                  - j = 0
-
-    .swiper-container.thumbs-hotel-slider.js-thumbs-hotel-slider
-      ul.swiper-wrapper.thumbs-hotel-slider__items
-        - for (var i = 0, j = 1; i < 10; i++, j++)
-          - if (j < 5)
-              li.swiper-slide.thumbs-hotel-slider__item
-                - var src = 'images/slider/slider-0' + j + '.jpg';
-                img(src=src alt='').thumbs-hotel-slider__image
-
-          - else
-              - j = 0;
-              li.swiper-slide.thumbs-hotel-slider__item.thumbs-hotel-slider__item_video
-                img(src='images/slider/hotels-video.jpg' alt='').thumbs-hotel-slider__image
-
-      div.thumbs-hotel-slider__button.thumbs-hotel-slider__button_prev.js-thumbs-hotel-slider__button_prev
-        svg.thumbs-hotel-slider__button-icon
-          use(xlink:href="#arrow-left")
-
-      div.thumbs-hotel-slider__button.thumbs-hotel-slider__button_next.js-thumbs-hotel-slider__button_next
-        svg.thumbs-hotel-slider__button-icon
-          use(xlink:href="#arrow-right")
-
+    include layouts/gallery-slider
 
     .hotelsHeader__button-wishlistMob.js-wishlist
       //- img(src="images/icon/wishlist.png", alt="")
@@ -137,7 +87,7 @@ block content
                   use(xlink:href='#arrow-right')
 
     .container
-      #hotelsTabs.js-accordion
+      #hotelsTabs.hotelsTabs.js-accordion
         ul.hotelsTabs__nav
           li
             a(href="#hotelsTabs-1") Описание тура
@@ -322,6 +272,7 @@ block content
               input.search__input.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
               svg.search__arrow
                 use(xlink:href='#caret-down')
+
       .container
         button.filter__buttonMob Фильтр
       .holidayCreate__sliderMob
@@ -363,33 +314,36 @@ block content
       .holidayCreate__result
         .container
           .numberResult
-            //- block 1
-            .numberResult__sum
-              .numberResult__sumTitle Сумма
-              .numberResult__sumValue 1 390 $
-              .numberResult__sumBonus
-                .numberResult__sumIcon
-                  svg
-                    use(xlink:href='#palma2')
+            .numberResult__image-wrapper
+              img(src='images/numbers/bg-result.jpg' alt='').numberResult__image
+            .numberResult__content
+              //- block 1
+              .numberResult__sum
+                .numberResult__sumTitle Сумма
+                .numberResult__sumValue 1 390 $
+                .numberResult__sumBonus
+                  .numberResult__sumIcon
+                    svg
+                      use(xlink:href='#palma2')
 
-                .numberResult__sumText TextBonus<br> <strong>TextBonus</strong>
-              a.numberResult__sumLink(href="") Подробнее о бонусной программе
-            .numberResult__payment
-              .numberResult__paymentDescription
-                | Вы можете внести предоплату 50% 
-                | <br>Оставшуюся сумму не поздней, чем за 14 дней 
-                | <br>до начала тура.
-              a.numberResult__paymentLink(href="") Список документов для визы
-              .numberResult__paymentMethods
-                .numberResult__paymentIcon
-                  svg
-                    use(xlink:href='#monets')
-                .numberResult__paymentText
-                  | <strong>Способы оплаты:</strong> банковской картой онлайн, 
-                  | <br>наличными или картой в офисе, а также 
-                  | <br>оформить кредит от Сбербанка
-            .numberResult__buy
-              button.numberResult__buyButton Купить
+                  .numberResult__sumText При покупке Вы получите <br> <strong>150 Мальдив бонусов</strong>
+                a.numberResult__sumLink(href="") Подробнее о бонусной программе
+              .numberResult__payment
+                .numberResult__paymentDescription
+                  | Вы можете внести предоплату 50%
+                  | <br>Оставшуюся сумму не поздней, чем за 14 дней
+                  | <br>до начала тура.
+                a.numberResult__paymentLink(href="") Список документов для визы
+                .numberResult__paymentMethods
+                  .numberResult__paymentIcon
+                    svg
+                      use(xlink:href='#monets')
+                  .numberResult__paymentText
+                    | <strong>Способы оплаты:</strong> банковской картой онлайн,
+                    | <br>наличными или картой в офисе, а также
+                    | <br>оформить кредит от Сбербанка
+              .numberResult__buy
+                button.numberResult__buyButton Купить
 
       .hotelsTours
         .section__title
@@ -515,7 +469,7 @@ block content
 
       .hotelsSimilar
         .section__title.hotelsSimilar__title
-          h2.h2 Отели рядом
+          h2.h2 Похожие места
         .container
           include layouts/slider__catalog.jade
 

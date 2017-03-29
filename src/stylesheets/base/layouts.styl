@@ -28,6 +28,7 @@ $footerHeight = 329px
     padding: 0;
   +b(mobile)
     padding-top: 46px;
+    padding-bottom: 3px;
 //----------------------------------------------------//
 // HEADER                                             //
 //----------------------------------------------------//
@@ -741,6 +742,8 @@ $footerHeight = 329px
   background: $darkColor
   color: #fff
   padding: 25px 0 0 0
+  +b(mobile)
+    padding: 17px 0 0 0;
   clearfix()
   &__right
     width: 76%
@@ -757,6 +760,8 @@ $footerHeight = 329px
     background: #acadaf
     margin: 15px 0 0 0
     padding: 5px 0
+    +b(mobile)
+      padding: 10px 0;
     clearfix()
     .copyright
       float: left
@@ -805,6 +810,8 @@ $footerHeight = 329px
       &.mob-hide {
         display: none;
       }
+      &+.footer__col
+        margin-top: 29px;
   &__payment-list
     padding: 9px 0 0 0
     &-item
@@ -894,7 +901,7 @@ $footerHeight = 329px
     }
     &__nav {
       position: relative;
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0;
       
       &:after {
         content: '';
@@ -951,7 +958,7 @@ $footerHeight = 329px
         right: 0;
         margin: 0 -15px;
         position: absolute;
-        bottom: 0;
+        bottom: 91px;
         left: 0;
       }
     }
@@ -960,7 +967,7 @@ $footerHeight = 329px
     }
     .phone-list {
       letter-spacing: -5px;
-      padding: 20px 0;
+      padding: 4px 0 15px;
       &__number {
         letter-spacing: normal;
         width: 60%;
@@ -993,6 +1000,8 @@ $footerHeight = 329px
   img
     vertical-align: middle
     margin-left: 7px
+    +b(mobile)
+      width: 75px;
   svg
     transition: fill 0.2s
   &:hover
