@@ -3,7 +3,7 @@ extends layouts/application.jade
 
 
 block content
-  .wrapper
+  .wrapper.country-page
     include layouts/header.jade
     h2.dNews__h2 Мальдивы– лучший отдых!
     //slider
@@ -325,17 +325,17 @@ block content
 
           .contactForm__row
             .contactForm__input
-              label(for="") <span>*</span>label
+              label(for="") <span>*</span>Имя
               input(name="name" type="text" placeholder="test")
             .contactForm__input
-              label(for="") <span>*</span>label
+              label(for="") <span>*</span>Телефон
               input(name="tel" type="text" placeholder="test")
             .contactForm__input
-              label(for="") <span>*</span>label
+              label(for="") <span>*</span>E-mail
               input(name="email" type="text" placeholder="test")
           .contactForm__row
             .contactForm__textarea
-              label(for="") label
+              label(for="") Сообщение
               textarea(name="message", cols="30", rows="10" placeholder="tests")
           .contactForm__row
             button.contactForm__button Отправить
