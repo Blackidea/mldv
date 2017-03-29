@@ -39,9 +39,9 @@
     +b(tablet)
       font-size 22px
       text-align center
+      margin-top 0
     +b(mobile)
       padding-bottom 0
-      margin-top 0
     & > span
       color #24b3fd    
   &__photo-up
@@ -59,11 +59,9 @@
   
   &__middle
     position relative
-    img 
-      width 449px
-      height 228px
-      +b(laptop)
-        width 66.6%
+    img
+      width 67.67%
+      height 225px
   &__border
     display block
     margin 0 auto
@@ -76,10 +74,11 @@
     +b(mobile)
       margin-top 24px
   &__age
-    margin-left -10px
-    height 228px
+    margin-left 0
+    width 32.33%
+    height 225px
     +b(laptop)
-      margin-left -5px
+      margin-left 0
   &__value
     position absolute
     top 70px
@@ -89,7 +88,7 @@
     line-height 22px
   &__vertical-border
     position absolute
-    top -26px
+    top -38px
     left 3px
     margin-right 3px
     width 3px
@@ -111,7 +110,7 @@
     background #fff
   &__photo-down
     position absolute
-    bottom -12px
+    bottom -4px
     left 0
     +b(tablet)
       display none
@@ -153,7 +152,7 @@
     color #07405e
     font-size 25px
     line-height 30px
-    padding-top 20px
+    padding-top 10px
     padding-bottom 8px
     font-weight bold
     +b(tablet)
@@ -290,7 +289,7 @@ section.l-culture
   padding-top 30px
   +b(mobile)
     padding-top 0
-    padding-bottom 22px
+    padding-bottom 20px
 .b-culture
   margin-top 62px
   margin-bottom 36px
@@ -371,25 +370,33 @@ section.l-culture
           width 30px
           height 30px
     &.__3
-      +b(mobile)  
+      padding-top 10px    
+      +b(mobile) 
+        padding-top 0
         order: 3   
       &:before    
         background-image url('../images/icon3.png')
         width 53px
         height 53px
+        top 14px
         left 4px
         +b(mobile)
+          top 6px
           left 1px
           width 33px
           height 33px
     &.__4
-      +b(mobile)  
+      padding-top 5px    
+      +b(mobile)
+        padding-top 0
         order: 4    
       &:before    
         background-image url('../images/icon4.png')
         width 59px
         height 59px
+        top 12px
         +b(mobile)
+          top 6px
           left 0
           width 37px
           height 37px
@@ -416,29 +423,88 @@ section.l-culture
           width 39px
           height 38px
     &.__7
-      +b(mobile)  
+      padding-top 10px    
+      +b(mobile) 
+        padding-top 0
         order: 7   
       &:before    
         background-image url('../images/icon7.png')
         width 56px
         height 58px
+        top 14px
         +b(mobile)
+          top 6px
           left -2px
           width 40px
           height 41px
     &.__8
-      +b(mobile)  
+      padding-top 5px    
+      +b(mobile) 
+        padding-top 0
         order: 8
       &:before
         background-image url('../images/icon8.png')
         width 38px
         height 48px
+        top 12px
         left 10px
         +b(mobile)
+          top 6px
           left 5px
           width 27px
           height 34px
-    
+.collage
+  box-sizing border-box
+  display flex
+  flex-direction row
+  justify-content center
+  align-items flex-end
+  max-height 675px
+  height 53.9%
+  max-width 900px
+  width 78.9%
+  &__col
+    box-sizing border-box
+    height 100%
+    width 50%
+    display flex
+    flex-direction row
+    justify-content flex-start
+    align-items flex-end
+    align-content flex-end
+    flex-wrap wrap
+  &__item
+    position relative
+    overflow hidden
+    &_vertical
+      width 50%
+      height 66.6%
+    &_square
+      width 50%
+      height 33.3%
+    &_horizontal
+      width 100%
+      height 33.3%
+    img 
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      margin auto
+      min-width 100%
+      min-height 100%
+      width 0
+      object-fit cover
+      
+.round-tr
+  border-top-right-radius 5px
+.round-tl
+  border-top-left-radius 5px
+.round-bl
+  border-bottom-left-radius 5px
+.round-br
+  border-bottom-right-radius 5px
     
     
       
