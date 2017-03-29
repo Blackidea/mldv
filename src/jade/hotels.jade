@@ -87,7 +87,7 @@ block content
                   use(xlink:href='#arrow-right')
 
     .container
-      #hotelsTabs.js-accordion
+      #hotelsTabs.hotelsTabs.js-accordion
         ul.hotelsTabs__nav
           li
             a(href="#hotelsTabs-1") Описание тура
@@ -272,6 +272,7 @@ block content
               input.search__input.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
               svg.search__arrow
                 use(xlink:href='#caret-down')
+
       .container
         button.filter__buttonMob Фильтр
       .holidayCreate__sliderMob
@@ -313,33 +314,36 @@ block content
       .holidayCreate__result
         .container
           .numberResult
-            //- block 1
-            .numberResult__sum
-              .numberResult__sumTitle Сумма
-              .numberResult__sumValue 1 390 $
-              .numberResult__sumBonus
-                .numberResult__sumIcon
-                  svg
-                    use(xlink:href='#palma2')
+            .numberResult__image-wrapper
+              img(src='images/numbers/bg-result.jpg' alt='').numberResult__image
+            .numberResult__content
+              //- block 1
+              .numberResult__sum
+                .numberResult__sumTitle Сумма
+                .numberResult__sumValue 1 390 $
+                .numberResult__sumBonus
+                  .numberResult__sumIcon
+                    svg
+                      use(xlink:href='#palma2')
 
-                .numberResult__sumText TextBonus<br> <strong>TextBonus</strong>
-              a.numberResult__sumLink(href="") Подробнее о бонусной программе
-            .numberResult__payment
-              .numberResult__paymentDescription
-                | Вы можете внести предоплату 50% 
-                | <br>Оставшуюся сумму не поздней, чем за 14 дней 
-                | <br>до начала тура.
-              a.numberResult__paymentLink(href="") Список документов для визы
-              .numberResult__paymentMethods
-                .numberResult__paymentIcon
-                  svg
-                    use(xlink:href='#monets')
-                .numberResult__paymentText
-                  | <strong>Способы оплаты:</strong> банковской картой онлайн, 
-                  | <br>наличными или картой в офисе, а также 
-                  | <br>оформить кредит от Сбербанка
-            .numberResult__buy
-              button.numberResult__buyButton Купить
+                  .numberResult__sumText При покупке Вы получите <br> <strong>150 Мальдив бонусов</strong>
+                a.numberResult__sumLink(href="") Подробнее о бонусной программе
+              .numberResult__payment
+                .numberResult__paymentDescription
+                  | Вы можете внести предоплату 50%
+                  | <br>Оставшуюся сумму не поздней, чем за 14 дней
+                  | <br>до начала тура.
+                a.numberResult__paymentLink(href="") Список документов для визы
+                .numberResult__paymentMethods
+                  .numberResult__paymentIcon
+                    svg
+                      use(xlink:href='#monets')
+                  .numberResult__paymentText
+                    | <strong>Способы оплаты:</strong> банковской картой онлайн,
+                    | <br>наличными или картой в офисе, а также
+                    | <br>оформить кредит от Сбербанка
+              .numberResult__buy
+                button.numberResult__buyButton Купить
 
       .hotelsTours
         .section__title

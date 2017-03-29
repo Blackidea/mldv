@@ -43,8 +43,8 @@
     height 150px
     margin 0 11px
     float left
-    margin: 0 1%;
-    width: 1.3%;  
+    margin: 0 1%
+    width: 1.3%
   &__column
     position absolute
     bottom 24px
@@ -63,20 +63,26 @@
     padding 0 !important
     color #cccccc
 #mapPrice
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 100%
+  max-width: 100%
   height 500px
   width 900px
-  height:400px;
-  width:100%;
-  border-radius:12px;
+  height:400px
+  width:100%
+  border-radius:12px
+
 .hotelsTabs
+  margin-top: 35px
+
+  +b(mobile)
+    margin-top: 25px
+
   &__bonus
     clearfix()
   &__block
-    height:auto;
-    width:100%;
-    // background:#000;
+    height:auto
+    width:100%
+    // background:#000
     +b(mobile)
       height auto
   &__nav
@@ -149,6 +155,10 @@
 .hotelsDescription
   margin-top: 33px
   clearfix()
+
+  +b(mobile)
+    margin-top: 13px
+
   &__accordTitle
     position relative
     display none
@@ -158,7 +168,8 @@
     +b(mobile)
       cursor pointer
       width 100%
-      display inline-block
+      display flex
+      justify-content space-between
       text-decoration none
       color #677e8a !important
       &:after
@@ -213,21 +224,21 @@
     margin 20px 0
   &__li
     position relative
-    font-size: 14px;
-    padding-left: 20px;
-    font-weight: normal;
-    // padding-top: 10px;
-    // padding-bottom: 10px;
+    font-size: 14px
+    padding-left: 20px
+    font-weight: normal
+    // padding-top: 10px
+    // padding-bottom: 10px
   &__li:before
     position absolute
     top 8px
     left 0
-    color: #999;
-    content: '';
-    height: 5px;   
-    width: 5px;
-    background: #677e8a;
-    border-radius: 53px;
+    color: #999
+    content: ''
+    height: 5px
+    width: 5px
+    background: #677e8a
+    border-radius: 53px
   
 .hotelsBonus
 
@@ -321,6 +332,8 @@
       border-radius 8px !important
     
 .holidayCreate
+  margin-top: 300px
+
   +b(mobile)
     margin-top 30px
   &__filterMob
@@ -335,6 +348,7 @@
     background url('../images/bg/filter-hotels.jpg') no-repeat 50%
     height 200px
     padding-top 20px
+
     +b(mobile)
       background none
       height auto
@@ -410,12 +424,12 @@
     border-radius 10px
     margin 0 15px 10px
     overflow hidden
-    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3);
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
     transition all 0.3s ease-in-out 0s
 
     &:hover
       cursor pointer
-      box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3);
+      box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3)
 
     &:hover .numbersSlider__image
       max-height: 145px
@@ -550,15 +564,60 @@
       padding-left 10px
 
 .numberResult
-  background url('../images/numbers/bg-result.jpg') no-repeat 50%
-  width 100%
-  height 230px
-  border-radius 12px
-  margin-bottom 90px
-  padding-top 40px
-  padding-left 68px
-  +b(tablet)
-    padding-left 1%
+  position: relative
+  border-radius: 10px
+  box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
+  overflow: hidden
+  display: flex
+  justify-content center
+  align-items center
+  min-height: 230px
+  width: 100%
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    min-width: 100%
+    min-height: 100%
+    width: 0
+    object-fit: cover
+    opacity: .2
+    z-index: 2
+
+    &-wrapper
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #1c0d00
+      z-index: 1
+
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        width: 100%
+        height: 100%
+        background-image: linear-gradient(to bottom, #ffffff, #ffc600)
+        opacity: .2
+
+  &__content
+    margin: 15px
+    display: inline-block
+    position: relative
+    z-index: 3
+
+  &__sumBonus, &__paymentMethods
+    display: flex
+
   &__sum
     color #fff
     width 225px
@@ -849,16 +908,16 @@
       border: 2px solid $secondFontColor
   +b(mobile)
     .slick-dots {
-      position: static;
-      margin: 0 0 17px 0;
+      position: static
+      margin: 0 0 17px 0
     }
   &__list
     +b(mobile)
       .sliderHotelsAround__list-item {
-        padding: 0 0 30px 0;
+        padding: 0 0 30px 0
       }
       .mob-hide {
-        display: none;
+        display: none
       }
     @media (min-width: 768px)
       &--tiles-view
@@ -906,7 +965,7 @@
       &--lines-view
         .sliderHotelsAround__list-item
           padding: 0 0 15px 0
-          //@include clearfix;
+          //@include clearfix
         .card
           position: relative
           &__img-box
@@ -926,7 +985,7 @@
             &-box
               width: 50%
               float: right
-              //text-align: right;
+              //text-align: right
           &__title
             padding-bottom: 4px
             margin: 0
@@ -960,16 +1019,16 @@
       border: 2px solid $secondFontColor
   +b(mobile)
     .slick-dots {
-      position: static;
-      margin: 0 0 17px 0;
+      position: static
+      margin: 0 0 17px 0
     }
   &__list
     +b(mobile)
       .sliderHotelsSimilar__list-item {
-        padding: 0 0 30px 0;
+        padding: 0 0 30px 0
       }
       .mob-hide {
-        display: none;
+        display: none
       }
     @media (min-width: 768px)
       &--tiles-view
@@ -1017,7 +1076,7 @@
       &--lines-view
         .sliderHotelsSimilar__list-item
           padding: 0 0 15px 0
-          //@include clearfix;
+          //@include clearfix
         .card
           position: relative
           &__img-box
@@ -1037,7 +1096,7 @@
             &-box
               width: 50%
               float: right
-              //text-align: right;
+              //text-align: right
           &__title
             padding-bottom: 4px
             margin: 0
@@ -1067,8 +1126,8 @@
     height 100px
     width 100%
     bottom 0
-    background: rgba(255,255,255,0.61);
-    background: linear-gradient(to bottom, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.87) 86%, rgba(255,255,255,1) 100%);
+    background: rgba(255,255,255,0.61)
+    background: linear-gradient(to bottom, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.87) 86%, rgba(255,255,255,1) 100%)
   &__content
     position relative
     height 210px
@@ -1094,9 +1153,9 @@
   display inline-block
   vertical-align middle
   fill #24b3fd
-  padding: 4px;
-  width: 29px;
-  height: 28px;
+  padding: 4px
+  width: 29px
+  height: 28px
   &.__popup
     fill #fff
 .svg__price
@@ -1111,7 +1170,7 @@
   fill #24b3fd
   width 25px
   height 25px
-  margin-right: 20px;
+  margin-right: 20px
   +b(tablet)
     margin-right 8%
     width 18px
@@ -1121,14 +1180,14 @@
   display inline-block
   vertical-align middle
   fill #fff
-  padding: 4px;
+  padding: 4px
   stroke #24b3fd
-  stroke-width: 20;
-  width: 29px;
-  height: 28px;
+  stroke-width: 20
+  width: 29px
+  height: 28px
   &.__popup
     fill #24b3fd
-    padding: 4px;
+    padding: 4px
     stroke #fff
 .svg__close
   height 20px
