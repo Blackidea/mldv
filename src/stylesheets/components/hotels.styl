@@ -1,184 +1,4 @@
 @import '../base/mixins&includes.styl'
-.main-hotel-slider
-  display: block
-  width: 100%
-  height: 455px
-
-  &__items
-    display: block
-
-  &__item
-    display: block
-
-    &::before, &::after
-      content ''
-      position absolute
-      bottom 0
-      left 0
-      display block
-      width 100%
-      pointer-events: none
-
-    &::before
-      height 50%
-      background-image linear-gradient(transparent, #000)
-      opacity .5
-
-    &::after
-      height: 25%
-      background-image: linear-gradient(transparent, #07405e)
-      opacity: .9
-
-  &__image, &__video
-    position: absolute
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    margin: auto
-    min-width: 100%
-    min-height: 100%
-    width: 0
-    object-fit: cover
-
-  &__description
-    position: relative
-    display: flex
-    flex-direction: column
-    justify-content flex-end
-    margin-top: auto
-    padding: 20px 35px
-    height: 100%
-    z-index: 1
-    color: #ffffff
-
-    &-wrapper {
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-      z-index: 2
-    }
-
-  &__price
-    font-size: em(24px, 14px)
-    font-weight: 700
-
-  &__info
-    display: flex
-    padding-top: 15px
-
-  &__title
-    margin-right: 15px
-    font-size: em(26px, 14px)
-
-  &__stars
-    display: flex
-
-  &__star
-    width: 20px
-    height: 20px
-
-    &:not(:last-child)
-      margin-right: 6px
-
-.thumbs-hotel-slider
-  display: block
-  margin-top: 11px
-  width: calc(100% - 40px)
-  height: 110px
-
-  &__button
-    position: absolute
-    top: 50%
-    transform: translateY(-50%)
-    display: block
-    padding: 9px 9px 9px 10px
-    width: 33px
-    height: 44px
-    background-color: rgba(7, 64, 94, .75)
-    z-index 3
-    cursor: pointer
-    transition background .25s ease-in-out
-
-    &:hover
-      background-color: rgba(7, 64, 94, 1)
-
-    &-icon
-      display: block
-      width: 15px
-      height: 26px
-      fill: #fff
-
-    &_prev
-      left: 0
-      border-radius: 0 5px 5px 0
-
-    &_next
-      right: 0
-      border-radius: 5px 0 0 5px
-
-  &__items
-    display: block
-
-  &__item
-    position: relative
-    display: block
-    width: 180px !important
-    cursor: pointer
-    box-sizing: border-box
-    overflow: hidden
-
-    // video icon
-    &_video
-      background-color: #000
-
-      // &__image element into &__item_video (opacity, kinda overlay)
-      & ^[0]__image
-          opacity .75
-
-      // common styles for circle and triangle
-      &::before, &::after
-        content ''
-        position: absolute
-        top: 50%
-        transform: translate(-50%, -50%)
-        display: block
-        z-index 2
-
-      // triangle
-      &::before
-        left: 52%
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 12.5px 0 12.5px 22px;
-        border-color: transparent transparent transparent #fff;
-
-      // circle
-      &::after
-        left: 50%
-        width: 54px
-        height: 54px
-        border: 2px solid #fff
-        z-index 2
-        border-radius: 50%
-
-  .swiper-slide-active
-    border: 2px solid #000
-
-  &__image
-    position: absolute
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    margin: auto
-    min-width: 100%
-    min-height: 100%
-    width: 0
-    object-fit: cover
 
 .calendarSlider
   position relative
@@ -585,6 +405,7 @@
 
 .numbersSlider
   &__item
+    position: relative
     display block
     border-radius 10px
     margin 0 15px 10px
@@ -603,11 +424,20 @@
         transition none
         height 115px
 
+    &:hover .numbersSlider__zoom
+      display: block
+      opacity: 1
+
   &__zoom
     position: absolute
+    top: 114px
+    right: 14px
     display: block
-    top: 0
-    left: 0
+    width: 20px
+    height: 20px
+    z-index: 3
+    opacity: 0
+    transition: opacity .5s ease-in-out
 
   &__images
     position relative
@@ -1359,6 +1189,10 @@
   cursor pointer
 .hotelsHeader
   padding 30px 0 10px
+
+  +b(mobile)
+    padding: 20px 0 10px
+
   &__column
     display inline-block
     vertical-align middle 
