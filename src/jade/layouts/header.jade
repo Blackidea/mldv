@@ -15,21 +15,6 @@ header.header
                   dt.phone-list__city
                     | Регионы
                     dd.phone-list__number +7 (800) 234-34-40
-            .header__currency
-              a.header__currency-link(href='#')
-                b Валюта 
-                | US Dollar (курс 65.10)
-                svg.header__currency-icon
-                  use(xlink:href='#caret-down')
-              .dropdown__box
-                span.dropdown__triangle
-                ul.dropdown__list
-                  li.dropdown__list-item
-                    a.dropdown__link(href='#') US Dollar
-                  li.dropdown__list-item
-                    a.dropdown__link(href='#') Рубль
-                  li.dropdown__list-item
-                    a.dropdown__link(href='#') Евро
           nav.header__bottom
             .container
               nav.header__nav.nav
@@ -37,6 +22,21 @@ header.header
                   svg
                     use(xlink:href='#logo-small')
                 ul.nav__list
+                  li.header__currency
+                    a.header__currency-link(href='#')
+                      b Валюта 
+                      | US Dollar (курс 65.10)
+                      svg.header__currency-icon
+                        use(xlink:href='#caret-down')
+                    .dropdown__box
+                      span.dropdown__triangle
+                      ul.dropdown__list
+                        li.dropdown__list-item
+                          a.dropdown__link(href='#') US Dollar
+                        li.dropdown__list-item
+                          a.dropdown__link(href='#') Рубль
+                        li.dropdown__list-item
+                          a.dropdown__link(href='#') Евро
                   li.nav__list-item.nav__list-item--big-drop
                     a.nav__link(href='#') Туры
                     .dropdown__box.dropdown--tour

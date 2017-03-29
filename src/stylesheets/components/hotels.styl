@@ -585,36 +585,52 @@
 .numbersSlider
   &__item
     display block
-    border-radius 8px    
+    border-radius 10px
     margin 0 15px 10px
     overflow hidden
-    // height 600px
-    box-shadow 1px 1px 5px #999,
-                -1px -1px 5px #999
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3);
     transition all 0.3s ease-in-out 0s
+
     &:hover
       cursor pointer
+      box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3);
+
     &:hover .numbersSlider__image
-      height 150px
-      transition background-size 0.4s ease-in-out 0s,
-                height 0.2s ease-in-out 0s
+      max-height: 145px
+
       +b(mobile)
         transition none
         height 115px
-        
-      
+
+  &__zoom
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+
   &__images
     position relative
     overflow hidden 
-    
-  &__image    
-    height 115px
-    background-size cover
-    background-repeat no-repeat 
-    background-position 50%
-    border-radius 8px 8px 0 0
-    transition background-size 0.4s ease-in-out 0s,
-              height 0.2s ease-in-out 0s
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, .25)
+
+  &__image
+    width: 263px
+    height: auto
+    max-height 115px
+    object-fit: cover
+    z-index 2
+    transform: translateZ(0)
+    transition all .3s ease-in-out
+
   &__arrow
     position absolute
     z-index 10
@@ -630,18 +646,29 @@
     &.__right
       top 50%
       right 10px
+
   &__type
+    display: flex
+    flex-direction: column
+    justify-content center
     margin 0 15px
+    padding: 13px 0
     border-bottom 1px solid #999
     height 85px
+
   &__info
+    display: flex
+    flex-direction: column
+    justify-content center
     margin 0 15px
+    padding: 13px 0
     border-bottom 1px solid #999
     height 85px
+
     +b(mobile)
       display none
   &__propertie
-    margin-top 20px
+    margin-bottom: 4px
     font-size 12px
     color #999999
   &__value
@@ -665,17 +692,32 @@
     height 15px
     width 15px 
     transition all 0.3s ease-in-out 0s
-  
+
   &__labelCheckbox
     display inline-block
     vertical-align middle
     font-size 16px
     padding-left 10px
+
 .checkboxActive
   background #24b3fd
   border 1px solid #24b3fd
   transition all 0.3s ease-in-out 0s
-    
+
+  & + .numbersSlider__labelCheckbox
+    text-indent -9999px
+    position: relative
+
+    &::after
+      position: absolute
+      top: 0
+      left: 0
+      display inline-block
+      width: 200px
+      content: attr(data-active-text)
+      text-indent 0
+      padding-left 10px
+
 .numberResult
   background url('../images/numbers/bg-result.jpg') no-repeat 50%
   width 100%

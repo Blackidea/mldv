@@ -60,8 +60,6 @@ $footerHeight = 329px
     padding: 16px 0 15px
     top: 0
     right: 15px
-    +b(mobile)
-      display: none
     &:hover
       .header__currency-link
         color: $mainFontColor
@@ -73,9 +71,19 @@ $footerHeight = 329px
       width: 12px
       height: 7px
       margin: 0 4px 0 8px
+      +b(mobile)
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
     &-link
       color: $mainFontColor
       text-decoration: none
+      position: relative
+      +b(mobile)
+        display: inline-block;
+        width: 100%;
     .dropdown__box
       display: none
       position: absolute
@@ -106,6 +114,10 @@ $footerHeight = 329px
         &-item
           position: relative
           padding: 0 26px
+          &:nth-child(2)
+            padding-left: 0
+          +b(mobile)
+            padding-left: 0;
           &:hover
             .dropdown__box
               display: block
@@ -726,26 +738,25 @@ $footerHeight = 329px
 // FOOTER                                             //
 //----------------------------------------------------//
 .footer
-  height: $footerHeight
   background: $darkColor
   color: #fff
   padding: 25px 0 0 0
   clearfix()
   &__right
-    width: 75%
+    width: 76%
     float: right
     padding: 0 0 0 15px
   &__left
-    width: 25%
+    width: 24%
     float: left
-    padding: 0 38px 0 0
+    padding: 0 25px 0 0
   b(tablet)
 
   &__bottom
     clear: both
     background: #acadaf
-    margin: 24px 0 0 0
-    padding: 11px 0
+    margin: 15px 0 0 0
+    padding: 5px 0
     clearfix()
     .copyright
       float: left
@@ -754,14 +765,17 @@ $footerHeight = 329px
   &__title
     display: block
     font-weight: 700
-    padding: 0 0 14px 0
+    padding: 0 0 15px 0
   &__mob-dropdown
     .footer__title
       svg
         display: none
+  &__nav
+    margin-bottom: 21px
   &__nav-list
     padding-bottom: 48px
     letter-spacing: -5px
+    border-bottom: 1px solid rgba(#f0f0f0, 0.25)
     clearfix()
     &-item
       letter-spacing: normal
@@ -778,8 +792,8 @@ $footerHeight = 329px
   &__col
     width: 33.333%
     float: left
-    padding: 0 0 0 15px
-    &:nth-of-type(1)
+    padding-right: 9px
+    &:last-of-type
       padding: 0
     +b(tablet)
       &.tab-hide {
@@ -813,6 +827,10 @@ $footerHeight = 329px
         &-yandex-money
           width: 77px
           height: 20px
+  .agent-button
+    margin-top: 14px
+    padding: 12px
+    width: 95%
   &__social-list
     &-item
       display: inline-block
@@ -846,7 +864,6 @@ $footerHeight = 329px
       color: #fff
   &__address
     padding: 20px 0 0 0
-    border-top: 1px solid #f0f0f0
     font-weight: 700
     line-height: 16px
     span
@@ -973,6 +990,9 @@ $footerHeight = 329px
 // developer info
 //----------------------------------------------------//
 .developer-info
+  img
+    vertical-align: middle
+    margin-left: 7px
   svg
     transition: fill 0.2s
   &:hover
