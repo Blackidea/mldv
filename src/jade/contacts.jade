@@ -24,30 +24,29 @@ block content
           .contacts__item.contacts__item_email
             h2 E-mail:
             a(href="mailto:info@maldiviana.com") info@maldiviana.com      
-    .map    
-    form.contact-us(action="")
+    .map
+    
+    .contactForm
       .container
-        .contact-us__title
-          h2 Свяжитесь с нами
-        .contact-us__fields
-          .contact-us__item
-            label.contact-us__label(for="name")
-              span *
-              |Имя:
-            input#name(type="text" placeholder="Мария")  
-          .contact-us__item
-            label.contact-us__label(for="phone")
-              span *
-              |Телефон:
-            input#phone(type="tel" placeholder="+7 (925) 123 23 55")
-          .contact-us__item
-            label.contact-us__label(for="email")
-              span *  
-              |E-mail
-            input#email(type="email" placeholder="ksenia@mail")
-        .contact-us__message
-          label.contact-us__label(for="message") Сообщение:
-          textarea#message(placeholder="Напишите текст Вашего сообщения")
-        .contact-us__submit
-          button.contact-us__btn(type="submit") Отправить        
+        form.contactForm__inner
+          .contactForm__textTitle 
+              span
+                |Связаться с нами
+          .contactForm__row
+            .contactForm__input
+              label(for="name") <span>*</span> Имя:
+              input(name="name" type="text" placeholder="Мария")
+            .contactForm__input
+              label(for="tel") <span>*</span> Телефон:
+              input(name="tel" type="tel" placeholder="+7 (925) 123 23 55")
+            .contactForm__input
+              label(for="email") <span>*</span> E-mail:
+              input(name="email" type="email" placeholder="ksenia@mail")
+          .contactForm__row
+            .contactForm__textarea
+              label(for="message") Сообщение:
+              textarea(name="message", cols="30", rows="10" placeholder="Напишите текст Вашего сообщения")
+          .contactForm__row
+            button.contactForm__button Отправить
+           
     include layouts/footer.jade
