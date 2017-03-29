@@ -165,6 +165,7 @@
     text-align center
     font-size 22px
     font-weight 300
+
     +b(mobile)
       cursor pointer
       width 100%
@@ -172,19 +173,23 @@
       justify-content space-between
       text-decoration none
       color #677e8a !important
+      font-size: 18px
+      font-family: "Open Sans Light", "Open Sans", sans-serif;
+      border-bottom: 1px solid #c6c6c6
+      padding: 13px 0
+
+      &:first-of-type
+        border-top: 1px solid #c6c6c6
+
       &:after
-        position absolute
-        content url('../images/icon/arrow-down.png')    
+        content url('../images/icon/arrow-down-sm.png')
         background none
-        left 90%
-        top 0
         width 20px
         height 11px
-        transform translate(0, 0)          
+        transform translate(0, 0)
+
       &:hover
         color #24b3fd !important
-        font-weight 600
-        font-size 22px
         
   &__column
     col(1/3)
