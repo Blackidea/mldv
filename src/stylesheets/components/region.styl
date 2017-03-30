@@ -190,6 +190,8 @@
     margin-top 27px
     overflow hidden
     padding-left 57px
+    +b(mobile)
+      padding-left 0
     &:last-child
       padding-left 0
   &__input
@@ -198,8 +200,10 @@
     margin-right 3%
     &:last-child
       margin-left 4%
+      +b(mobile)
+        margin-left 0
     +b(mobile)
-      col(1)
+      col(1)  
       margin-top 10px
     & > label
       font-size 16px
@@ -221,7 +225,8 @@
       font-size 16px
       color #fff
       margin-bottom 10px
-      
+      +b(mobile)
+        font-size 14px
     & > textarea
       width 100%
       height 80px
