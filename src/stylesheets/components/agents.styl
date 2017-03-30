@@ -5,51 +5,148 @@
   &__title 
     font-family "Roboto"
     color #24b3fd
-    font-size 35px
+    font-size 40px
     font-weight 300
-    line-height 45px
+    line-height 20px
     text-decoration none
     text-align center
-    margin 30px 0
-  &Info
-    font-family 'Roboto'
+    margin 32px 0 46px
+    +b(mobile)
+      margin 28px 0 16px
+      font-size 30px
   &Form
     &__title
+      font-family $mainFont
       text-align center
+      font-size 25px
+      line-height normal
+      font-weight 700 
       color #07405e
-      margin-bottom 30px
+      margin-top 34px
+      margin-bottom 42px
+      +b(mobile)
+        margin-bottom 30px
+        font-size 18px
+.b-agents      
+  &Info
+    &__text  
+      font-family $mainFont
+      font-size 14px
+      line-height 22px
+      +b(mobile)
+        padding-bottom 4px
+        padding-right 10px
+        font-size 12px
+      &.__1
+        +b(mobile)
+          line-height 20px
+      &.__2
+        +b(mobile)
+          line-height 18px
+    &__link
+      font-weight 700
+      text-decoration none
+      color #000;        
 .b-agentsForm
+  &__section
+    margin-bottom 20px
+    &_organization
+      margin-top 30px
+      +b(mobile)
+        margin-bottom 32px
+      & .b-agentsForm__data:first-of-type .b-agentsForm__label
+        padding-left 280px
+        +b(laptop)
+          padding-left 180px
+        +b(tablet)
+          padding-left 0
+    &_contacts
+      margin-bottom 56px
+      +b(mobile)
+        margin-bottom 38px
+    &_chief
+      margin-bottom 54px
+      +b(mobile)
+        margin-bottom 12px
+      & .b-agentsForm__data:last-of-type .b-agentsForm__label
+        padding-left 320px
+        +b(laptop)
+          padding-left 180px
+        +b(tablet)
+          padding-left 0
+      & .b-agentsForm__title
+        font-size 16px
+        +b(mobile)
+          padding-bottom 18px
+          margin-bottom 28px
+    &_submit
+      margin-bottom 54px
+      +b(mobile)
+        margin-bottom 40px
+      & .b-agentsForm__title
+        margin-bottom 10px
+        +b(mobile)
+          margin-bottom 12px
   &__title
     display block
     color #07405e
     text-align left
-    padding-bottom 15px
+    padding-bottom 12px
     border-bottom 1px solid #b9b9b9
     font-weight 300
     font-size 20px
-    margin-top 30px
+    line-height 20px
+    margin-top 0px
+    margin-bottom 40px
+    text-transform uppercase
+    +b(mobile)
+      margin-bottom 20px
+      font-size 16px
   &__data
-    margin-top: 40px
+    margin-bottom 35px
+    +b(mobile)
+      margin-bottom 19px
     &.upload 
       overflow hidden
     &.last
       margin-bottom 30px
+    &:last-of-type
+      margin-bottom 0
+    /*&:first-of-type
+      label
+        padding-left 280px
+        +b(mobile)
+          padding-left 0
+    &:nth-of-type(16)
+      label
+        padding-left 320px
+        +b(mobile)
+          padding-left 0*/
   &__label
+    box-sizing border-box
     text-align right
     display inline-block
     vertical-align middle !important
     width 40%
-    font-size 16px    
+    font-size 16px  
+    line-height 20px
     margin-right 30px
+    padding-left 180px
     +b(tablet)
+      padding-left 0
       display block
       width 100%
       text-align left
       padding-bottom 15px
+    +b(mobile)
+      padding-left 0
+      padding-bottom 10px
+      font-size 14px
   &__input
     border-radius 4px !important
     height 40px
-    width 30% !important
+    width 31.5% !important
+    margin-left -4px
     display inline-block !important
     vertical-align middle !important
     +b(tablet)
@@ -59,44 +156,61 @@
     // text-align center
     width 33%
     float none
-    margin 30px auto 30px
+    margin 26px auto 30px
     // margin-top 30px
     +b(tablet)
       width 100%
+    +b(mobile)
+      margin-top 0px
     
     & > li 
       list-style none
+      padding-left 6px
+      +b(mobile)
+        padding-left 0
       & > label
         padding-left 20px !important
         font-size 16px        
         margin-top 15px
-        margin-bottom 15px
+        margin-bottom 6px
+        +b(mobile)
+          margin-top 6px
+          margin-bottom 0
+          font-size 14px
+          line-height 18px
   &__button
     display block
-    width 55%
+    box-sizing border-box
+    /*width 55%*/
     margin 0 auto
+    padding 12px 29px
+    margin-top 30px
     +b(tablet)
       width 100%
+    +b(mobile)
+      margin-top 20px
       
     
-.file_upload{
+.file_upload
     position: relative;
     border-radius 0 !important
     overflow: hidden;
     font-size: 1em;        /* example */
     width:100%;
           /* the same as height */
-}
-.file_upload > button{
+
+.file_upload > button
   float: right;
   background: none;
   // border: 1px solid #bcbcbc;
   height: 100%
   padding 0
   width 100%
+  +b(tablet)
+    padding-left 4px
   
-}
-.file_upload > button > div{
+
+.file_upload > button > div
   float: left;
   background: none;
   border: 1px solid #bcbcbc;
@@ -105,8 +219,8 @@
   width 80%
   margin-right 7%
   border-radius 4px
-}
-.file_upload > button > svg{
+
+.file_upload > button > svg
   float: left;
   background: #24b3fd;
   height: 100%
@@ -117,13 +231,13 @@
   margin-top 1px
   margin-bottom 1px
   transition all 0.2s ease-in-out
-}
-.file_upload > button > svg:hover{
+
+.file_upload > button > svg:hover
   background #677e8a
   transition all 0.2s ease-in-out
-}
 
-.file_upload input[type=file]{
+
+.file_upload input[type=file]
   display block
   position: absolute !important
   left: 0 !important
@@ -135,12 +249,17 @@
   -ms-transform: scale(20) !important /* IE 9 fix */
   opacity: 0 !important
   cursor: pointer !important
-}
-.file-upload__text{
-
+.file-upload__text
   col(4/12,offset:5/12)
   color #999999
   font-size 12px
   font-weight 400
+  margin-top 10px
+  +b(mobile)
+    letter-spacing -0.06px
+    width 100%
+    margin-left 0
+    margin-top 4px
+    line-height 16px
+    
   
-}
