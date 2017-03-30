@@ -1304,58 +1304,58 @@ $(document).ready(function(){
   //   e.preventDefault();
   // });
 
-
-  // for calendar-price
-  var maxCalendarPrice = 10000;
-  var minCalendarPrice = 1000;
-
-  function getRandomInt(minCalendarPrice, maxCalendarPrice) {
-    return Math.floor(Math.random() * (maxCalendarPrice - minCalendarPrice)) + minCalendarPrice;
-  }
-
-  function calendarPrice(){
-    var calendarPriceHash = {};
-    var calendarPriceMonths = [
-      'январь',
-      'февраль',
-      'март',
-      'апрель',
-      'май',
-      'июнь',
-      'июль',
-      'август',
-      'сентябрь',
-      'октябрь',
-      'ноябрь',
-      'декабрь'
-    ];
-    $.each(calendarPriceMonths, function(index, month) {
-      $('.calendarSlider').append('<div class="calendar-charts calendarIndex-'+ index +'"></div>');
-      console.log(month);
-      for (var i = 1; i <= 30; i++) {
-          var randomCalendarPrice = getRandomInt(minCalendarPrice, maxCalendarPrice);
-          console.log(randomCalendarPrice);
-          var calendarPriceHeight = (randomCalendarPrice / maxCalendarPrice) * 100;
-          calendarPriceHash[i] = calendarPriceHeight;
-          $('.calendarIndex-' + index).append('<div class="calendar-charts__item"><div class="calendar-charts__column" style="height:' + calendarPriceHeight +'%;"></div><div class="calendar-charts__number">'+ i +'</div></div>');
-          
-      };
-      $('.calendarIndex-' + index).append('<p class="calendar-charts__month">'+ month +'</p>');
-    });
-      
-    console.log(calendarPriceHash);
-    $('.calendarSlider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: '<div class="calendarSlider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',                 
-      nextArrow: '<div class="calendarSlider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
-      centerMode: false,
-      infinite: false,
-      fade: false,
-      asNavFor: ''
-    });
-  }
-  calendarPrice();
+  //
+  // // for calendar-price
+  // var maxCalendarPrice = 10000;
+  // var minCalendarPrice = 1000;
+  //
+  // function getRandomInt(minCalendarPrice, maxCalendarPrice) {
+  //   return Math.floor(Math.random() * (maxCalendarPrice - minCalendarPrice)) + minCalendarPrice;
+  // }
+  //
+  // function calendarPrice(){
+  //   var calendarPriceHash = {};
+  //   var calendarPriceMonths = [
+  //     'январь',
+  //     'февраль',
+  //     'март',
+  //     'апрель',
+  //     'май',
+  //     'июнь',
+  //     'июль',
+  //     'август',
+  //     'сентябрь',
+  //     'октябрь',
+  //     'ноябрь',
+  //     'декабрь'
+  //   ];
+  //   $.each(calendarPriceMonths, function(index, month) {
+  //     $('.calendarSlider').append('<div class="calendar-charts calendarIndex-'+ index +'"></div>');
+  //     console.log(month);
+  //     for (var i = 1; i <= 30; i++) {
+  //         var randomCalendarPrice = getRandomInt(minCalendarPrice, maxCalendarPrice);
+  //         console.log(randomCalendarPrice);
+  //         var calendarPriceHeight = (randomCalendarPrice / maxCalendarPrice) * 100;
+  //         calendarPriceHash[i] = calendarPriceHeight;
+  //         $('.calendarIndex-' + index).append('<div class="calendar-charts__item"><div class="calendar-charts__column" style="height:' + calendarPriceHeight +'%;"></div><div class="calendar-charts__number">'+ i +'</div></div>');
+  //
+  //     };
+  //     $('.calendarIndex-' + index).append('<p class="calendar-charts__month">'+ month +'</p>');
+  //   });
+  //
+  //   console.log(calendarPriceHash);
+  //   $('.calendarSlider').slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     prevArrow: '<div class="calendarSlider__arrow __left"><svg><use xlink:href="#arrow-left"></svg></div>',
+  //     nextArrow: '<div class="calendarSlider__arrow __right"><svg><use xlink:href="#arrow-right"></svg></div>',
+  //     centerMode: false,
+  //     infinite: false,
+  //     fade: false,
+  //     asNavFor: ''
+  //   });
+  // }
+  // calendarPrice();
   $('#hotelsTabs').tabs();
   
 
