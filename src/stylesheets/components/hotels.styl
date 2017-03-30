@@ -413,7 +413,7 @@
     min-height 700px
     +b(mobile)
       min-height auto
-      display none
+
     &__arrow
       position absolute
       height 40px
@@ -441,6 +441,9 @@
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
     transition all 0.3s ease-in-out 0s
 
+    +b(mobile)
+      margin: 0 15px 30px
+
     &:hover
       cursor pointer
       box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3)
@@ -450,11 +453,14 @@
 
       +b(mobile)
         transition none
-        height 115px
+        max-height 115px
 
     &:hover .numbersSlider__zoom
       display: block
       opacity: 1
+
+      +b(mobile)
+        display: none
 
   &__zoom
     position: absolute
@@ -466,6 +472,22 @@
     z-index: 3
     opacity: 0
     transition: opacity .5s ease-in-out
+
+    +b(mobile)
+      display: none
+
+  &__lunch
+    position: absolute
+    top: 83px
+    right: 24px
+    display: none
+    width: 24px
+    height: 22px
+    z-index: 3
+    fill: #fff
+
+    +b(mobile)
+      display: block
 
   &__images
     position relative
@@ -480,6 +502,13 @@
       width: 100%
       height: 100%
       background-color: rgba(0, 0, 0, .25)
+
+      +b(mobile)
+        top 35%
+        height: 65%
+        background-color: transparent
+        background-image: linear-gradient(transparent, #07405e)
+        opacity: .86
 
   &__image
     width: 263px
@@ -515,6 +544,9 @@
     border-bottom 1px solid #999
     height 85px
 
+    +b(mobile)
+      border-bottom: none
+
   &__info
     display: flex
     flex-direction: column
@@ -526,6 +558,17 @@
 
     +b(mobile)
       display none
+
+      &_price
+        display: block
+        margin: 0
+        padding: 0
+        height: 0
+        border: 0
+
+        & ^[0]__propertie
+         display: none
+
   &__propertie
     margin-bottom: 4px
     font-size 12px
@@ -538,10 +581,24 @@
     font-size 25px
     font-weight bold
     color #24b3fd
+
+    +b(mobile)
+      position: absolute
+      top: 105px
+      left: 24px
+      transform: translateY(-100%)
+      font-size: 22px
+      font-weight: normal
+      color: #ffffff
+
   &__form
     padding-top 20px
     margin 0 15px
     height 65px
+
+    +b(mobile)
+      display: none
+
   &__checkbox
     display inline-block
     vertical-align middle
