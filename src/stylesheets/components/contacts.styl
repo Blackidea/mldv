@@ -1,12 +1,22 @@
+@import '../base/mixins&includes.styl'
+
 .contacts
+  margin-bottom 30px
+  +b(mobile)
+    margin-bottom 18px
   &__title
     box-sizing border-box
     width 100%
-    & > h1
+    margin 40px 0 54px
+    +b(mobile)
+      margin 28px 0 18px
+    h1
       font-size 40px
-      line-height 0.5em
+      line-height 20px
       font-weight 300
       text-align center
+      +b(mobile)
+        font-size 30px
   &__content
     box-sizing border-box
     width 100%
@@ -14,19 +24,84 @@
     flex-direction row
     justify-content space-between
     align-items flex-start
+    +b(tablet)
+      align-content flex-start
+      flex-wrap wrap
+    +b(mobile)
+      flex-direction column
+      justify-content flex-start
+      align-items center
   &__item
-    width 25%
-    & h2
+    box-sizing border-box;
+    padding-left 98px
+    width 23%
+    text-align left
+    +b(tablet)
+      padding-right 100px
+      width 49%
+    +b(mobile)
+      padding-right 0
+      padding-left 0
+      margin-bottom 10px
+      width 100%
+    h2
       font-family $mainFont, $fixFont
       font-size 20px
-      line-height 1em
+      line-height 20px
       font-weight 700
-      color #07405e 
-    & p
+      color #07405e
+      margin-bottom 12px
+      +b(mobile)
+        margin-bottom 10px
+        font-size 18px
+    a 
+      +b(tablet)
+        border-bottom 1px solid $secondFontColor
+        &:hover
+          border-bottom-color $darkBlueColor
+      +b(mobile)
+        font-size 12px    
+    p
       font-family $mainFont, $fixFont
       font-size 14px
-      line-height 2.1em
+      line-height 22px
+      +b(mobile)
+        padding-bottom 0
+        font-size 12px
+        line-height 20px
     &_adress
-      & p
-        color #252525;
+      padding-left 0
+      +b(tablet)
+        padding-left 98px
+      +b(mobile)
+        padding-left 0
+      p
+        color #252525
+    &_worktime
+      p 
+        padding-bottom 0
+    &_phone
+      a 
+        color #252525
+        text-decoration none
+        +b(tablet)
+          color $secondFontColor
+        &:hover
+          color inherit
+          +b(tablet)
+            color $darkBlueColor
+    &_email
+      a 
+        border-bottom 1px solid $secondFontColor
+        &:hover
+          border-bottom-color $darkBlueColor
+.contacts-map
+  width 100vw
+  background-color #f3f3f3
+  height 390px  
+  +b(mobile)
+    height 300px
+.contacts-form .contactForm__textTitle_nounderline span::after 
+  display none
+      
         
