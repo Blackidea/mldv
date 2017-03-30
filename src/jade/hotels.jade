@@ -241,8 +241,46 @@ block content
       .section__title
         h2.h2 Создай свой идеальный отдых
       .holidayCreate__filter
-        
-        include layouts/filter__hotels.jade
+        img(src='images/bg/filter-hotels.jpg' alt='').holidayCreate__filter-image
+        .container.holidayCreate__filter-content
+          .holidayCreate__selectors
+            .holidayCreate__selectors-item
+              label(for="test")
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option Любой тип питания
+                option test2
+                option test3
+                option test4
+            .holidayCreate__selectors-item
+              label(for="test")
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option Любой тип номера
+                option test2
+                option test3
+                option test4
+          .holidayCreate__sort
+            .container
+              .catalog-sort.js-mobile-screen
+                a.catalog-sort__back.back.js-close-mobile-screen(href='#')
+                  svg.icon-arrow-left
+                    use(xlink:href='#arrow-left')
+                  | Назад
+                .catalog-sort__desctop.holidayCreate__sort-inner
+                  span.catalog-sort__title Сортировать по:
+                  ul.catalog-sort__list.js-sort
+                    li.catalog-sort__list-item.active
+                      a.catalog-sort__link(href='#') цене
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') дате
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') популярности
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') названию
+
       .holidayCreate__filterMob(style="display:none;")
         a.filter__back.back.js-close-filterMob(href='#')
           svg.icon-arrow-left
@@ -275,9 +313,9 @@ block content
 
       .container
         button.filter__buttonMob Фильтр
-      .holidayCreate__sliderMob
-        .container
-          include layouts/slider__catalog.jade
+      //- .holidayCreate__sliderMob
+      //-  .container
+      //-    include layouts/slider__catalog.jade
       .holidayCreate__slider
         
         #sliderNumbers.container
@@ -287,6 +325,9 @@ block content
                 title zoom
                 path(d='M19.09,18.8,13.9,13.4a8,8,0,1,0-1,1l5.21,5.42a.7.7,0,0,0,.51.22.71.71,0,0,0,.51-1.2ZM8,14.58A6.58,6.58,0,1,1,14.58,8,6.59,6.59,0,0,1,8,14.58Z', fill='#fff')
                 path(d='M11,7.35H8.65V5a.65.65,0,0,0-1.3,0V7.35H5a.65.65,0,0,0,0,1.3H7.35V11a.65.65,0,1,0,1.3,0V8.65H11a.65.65,0,1,0,0-1.3Z', fill='#fff')
+
+              svg.numbersSlider__lunch
+                use(xlink:href='#lunch')
 
               .sliderNumber.numbersSlider__images
                 img(src='images/numbers/image-1.jpg' alt='').numbersSlider__image
@@ -304,7 +345,7 @@ block content
               .numbersSlider__info
                 .numbersSlider__propertie Условия
                 .numbersSlider__value Скидка при раннем бронировании
-              .numbersSlider__info
+              .numbersSlider__info.numbersSlider__info_price
                 .numbersSlider__propertie Цена
                 .numbersSlider__price 1 270 $
               form.numbersSlider__form(action="")
@@ -363,6 +404,10 @@ block content
                   a.dropdown__link(href='#') Сейшелы
                 li.dropdown__list-item
                   a.dropdown__link(href='#') Маврикий
+
+        .container
+          button.filter__buttonMob Фильтр
+
         .container
           .hotelsTours__sorting
             .hotelsTours__sortingSelectors.__food
@@ -370,7 +415,7 @@ block content
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
-                option test1
+                option Любой тип питания
                 option test2
                 option test3
                 option test4
@@ -379,7 +424,7 @@ block content
                 svg
                   use(xlink:href='#caret-down')
               select(name="test2")
-                option test1
+                option Любой тип номера
                 option test2
                 option test3
                 option test4
@@ -388,7 +433,7 @@ block content
                 svg
                   use(xlink:href='#caret-down')
               select(name="test3")
-                option test1
+                option Авиакомпания
                 option test2
                 option test3
                 option test4
@@ -439,10 +484,10 @@ block content
                 .hotelsTours__tableCell.__tour 
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__numbers Полулюкс
                 .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Emirates
-                .hotelsTours__tableCell.__price 1360 $
+                .hotelsTours__tableCell.__airCompanie Аэрофлот
+                .hotelsTours__tableCell.__price 1270 $
 
               .hotelsTours__tableRow
                 .hotelsTours__tableCell.__tour 
@@ -450,17 +495,17 @@ block content
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
                 .hotelsTours__tableCell.__numbers Стандартный номер
                 .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Emirates
+                .hotelsTours__tableCell.__airCompanie Qatar Airways
                 .hotelsTours__tableCell.__price 1360 $
 
               .hotelsTours__tableRow
                 .hotelsTours__tableCell.__tour 
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Стандартный номер
+                .hotelsTours__tableCell.__numbers Аэрофлот
                 .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Emirates
-                .hotelsTours__tableCell.__price 1360 $
+                .hotelsTours__tableCell.__airCompanie Аэрофлот
+                .hotelsTours__tableCell.__price 1270 $
       .hotelsAround
         .section__title.hotelsAround__title
           h2.h2 Отели рядом

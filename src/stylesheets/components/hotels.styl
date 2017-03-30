@@ -181,8 +181,8 @@
       &:first-of-type
         border-top: 1px solid #c6c6c6
 
-      &:after
-        content url('../images/icon/arrow-down-sm.png')
+      &::after
+        content url('.../images/icon/arrow-down-sm.png')
         background none
         width 20px
         height 11px
@@ -359,14 +359,47 @@
     background #fff
 
   &__filter
-    background url('../images/bg/filter-hotels.jpg') no-repeat 50%
+    position: relative
     height 200px
-    padding-top 20px
+    margin-top: 20px
+    margin-bottom: 10px
 
     +b(mobile)
       background none
       height auto
       display none
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, .43)
+      z-index: 2
+
+    &-image
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      min-width: 100%
+      min-height: 100%
+      width: 0
+      object-fit: cover
+      z-index: 1
+
+    &-content
+      position: relative
+      display: block
+      padding-top: 17px
+      padding-bottom: 17px
+      z-index: 3
+
   &__selectors
     overflow hidden
     width 50%
@@ -388,17 +421,32 @@
         height 100%
         fill #fff
     & > select
-      border-radius 4px
+      border-radius 5px
       height 40px  
       color #fff
-      background rgba(59,86,100,0.58)
+      background rgba(9,60,87,.5)
+      outline none
+      border: 1px solid #fff
 
   &__sort-inner
-    // width 600px
     text-align center
-    padding-top 10px
-    border-top 1px solid #9e9e9c
+    padding-top 12px
+    border-top 1px solid rgba(204, 204, 204, .5)
     margin 0 auto
+
+    .catalog-sort__list
+      margin-right: 0
+      padding-right: 0
+
+    .catalog-sort__title, .catalog-sort__link
+      color: #ffffff
+
+    .catalog-sort__link:hover
+      color: #ffffff
+
+    .catalog-sort__list-item.active .catalog-sort__link
+      color: #677e8a
+
   &__result
     +b(mobile)
       display none
@@ -413,7 +461,7 @@
     min-height 700px
     +b(mobile)
       min-height auto
-      display none
+
     &__arrow
       position absolute
       height 40px
@@ -441,6 +489,9 @@
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
     transition all 0.3s ease-in-out 0s
 
+    +b(mobile)
+      margin: 0 15px 30px
+
     &:hover
       cursor pointer
       box-shadow: 0 0 9.5px 0.5px rgba(35, 41, 50, 0.3)
@@ -450,11 +501,14 @@
 
       +b(mobile)
         transition none
-        height 115px
+        max-height 115px
 
     &:hover .numbersSlider__zoom
       display: block
       opacity: 1
+
+      +b(mobile)
+        display: none
 
   &__zoom
     position: absolute
@@ -466,6 +520,22 @@
     z-index: 3
     opacity: 0
     transition: opacity .5s ease-in-out
+
+    +b(mobile)
+      display: none
+
+  &__lunch
+    position: absolute
+    top: 83px
+    right: 24px
+    display: none
+    width: 24px
+    height: 22px
+    z-index: 3
+    fill: #fff
+
+    +b(mobile)
+      display: block
 
   &__images
     position relative
@@ -480,6 +550,13 @@
       width: 100%
       height: 100%
       background-color: rgba(0, 0, 0, .25)
+
+      +b(mobile)
+        top 35%
+        height: 65%
+        background-color: transparent
+        background-image: linear-gradient(transparent, #07405e)
+        opacity: .86
 
   &__image
     width: 263px
@@ -515,6 +592,9 @@
     border-bottom 1px solid #999
     height 85px
 
+    +b(mobile)
+      border-bottom: none
+
   &__info
     display: flex
     flex-direction: column
@@ -526,6 +606,17 @@
 
     +b(mobile)
       display none
+
+      &_price
+        display: block
+        margin: 0
+        padding: 0
+        height: 0
+        border: 0
+
+        & ^[0]__propertie
+         display: none
+
   &__propertie
     margin-bottom: 4px
     font-size 12px
@@ -538,10 +629,24 @@
     font-size 25px
     font-weight bold
     color #24b3fd
+
+    +b(mobile)
+      position: absolute
+      top: 105px
+      left: 24px
+      transform: translateY(-100%)
+      font-size: 22px
+      font-weight: normal
+      color: #ffffff
+
   &__form
     padding-top 20px
     margin 0 15px
     height 65px
+
+    +b(mobile)
+      display: none
+
   &__checkbox
     display inline-block
     vertical-align middle
@@ -713,10 +818,28 @@
         margin-left 0
       
 .hotelsTours
+  margin-top: 80px
+
+  & > .section__title .pick-up
+    +b(mobile)
+      display: block
+      margin: 0
+      padding: 0
+      color: #677e8a
+      font-size: 22px;
+
+    .dropdown__box
+      padding: 10px
+      text-align: center
+
+      +b(mobile)
+        min-width: calc(100% - 30px)
+        margin-left: 15px
+
   &__sortingMob
     display none
     +b(mobile)
-      display block
+      display none
       margin-top 30px
     &Title
       display block
@@ -735,9 +858,11 @@
   &__sorting
     display inline-block
     vertical-align middle
+    margin-top: 26px
     margin-bottom 26px
     +b(mobile)
-      width 100%
+      display: none
+
     &Selectors
       position relative
       display inline-block
@@ -852,8 +977,8 @@
     &Titles
       display table
       height 50px
-      border-top 1px solid #999
-      border-bottom 1px solid #999
+      border-top 1px solid rgba(204, 204, 204, .5)
+      border-bottom 1px solid rgba(204, 204, 204, .5)
       color #999
     &Title
       display inline-block
