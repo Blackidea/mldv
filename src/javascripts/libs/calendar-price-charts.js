@@ -145,13 +145,15 @@ const init = (prices) => {
         throw new Error(`Expected data to be an array of arrays of numbers`);
     }
 
+    const cachedBiggestPrice = biggestPrice(prices);
+
     prices.forEach((monthPrices, monthIndex) => {
         const month = createMonthElement();
         const charts = createChartsContainerElement();
         const days = createDaysContainerElement();
 
         monthPrices.forEach((price, dayIndex) => {
-            const chartItem = createChartItemElement(price, biggestPrice(prices));
+            const chartItem = createChartItemElement(price, cachedBiggestPrice);
             const dayItem = createDayItemElement(new Date().getFullYear(), monthIndex, dayIndex + 1);
 
             charts.appendChild(chartItem);
