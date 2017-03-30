@@ -181,8 +181,8 @@
       &:first-of-type
         border-top: 1px solid #c6c6c6
 
-      &:after
-        content url('../images/icon/arrow-down-sm.png')
+      &::after
+        content url('.../images/icon/arrow-down-sm.png')
         background none
         width 20px
         height 11px
@@ -359,14 +359,47 @@
     background #fff
 
   &__filter
-    background url('../images/bg/filter-hotels.jpg') no-repeat 50%
+    position: relative
     height 200px
-    padding-top 20px
+    margin-top: 20px
+    margin-bottom: 10px
 
     +b(mobile)
       background none
       height auto
       display none
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, .43)
+      z-index: 2
+
+    &-image
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      min-width: 100%
+      min-height: 100%
+      width: 0
+      object-fit: cover
+      z-index: 1
+
+    &-content
+      position: relative
+      display: block
+      padding-top: 17px
+      padding-bottom: 17px
+      z-index: 3
+
   &__selectors
     overflow hidden
     width 50%
@@ -388,17 +421,32 @@
         height 100%
         fill #fff
     & > select
-      border-radius 4px
+      border-radius 5px
       height 40px  
       color #fff
-      background rgba(59,86,100,0.58)
+      background rgba(9,60,87,.5)
+      outline none
+      border: 1px solid #fff
 
   &__sort-inner
-    // width 600px
     text-align center
-    padding-top 10px
-    border-top 1px solid #9e9e9c
+    padding-top 12px
+    border-top 1px solid rgba(204, 204, 204, .5)
     margin 0 auto
+
+    .catalog-sort__list
+      margin-right: 0
+      padding-right: 0
+
+    .catalog-sort__title, .catalog-sort__link
+      color: #ffffff
+
+    .catalog-sort__link:hover
+      color: #ffffff
+
+    .catalog-sort__list-item.active .catalog-sort__link
+      color: #677e8a
+
   &__result
     +b(mobile)
       display none

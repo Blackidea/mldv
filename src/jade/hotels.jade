@@ -241,8 +241,46 @@ block content
       .section__title
         h2.h2 Создай свой идеальный отдых
       .holidayCreate__filter
-        
-        include layouts/filter__hotels.jade
+        img(src='images/bg/filter-hotels.jpg' alt='').holidayCreate__filter-image
+        .container.holidayCreate__filter-content
+          .holidayCreate__selectors
+            .holidayCreate__selectors-item
+              label(for="test")
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option Любой тип питания
+                option test2
+                option test3
+                option test4
+            .holidayCreate__selectors-item
+              label(for="test")
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option Любой тип номера
+                option test2
+                option test3
+                option test4
+          .holidayCreate__sort
+            .container
+              .catalog-sort.js-mobile-screen
+                a.catalog-sort__back.back.js-close-mobile-screen(href='#')
+                  svg.icon-arrow-left
+                    use(xlink:href='#arrow-left')
+                  | Назад
+                .catalog-sort__desctop.holidayCreate__sort-inner
+                  span.catalog-sort__title Сортировать по:
+                  ul.catalog-sort__list.js-sort
+                    li.catalog-sort__list-item.active
+                      a.catalog-sort__link(href='#') цене
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') дате
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') популярности
+                    li.catalog-sort__list-item
+                      a.catalog-sort__link(href='#') названию
+
       .holidayCreate__filterMob(style="display:none;")
         a.filter__back.back.js-close-filterMob(href='#')
           svg.icon-arrow-left
@@ -275,9 +313,9 @@ block content
 
       .container
         button.filter__buttonMob Фильтр
-      //.holidayCreate__sliderMob
-      //  .container
-      //    include layouts/slider__catalog.jade
+      //- .holidayCreate__sliderMob
+      //-  .container
+      //-    include layouts/slider__catalog.jade
       .holidayCreate__slider
         
         #sliderNumbers.container
