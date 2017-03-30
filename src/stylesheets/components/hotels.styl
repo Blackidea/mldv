@@ -818,10 +818,28 @@
         margin-left 0
       
 .hotelsTours
+  margin-top: 80px
+
+  & > .section__title .pick-up
+    +b(mobile)
+      display: block
+      margin: 0
+      padding: 0
+      color: #677e8a
+      font-size: 22px;
+
+    .dropdown__box
+      padding: 10px
+      text-align: center
+
+      +b(mobile)
+        min-width: calc(100% - 30px)
+        margin-left: 15px
+
   &__sortingMob
     display none
     +b(mobile)
-      display block
+      display none
       margin-top 30px
     &Title
       display block
@@ -840,9 +858,11 @@
   &__sorting
     display inline-block
     vertical-align middle
+    margin-top: 26px
     margin-bottom 26px
     +b(mobile)
-      width 100%
+      display: none
+
     &Selectors
       position relative
       display inline-block
@@ -957,8 +977,8 @@
     &Titles
       display table
       height 50px
-      border-top 1px solid #999
-      border-bottom 1px solid #999
+      border-top 1px solid rgba(204, 204, 204, .5)
+      border-bottom 1px solid rgba(204, 204, 204, .5)
       color #999
     &Title
       display inline-block
