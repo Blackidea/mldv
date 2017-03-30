@@ -10,13 +10,12 @@ block content
       h2.l-agents__title Агентствам
       .container.b-agentsInfo
         .col-6.colm-12
-          p.b-agentsInfo__text.  «Мальдивиана» предлагает турагентствам взаимовыгодное сотрудничество, с условиями которого вы можете ознакомиться  в разделе  «Как с нами работать». 
-            В данном разделе, вы найдете всю    необходимую информацию для успешной работы с нами! Многие московские и региональные агентства, агентства из стран 
-            СНГ  стали нашими постоянными партнерами. Мы с удовольствием делимся своими знаниями о наших направлениях, проводя семинары в Центральном офисе.
-            А в разделе «Бонусная программа для агентств» Вы сможете ознакомится с приобретением туров на самых выгодных условиях.
-
+          p.b-agentsInfo__text.__1.
+            «Мальдивиана» предлагает турагентствам взаимовыгодное сотрудничество, с условиями которого вы можете ознакомиться  в разделе  «Как с нами работать». В данном разделе, 
+            вы найдете всю необходимую информацию для успешной работы с нами! Многие московские и региональные агентства, агентства из стран СНГ  стали нашими постоянными партнерами. 
+            Мы с удовольствием делимся своими знаниями о наших направлениях, проводя семинары в Центральном офисе. А в разделе «Бонусная программа для агентств» Вы сможете ознакомится с приобретением туров на самых выгодных условиях.
         .col-6.colm-12
-          p.b-agentsInfo__text  На рассылку наших новостей и лучших предложений, вы можете подписаться на главной странице нашего сайта или сразу зайти на страницу подписки. 
+          p.b-agentsInfo__text.__2  На рассылку наших новостей и лучших предложений, вы можете подписаться на главной странице нашего сайта или сразу зайти на страницу подписки. 
             |Информация постоянно обновляется, поэтому мы рекомендуем вам регулярно посещать страницы этого раздела! Всю информацию об условиях сотрудничества, нюансах бонусных программ для агентств, совместной рекламе Вы можете также получить у менеджеров Компании, по телефону 
             a.b-agentsInfo__link(href="tel:+7495925-11-11")  +7 (495) 925-11-11, 
             a.b-agentsInfo__link(href="tel:info@maldiviana.com")  e-mail: info@maldiviana.com  
@@ -29,38 +28,39 @@ block content
       h2.l-agentsForm__title Регистрация агентства
       .container
         form.b-agentsForm
-          h3.b-agentsForm__title Сведения об организации:
-          .b-agentsForm__data
+          .b-agentsForm__section.b-agentsForm__section_organization
+            h3.b-agentsForm__title Сведения об организации:
+            .b-agentsForm__data
               label.b-agentsForm__label Название компании на русском языке:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Свидетельство о внесении в Единый государственный реестр юр. лиц (дата, №, кем выдано):
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label ОГРН
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label ИНН
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label КПП
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label ОКПО
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Расчетный счет -№
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Корреспондентский счет-№
               input.b-agentsForm__input(type="text")
-              .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Код БИК:
               input.b-agentsForm__input(type="text")
-              .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Наименование и адрес обслуживающего банка:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data.upload
+            .b-agentsForm__data.upload
               label.b-agentsForm__label Добавить файл:
               .file_upload.b-agentsForm__input
                 //- div(style="float:right;width:30px;border-radius:4px;border:1px solid #000;height:100%;")
@@ -70,40 +70,41 @@ block content
                     use(xlink:href="#screpka")
                 input(type="file")
               .file-upload__text  Если необходимо, прикрепите подтверждающие документы
-
-          h3.b-agentsForm__title Адресные данные:
-          .b-agentsForm__data
+          .b-agentsForm__section.b-agentsForm__section_contacts  
+            h3.b-agentsForm__title Адресные данные:
+            .b-agentsForm__data
               label.b-agentsForm__label Юридический адрес:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Фактический адрес:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Телефон:
               input.b-agentsForm__input(type="tel")
-          .b-agentsForm__data.last
+            .b-agentsForm__data.last
               label.b-agentsForm__label Email:
               input.b-agentsForm__input(type="email")
-
-          h3.b-agentsForm__title  Сведения о руководителе, от имени которого заключается договор:
-          .b-agentsForm__data
+          .b-agentsForm__section.b-agentsForm__section_chief  
+            h3.b-agentsForm__title  Сведения о руководителе, от имени которого заключается договор:
+            .b-agentsForm__data
               label.b-agentsForm__label ФИО:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label Должность:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__data
+            .b-agentsForm__data
               label.b-agentsForm__label На основании чего действует:
               input.b-agentsForm__input(type="text")
-          .b-agentsForm__title
-          .row.b-agentsForm__checkbox
-            li
-              input#license1.checkbox--inline(type='checkbox')
-              label(for='license1') Я согласен с условиями публичной оферты
-            li.filter__li
-              input#license2.checkbox--inline(type='checkbox')
-              label(for='license2') Получать уведомления по email
-            button.b-agentsForm__button(type="submit") Регистрация
+          .b-agentsForm__section.b-agentsForm__section_submit      
+            .b-agentsForm__title  
+            .row.b-agentsForm__checkbox
+              li
+                input#license1.checkbox--inline(type='checkbox')
+                label(for='license1') Я согласен с условиями публичной оферты
+              li.filter__li
+                input#license2.checkbox--inline(type='checkbox')
+                label(for='license2') Получать уведомления по email
+              button.b-agentsForm__button(type="submit") Регистрация
               
           
 

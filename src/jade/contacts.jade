@@ -24,23 +24,24 @@ block content
           .contacts__item.contacts__item_email
             h2 E-mail:
             a(href="mailto:info@maldiviana.com") info@maldiviana.com      
-    .map
+    .contacts-map#contacts-map
     
-    .contactForm
+    
+    .contactForm.contacts-form
       .container
         form.contactForm__inner
-          .contactForm__textTitle 
+          .contactForm__textTitle.contactForm__textTitle_nounderline 
               span
                 |Связаться с нами
           .contactForm__row
             .contactForm__input
-              label(for="name") <span>*</span> Имя:
+              label(for="name") <span>*</span>Имя:
               input(name="name" type="text" placeholder="Мария")
             .contactForm__input
-              label(for="tel") <span>*</span> Телефон:
+              label(for="tel") <span>*</span>Телефон:
               input(name="tel" type="tel" placeholder="+7 (925) 123 23 55")
             .contactForm__input
-              label(for="email") <span>*</span> E-mail:
+              label(for="email") <span>*</span>E-mail:
               input(name="email" type="email" placeholder="ksenia@mail")
           .contactForm__row
             .contactForm__textarea
