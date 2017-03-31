@@ -165,6 +165,9 @@
     +b(mobile)
       margin-left 0
       margin-right 0
+      padding-top 26px
+      padding-bottom 26px
+      margin-bottom 24px
       
   &__textTitle
     display block
@@ -173,6 +176,8 @@
     font-family 'Roboto'
     font-size 25px 
     font-weight 700
+    +b(mobile)
+      font-size 18px
     & > span
       &:after
         content ''
@@ -181,17 +186,31 @@
         width 30%
         margin 30px auto 25px
         border-bottom 1px solid #fff
+        +b(mobile)
+          width 72%
+          margin 20px auto 16px
+    &_nounderline
+      margin 10px 0 48px
+      +b(mobile)
+        margin 4px 0 11px
+        font-size 25px
+      & span::after 
+        display none  
   &__description
     color #fff
     text-align center
     font-size 14px
     margin-bottom 47px
+    +b(mobile)
+      margin-bottom 0
+      font-size 12px
   &__row
     margin-top 27px
     overflow hidden
     padding-left 57px
     +b(mobile)
       padding-left 0
+      margin-top 8px
     &:last-child
       padding-left 0
   &__input
@@ -205,6 +224,7 @@
     +b(mobile)
       col(1)  
       margin-top 10px
+      margin-bottom 11px
     & > label
       font-size 16px
       color #fff
@@ -221,6 +241,8 @@
       color #fff
   &__textarea
     width 100%
+    +b(mobile)
+      margin-bottom 16px
     & > label
       font-size 16px
       color #fff
@@ -233,6 +255,8 @@
       border-radius 4px
       border 1px solid #fff
       background rgba(10,45,64,0.5)
+      +b(mobile)
+        height 64px
       &:focus
         background #fff
   &__button
