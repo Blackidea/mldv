@@ -818,6 +818,15 @@
 .hotelsTours
   margin-top: 80px
 
+  & .hotelsToursfilter__buttonMob
+    display: none
+
+    +b(mobile)
+      display: block
+      width: 100%
+      height: 40px
+      padding: 0
+
   & > .section__title .pick-up
     +b(mobile)
       display: block
@@ -837,27 +846,28 @@
   &__sortingMob
     display none
     +b(mobile)
-      display none
+      display block
       margin-top 30px
     &Title
       display block
-      
+      margin-top: 20px
       font-weight bold
       color #000
       padding-right 30px
     &List
-      margin-top 30px
+      margin-top 15px
       display block
       vertical-align middle
       & > li
         margin-top 10px
         margin-bottom 10px
-    
+
   &__sorting
     display inline-block
     vertical-align middle
     margin-top: 26px
     margin-bottom 26px
+
     +b(mobile)
       display: none
 
@@ -869,6 +879,17 @@
       height 30px
       +b(mobile)
         border-right none
+        border-bottom: 1px solid #cccccc
+
+        & > label
+          right: 0
+
+        & > select
+          padding-left: 0
+          padding-right: 0
+          font-size: 14px
+          color: #000000
+
       &.__food
         width 218px
         +b(mobile)
@@ -956,7 +977,7 @@
       vertical-align middle
     &ListItem
       display inline-block
-      vertical-align middle     
+      vertical-align middle
       & > a
         text-decoration none
         color #999
@@ -966,6 +987,7 @@
         background #f4f4f4
         color #000
   &__tableMob
+    margin-top: 20px
     display none
     +b(mobile)
       display block

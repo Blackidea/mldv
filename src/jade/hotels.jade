@@ -415,9 +415,8 @@ block content
                   a.dropdown__link(href='#') Маврикий
 
         .container
-          button.filter__buttonMob Фильтр
+          button.hotelsToursfilter__buttonMob Фильтр
 
-        .container
           .hotelsTours__sorting
             .hotelsTours__sortingSelectors.__food
               label(for="test") 
@@ -456,7 +455,42 @@ block content
                   a.hotelsTours__sortingLink(href='#') дате
                 li.hotelsTours__sortingListItem
                   a.hotelsTours__sortingLink(href='#') названию
+
+        .holidayCreate__filterMob.hotelsTours__filterMob(style="display:none;")
+          a.filter__back.back.js-close-hotelsTours__filterMob(href='#')
+            svg.icon-arrow-left
+              use(xlink:href='#arrow-left')
+            | Назад
+
+          .container
             .hotelsTours__sortingMob
+              .hotelsTours__sortingSelectors.__food
+                label(for="test")
+                  svg
+                    use(xlink:href='#caret-down')
+                select(name="test")
+                  option Любой тип питания
+                  option test2
+                  option test3
+                  option test4
+              .hotelsTours__sortingSelectors.__typeNumbers
+                label(for="test2")
+                  svg
+                    use(xlink:href='#caret-down')
+                select(name="test2")
+                  option Любой тип номера
+                  option test2
+                  option test3
+                  option test4
+              .hotelsTours__sortingSelectors.__airCompanie
+                label(for="test3")
+                  svg
+                    use(xlink:href='#caret-down')
+                select(name="test3")
+                  option Авиакомпания
+                  option test2
+                  option test3
+                  option test4
               //- .catalog-sort__desctop.holidayCreate__sort-inner
               span.hotelsTours__sortingMobTitle Сортировать по:
               ul.hotelsTours__sortingMobList
@@ -469,8 +503,11 @@ block content
                 li
                   input#countryOption-3.checkbox--inline(type='checkbox')
                   label(for='countryOption-3') Названию
+
+        .container
           .hotelsTours__tableMob
             include layouts/slider__catalog.jade
+
           .hotelsTours__table
             .hotelsTours__tableTitles
               .hotelsTours__tableTitle.__tour Тур
@@ -481,7 +518,7 @@ block content
               .hotelsTours__tableTitle.__price Цена
             .hotelsTours__tableCells
               .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour 
+                .hotelsTours__tableCell.__tour
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
                 .hotelsTours__tableCell.__numbers Стандартный номер
@@ -490,7 +527,7 @@ block content
                 .hotelsTours__tableCell.__price 1360 $
 
               .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour 
+                .hotelsTours__tableCell.__tour
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
                 .hotelsTours__tableCell.__numbers Полулюкс
@@ -499,7 +536,7 @@ block content
                 .hotelsTours__tableCell.__price 1270 $
 
               .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour 
+                .hotelsTours__tableCell.__tour
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
                 .hotelsTours__tableCell.__numbers Стандартный номер
@@ -508,7 +545,7 @@ block content
                 .hotelsTours__tableCell.__price 1360 $
 
               .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour 
+                .hotelsTours__tableCell.__tour
                   a(href="") Мальдивские острова Qatar Airways
                 .hotelsTours__tableCell.__duration 12 дн. / 10 н.
                 .hotelsTours__tableCell.__numbers Аэрофлот

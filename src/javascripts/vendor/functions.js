@@ -2044,13 +2044,35 @@ function mapPrice() {
    
   }
 
+  function hotelsTourFilterMob(){
+
+    var filterBlock = $('.hotelsTours__filterMob');
+
+    if (!filterBlock.hasClass('active')){
+      filterBlock.addClass('active');
+      filterBlock.toggle('slide');
+    }
+    else{
+      filterBlock.removeClass('active');
+      filterBlock.toggle('slide');
+    }
+  }
+
   $('.filter__buttonMob').click(holidayCreateFilterMob);
+
   $('.js-close-filterMob').click(function(e){
     e.preventDefault();
     holidayCreateFilterMob();
   });
-  
-  function countryTabs(){
+
+  $('.hotelsToursfilter__buttonMob').click(hotelsTourFilterMob);
+
+  $('.js-close-hotelsTours__filterMob').click(function(e){
+      e.preventDefault();
+      hotelsTourFilterMob();
+  });
+
+function countryTabs(){
     $('#countryTabs').tabs();
   }
 
@@ -2071,3 +2093,4 @@ function mapPrice() {
   specialOffersMap();
   otherRegionsSlider();
   holidayCreateFilterMob();
+  hotelsTourFilterMob();
