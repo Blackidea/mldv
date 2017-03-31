@@ -1,0 +1,36 @@
+.modal-popup.js-discount-for-accommodation-popup
+    .modal-popup__container
+        header.modal-popup__header
+            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.79 14.79").modal-popup__close.js-modal-popup__close
+                title Close popup
+                line(x1="2" y1="2" x2="12.79" y2="12.79" fill="none" stroke="#24b3fd" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4")
+                line(x1="2" y1="12.79" x2="12.79" y2="2" fill="none" stroke="#24b3fd" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4")
+
+            span.modal-popup__title 20% скидка на проживание
+
+        .modal-popup__content.discount-for-accommodation-popup__content
+            ul.discount-for-accommodation-popup__list
+                li.discount-for-accommodation-popup__item
+                    span.discount-for-accommodation-popup__item-text.discount-for-accommodation-popup__item-text_bold
+                        | Типы номеров:
+                        = ' '
+                    span.discount-for-accommodation-popup__item-text Все
+                li.discount-for-accommodation-popup__item
+                    span.discount-for-accommodation-popup__item-text.discount-for-accommodation-popup__item-text_bold
+                        | Пансион:
+                        = ' '
+                    span.discount-for-accommodation-popup__item-text Все
+                li.discount-for-accommodation-popup__item
+                    span.discount-for-accommodation-popup__item-text.discount-for-accommodation-popup__item-text_bold
+                        | Комбинируется с другими бонусами:
+                        = ' '
+                    span.discount-for-accommodation-popup__item-text Да
+                li.discount-for-accommodation-popup__item
+                    span.discount-for-accommodation-popup__item-text.discount-for-accommodation-popup__item-text_bold
+                        | Бонус учтен в ценах на сайте:
+                        = ' '
+                    span.discount-for-accommodation-popup__item-text Да
+
+            .discount-for-accommodation-popup__text-block
+                span.discount-for-accommodation-popup__text.discount-for-accommodation-popup__text_red.discount-for-accommodation-popup__text_bold Внимание:
+                span.discount-for-accommodation-popup__text Бонусные (бесплатные) ночи расчитываются на базовом питании. Разницу между выбранным и базовым питанием необходимо будет оплатить
