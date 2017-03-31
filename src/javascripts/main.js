@@ -15,3 +15,16 @@ require('./libs/calendar-price-charts')([
     [4479,3067,7658,2640,9363,4269,9071,6652,1668,1619,3214,5460,942,9828,5938,9665,9578,1861,4357,7926,8953,985,5161,4415,9677,5158,601,6909,6183,3554],
     [9016,944,6535,5691,3781,9380,9268,301,8769,4826,5943,5701,9893,6024,6056,8623,2027,9265,7137,7533,102,2650,4261,8304,9363,3262,6436,2421,6927,6647,534]
 ]);
+
+// calendar-price-charts slider
+const Swiper = require('swiper/dist/js/swiper.jquery');
+
+new Swiper('.js-calendar-price-slider-container', {
+    slidesPerView: 'auto',
+    initialSlide: new Date().getMonth(),
+    spaceBetween: 20,
+    slideClass: 'calendar-price-charts__month',
+    freeMode: true,
+    nextButton: '.js-calendar-price__btn_next',
+    prevButton: '.js-calendar-price__btn_prev'
+});

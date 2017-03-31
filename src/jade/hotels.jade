@@ -72,7 +72,15 @@ block content
       .section__title
         h2.h2 Календарь цен
       .container
-        .calendar-price-charts.js-calendar-price-charts
+        .js-calendar-price-slider-container.swiper-container
+          .calendar-price-charts.js-calendar-price-charts.swiper-wrapper
+
+        .calendar-price__btn.calendar-price__btn_prev.js-calendar-price__btn_prev
+          svg
+              use(xlink:href="#arrow-left")
+        .calendar-price__btn.calendar-price__btn_next.js-calendar-price__btn_next
+          svg
+              use(xlink:href="#arrow-right")
 
     .dSubscribePrice
       .container
