@@ -33,35 +33,33 @@
         
 .calendar-price
   margin 30px 0
+
   +b(mobile)
     display none
-.calendar-charts
-  margin 30px auto 30px
-  &__item
-    position relative
-    width 15px
-    height 150px
-    margin 0 11px
-    float left
-    margin: 0 1%
-    width: 1.3%
-  &__column
-    position absolute
-    bottom 24px
-    background #e6e6e7
-    height 10px
-    width 100%
-    &:hover
-      background #24b3fd    
-  &__number
-    position absolute
-    width 100%
-    text-align center
-    bottom 0
-    left 0
-  &__month
-    padding 0 !important
-    color #cccccc
+
+  & > .container
+    display: flex
+    align-items: center
+
+  &__btn
+    cursor: pointer
+
+    & > svg
+      width: 8px
+      height: 15px
+      fill: #677e8a
+
+    &_next
+      order: 3
+      margin-left: 10px
+
+    &_prev
+      order: 1
+      margin-right: 10px
+
+  & .swiper-container
+    order: 2
+
 #mapPrice
   max-height: 100%
   max-width: 100%
