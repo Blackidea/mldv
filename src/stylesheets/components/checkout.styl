@@ -104,20 +104,38 @@
               transform translate(0, 0)
 
 .about-tour
-  display: block
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+  &__column
+    display: flex
+    flex-direction: column
+    width: 50%
+
+    &_right
+      align-items: right
 
   &__title
     display: block
+    margin-bottom: 34px
+    width: 100%
     color: #07405e
     font-size: em(25px, 14px)
     font-weight: 700
-    margin-bottom: 34px
 
   &__heading
     color: #07405e
     font-family: "Open Sans Light", "Open Sans", sans-serif
     font-size: em(20px, 14px)
     text-transform uppercase
+
+  &__description
+    display: block
+    margin-top: 14px
+    width: 100%
+    font-size: 1em
+    color: #000000
 
   &__icon-list
     display: flex
@@ -206,3 +224,50 @@
       & > small
         font-size: em(12px, 14px)
         color: #999999
+
+  &__photos
+    display: block
+
+    &-list
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-between
+      width: 375px
+      margin-top: 10px
+
+    &-item
+      position: relative
+      display: block
+      width: 180px
+      height: 110px
+      border-radius: 5px
+      overflow: hidden
+      margin-top: 15px
+
+    &-image
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      min-width: 100%
+      min-height: 100%
+      width: 0
+      object-fit: cover
+
+  &__tickets
+    display: block
+    width: 100%
+
+    &-list
+      display: flex
+      justify-content space-between
+      margin-top: 24px
+
+    &-item
+      display: block
+      width: 555px
+      height: 134px
+      border-radius: 10px
+      box-shadow: 0 0 3.8px .2px rgba(35, 41, 50, 0.3)
