@@ -1,0 +1,208 @@
+@import '../base/mixins&includes.styl'
+
+.checkoutHeader
+  padding 30px 0 10px
+  text-align: center
+
+  +b(mobile)
+    padding: 20px 0 10px
+
+  &__nameHotel
+    font-family 'Roboto'
+    font-weight 300
+    line-height normal
+    font-size 40px
+    color #24b3fd
+    +b(mobile)
+      font-size 30px
+
+  &__geo
+    font-family 'Roboto'
+    font-weight 300
+    color #acadaf
+    font-size 14px
+    +b(mobile)
+      font-size 12px
+
+.checkoutTabs
+  margin-top: 35px
+
+  +b(mobile)
+    margin-top: 25px
+
+  &__block
+    height:auto
+    width:100%
+    +b(mobile)
+      height auto
+
+  &__nav
+    padding 25px 0
+    margin-bottom 50px
+    border-top 1px solid #9f9fa0
+    border-bottom 1px solid #9f9fa0
+    +b(mobile)
+      display none
+
+    & > .ui-tabs-active > a
+      color #24b3fd !important
+      font-weight 600
+      font-size 22px
+
+      &:after
+        position absolute
+        content url('../images/icon/arrow-down.png')
+        height 100%
+        width 80%
+        top 25px
+        left 50%
+        transform translate(-50%, 50%)
+        background #fff
+        +b(mobile)
+          background none
+          left 90%
+          top 0
+          width 20px
+          height 11px
+          transform translate(0, 0)
+
+    & > li
+      position relative
+      display inline-block
+      width 33%
+      text-align center
+      font-size 22px
+      font-weight 300
+      +b(mobile)
+        width 100%
+      & > a
+        text-decoration none
+        color #677e8a !important
+        height 20px
+        width 20px
+
+        &:hover
+          color #24b3fd !important
+          font-weight 600
+          font-size 22px
+
+          &:after
+            position absolute
+            content url('../images/icon/arrow-down.png')
+            height 100%
+            width 80%
+            top 25px
+            left 50%
+            transform translate(-50%, 50%)
+            background #fff
+            +b(mobile)
+              background none
+              left 90%
+              top 0
+              width 20px
+              height 11px
+              transform translate(0, 0)
+
+.about-tour
+  display: block
+
+  &__title
+    display: block
+    color: #07405e
+    font-size: em(25px, 14px)
+    font-weight: 700
+    margin-bottom: 34px
+
+  &__heading
+    color: #07405e
+    font-family: "Open Sans Light", "Open Sans", sans-serif
+    font-size: em(20px, 14px)
+    text-transform uppercase
+
+  &__icon-list
+    display: flex
+    flex-flow row wrap
+    width: 680px
+    margin-top: 23px
+    margin-bottom: 47px
+
+    &-wrapper
+      display: block
+
+    &-item
+      display: flex
+      align-items: center
+      width: 50%
+      margin-bottom: 15px
+
+    &-icon
+      display: block
+      fill: #24b3fd
+
+      & > *
+        fill: #24b3fd
+
+      &-wrapper
+        display: block
+        width: 25px
+        margin-right: 12px
+
+      &_calendar
+        width: 21px
+        height: 22px
+
+      &_deluxe
+        width: 24px
+        height: 17px
+
+      &_night
+        width: 20px
+        height: 20px
+
+      &_breakfast
+        width: 19px
+        height: 23px
+
+      &_people
+        width: 22px
+        height: 20px
+
+      &_christmas
+        width: 16px
+        height: 23px
+
+      &_excursion
+        width: 21px
+        height: 26px
+
+      &_insurance
+        width: 20px
+        height: 25px
+
+      &_vip
+        width: 23px
+        height: 23px
+
+      &_marriage
+        width: 19px
+        height: 22px
+
+      &_arrival
+        width: 19px
+        height: 25px
+
+      &_visa
+        width: 21px
+        height: 21px
+
+      &_transfer
+        width: 23px
+        height: 14px
+
+    &-text
+      color: #000000
+      font-size: em(16px, 14px)
+
+      & > small
+        font-size: em(12px, 14px)
+        color: #999999

@@ -1357,7 +1357,8 @@ $(document).ready(function(){
   // }
   // calendarPrice();
   $('#hotelsTabs').tabs();
-  
+  $('#checkoutTabs').tabs();
+
 
 });
 function mapPrice() {
