@@ -252,6 +252,63 @@ block content
                                 b 320 Мальдив бонусов
 
                 #checkoutTabs-2.checkoutTabs__block
+                    .tourist-data
+                        .tourist-data__tour-card
+                            //card
+                        form.tourist-data__form
+                            fieldset.tourist-data__contacts
+                                label.tourist-data__field
+                                    span.tourist-data__label Телефон:
+                                    input.tourist-data__input(value="+7 (925) 123 23 55")
+                                label.tourist-data__field
+                                    span.tourist-data__label E-mail:
+                                    input.tourist-data__input(value="ksenia@mail.ru")
+                                .tourist-data__contacts-description
+                                    small Контактные данные.
+                                    small Будем присылать информацию по туру
+
+                            fieldset.tourist-data__tourist
+                                legend.tourist-data__tourist-title Турист #1
+                                .tourist-data__tourist-select
+                                    .tourist-data__tourist-select-heading
+                                        svg.tourist-data__tourist-select-icon-people
+                                        .tourist-data__tourist-select-title Выбрать туриста
+                                        svg.tourist-data__tourist-select-icon-dropdown
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Фамилия:
+                                    input.tourist-data__input
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Гражданство:
+                                    input.tourist-data__input
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Имя:
+                                    input.tourist-data__input
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Дата рождения:
+                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Номер загранпаспорта:
+                                    input.tourist-data__input
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Дата выдачи:
+                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Кем выдан:
+                                    input.tourist-data__input
+
+                                label.tourist-data__field
+                                    span.tourist-data__label Окончание действия:
+                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+
+                            // checkbox
+                            // button
                 #checkoutTabs-3.checkoutTabs__block
 
     include layouts/footer.jade
