@@ -249,9 +249,11 @@ block content
     .holidayCreate
       .section__title
         h2.h2 Создай свой идеальный отдых
+
       .holidayCreate__filter
-        img(src='images/bg/filter-hotels.jpg' alt='').holidayCreate__filter-image
+        img(src='images/bg/filter-hotels.jpg' alt='@').holidayCreate__filter-image
         .container.holidayCreate__filter-content
+
           .holidayCreate__selectors
             .holidayCreate__selectors-item
               label(for="test")
@@ -289,36 +291,6 @@ block content
                       a.catalog-sort__link(href='#') популярности
                     li.catalog-sort__list-item
                       a.catalog-sort__link(href='#') названию
-
-      .holidayCreate__filterMob(style="display:none;")
-        a.filter__back.back.js-close-filterMob(href='#')
-          svg.icon-arrow-left
-            use(xlink:href='#arrow-left')
-          | Назад
-        .container
-          .search__items
-            .search__item.filterMob__search
-              svg.search__icon.icon-compass
-                use(xlink:href='#compass')
-              input.search__input.js-init-autocomplete(type='text', placeholder='Куда', data-source='places')
-            .search__item.filterMob__search.search__item--lg.search__item--people
-              svg.search__icon.icon-people
-                use(xlink:href='#people')
-              input.search__input.js-init-people(type='text', placeholder='2 взрослых 0 детей', readonly='true')
-              svg.search__arrow
-                use(xlink:href='#caret-down')
-            .search__item.filterMob__search.search__item--lg
-              svg.search__icon.icon-calendar
-                use(xlink:href='#calendar')
-              input.search__input.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
-              svg.search__arrow
-                use(xlink:href='#caret-down')
-            .search__item.filterMob__search
-              svg.search__icon.icon-location
-                use(xlink:href='#location')
-              input.search__input.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
-              svg.search__arrow
-                use(xlink:href='#caret-down')
 
       .container
         button.filter__buttonMob Фильтр
@@ -456,7 +428,7 @@ block content
                 li.hotelsTours__sortingListItem
                   a.hotelsTours__sortingLink(href='#') названию
 
-        .holidayCreate__filterMob.hotelsTours__filterMob(style="display:none;")
+        .hotelsTours__filterMob(style="display:none;")
           a.filter__back.back.js-close-hotelsTours__filterMob(href='#')
             svg.icon-arrow-left
               use(xlink:href='#arrow-left')

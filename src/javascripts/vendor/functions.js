@@ -2007,7 +2007,6 @@ function mapPrice() {
     else{
       $('#hotelsTabs-3').slideUp();
       $(this).removeClass('active');
-      console.log('hide Tab');
     }  
     
   });
@@ -2016,13 +2015,11 @@ function mapPrice() {
     if(!$(this).hasClass('active')) {
       $('#hotelsTabs-4').slideDown();
       $(this).addClass('active');
-      console.log('show Tab');
       
     }
     else{
       $('#hotelsTabs-4').slideUp();
       $(this).removeClass('active');
-      console.log('hide Tab');
     }  
     
   });
@@ -2034,15 +2031,11 @@ function mapPrice() {
     if (!filterBlock.hasClass('active')){
       filterBlock.addClass('active');
       filterBlock.toggle('slide');
-      console.log('filter active');
     }
     else{
       filterBlock.removeClass('active');
       filterBlock.toggle('slide');
-      console.log('filter disable');
     }
-    console.log('filter button click success');
-   
   }
 
   function hotelsTourFilterMob(){
