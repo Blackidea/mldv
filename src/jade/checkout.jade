@@ -173,7 +173,83 @@ block content
                                 | Условия перелётов могут измениться.
                             ul.about-tour__tickets-list
                                 li.about-tour__tickets-item
+                                    ul.about-tour__tickets-logos
+                                        li.about-tour__tickets-logos-item
+                                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                                        li.about-tour__tickets-logos-item
+                                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                                    .about-tour__tickets-info
+                                        img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                                        .about-tour__tickets-info-content
+                                            .about-tour__tickets-info-row
+                                                .about-tour__tickets-info-time 12:40
+                                                .about-tour__tickets-info-travel-time
+                                                    svg.about-tour__tickets-info-travel-time-icon
+                                                        use(xlink:href='#plane-up')
+                                                    .about-tour__tickets-info-travel-time-text
+                                                        span Всего: 24ч 5м
+                                                        span 1 пересадка (7ч)
+                                                    svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                                                        use(xlink:href='#plane-up')
+                                                .about-tour__tickets-info-time 14:45
+                                            .about-tour__tickets-info-row
+                                                .about-tour__tickets-info-direction
+                                                    span Москва
+                                                    span 09 янв 2017, Сб
+                                                ul.about-tour__tickets-info-airports
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport DME
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport AUH
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport MLE
+                                                .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                                                    span Москва
+                                                    span 09 янв 2017, Сб
+
                                 li.about-tour__tickets-item
+                                    ul.about-tour__tickets-logos
+                                        li.about-tour__tickets-logos-item
+                                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                                        li.about-tour__tickets-logos-item
+                                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                                    .about-tour__tickets-info
+                                        img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                                        .about-tour__tickets-info-content
+                                            .about-tour__tickets-info-row
+                                                .about-tour__tickets-info-time 19:30
+                                                .about-tour__tickets-info-travel-time
+                                                    svg.about-tour__tickets-info-travel-time-icon
+                                                        use(xlink:href='#plane-up')
+                                                    .about-tour__tickets-info-travel-time-text
+                                                        span Всего: 13ч 5м
+                                                        span 1 пересадка (2ч)
+                                                    svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                                                        use(xlink:href='#plane-up')
+                                                .about-tour__tickets-info-time 07:15
+                                            .about-tour__tickets-info-row
+                                                .about-tour__tickets-info-direction
+                                                    span Мале
+                                                    span 16 янв 2017, Пт
+                                                ul.about-tour__tickets-info-airports
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport MLE
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport AUH
+                                                    li.about-tour__tickets-info-airports-item
+                                                        .about-tour__tickets-info-airport DME
+                                                .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                                                    span Москва
+                                                    span 16 янв 2017, Сб
+
+                        .about-tour__order
+                            .about-tour__order-sum
+                                span.about-tour__order-sum-heading Сумма:
+                                span.about-tour__order-sum-price 5 500 $
+                            a(href='#').button.about-tour__order-button Далее
+                            span.about-tour__order-bonus При покупке Вы получите
+                                = ' '
+                                b 320 Мальдив бонусов
 
                 #checkoutTabs-2.checkoutTabs__block
                 #checkoutTabs-3.checkoutTabs__block
