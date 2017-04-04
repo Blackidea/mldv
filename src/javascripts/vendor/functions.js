@@ -1358,6 +1358,7 @@ $(document).ready(function(){
   // calendarPrice();
   $('#hotelsTabs').tabs();
   $('#checkoutTabs').tabs();
+  $('#payAnOrderTabs').tabs();
 
 
 });
