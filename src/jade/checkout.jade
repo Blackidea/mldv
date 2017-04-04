@@ -353,5 +353,61 @@ block content
                                 button.button.tourist-data__payment-button Выбрать способ оплаты
 
                 #checkoutTabs-3.checkoutTabs__block
+                    .pay-an-order
+                        .card.pay-an-order__card
+                        #payAnOrderTabs.pay-an-order__tabs
+                            ul.pay-an-order__nav
+                                li.pay-an-order__nav-item
+                                    a(href="#payAnOrderTabs-1")
+                                        .pay-an-order__nav-item-icon
+                                        span.pay-an-order__nav-item-title Оплата банковской картой на сайте
+                                        p.pay-an-order__nav-item-description
+                                            | До оплаты цена иногда меняется, картой
+                                            | можно оплатить мгновенно и без комиссии
+                                li.pay-an-order__nav-item
+                                    a(href="#payAnOrderTabs-1")
+                                        .pay-an-order__nav-item-icon
+                                        span.pay-an-order__nav-item-title Наличными или баHковской картой в офисе
+                                        p.pay-an-order__nav-item-description Только Москва
+
+                            form#payAnOrderTabs-1.pay-an-order__block
+                                span.pay-an-order__title Выберите сумму к оплате
+                                label.pay-an-order__radio
+                                    input(type="radio").tourist-data__radio-control
+                                    span.pay-an-order__radio-box
+                                    span.pay-an-order__radio-text Всю сумму —
+                                        = ' '
+                                        b 5 500$
+                                        = ' '
+                                        | (330 000Р)
+                                label.pay-an-order__radio
+                                    input(type="radio").tourist-data__radio-control
+                                    span.pay-an-order__radio-box
+                                    span.pay-an-order__radio-text 50% —
+                                        = ' '
+                                        b 2 750$
+                                        = ' '
+                                        | (165 000Р)
+
+                                button.button.pay-an-order__button Оплатить
+                            form#payAnOrderTabs-2.pay-an-order__block
+                                div.pay-an-order__text
+                                    span
+                                        b Адрес:
+                                        = ' '
+                                        | г.Москва, ул. Маросейка, д. 2/15
+                                    span (м. "Китай-город")
+                                    p
+                                        b Телефон:
+                                        = ' '
+                                        | +7 (495) 925-11-11
+                                    span
+                                        b Режим работы:
+                                    span Пн-Пт: 11.00-20.00
+                                    span Сб: 11.00-19.00
+                                    span Вс: выходной
+                                    p К оплате принимаем наличные и банковские карты
+
+                                    button.button.pay-an-order__button Оплатить в офисе
 
     include layouts/footer.jade
