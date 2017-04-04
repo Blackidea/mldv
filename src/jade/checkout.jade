@@ -253,8 +253,34 @@ block content
 
                 #checkoutTabs-2.checkoutTabs__block
                     .tourist-data
-                        .tourist-data__tour-card
-                            //card
+                        .card.tourist-data__tour-card
+                            a(href='#')
+                                .card__img-box
+                                    img(src='images/card-image/card-image-01.jpg', alt='')
+                                    span.card__price от 5 500 $
+
+                                .card__content
+                                    span.card__country Мальдивы
+                                    .card__title
+                                        span.card__rating
+                                            | 4
+                                            svg.card__rating-star
+                                                use(xlink:href='#star-fill')
+                                        h3 Sol Cayo Largo
+                                    .card__description-box
+                                        span.card__description
+                                            svg.card__description-icon
+                                                use(xlink:href='#night')
+                                            | 7 ночей на двоих
+                                        span.card__description
+                                            svg.card__description-icon
+                                                use(xlink:href='#plane-up')
+                                            | вылет 26 авг., Аэрофлот
+                                        span.card__description
+                                            svg.card__description-icon
+                                                use(xlink:href='#breakfest')
+                                            | только завтраки
+
                         form.tourist-data__form
                             fieldset.tourist-data__contacts
                                 label.tourist-data__field
