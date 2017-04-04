@@ -264,51 +264,68 @@ block content
                                     span.tourist-data__label E-mail:
                                     input.tourist-data__input(value="ksenia@mail.ru")
                                 .tourist-data__contacts-description
-                                    small Контактные данные.
-                                    small Будем присылать информацию по туру
+                                    small.tourist-data__contacts-description-text Контактные данные.
+                                    small.tourist-data__contacts-description-text Будем присылать информацию по туру
 
-                            fieldset.tourist-data__tourist
-                                legend.tourist-data__tourist-title Турист #1
-                                .tourist-data__tourist-select
-                                    .tourist-data__tourist-select-heading
-                                        svg.tourist-data__tourist-select-icon-people
-                                        .tourist-data__tourist-select-title Выбрать туриста
-                                        svg.tourist-data__tourist-select-icon-dropdown
+                            - for (var i = 1; i <= 2; i++)
+                                fieldset.tourist-data__tourist
+                                    .tourist-data__tourist-heading
+                                        legend.tourist-data__tourist-title Турист ##{i}
+                                        .tourist-data__tourist-choose
+                                            svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 60 55').tourist-data__tourist-choose-icon.tourist-data__tourist-choose-icon_people
+                                                title people
+                                                path(d='M55.52,44l-9.77-4.23A2,2,0,0,1,45,39h6.53a11.56,11.56,0,0,0,5-.67,3,3,0,0,0,1.24-4.43c-1.87-2.65-6.22-9.59-6.35-16.62,0-.12-.4-12.08-12.21-12.18A14.05,14.05,0,0,0,34.4,6a8.32,8.32,0,0,0-1.49-2.46C30.85,1.19,27.52,0,23,0s-7.85,1.19-9.91,3.53A9,9,0,0,0,11,10.06v5.32A4,4,0,0,0,10,18v4a4,4,0,0,0,1.5,3.11A21,21,0,0,0,15,32.35v3.31A2.64,2.64,0,0,1,13.62,38L4.7,42.84A9,9,0,0,0,0,50.76V55H60V51.3A8.07,8.07,0,0,0,55.52,44ZM44,53H2V50.76A7,7,0,0,1,5.66,44.6l8.92-4.87A4.64,4.64,0,0,0,17,35.65v-4l-.23-.28a18.88,18.88,0,0,1-3.41-7.07l-.09-.4-.34-.22A2,2,0,0,1,12,22V18a2,2,0,0,1,.67-1.48l.33-.3V9.87a6.94,6.94,0,0,1,1.61-5C16.25,3,19.08,2,23,2s6.73,1,8.39,2.83a6.5,6.5,0,0,1,1.45,2.87l0,.21c0,.07,0,.14,0,.21l0,.23,0,.16c0,.12,0,.24,0,.35v0c0,.11,0,.21,0,.3s0,0,0,.05,0,.16,0,.23v0c0,.23,0,.38,0,.38v6.36l.33.3A2,2,0,0,1,34,18v4a2,2,0,0,1-1.42,1.9l-.5.15-.16.5a20.93,20.93,0,0,1-2.83,5.71,13.16,13.16,0,0,1-.84,1.08l-.25.28v4.13a4.71,4.71,0,0,0,.06.74c0,.05,0,.1,0,.15a4.69,4.69,0,0,0,.16.59l0,.13a4.65,4.65,0,0,0,.27.6l0,.07a4.56,4.56,0,0,0,.5.72l.23.28h0a4.66,4.66,0,0,0,1.18.86l9.55,4.78A7,7,0,0,1,44,51Zm14,0H46V51a9,9,0,0,0-5-8.07l-6.86-3.43A1.73,1.73,0,0,0,32.57,37H30.35a2.55,2.55,0,0,1-.11-.26,2.18,2.18,0,0,1-.24-1V32.37c.23-.28.47-.6.72-1a22.89,22.89,0,0,0,3-5.8A4,4,0,0,0,36,22V18a4,4,0,0,0-1-2.62V10.06a8.8,8.8,0,0,0-.08-2.14,12,12,0,0,1,4.29-.78c9.84.08,10.2,9.81,10.21,10.22.15,7.58,4.75,14.93,6.72,17.73a1,1,0,0,1,.14.83.93.93,0,0,1-.53.62,9.83,9.83,0,0,1-4.08.51H44.78a1.84,1.84,0,0,0-1.65,2.66,4.17,4.17,0,0,0,1.78,1.93l9.75,4.22A6.07,6.07,0,0,1,58,51.3Z')
+                                            select.tourist-data__tourist-choose-select
+                                                option Выбрать туриста
+                                                option Турист Туристович
+                                            svg.tourist-data__tourist-choose-icon.tourist-data__tourist-choose-icon_dropdown
+                                                use(xlink:href='#caret-down')
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Фамилия:
-                                    input.tourist-data__input
+                                    label.tourist-data__field
+                                        span.tourist-data__label Фамилия:
+                                        input.tourist-data__input.tourist-data__input_medium
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Гражданство:
-                                    input.tourist-data__input
+                                    label.tourist-data__field
+                                        span.tourist-data__label Гражданство:
+                                        input.tourist-data__input.tourist-data__input_medium
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Имя:
-                                    input.tourist-data__input
+                                    label.tourist-data__field
+                                        span.tourist-data__label Имя:
+                                        input.tourist-data__input.tourist-data__input_medium
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Дата рождения:
-                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+                                    label.tourist-data__field
+                                        span.tourist-data__label Дата рождения:
+                                        input.tourist-data__input.tourist-data__input_medium(placeholder="ДД/ММ/ГГ")
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Номер загранпаспорта:
-                                    input.tourist-data__input
+                                    label.tourist-data__field
+                                        span.tourist-data__label Номер загранпаспорта:
+                                        input.tourist-data__input.tourist-data__input_medium
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Дата выдачи:
-                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+                                    label.tourist-data__field
+                                        span.tourist-data__label Дата выдачи:
+                                        input.tourist-data__input.tourist-data__input_medium(placeholder="ДД/ММ/ГГ")
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Кем выдан:
-                                    input.tourist-data__input
+                                    label.tourist-data__field
+                                        span.tourist-data__label Кем выдан:
+                                        input.tourist-data__input.tourist-data__input_medium
 
-                                label.tourist-data__field
-                                    span.tourist-data__label Окончание действия:
-                                    input.tourist-data__input(placeholder="ДД/ММ/ГГ")
+                                    label.tourist-data__field
+                                        span.tourist-data__label Окончание действия:
+                                        input.tourist-data__input.tourist-data__input_medium(placeholder="ДД/ММ/ГГ")
 
-                            // checkbox
-                            // button
+                            fieldset.tourist-data__payment
+                                .tourist-data__payment-accept
+                                    label.tourist-data__checkbox
+                                        input(type="checkbox").tourist-data__checkbox-control
+                                        span.tourist-data__checkbox-box
+                                        span.tourist-data__checkbox-text
+                                            | Совершая действие по оплате туристского продукта, я подтверждаю, что ознакомлен, согласен и полностью
+                                            | принимаю все положения договора-оферты. Также я выражаю письменное согласие на обработку моих персональных
+                                            | данных и персональных данных лиц, которые сообщу в заявке и при заключении договора (или в ходе его
+                                            | исполнения) и подтверждаю, что у меня есть полномочия на это.
+
+                                button.button.tourist-data__payment-button Выбрать способ оплаты1
+
                 #checkoutTabs-3.checkoutTabs__block
 
     include layouts/footer.jade

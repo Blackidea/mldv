@@ -453,4 +453,157 @@
       text-align: center
 
 .tourist-data
-  display: block
+  display: flex
+  justify-content: space-between
+  padding-bottom: 20px
+
+  &__tour-card
+    display: block
+    width: 263px
+    height: 250px
+    background-color: #112233
+    margin-right: 30px
+
+  &__form
+    display: flex
+    flex-direction: column
+    width: 100%
+
+  &__contacts
+    display: flex
+    justify-content: space-between
+
+    &-description
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      width: 262px
+      text-align: left
+      margin-bottom: 20px
+
+      &-text
+        display: block
+        font-size: em(12px, 14px)
+        color: #999
+
+  &__tourist
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    margin-top: 15px
+    padding-top: 25px
+    border-top: 1px solid #c6c6c6
+
+    &-title
+      color: #07405e
+      font-weight: 700
+      font-size: em(25px, 14px)
+      padding-right: 22px
+      border-right: 1px solid #ddd
+      margin-right: 22px
+
+    &-heading
+      display: flex
+      align-items: center
+      width: 100%
+      margin-bottom: 22px
+
+    &-choose
+      position: relative
+
+      &-icon
+        position: absolute
+        top: 50%
+        display: block
+        pointer-events: none
+
+        &_people
+          left: 0
+          transform: translateY(-50%)
+          width: 24px
+          height: 22px
+          fill: #24b3fd
+
+        &_dropdown
+          right: 0
+          transform: translateY(-50%)
+          width: 10px
+          height: 6px
+          fill: #748893
+
+      &-select
+        padding-left: 35px
+        padding-right: 18px
+        border: 0
+        outline: none
+
+  &__payment
+    display: block
+    padding: 20px 0
+
+    &-accept
+      width: 80%
+
+    &-button
+      margin: 40px auto 0
+
+  &__field
+    display: block
+    margin-bottom: 20px
+
+  &__label
+    display: block
+    color: #252525
+    font-size: em(16px, 14px)
+    text-align: left
+
+  &__input
+    display: flex
+    align-content: center
+    margin-top: 9px
+    padding: 0 12px
+    width: 262px
+    height: 40px
+    border-radius: 5px
+    border: 1px solid #ddd
+    font-weight: 700
+    color: #000
+    font-size: em(16px, 14px)
+
+    &::placeholder
+      color: #ccc
+
+    &_medium
+      width: 360px
+
+  &__checkbox
+    display: flex
+
+    &-box
+      display: block
+      width: 12px
+      height: 12px
+      border-radius: 1px
+      border: 1px solid #b9b9b9
+      background-color: transparent;
+      transition: all .25s ease-in-out
+
+    &-control
+      display: none
+
+      &:checked + ^[1]-text
+        color: #24b3fd
+
+      :checked + ^[1]-box
+         background-color: #24b3fd
+         border-color: transparent
+
+    &-text
+      display: block
+      margin-top: -2px
+      margin-left: 9px
+      font-size: em(12px, 14px)
+      color: #999
+      line-height: 1.333
+      text-align: left
+      transition: all .25s ease-in-out
