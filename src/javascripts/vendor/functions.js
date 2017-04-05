@@ -1361,6 +1361,16 @@ $(document).ready(function(){
   $('#payAnOrderTabs').tabs();
 
 
+  // Обработка клика (след таб)
+  $('.js-checkout-next-tab').click(function(e) {
+      e.preventDefault();
+      const href = $(this).attr('href');
+      const link = $(`#checkoutTabs>ul`).find(`a[href="${href}"]`)[0];
+      link.click();
+
+      $('html, body').animate({ scrollTop: 0 }, 200);
+  });
+
 });
 function mapPrice() {
     // debugger;

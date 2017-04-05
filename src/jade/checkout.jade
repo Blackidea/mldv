@@ -16,7 +16,7 @@ block content
                 .checkoutHeader__geo Мальдивы, Атолл Фелиху
 
         .container
-            #checkoutTabs.checkoutTabs.js-accordion
+            form#checkoutTabs.checkoutTabs.js-accordion
                 ul.checkoutTabs__nav
                     li
                         a(href="#checkoutTabs-1") 1. Информация о туре
@@ -298,7 +298,7 @@ block content
                             .about-tour__order-sum
                                 span.about-tour__order-sum-heading Сумма:
                                 span.about-tour__order-sum-price 5 500 $
-                            a(href='#').button.about-tour__order-button Далее
+                            a(href='#checkoutTabs-2').button.about-tour__order-button.js-checkout-next-tab Далее
                             span.about-tour__order-bonus При покупке Вы получите
                                 = ' '
                                 b 320 Мальдив бонусов
@@ -333,8 +333,8 @@ block content
                                                 use(xlink:href='#breakfest')
                                             | только завтраки
 
-                        form.tourist-data__form
-                            fieldset.tourist-data__contacts
+                        .tourist-data__form
+                            .tourist-data__contacts
                                 label.tourist-data__field
                                     span.tourist-data__label Телефон:
                                     input.tourist-data__input(value="+7 (925) 123 23 55")
@@ -346,9 +346,9 @@ block content
                                     small.tourist-data__contacts-description-text Будем присылать информацию по туру
 
                             - for (var i = 1; i <= 2; i++)
-                                fieldset.tourist-data__tourist
+                                .tourist-data__tourist
                                     .tourist-data__tourist-heading
-                                        legend.tourist-data__tourist-title Турист ##{i}
+                                        .tourist-data__tourist-title Турист ##{i}
                                         .tourist-data__tourist-choose
                                             svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 60 55').tourist-data__tourist-choose-icon.tourist-data__tourist-choose-icon_people
                                                 title people
@@ -391,7 +391,7 @@ block content
                                         span.tourist-data__label Окончание действия:
                                         input.tourist-data__input.tourist-data__input_medium(placeholder="ДД/ММ/ГГ")
 
-                            fieldset.tourist-data__payment
+                            .tourist-data__payment
                                 .tourist-data__payment-accept
                                     label.tourist-data__checkbox
                                         input(type="checkbox").tourist-data__checkbox-control
@@ -402,7 +402,7 @@ block content
                                             | данных и персональных данных лиц, которые сообщу в заявке и при заключении договора (или в ходе его
                                             | исполнения) и подтверждаю, что у меня есть полномочия на это.
 
-                                button.button.tourist-data__payment-button Выбрать способ оплаты
+                                a(href="#checkoutTabs-3").button.tourist-data__payment-button.js-checkout-next-tab Выбрать способ оплаты
 
                 #checkoutTabs-3.checkoutTabs__block
                     .pay-an-order
@@ -493,10 +493,10 @@ block content
                                         span.pay-an-order__nav-title Наличными или банковской картой в офис
                                         p.pay-an-order__nav-description Только Москва
 
-                            form#payAnOrderTabs-1.pay-an-order__block
+                            #payAnOrderTabs-1.pay-an-order__block
                                 span.pay-an-order__title Выберите сумму к оплате
                                 label.pay-an-order__radio
-                                    input(type="radio" name="test").tourist-data__radio-control
+                                    input(type="radio" name="test" checked).tourist-data__radio-control
                                     span.pay-an-order__radio-box
                                     span.pay-an-order__radio-text Всю сумму —
                                         = ' '
@@ -514,7 +514,7 @@ block content
 
                                 button.button.pay-an-order__button Оплатить
 
-                            form#payAnOrderTabs-2.pay-an-order__block
+                            #payAnOrderTabs-2.pay-an-order__block
                                 div.pay-an-order__text
                                     span
                                         b Адрес:
