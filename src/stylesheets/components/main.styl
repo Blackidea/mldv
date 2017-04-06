@@ -137,6 +137,7 @@
 // sidebar
 //----------------------------------------------------//
 .sidebar
+  margin-top: 20px
   margin-bottom: 25px
   width: 264px
   min-height: 1%
@@ -196,7 +197,7 @@
   &__link
     display: block
     text-align: center
-    padding: 10px 12px
+    padding: 12px
     text-transform: uppercase
     text-decoration: none
     background-color: #e8e8e8
@@ -224,13 +225,48 @@
     padding: 0 19px
   &__item
     text-align: left
-    padding: 16px
+    margin-top: 16px
+    padding-bottom: 16px
     border-bottom: 1px solid #cccccc
     &:last-of-type
       border-bottom: none
+
+    &_dropdown
+      display: block
+
+      & ^[0]__content
+        display: none
+
+      & ^[0]__title
+        position: relative
+        cursor: pointer
+
+      & ^[0]__title-icon
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        display: block
+        width: 10px
+        height: 6px
+        fill: #252525
+        transition: all .25s ease-in-out
+        pointer-events: none
+
+      &_active
+
+        & ^[0]__title-icon
+          transform: translateY(-50%) rotate(180deg)
+
   &__title
     display: block
-    margin-bottom: 14px
+
+    &-icon
+      display: none
+
+  &__content
+    margin-top: 14px;
+
   &__buttons
     text-align: center
     padding: 0 0 10px
@@ -283,6 +319,7 @@
   position: relative
   height: 6px
   background-color: #cccccc
+  border-radius: 3px
 .ui-slider-handle
   position: absolute
   z-index: 2

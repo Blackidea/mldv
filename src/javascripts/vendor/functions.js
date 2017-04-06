@@ -291,28 +291,42 @@ var SIDEBAR = (function($) {
 /* RANGE */
 var RANGE = (function($) {
   var $range = $('.js-init-range'),
-      isRange = $range.length,
-      $valueMin = $('.js-range-min'),
-      $valueMax = $('.js-range-max'),
-      options = {
-        range: true,
-        slide: function( event, ui ) {
-          $valueMin.text(numberWithSpaces(ui['values'][0]));
-          $valueMax.text(numberWithSpaces(ui['values'][1]));
-        }
-      }
+      sliders = [];
+
+  $range.each(function() {
+    var $item = $(this),
+        isRange = $item.length,
+        $parent = $item.parent(),
+        $valueMin = $parent.find('.js-range-min'),
+        $valueMax = $parent.find('.js-range-max'),
+        options = {
+            range: true,
+            slide: function( event, ui ) {
+                $valueMin.text(numberWithSpaces(ui['values'][0]));
+                $valueMax.text(numberWithSpaces(ui['values'][1]));
+            }
+        };
+
+    sliders.push({
+        range: $item,
+        isRange: isRange,
+        valueMin: $valueMin,
+        valueMax: $valueMax,
+        options: options
+    })
+  });
 
   function numberWithSpaces(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
     
   return {
-    getAdditionalOptions: function() {
-      var min  = +$range.attr('data-min'),
-          max  = +$range.attr('data-max'),
-          step = +$range.attr('data-step'),
-          val1 = +$range.attr('data-value1'),
-          val2 = +$range.attr('data-value2');
+    getAdditionalOptions: function(slider) {
+      var min  = +slider.range.attr('data-min'),
+          max  = +slider.range.attr('data-max'),
+          step = +slider.range.attr('data-step'),
+          val1 = +slider.range.attr('data-value1'),
+          val2 = +slider.range.attr('data-value2');
       return {
         min: min,
         max: max,
@@ -321,27 +335,39 @@ var RANGE = (function($) {
       }
     },
 
-    setAdditionalOptions: function(additionalOptions) {
-      $.extend(options, additionalOptions);
+    setAdditionalOptions: function(additionalOptions, slider) {
+      $.extend(slider.options, additionalOptions);
     },
 
-    setInitialValues: function(values) {
-      $valueMin.text(numberWithSpaces(values[0]));
-      $valueMax.text(numberWithSpaces(values[1]));
+    setInitialValues: function(values, slider) {
+      slider.valueMin.text(numberWithSpaces(values[0]));
+      slider.valueMax.text(numberWithSpaces(values[1]));
     },
 
     init: function() {
-      if(isRange) {
-        var additionalOptions = this.getAdditionalOptions();
-        this.setAdditionalOptions(additionalOptions);
-        this.setInitialValues(additionalOptions['values']);
-        $range.slider(options);
-        $range.trigger('slide')
-      }
+      sliders.forEach(function(slider) {
+        if (slider.isRange) {
+          var additionalOptions = RANGE.getAdditionalOptions(slider);
+          RANGE.setAdditionalOptions(additionalOptions, slider);
+          RANGE.setInitialValues(additionalOptions['values'], slider);
+          slider.range.slider(slider.options);
+          slider.range.trigger('slide')
+        }
+      });
     }
   }
 })(jQuery);
 /* RANGE END */
+
+var SIDEBAR_FILTER_DROPDOWN = (function($) {
+  $('.js-filter__item_dropdown').on('click', '.js-filter__title', function(e) {
+    e.preventDefault();
+
+    var $parent = $(this).parent();
+    $parent.toggleClass('filter__item_dropdown_active');
+    $parent.find('.js-filter__content').slideToggle();
+  });
+})(jQuery);
 
 /* STARS */
 var STARS = (function($) {
