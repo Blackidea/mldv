@@ -39,191 +39,172 @@ block content
                             span.range__value
                               span.js-range-max
                               |  руб.
-                      fieldset.filter__item
-                        strong.filter__title Рейтинг отеля
-                        .filter__content
-                          .filter__range.range
-                            .range__slider.js-init-range(data-min='0', data-max='10', data-value1='3.7', data-value2='10.0', data-step='0.1')
-                            .range__values
-                              span.range__value
-                                span.js-range-min
-                              span.range__value
-                                span.js-range-max
                     fieldset.filter__item
-                      strong.filter__title Категория отеля
+                      strong.filter__title Рейтинг отеля
                       .filter__content
-                        .filter__stars.stars
-                          input#star-1(type='radio', name='star', value='1')
-                          label(for='star-1')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-2(type='radio', name='star', value='2')
-                          label(for='star-2')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-3(type='radio', name='star', value='3')
-                          label(for='star-3')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-4(type='radio', name='star', value='4')
-                          label(for='star-4')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-5(type='radio', name='star', value='5')
-                          label(for='star-5')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Питание
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#food-1.checkbox--has-icon(type='checkbox')
-                            label(for='food-1')
-                              span.icon-wrap
-                                svg.icon-no-food
-                                  use(xlink:href='#no-food')
-                              |                           Без питания
-                          li.filter__li
-                            input#food-2.checkbox--has-icon(type='checkbox')
-                            label(for='food-2')
-                              span.icon-wrap
-                                svg.icon-breakfest
-                                  use(xlink:href='#breakfest')
-                              |                           Только завтраки
-                          li.filter__li
-                            input#food-3.checkbox--has-icon(type='checkbox')
-                            label(for='food-3')
-                              span.icon-wrap
-                                svg.icon-lunch-alternative
-                                  use(xlink:href='#lunch-alternative')
-                              |                           Завтрак и ужин
-                          li.filter__li
-                            input#food-4.checkbox--has-icon(type='checkbox')
-                            label(for='food-4')
-                              span.icon-wrap
-                                svg.icon-lunch
-                                  use(xlink:href='#lunch')
-                              |                           Завтрак, обуд, ужин (без алкоголя)
-                          li.filter__li
-                            input#food-5.checkbox--has-icon(type='checkbox')
-                            label(for='food-5')
-                              span.icon-wrap
-                                svg.icon-coctail
-                                  use(xlink:href='#coctail')
-                              |                           Все включено
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Авиакомпания
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#airports-1.checkbox(type='checkbox')
-                            label(for='airports-1') Все
-                          li.filter__li
-                            input#airports-2.checkbox(type='checkbox')
-                            label(for='airports-2') Etihad Airways
-                          li.filter__li
-                            input#airports-3.checkbox(type='checkbox')
-                            label(for='airports-3') Emirates
-                          li.filter__li
-                            input#airports-4.checkbox(type='checkbox')
-                            label(for='airports-4') Austrian Airlines
-                          li.filter__li
-                            input#airports-5.checkbox(type='checkbox')
-                            label(for='airports-5') Qatar Airways
-                          li.filter__li
-                            input#airports-6.checkbox(type='checkbox')
-                            label(for='airports-6') Etihad Airways
-                          li.filter__li
-                            input#airports-7.checkbox(type='checkbox')
-                            label(for='airports-7') Emirates
-                          li.filter__li
-                            input#airports-8.checkbox(type='checkbox')
-                            label(for='airports-8') Austrian Airlines
-                          li.filter__li
-                            input#airports-9.checkbox(type='checkbox')
-                            label(for='airports-9') Qatar Airways
+                        .filter__range.range
+                          .range__slider.js-init-range(data-min='0', data-max='10', data-value1='3.7', data-value2='10.0', data-step='0.1')
+                          .range__values
+                            span.range__value
+                              span.js-range-min
+                            span.range__value
+                              span.js-range-max
 
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Перелет
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#flight-1.checkbox(type='checkbox')
-                            label(for='flight-1') Прямой
-                          li.filter__li
-                            input#flight-2.checkbox(type='checkbox')
-                            label(for='flight-2') Непрямой
-                          li.filter__li
-                            input#flight-3.checkbox(type='checkbox')
-                            label(for='flight-3') Все
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Виды отдыха
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#rest-1(type='checkbox')
-                            label(for='rest-1') Все включено
-                          li.filter__li
-                            input#rest-2(type='checkbox')
-                            label(for='rest-2') Пляж
-                          li.filter__li
-                            input#rest-3(type='checkbox')
-                            label(for='rest-3') Город
-                          li.filter__li
-                            input#rest-4(type='checkbox')
-                            label(for='rest-4') Семейных отдых
-                          li.filter__li
-                            input#rest-5(type='checkbox')
-                            label(for='rest-5') Отдых с детьми
-                          li.filter__li
-                            input#rest-6(type='checkbox')
-                            label(for='rest-6') Молодожены
-                          li.filter__li
-                            input#rest-7(type='checkbox')
-                            label(for='rest-7') Экономичных отдых
-                          li.filter__li
-                            input#rest-8(type='checkbox')
-                            label(for='rest-8') LUXE коллекция
-                          li.filter__li
-                            input#rest-9(type='checkbox')
-                            label(for='rest-9') Эксклюзив
-                          li.filter__li
-                            input#rest-10(type='checkbox')
-                            label(for='rest-10') Только для взрослых
-                          li.filter__li
-                            input#rest-11(type='checkbox')
-                            label(for='rest-11') SPA
-                          li.filter__li
-                            input#rest-12(type='checkbox')
-                            label(for='rest-12') Автобусные туры
-                          li.filter__li
-                            input#rest-13(type='checkbox')
-                            label(for='rest-13') ЯХТА
-                          li.filter__li
-                            input#rest-14(type='checkbox')
-                            label(for='rest-14') Рекомендованные отели
-                          li.filter__li
-                            input#rest-15(type='checkbox')
-                            label(for='rest-15') Виллы и Сьюты
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Категория отеля
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            - for (var i = 1; i <= 5; i++)
+                              li.filter__li
+                                input.checkbox--has-icon(type='checkbox' id='t-star-#{i}')
+                                label(for='t-star-#{i}')
+                                  span.stars-icons
+                                    - for (var j = 0; j < i; j++)
+                                        svg.icon-star
+                                          use(xlink:href='#star-fill')
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Питание
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#t-food-1.checkbox--has-icon(type='checkbox')
+                              label(for='t-food-1')
+                                span.icon-wrap
+                                  svg.icon-no-food
+                                    use(xlink:href='#no-food')
+                                |                           Без питания
+                            li.filter__li
+                              input#t-food-2.checkbox--has-icon(type='checkbox')
+                              label(for='t-food-2')
+                                span.icon-wrap
+                                  svg.icon-breakfest
+                                    use(xlink:href='#breakfest')
+                                |                           Только завтраки
+                            li.filter__li
+                              input#t-food-3.checkbox--has-icon(type='checkbox')
+                              label(for='t-food-3')
+                                span.icon-wrap
+                                  svg.icon-lunch-alternative
+                                    use(xlink:href='#lunch-alternative')
+                                |                           Завтрак и ужин
+                            li.filter__li
+                              input#t-food-4.checkbox--has-icon(type='checkbox')
+                              label(for='t-food-4')
+                                span.icon-wrap
+                                  svg.icon-lunch
+                                    use(xlink:href='#lunch')
+                                |                           Завтрак, обуд, ужин (без алкоголя)
+                            li.filter__li
+                              input#t-food-5.checkbox--has-icon(type='checkbox')
+                              label(for='t-food-5')
+                                span.icon-wrap
+                                  svg.icon-coctail
+                                    use(xlink:href='#coctail')
+                                |                           Все включено
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Авиакомпания
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#t-airports-1.checkbox(type='checkbox')
+                              label(for='t-airports-1') Все
+                            li.filter__li
+                              input#t-airports-2.checkbox(type='checkbox')
+                              label(for='t-airports-2') Etihad Airways
+                            li.filter__li
+                              input#t-airports-3.checkbox(type='checkbox')
+                              label(for='t-airports-3') Emirates
+                            li.filter__li
+                              input#t-airports-4.checkbox(type='checkbox')
+                              label(for='t-airports-4') Austrian Airlines
+                            li.filter__li
+                              input#t-airports-5.checkbox(type='checkbox')
+                              label(for='t-airports-5') Qatar Airways
+                            li.filter__li
+                              input#t-airports-6.checkbox(type='checkbox')
+                              label(for='t-airports-6') Etihad Airways
+                            li.filter__li
+                              input#t-airports-7.checkbox(type='checkbox')
+                              label(for='t-airports-7') Emirates
+                            li.filter__li
+                              input#t-airports-8.checkbox(type='checkbox')
+                              label(for='t-airports-8') Austrian Airlines
+                            li.filter__li
+                              input#t-airports-9.checkbox(type='checkbox')
+                              label(for='t-airports-9') Qatar Airways
+
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Перелет
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#t-flight-1.checkbox(type='checkbox')
+                              label(for='t-flight-1') Прямой
+                            li.filter__li
+                              input#t-flight-2.checkbox(type='checkbox')
+                              label(for='t-flight-2') Непрямой
+                            li.filter__li
+                              input#t-flight-3.checkbox(type='checkbox')
+                              label(for='t-flight-3') Все
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Виды отдыха
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#t-rest-1(type='checkbox')
+                              label(for='t-rest-1') Все включено
+                            li.filter__li
+                              input#t-rest-2(type='checkbox')
+                              label(for='t-rest-2') Пляж
+                            li.filter__li
+                              input#t-rest-3(type='checkbox')
+                              label(for='t-rest-3') Город
+                            li.filter__li
+                              input#t-rest-4(type='checkbox')
+                              label(for='t-rest-4') Семейных отдых
+                            li.filter__li
+                              input#t-rest-5(type='checkbox')
+                              label(for='t-rest-5') Отдых с детьми
+                            li.filter__li
+                              input#t-rest-6(type='checkbox')
+                              label(for='t-rest-6') Молодожены
+                            li.filter__li
+                              input#t-rest-7(type='checkbox')
+                              label(for='t-rest-7') Экономичных отдых
+                            li.filter__li
+                              input#t-rest-8(type='checkbox')
+                              label(for='t-rest-8') LUXE коллекция
+                            li.filter__li
+                              input#t-rest-9(type='checkbox')
+                              label(for='t-rest-9') Эксклюзив
+                            li.filter__li
+                              input#t-rest-10(type='checkbox')
+                              label(for='t-rest-10') Только для взрослых
+                            li.filter__li
+                              input#t-rest-11(type='checkbox')
+                              label(for='t-rest-11') SPA
+                            li.filter__li
+                              input#t-rest-12(type='checkbox')
+                              label(for='t-rest-12') Автобусные туры
+                            li.filter__li
+                              input#t-rest-13(type='checkbox')
+                              label(for='t-rest-13') ЯХТА
+                            li.filter__li
+                              input#t-rest-14(type='checkbox')
+                              label(for='t-rest-14') Рекомендованные отели
+                            li.filter__li
+                              input#t-rest-15(type='checkbox')
+                              label(for='t-rest-15') Виллы и Сьюты
                 .filter__buttons
                   button.filter__button.button(type='submit') Найдено 146
                   a.filter__reset.js-reset-filter(href='#') Сбросить фильтр
@@ -248,127 +229,108 @@ block content
                             span.range__value
                               span.js-range-max
                               |  руб.
-                      fieldset.filter__item
-                        strong.filter__title Рейтинг отеля
-                        .filter__content
-                          .filter__range.range
-                            .range__slider.js-init-range(data-min='0', data-max='10', data-value1='3.7', data-value2='10.0', data-step='0.1')
-                            .range__values
-                              span.range__value
-                                span.js-range-min
-                              span.range__value
-                                span.js-range-max
                     fieldset.filter__item
-                      strong.filter__title Категория отеля
+                      strong.filter__title Рейтинг отеля
                       .filter__content
-                        .filter__stars.stars
-                          input#star-1(type='radio', name='star', value='1')
-                          label(for='star-1')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-2(type='radio', name='star', value='2')
-                          label(for='star-2')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-3(type='radio', name='star', value='3')
-                          label(for='star-3')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-4(type='radio', name='star', value='4')
-                          label(for='star-4')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                          input#star-5(type='radio', name='star', value='5')
-                          label(for='star-5')
-                            svg.icon-star
-                              use(xlink:href='#star')
-                            svg.icon-star-fill
-                              use(xlink:href='#star-fill')
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Питание
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#food-1.checkbox--has-icon(type='checkbox')
-                            label(for='food-1')
-                              span.icon-wrap
-                                svg.icon-no-food
-                                  use(xlink:href='#no-food')
-                              |                           Без питания
-                          li.filter__li
-                            input#food-2.checkbox--has-icon(type='checkbox')
-                            label(for='food-2')
-                              span.icon-wrap
-                                svg.icon-breakfest
-                                  use(xlink:href='#breakfest')
-                              |                           Только завтраки
-                          li.filter__li
-                            input#food-3.checkbox--has-icon(type='checkbox')
-                            label(for='food-3')
-                              span.icon-wrap
-                                svg.icon-lunch-alternative
-                                  use(xlink:href='#lunch-alternative')
-                              |                           Завтрак и ужин
-                          li.filter__li
-                            input#food-4.checkbox--has-icon(type='checkbox')
-                            label(for='food-4')
-                              span.icon-wrap
-                                svg.icon-lunch
-                                  use(xlink:href='#lunch')
-                              |                           Завтрак, обуд, ужин (без алкоголя)
-                          li.filter__li
-                            input#food-5.checkbox--has-icon(type='checkbox')
-                            label(for='food-5')
-                              span.icon-wrap
-                                svg.icon-coctail
-                                  use(xlink:href='#coctail')
-                              |                           Все включено
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Типо номера
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#number-1.checkbox(type='checkbox')
-                            label(for='number-1') одноместный
-                          li.filter__li
-                            input#number-2.checkbox(type='checkbox')
-                            label(for='number-2') 2-местный
-                          li.filter__li
-                            input#number-3.checkbox(type='checkbox')
-                            label(for='number-3') стандарт
-                          li.filter__li
-                            input#type-of-number-4.checkbox(type='checkbox')
-                            label(for='type-of-number-4') люкс
-                    fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
-                      strong.filter__title.js-filter__title Виды отдыха
-                        svg.filter__title-icon
-                          use(xlink:href='#caret-down')
-                      .filter__content.js-filter__content
-                        ul.filter__list
-                          li.filter__li
-                            input#rest-1(type='checkbox')
-                            label(for='rest-1') Все включено
-                          li.filter__li
-                            input#rest-2(type='checkbox')
-                            label(for='rest-2') Пляж
-                          li.filter__li
-                            input#rest-3(type='checkbox')
-                            label(for='rest-3') Город
-                          li.filter__li
-                            input#rest-4(type='checkbox')
-                            label(for='rest-4') Семейныхq
+                        .filter__range.range
+                          .range__slider.js-init-range(data-min='0', data-max='10', data-value1='3.7', data-value2='10.0', data-step='0.1')
+                          .range__values
+                            span.range__value
+                              span.js-range-min
+                            span.range__value
+                              span.js-range-max
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Категория отеля
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            - for (var i = 1; i <= 5; i++)
+                              li.filter__li
+                                input.checkbox--has-icon(type='checkbox' id='h-star-#{i}')
+                                label(for='h-star-#{i}')
+                                  span.stars-icons
+                                    - for (var j = 0; j < i; j++)
+                                        svg.icon-star
+                                          use(xlink:href='#star-fill')
+
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Питание
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-food-1.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-1')
+                                span.icon-wrap
+                                  svg.icon-no-food
+                                    use(xlink:href='#no-food')
+                                |                           Без питания
+                            li.filter__li
+                              input#h-food-2.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-2')
+                                span.icon-wrap
+                                  svg.icon-breakfest
+                                    use(xlink:href='#breakfest')
+                                |                           Только завтраки
+                            li.filter__li
+                              input#h-food-3.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-3')
+                                span.icon-wrap
+                                  svg.icon-lunch-alternative
+                                    use(xlink:href='#lunch-alternative')
+                                |                           Завтрак и ужин
+                            li.filter__li
+                              input#h-food-4.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-4')
+                                span.icon-wrap
+                                  svg.icon-lunch
+                                    use(xlink:href='#lunch')
+                                |                           Завтрак, обуд, ужин (без алкоголя)
+                            li.filter__li
+                              input#h-food-5.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-5')
+                                span.icon-wrap
+                                  svg.icon-coctail
+                                    use(xlink:href='#coctail')
+                                |                           Все включено
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Типо номера
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-number-1.checkbox(type='checkbox')
+                              label(for='h-number-1') одноместный
+                            li.filter__li
+                              input#h-number-2.checkbox(type='checkbox')
+                              label(for='h-number-2') 2-местный
+                            li.filter__li
+                              input#h-number-3.checkbox(type='checkbox')
+                              label(for='h-number-3') стандарт
+                            li.filter__li
+                              input#h-number-4.checkbox(type='checkbox')
+                              label(for='h-number-4') люкс
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Виды отдыха
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-rest-1(type='checkbox')
+                              label(for='h-rest-1') Все включено
+                            li.filter__li
+                              input#h-rest-2(type='checkbox')
+                              label(for='h-rest-2') Пляж
+                            li.filter__li
+                              input#h-rest-3(type='checkbox')
+                              label(for='h-rest-3') Город
+                            li.filter__li
+                              input#h-rest-4(type='checkbox')
+                              label(for='h-rest-4') Семейныхq
                 .filter__buttons
                   button.filter__button.button(type='submit') Найдено 146
                   a.filter__reset.js-reset-filter(href='#') Сбросить фильтр
