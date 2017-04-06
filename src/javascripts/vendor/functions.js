@@ -364,8 +364,10 @@ var SIDEBAR_FILTER_DROPDOWN = (function($) {
     e.preventDefault();
 
     var $parent = $(this).parent();
-    $parent.toggleClass('filter__item_dropdown_active');
-    $parent.find('.js-filter__content').slideToggle();
+    $parent.find('.js-filter__content').slideToggle(function() {
+        $parent.toggleClass('filter__item_dropdown_active');
+    });
+
   });
 })(jQuery);
 
