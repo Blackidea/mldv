@@ -1013,6 +1013,9 @@ function viewToggle() {
           $toggleContent.removeClass('catalog__list--lines-view').addClass('catalog__list--tiles-view');
         } else if (selfIndex == 1) {
           $toggleContent.removeClass('catalog__list--tiles-view').addClass('catalog__list--lines-view');
+          $toggleContent.children().each(function(i, el) {
+            el.style.order = i + 1;
+          });
         }
       }
       $(window).trigger('view-changed');
@@ -1975,7 +1978,7 @@ function mapPrice() {
       $('.js-showHotelsOnMap__inner').hide();
     });
     $('#js-linesView').click(function(){
-      $('.catalog__list').css({'display' : 'block'});
+      $('.catalog__list').css({'display' : 'flex'});
       $('.js-showHotelsOnMap__inner').hide();
     });
   }

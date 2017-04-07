@@ -489,7 +489,7 @@ block content
           ul.catalog__list.catalog__list--tiles-view
             - for (var i = 0; i < 13; i++)
               - if (i == 5)
-                li.catalog__list-item.mob-hide
+                li.catalog__list-item.catalog__list-item--email.mob-hide
                   .help-card.help-card--email
                     img(src="images/help-card-img/help-card-img-01.jpg" alt="")
                     .help-card__content
@@ -500,7 +500,7 @@ block content
                           svg
                             use(xlink:href='#arrow-right')
               - else if (i === 6)
-                li.catalog__list-item.catalog__list-item--wide.mob-hide
+                li.catalog__list-item.catalog__list-item--more.catalog__list-item--wide.mob-hide
                   .help-card.help-card--more
                     img(src="images/help-card-img/help-card-img-03.jpg" alt="")
                     .help-card__content
@@ -508,9 +508,9 @@ block content
                         | Скучаете по Красному морю Египта?
                     a.button(href='#') Узнать подробнее
               - else if (i === 8)
-                li.catalog__list-item.mob-hide
+                li.catalog__list-item.catalog__list-item--phone.mob-hide
                   .help-card.help-card--phone
-                    img(src="images/help-card-img/help-card-img-02.jpg" alt="")
+                    img(src="images/help-card-img/help-card-img-02.jpg" alt="@")
                     .help-card__content
                       .help-card__title
                         | Не можете выбрать куда поехать отдыхать?
@@ -540,28 +540,29 @@ block content
                             svg.card__rating-star
                               use(xlink:href='#star-fill')
                           h3 Kurumba Village
-                        .card__description-box
-                          span.card__description
-                            svg.card__description-icon
-                              use(xlink:href='#night')
-                            |                       7 ночей на двоих
-                          span.card__description
-                            svg.card__description-icon
-                              use(xlink:href='#plane-up')
-                            |                       вылет 26 авг.,Аэрофлот
-                          span.card__description
-                            svg.card__description-icon
-                              use(xlink:href='#breakfest')
-                            |                       только завтраки
-                        ul.card__tag-items
-                          li.card__tag-box
-                            a(href='#').card__tag эксклюзив
-                          li.card__tag-box
-                            a(href='#').card__tag семейный отдых
-                          li.card__tag-box
-                            a(href='#').card__tag LUXE коллекция
-                          li.card__tag-box
-                            a(href='#').card__tag экономичный отдых
+                        .card__row
+                          .card__description-box
+                            span.card__description
+                              svg.card__description-icon
+                                use(xlink:href='#night')
+                              |                       7 ночей на двоих
+                            span.card__description
+                              svg.card__description-icon
+                                use(xlink:href='#plane-up')
+                              |                       вылет 26 авг.,Аэрофлот
+                            span.card__description
+                              svg.card__description-icon
+                                use(xlink:href='#breakfest')
+                              |                       только завтраки
+                          ul.card__tag-items
+                            li.card__tag-box
+                              a(href='#').card__tag эксклюзив
+                            li.card__tag-box
+                              a(href='#').card__tag семейный отдых
+                            li.card__tag-box
+                              a(href='#').card__tag LUXE коллекция
+                            li.card__tag-box
+                              a(href='#').card__tag экономичный отдых
 
           .center-text
             a.button.button--more(href='#') Загрузить еще
