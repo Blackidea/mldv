@@ -496,7 +496,7 @@ block content
                       .help-card__title ПОМОЧЬ ПОДОБРАТЬ ОТДЫХ  ПО ЭТОМУ НАПРАВЛЕНИЮ?
                       .short-form
                         input(type='text', placeholder='Ваш E-mail')
-                        button.subscribe-button(type='submit', data-href='#subscribe-popup')
+                        button(type='submit', data-modal-popup='.js-thanks-for-subscribing-popup').subscribe-button.js-open-modal-popup
                           svg
                             use(xlink:href='#arrow-right')
               - else if (i === 6)
@@ -517,7 +517,7 @@ block content
                         .help-card__subtitle Наши эксперты подберут тур спеицально для Вас!
                       .short-form
                         input.js-phone-mask(type='text', placeholder='+7 (___)  ___ __ __')
-                        button.subscribe-button(type='submit', data-href='#request-popup')
+                        button(type='submit', data-modal-popup='.js-thanks-for-request-popup').subscribe-button.js-open-modal-popup
                           svg
                             use(xlink:href='#arrow-right')
               - else
@@ -617,3 +617,6 @@ block content
   //- // FOOTER FIX [END]
   //- FOOTER
   include layouts/footer.jade
+
+  include layouts/modal-popups/thanks-for-subscribing
+  include layouts/modal-popups/thanks-for-request
