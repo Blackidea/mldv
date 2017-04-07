@@ -299,18 +299,30 @@
           margin-right: 0
   &__li
     margin-bottom: 4px
+
+    &_stars
+      margin-bottom: 15px
+
   +b(tablet)
     &__back {
       display: block;
     }
 
 .stars-icons
+  margin-top: 2.5px
   display: block
 
   .icon-star
     fill: transparent
     stroke: #aeaeae
     transition: all .25s ease-in-out
+    width: 14px
+    height: 14px
+    stroke-width: 3px
+
+    &:not(:last-child)
+      margin-right: 9px
+
 // range
 //----------------------------------------------------//
 .range

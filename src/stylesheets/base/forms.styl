@@ -185,6 +185,15 @@ input[type="checkbox"]
   //   &:before
 // checkbox--has-icon
 //----------------------------------------------------//
+input[type="checkbox"].checkbox--star-icon
+  & + label
+    &:hover
+      .icon-star
+        stroke: #24b3fd
+
+  &:checked + label .icon-star
+    stroke-width: 0
+
 input[type="checkbox"].checkbox--has-icon
   & + label
     padding-left: 55px
@@ -193,8 +202,6 @@ input[type="checkbox"].checkbox--has-icon
       [class^="icon-"],
         [class*="icon-"]
         fill: #24b3fd
-      .icon-star
-        stroke: transparent
     .icon-wrap
       position: absolute
       top: 0
