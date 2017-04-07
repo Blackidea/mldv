@@ -1642,9 +1642,15 @@ input.calendar__nights
   img
     position: absolute
     top: 0
+    right: 0
+    bottom: 0
     left: 0
-    min-height: 100%
+    margin: auto
     min-width: 100%
+    min-height: 100%
+    width: 0
+    object-fit: cover
+
   &__content
     letter-spacing: normal
     display: inline-block
@@ -1665,8 +1671,15 @@ input.calendar__nights
     font-weight: 400
     text-transform: none
   &--email
-    background: url("../images/help-card-img/help-card-img-01.jpg") center no-repeat
-    background-size: cover
+    display: block
+    .help-card__title
+      text-align: left
+      font-size: 1em
+      font-weight: 700
+      line-height: 1.14
+      padding-bottom: 12px
+    .help-card__content
+      padding-top: 70px
   &--phone
     background: url("../images/help-card-img/help-card-img-02.jpg") center no-repeat
     background-size: cover
