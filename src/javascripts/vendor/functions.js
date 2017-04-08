@@ -1294,7 +1294,7 @@ $(document).on('ready', function() {
   SEARCH_RESET.init();
   phoneMask();
   hideControls();
-  SIDEBAR.init();
+  // SIDEBAR.init();
   
 });
 
