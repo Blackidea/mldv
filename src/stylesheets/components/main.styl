@@ -16,6 +16,17 @@
 .catalog-page
   .container
     position: relative
+
+.catalog-found
+  display: block
+  margin: 15px 0
+  width: 100%
+  font-family: "Open Sans Light", "Open Sans", sans-serif
+  font-weight: 300
+  font-size: em(20px, 14px)
+  color: #07405e
+  text-transform: uppercase
+
 // helpers
 //----------------------------------------------------//
 .tbl
@@ -2267,7 +2278,9 @@ input.calendar__nights
 //catalog list end --------------
 //catalog sort ------------------
 .catalog-sort
-  padding: 0 0 25px 0
+  padding-bottom: 10px
+  border-bottom: 1px solid #e5e5e5
+
   clearfix()
   &__title
     color: #040404

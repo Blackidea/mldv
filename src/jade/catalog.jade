@@ -484,7 +484,12 @@ block content
                   li
                     input#sort-3.checkbox--lg(type='checkbox')
                     label(for='sort-3') Поплурятности
-          
+          .catalog-found
+            | Найдено
+            = ' '
+            b 146
+            = ' '
+            | Туров
           #mapCatalog.js-showHotelsOnMap__inner
           ul.catalog__list.catalog__list--tiles-view
             - for (var i = 0; i < 13; i++)
