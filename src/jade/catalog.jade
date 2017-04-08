@@ -490,6 +490,30 @@ block content
             b 146
             = ' '
             | Туров
+
+          .catalog-looking-for
+              .catalog-looking-for__content
+                .catalog-looking-for__row
+                  span.catalog-looking-for__text Москва
+                  svg.catalog-looking-for__direction
+                    use(xlink:href='#arrow-direction')
+                  span.catalog-looking-for__text Фр. Полинезия
+                .catalog-looking-for__row
+                  span.catalog-looking-for__text
+                    b 2
+                    = ' '
+                    | взрослых
+                    = ' '
+                    b 1
+                    = ' '
+                    | ребёнок,
+                    = ' '
+                    b 10 авг.
+                    = ' '
+                    | на 5-7 ночей
+
+              svg.catalog-looking-for__pen
+                use(xlink:href='#pen')
           #mapCatalog.js-showHotelsOnMap__inner
           ul.catalog__list.catalog__list--tiles-view
             - for (var i = 0; i < 13; i++)
