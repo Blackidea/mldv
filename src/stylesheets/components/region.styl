@@ -1,11 +1,32 @@
 @import '../base/mixins&includes.styl'
 
+.region-page
+
+  +b(mobile)
+    .dNews__h2
+      margin: 15px 0
+
+    .regionHotelsSlider
+      margin-top: 40px
+
+    .specialOffers
+      display: none
+
 .regionCountry
   position relative
   margin 50px 0 5px
+
+  +b(mobile)
+    margin-top: 15px
+    margin-bottom: 15px
+
   &__inner
     padding 40px 0
     text-align center
+
+    +b(mobile)
+      padding: 0
+
   &__column
     position: relative
     col(1/4)
@@ -33,7 +54,11 @@
 
     +b(mobile)
       col(1)
-      margin-top 20px
+      border-radius: 0
+      margin-top: 20px
+
+      &:first-child
+        margin-top: 10px
 
       &:hover .regionCountry__bg
         min-width: 100%
@@ -95,6 +120,9 @@
       font-size 14px
       line-height: 22px
       padding-right 12.5%
+      +b(mobile)
+        padding-right: 0
+        margin-top: 20px
   &__images
     col(4/12)
     +b(mobile)
@@ -115,8 +143,11 @@
     +b(mobile)
       col(1)
       margin-top 20px
+      height: auto
     &Text      
       padding 85px 10px 0
+      +b(mobile)
+        padding: 30px 10px 0
       & > span
         font-size: 26px;
         font-weight: normal;
@@ -124,6 +155,8 @@
         display block
         line-height normal
         text-align center
+        +b(mobile)
+          font-size: 18px
         &:after
           content ''
           display block
@@ -169,6 +202,10 @@
   margin-top 41px
   margin-bottom 50px
 
+  +b(mobile)
+    margin-top: 15px
+    margin-bottom: 20px
+
   &__slider
     position: relative
     display: block
@@ -177,6 +214,8 @@
     &-wrapper
       position: relative
       margin-top: 40px
+      +b(mobile)
+        margin-top: 10px
 
   &__button
     position: absolute
@@ -190,6 +229,9 @@
     z-index 3
     cursor: pointer
     transition background .25s ease-in-out
+
+    +b(mobile)
+      display: none
 
     &:hover
       background-color: rgba(7, 64, 94, 1)
@@ -256,9 +298,13 @@
     text-decoration: none
     text-transform: uppercase
 
+    +b(mobile)
+      padding: 0 10px
+      font-size: 18px
+      text-align: center
+
     &:hover
       color: #fff
-
 
 .contactForm
   position relative
