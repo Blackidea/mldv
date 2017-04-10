@@ -270,67 +270,67 @@ block content
       .container
         include layouts/types__holiday.jade
 
-        
-
-
     .regionCountry
       .section__title
         h2.h2 Другие страны в этом регионе
       .container.regionCountry__inner
-        //.regionCountry__column
-          .regionCountry__bg(style="background:url('./images/region/country-1.jpg') no-repeat 50%")
-            .regionCountry__name  Мальдивы
-        .regionCountry__column
-          .regionCountry__bg(style="background:url('./images/region/country-2.jpg') no-repeat 50%")
-            .regionCountry__name  шри-ланка
-        .regionCountry__column
-          .regionCountry__bg(style="background:url('./images/region/country-3.jpg') no-repeat 50%")
-            .regionCountry__name  сейшелы
-        .regionCountry__column
-          .regionCountry__bg(style="background:url('./images/region/country-4.jpg') no-repeat 50%")
-            .regionCountry__name  дайвинг-сафари
-
-
+        a(href='#').regionCountry__column
+          img(src="images/region/country-2.jpg" alt='').regionCountry__bg
+          .regionCountry__name  шри-ланка
+        a(href='#').regionCountry__column
+          img(src="images/region/country-3.jpg" alt='').regionCountry__bg
+          .regionCountry__name  сейшелы
+        a(href='#').regionCountry__column
+          img(src="images/region/country-4.jpg" alt='').regionCountry__bg
+          .regionCountry__name  дайвинг-сафари
 
     include layouts/special__offers.jade
 
     .otherRegions
       .section__title.regionHotelsSlider__title
         h2.h2 Другие регионы
-      .otherRegionsSlider__layout
-        .container.otherRegionsSlider
-          .otherRegionsSlider__item
-            .otherRegions__bg(style="background:url('./images/region/otherregions.jpg') no-repeat 50%")
-              .otherRegions__name  Азия, ближний и средний восток
-          .otherRegionsSlider__item
-            .otherRegions__bg(style="background:url('./images/region/otherregions.jpg') no-repeat 50%")
-              .otherRegions__name  Азия, ближний и средний восток
+
+      .otherRegions__slider-wrapper
+        div.otherRegions__button.otherRegions__button_prev.js-otherRegions__button_prev
+          svg.otherRegions__button-icon
+            use(xlink:href="#arrow-left")
+
+        div.otherRegions__button.otherRegions__button_next.js-otherRegions__button_next
+          svg.otherRegions__button-icon
+            use(xlink:href="#arrow-right")
+
+        .otherRegions__slider.js-otherRegions__slider.swiper-container.container
+          ul.otherRegions__items.swiper-wrapper
+            - for (var i = 0; i < 2; i++)
+            li.otherRegions__item.swiper-slide
+              img(src='images/region/otherregions.jpg' alt='').otherRegions__image
+              a(href='#').otherRegions__name Азия, Ближний и Средний Восток
+
 
     .contactForm
       .container
         form.contactForm__inner
-          .contactForm__textTitle 
-              span
-                |Подберем для вас тур мечты
+          .contactForm__textTitle
+            span
+              | Выберите страну по вкусу
           .contactForm__description  Наши менеджеры подберут для вас идеальное предложение, учитывая все Ваши пожелания.
 
           .contactForm__row
             .contactForm__input
-              label(for="") <span>*</span>Имя
-              input(name="name" type="text" placeholder="test")
+              label(for="") <span>*</span>Имя:
+              input(name="name" type="text" placeholder="Mария")
             .contactForm__input
-              label(for="") <span>*</span>Телефон
-              input(name="tel" type="text" placeholder="test")
+              label(for="") <span>*</span>Телефон:
+              input(name="tel" type="text" placeholder="+7 (925) 123 23 55")
             .contactForm__input
-              label(for="") <span>*</span>E-mail
-              input(name="email" type="text" placeholder="test")
+              label(for="") <span>*</span>E-mail:
+              input(name="email" type="text" placeholder="ksenia@mail.ru")
           .contactForm__row
             .contactForm__textarea
-              label(for="") Сообщение
-              textarea(name="message", cols="30", rows="10" placeholder="tests")
+              label(for="") Сообщение:
+              textarea(name="message", cols="30", rows="10" placeholder="Напишите текст Вашего сообщения")
           .contactForm__row
             button.contactForm__button Отправить
-
       
 
           
