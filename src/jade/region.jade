@@ -6,7 +6,8 @@ block content
   .wrapper
     include layouts/header.jade
     h2.dNews__h2 Африка и Индийский океан
-    include layouts/slider__main.jade
+    - var gallerySliderNoDescription = true
+    include layouts/gallery-slider
 
     .regionCountry
       .section__title

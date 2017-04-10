@@ -1,21 +1,23 @@
 .main-gallery-slider.swiper-container.js-main-gallery-slider
     .main-gallery-slider__description-wrapper
-        .main-gallery-slider__description.container
-            span.main-gallery-slider__price От 5 500 $
-            span.main-gallery-slider__rating-icon 7,4
-            .main-gallery-slider__info
-                .main-gallery-slider__title Sol Cayo Largo
-                .main-gallery-slider__stars
-                    svg.icon-star-fill.main-gallery-slider__star
-                        use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-gallery-slider__star
-                        use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-gallery-slider__star
-                        use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-gallery-slider__star
-                        use(xlink:href='#star-fill')
-                    svg.icon-star-fill.main-gallery-slider__star
-                use(xlink:href='#star-fill')
+
+        unless gallerySliderNoDescription
+            .main-gallery-slider__description.container
+                span.main-gallery-slider__price От 5 500 $
+                span.main-gallery-slider__rating-icon 7,4
+                .main-gallery-slider__info
+                    .main-gallery-slider__title Sol Cayo Largo
+                    .main-gallery-slider__stars
+                        svg.icon-star-fill.main-gallery-slider__star
+                            use(xlink:href='#star-fill')
+                        svg.icon-star-fill.main-gallery-slider__star
+                            use(xlink:href='#star-fill')
+                        svg.icon-star-fill.main-gallery-slider__star
+                            use(xlink:href='#star-fill')
+                        svg.icon-star-fill.main-gallery-slider__star
+                            use(xlink:href='#star-fill')
+                        svg.icon-star-fill.main-gallery-slider__star
+                    use(xlink:href='#star-fill')
 
     ul.main-gallery-slider__items.swiper-wrapper
         - for (var i = 0, j = 1; i < 10; i++, j++)
