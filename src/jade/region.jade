@@ -80,14 +80,22 @@ block content
     .otherRegions
       .section__title.regionHotelsSlider__title
         h2.h2 Другие регионы
-      .otherRegionsSlider__layout
-        .container.otherRegionsSlider
-          .otherRegionsSlider__item
-            .otherRegions__bg(style="background:url('./images/region/otherregions.jpg') no-repeat 50%")
-              .otherRegions__name  Азия, ближний и средний восток
-          .otherRegionsSlider__item
-            .otherRegions__bg(style="background:url('./images/region/otherregions.jpg') no-repeat 50%")
-              .otherRegions__name  Азия, ближний и средний восток
+
+      .otherRegions__slider-wrapper
+        div.otherRegions__button.otherRegions__button_prev.js-otherRegions__button_prev
+          svg.otherRegions__button-icon
+            use(xlink:href="#arrow-left")
+
+        div.otherRegions__button.otherRegions__button_next.js-otherRegions__button_next
+          svg.otherRegions__button-icon
+            use(xlink:href="#arrow-right")
+
+        .otherRegions__slider.js-otherRegions__slider.swiper-container.container
+          ul.otherRegions__items.swiper-wrapper
+            - for (var i = 0; i < 2; i++)
+                li.otherRegions__item.swiper-slide
+                    img(src='images/region/otherregions.jpg' alt='').otherRegions__image
+                    a(href='#').otherRegions__name Азия, Ближний и Средний Восток
     
     .contactForm
       .container

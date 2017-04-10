@@ -28,3 +28,12 @@ new Swiper('.js-calendar-price-slider-container', {
     nextButton: '.js-calendar-price__btn_next',
     prevButton: '.js-calendar-price__btn_prev'
 });
+
+// Other region slider
+
+new Swiper('.js-otherRegions__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    nextButton: '.js-otherRegions__button_next',
+    prevButton: '.js-otherRegions__button_prev'
+});
