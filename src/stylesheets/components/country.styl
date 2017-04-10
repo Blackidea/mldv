@@ -7,6 +7,29 @@
     margin-bottom 50px
     border-top 1px solid #9f9fa0
     border-bottom 1px solid #9f9fa0
+
+    & > .ui-tabs-active > a
+      color #24b3fd !important
+      font-weight 600
+      font-size 22px
+
+      &:after
+        position absolute
+        content url('../images/icon/arrow-down.png')
+        height 100%
+        width 80%
+        top 25px
+        left 50%
+        transform translate(-50%, 50%)
+        background #fff
+        +b(mobile)
+          background none
+          left 90%
+          top 0
+          width 20px
+          height 11px
+          transform translate(0, 0)
+
     & > li
       position relative
       display inline-block
