@@ -1589,10 +1589,22 @@ function mapPrice() {
 
   /// hide and show content in hotelsArticle
   function hotelsArticleShow(){
-    $('.hotelsArticle__button').click(function(){
-      var currentBlock = $(this).parent();
-      $(currentBlock).find('.hotelsArticle__content').toggleClass('active');
-      $(currentBlock).find('.hotelsArticle__blockOpacity').toggle();
+    $('.hotelsArticle__button').click(function(e){
+      e.preventDefault();
+      var btn = $(this),
+          currentBlock = btn.parent(),
+          content = $(currentBlock).find('.hotelsArticle__content');
+
+      if (content.hasClass('active')) {
+          btn.text('Подбронее');
+      } else {
+          btn.text('Свернуть');
+      }
+
+      content.toggleClass('active');
+      $(currentBlock).find('.hotelsArticle__blockOpacity').toggle(function() {
+        btn.blur();
+      });
     });
   }
 

@@ -1298,14 +1298,14 @@
     background: linear-gradient(to bottom, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.87) 86%, rgba(255,255,255,1) 100%)
   &__content
     position relative
-    height 210px
+    max-height 210px
     overflow hidden
-    transition all 0.6s ease-in-out 0s
+    transition all 0.6s ease-in-out
     &.__history
-      height 728px
+      min-height 728px
     &.active
-      height 100%
-      transition all 0.6s ease-in-out 0s
+      max-height: 2000px
+      transition all 0.6s ease-in-out
   &__history-column
     float left
     width 46%
