@@ -29,6 +29,12 @@
       &__button
         display: none
 
+    .filterHotels__switch-inner
+      display: none
+
+    .filterCountry__options
+      display: none
+
 .countryTabs
   &__layout
     margin-top 71px
@@ -235,6 +241,10 @@
   
   margin-top 53px
   margin-bottom 30px
+
+  +b(mobile)
+    margin-top: 15px
+    margin-bottom: 15px
 
   &__hotels
     +b(mobile)
