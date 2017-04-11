@@ -1054,6 +1054,35 @@ function categorySlider() {
   }
 }
 
+function regionCountrySlider() {
+  var $slider = $('.regionCountry__inner'),
+    isSlider = $slider.length,
+    isHandler = false;
+  function addSlider() {
+    if (!isHandler) {
+      if (window.innerWidth < 767) {
+        $slider.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+          centerMode: true
+        });
+        isHandler = true;
+      }
+    } else {
+      if (window.innerWidth > 767) {
+        $slider.slick('unslick');
+        isHandler = false;
+      }
+    }
+  }
+  if (isSlider) {
+    addSlider();
+    $(window).on('resize', addSlider);
+  }
+}
+
 // feedback slider 
 
 function feedBackSlider() {
@@ -1273,6 +1302,7 @@ $(document).on('ready', function() {
   sortToggle();
   viewToggle();
   categorySlider();
+  regionCountrySlider();
   newsSlider();
   footerDrop();
   mobNav();

@@ -18,6 +18,16 @@
         padding-bottom: 14px
         border-bottom: 1px solid #999
 
+    .hotelsArticle
+      &__content
+        display: block
+        max-height: 100%
+
+      &__blockOpacity
+        display: none
+
+      &__button
+        display: none
 
 .countryTabs
   &__layout
@@ -91,6 +101,9 @@
             transform translate(-50%, 50%)
             background #fff
   &__sorting
+    +b(mobile)
+      display: none
+
     &Title
       display inline-block
       vertical-align middle
@@ -161,21 +174,51 @@
       border-radius 12px
   &__image
     col(3/12)    
-    overflow hidden    
+    overflow hidden
+
+    +b(mobile)
+      position: relative
+      col(1)
+      width: 100%
+      height: 200px
+      border-radius: 10px
+      overflow: hidden
+
     & > img
       display block
       width 100%
+
+      +b(mobile)
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        margin: auto
+        min-width: 100%
+        min-height: 100%
+        width: 0
+        object-fit: cover
       
   &__description
     col(9/12)
     padding-right 6%
     margin-right 0
+    +b(mobile)
+      col(1)
+      padding: 0
+      margin-top: 25px
+
     &Title
       margin-top 10px
       margin-bottom 10px
       color #07405e
       font-weight bold
       font-size 25px
+      +b(mobile)
+        margin-top: 0
+        margin-bottom: 15px
+
     &SubTitle
       margin-top 10px
       margin-bottom 10px
@@ -192,7 +235,11 @@
   
   margin-top 53px
   margin-bottom 30px
-  
+
+  &__hotels
+    +b(mobile)
+      display: none
+
   &__button
     float right
     padding 16px 42px
@@ -205,6 +252,8 @@
     clearfix()
     &Column
       col(1/4)
+      +b(mobile)
+        col(1)
       & > li
         list-style-type none
         & > label

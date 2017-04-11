@@ -11,20 +11,27 @@ block content
 
     .regionCountry
       .section__title
-        h2.h2 Страны в этом регионе
-      .container.regionCountry__inner
-        a(href='#').regionCountry__column
-          img(src="images/region/country-1.jpg" alt='').regionCountry__bg
-          .regionCountry__name  Мальдивы
-        a(href='#').regionCountry__column
-          img(src="images/region/country-2.jpg" alt='').regionCountry__bg
-          .regionCountry__name  шри-ланка
-        a(href='#').regionCountry__column
-          img(src="images/region/country-3.jpg" alt='').regionCountry__bg
-          .regionCountry__name  сейшелы
-        a(href='#').regionCountry__column
-          img(src="images/region/country-4.jpg" alt='').regionCountry__bg
-          .regionCountry__name  дайвинг-сафари
+        h2.h2 Другие страны в этом регионе
+      .container
+        ul.category__list
+          li.category__list-item
+            .category-card
+              a(href='#')
+                img(src='images/region/country-2.jpg', alt='')
+                span.category-card__title
+                  | шри-ланка
+          li.category__list-item
+            .category-card
+              a(href='#')
+                img(src='images/region/country-3.jpg', alt='')
+                span.category-card__title
+                  | сейшелы
+          li.category__list-item
+            .category-card
+              a(href='#')
+                img(src='images/region/country-4.jpg', alt='')
+                span.category-card__title
+                  | дайвинг-сафари
 
     .regionArticle
       .container
