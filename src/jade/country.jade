@@ -7,6 +7,7 @@ block content
     include layouts/header.jade
     h2.dNews__h2 Мальдивы– лучший отдых!
     //slider
+    - var gallerySliderNoDescription = true
     include layouts/gallery-slider
 
     .countryTabs__layout
@@ -23,26 +24,11 @@ block content
               a( href="#countryTabs-4") Экскурсии
             li 
               a( href="#countryTabs-1") Статьи
-          #countryTabs-1.countryTabs__block
-            .other-news        
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
-            
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
-              .other-news__collumn
-                include layouts/news__item.jade
 
+          p.mobShow.hotelsDescription__accordTitle.js-countryTabs.active О стране
+          #countryTabs-5.countryTabs__block
+            p test
+          p.mobShow.hotelsDescription__accordTitle.js-countryTabs История страны
           #countryTabs-2.countryTabs__block
             .hotelsArticle__wrapper.excursionTab
               .hotelsArticle__content.__history
@@ -70,12 +56,14 @@ block content
                       | <br/>Вторая волна заселения Мальдивских островов приходится на 500 г. до н.э. В эту эпоху с территории современной Шри-Ланки на острова прибыли буддисты. Они обосновались преимущественно на южных островах, где и построили свои святилища в честь Будды, похожие на дагобы (буддистские святыни в форме купола), на месте древних хавитов культуры рединов.
                 .hotelsArticle__blockOpacity
               button.hotelsArticle__button Подробнее
+
+          p.mobShow.hotelsDescription__accordTitle.js-countryTabs Виза
           #countryTabs-3.countryTabs__block
             p test
-          #countryTabs-5.countryTabs__block
-            p test
+
+          p.mobShow.hotelsDescription__accordTitle.js-countryTabs Экскурсии
           #countryTabs-4.countryTabs__block
-            .countryTabs__sorting              
+            .countryTabs__sorting
               //- .catalog-sort__desctop.holidayCreate__sort-inner
               span.countryTabs__sortingTitle Показать:
               ul.countryTabs__sortingList.js-sort
@@ -200,6 +188,27 @@ block content
                 .hotelsArticle__blockOpacity
               button.hotelsArticle__button Подробнее
 
+          p.mobShow.hotelsDescription__accordTitle.js-countryTabs Статьи
+          #countryTabs-1.countryTabs__block
+            .other-news
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+              .other-news__collumn
+                include layouts/news__item.jade
+
     .filterCountry
       .section__title.filterCountry__title
         h2.h2 Подобрать тур
@@ -302,9 +311,9 @@ block content
         .otherRegions__slider.js-otherRegions__slider.swiper-container.container
           ul.otherRegions__items.swiper-wrapper
             - for (var i = 0; i < 2; i++)
-            li.otherRegions__item.swiper-slide
-              img(src='images/region/otherregions.jpg' alt='').otherRegions__image
-              a(href='#').otherRegions__name Азия, Ближний и Средний Восток
+              li.otherRegions__item.swiper-slide
+                img(src='images/region/otherregions.jpg' alt='').otherRegions__image
+                a(href='#').otherRegions__name Азия, Ближний и Средний Восток
 
 
     .contactForm

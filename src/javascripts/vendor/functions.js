@@ -2023,6 +2023,18 @@ function mapPrice() {
   }
 
   /// drop for tabs
+  $('.js-countryTabs').click(function() {
+    var btn = $(this),
+        next = btn.next();
+
+    if (!$(next).hasClass('countryTabs__block')) {
+      return;
+    }
+
+    btn.toggleClass('active');
+    $(next).slideToggle();
+  });
+
   /// drop for tabs
   $('.hotelsTabsDrop-1').click(function(){
     if(!$(this).hasClass('active')) {

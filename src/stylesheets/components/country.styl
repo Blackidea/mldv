@@ -1,14 +1,32 @@
 @import '../base/mixins&includes.styl'
 
+.country-page
+
+  +b(mobile)
+    .dNews__h2
+      margin: 15px 0
+      font-size: 22px
+
+    .regionHotelsSlider
+      margin-top: 40px
+
 .countryTabs
   &__layout
     margin-top 71px
-    margin-bottom: 30px;
+    margin-bottom: 30px
+
+    +b(mobile)
+      margin-top: 25px
+
   &__nav
     padding 18px 0
     margin-bottom 50px
     border-top 1px solid #9f9fa0
     border-bottom 1px solid #9f9fa0
+
+
+    +b(mobile)
+      display: none
 
     & > .ui-tabs-active > a
       color #24b3fd !important
