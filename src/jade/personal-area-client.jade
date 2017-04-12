@@ -29,5 +29,55 @@ block content
                 a(href=link.path).personal-area-nav__link= link.title
 
     .container
+      .personal-area-section
+        h2.personal-area-section__heading Профиль
+        .personal-area-section__content
+
+          form.personal-area__profile
+            label.personal-area__field
+              span.personal-area__label <span>*</span>E-mail:
+              input(value='ksenia@mail.ru').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label <span>*</span>Телефон::
+              input(value='+7 (925) 123 23 55').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label <span>*</span>Имя:
+              input(value='Ксения').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label <span>*</span>Фамилия:
+              input(value='Путешес').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Дата рождения:
+              input.personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Гражданство:
+              input(value='Россия').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Номер загранпаспорта:
+              input(value='44 6782345').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Кем выдан:
+              input(value='УФМС').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Дата выдачи
+              input(value='15.04.2005').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Окончание действия:
+              input(value='20.04.2025').personal-area__text-field
+            .personal-area__field.personal-area__field_labelless
+              span.personal-area__required <span>*</span> - поля обязательные для заполнения
+            .personal-area__field.personal-area__field_labelless
+              label.personal-area__checkbox
+                input(type="checkbox").personal-area__checkbox-control
+                span.personal-area__checkbox-box
+                span.personal-area__checkbox-text я согласен  с условиями публичной оферты
+            .personal-area__field.personal-area__field_labelless
+              label.personal-area__checkbox
+                input(type="checkbox").personal-area__checkbox-control
+                span.personal-area__checkbox-box
+                span.personal-area__checkbox-text я согласен  с получать рассылку о новых предложениях и акциях
+            .personal-area__field
+              a(href='#').personal-area__label.personal-area__link Изменить пароль
+              button(type='submit').button Сохранить
 
   include layouts/footer.jade

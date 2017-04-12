@@ -3,11 +3,98 @@
 .personal-area
   display: block
 
+  &__profile
+    margin: 0 auto 65px
+    display: block
+    width: 585px
+
+  &__required
+    font-size: em(12px, 14px)
+    color: #999
+
+    & > span
+      color: #fd2424
+
+  &__checkbox
+    display: flex
+    align-items: center
+
+    &-box
+      display: block
+      width: 12px
+      height: 12px
+      border-radius: 1px
+      border: 1px solid #b9b9b9
+      background-color: transparent
+      transition: all .25s ease-in-out
+      flex-shrink: 0
+
+    &-control
+      display: none
+
+      :checked + ^[1]-box
+       background-color: #24b3fd
+       border-color: transparent
+
+    &-text
+      display: block
+      margin-top: -4px
+      margin-left: 10px
+      font-size: em(12px, 14px)
+      color: #252525
+      line-height: 1.333
+      text-align: left
+      transition: all .25s ease-in-out
+
+      +b(mobile)
+        margin-left: 26px
+
+  &__link
+    color: #000
+    font-weight: 700
+    text-decoration: underline dashed
+
+  &__field
+    display: flex
+    align-items: center
+
+    &_labelless
+      padding-left: 225px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+  &__label
+    flex: 0 0 200px
+    margin-right: 25px
+    font-size: em(16px, 14px)
+    color: #000
+    text-align: right
+
+    & > span
+      color: #fd2424
+
+  &__text-field
+    display: flex
+    align-items: center
+    flex: 1
+    padding: 0 12px
+    height: 40px
+    border-radius: 5px
+    border: 1px solid #ddd
+    font-size: em(16px, 14px)
+    color: #000
+    font-weight: 700
+    transition: all .25s ease-in-out
+
+    &:focus
+      border-color: #748893
+      font-weight: 400
+
 .personal-area-nav
   position: relative
   display: block
   width: 100%
-  margin-bottom: 54px
 
   &::after
     content: ''
@@ -97,3 +184,19 @@
       text-decoration: none
       transition: .25s ease-in-out
       opacity: .8
+
+.personal-area-section
+  display: block
+  margin-top: 63px
+
+  &__heading
+    display: block
+    font-size: em(25px, 14px)
+    font-weight: 700
+    color: #07405e
+    text-align: center
+
+  &__content
+    display: block
+    margin-top: 25px
+
