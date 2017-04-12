@@ -1,0 +1,288 @@
+extends layouts/application.jade
+
+
+
+block content
+  .wrapper.compare-page
+    include layouts/header.jade
+    .compare
+      .container
+        .compare__header
+          h2.dNews__h2 Сравнение отелей
+          a.compare__clear(href="#") Очистить сравнение
+            img(src="images/icons/svg/trash.svg", width="15")
+          .compare__date
+            p.compare__datetext Выбранная дата:
+            svg.icon-calendar
+              use(xlink:href='#calendar')
+            input.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
+            svg.search__arrow
+              use(xlink:href='#caret-down')
+          //- // calendar-drop
+          .calendar-drop.dropdown__box
+            .dropdown__triangle
+            .calendar
+              .calendar__top
+                strong.calendar__title Выберите кол-во ночей
+                .calendar__left
+                  .calendar__amount
+                    .calendar__minus
+                      svg.icon-minus
+                        use(xlink:href='#minus')
+                    input.calendar__nights(type='text', value='7 ночей', data-min='0', data-max='100')
+                    .calendar__plus
+                      svg.icon-plus
+                        use(xlink:href='#plus')
+                .calendar__right
+                  .calendar__toggle.toggle
+                    input#input-calendar-1.radio--toggle(type='radio', name='calendar', value='1', checked='checked')
+                    label(for='input-calendar-1') ± 2 Ночи
+                    input#input-calendar-2.radio--toggle(type='radio', name='calendar', value='2')
+                    label(for='input-calendar-2') Ровно
+              .calendar__bottom
+                strong.calendar__title Выберите дату вылета
+                .calendar__datepicker
+                button.calendar__button.button Сохранить
+          //- // calendar-drop end
+        
+        .compare__main-wrapper
+          .compare__main
+            .compare__cols.compare__cols_images
+              .compare__col(data-col="1")
+                .compare__imgblock.active
+                  a.compare__addicon
+                    img(src="images/icons/svg/plus2.svg", alt="@@", width="54")
+                  img.compare__hotelimg(src="images/compare/hotel1.jpg", alt="@@")
+                  a.compare__delete(href="#")
+                    img(src="images/icons/svg/close.svg", alt="@@", width="16")
+                  .compare__hotelselect
+                    a.compare__hotelname OBLU by Atmosphere at Helengeli
+                      svg.search__arrow
+                        use(xlink:href='#caret-down')
+              .compare__col(data-col="2")
+                .compare__imgblock.active
+                  a.compare__addicon
+                    img(src="images/icons/svg/plus2.svg", alt="@@", width="54")
+                  img.compare__hotelimg(src="images/compare/hotel2.jpg", alt="@@")
+                  a.compare__delete(href="#")
+                    img(src="images/icons/svg/close.svg", alt="@@", width="16")
+                  .compare__hotelselect
+                    a.compare__hotelname OBLU by Atmosphere at Helengeli
+                      svg.search__arrow
+                        use(xlink:href='#caret-down')
+              .compare__col(data-col="3")
+                .compare__imgblock
+                  a.compare__addicon
+                    img(src="images/icons/svg/plus2.svg", alt="@@", width="54")
+                  img.compare__hotelimg(src="images/compare/hotel1.jpg", alt="@@")
+                  a.compare__delete(href="#")
+                    img(src="images/icons/svg/close.svg", alt="@@", width="16")
+                  .compare__hotelselect
+                    a.compare__hotelname OBLU by Atmosphere at Helengeli
+                      svg.search__arrow
+                        use(xlink:href='#caret-down')
+                        
+            .compare__option-heading Тип номера
+            .compare__cols.compare__cols_types
+              .compare__col(data-col="1")
+                a.compare__hoteltype Стандартный двухместный номер
+                  svg.search__arrow
+                        use(xlink:href='#caret-down')
+              .compare__col(data-col="2")
+                a.compare__hoteltype Улучшенный двухместный номер<br> с видом на море
+                  svg.search__arrow
+                        use(xlink:href='#caret-down')
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Цена
+            .compare__cols.compare__cols_price
+              .compare__col(data-col="1")
+                p.compare__hotelprice от 2540$
+              .compare__col(data-col="2")
+                p.compare__hotelprice от 2570$
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Количество звезд
+            .compare__cols.compare__cols_price
+              .compare__col(data-col="1")
+                .compare__hotelstars
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+              .compare__col(data-col="2")
+                .compare__hotelstars
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+                  svg
+                    use(xlink:href='#star-fill')
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Рейтинг отеля
+            .compare__cols.compare__cols_rating
+              .compare__col(data-col="1")
+                p.compare__hotelrating #[span 9.3]/10
+              .compare__col(data-col="2")
+                p.compare__hotelrating #[span 9.6]/10
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Питание
+            .compare__cols.compare__cols_food
+              .compare__col(data-col="1")
+                p.compare__hotelfood
+                  svg
+                    use(xlink:href='#breakfest')
+                  | Только завтраки
+              .compare__col(data-col="2")
+                p.compare__hotelfood 
+                  svg
+                    use(xlink:href='#coctail')
+                  | Все включено
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Бонусы отеля
+            .compare__cols.compare__cols_bonuses
+              .compare__col(data-col="1")
+                a.hotelsBonus__column
+                  img(src='images/bonus/bonus-1.jpg' alt='').hotelsBonus__image
+                  .hotelsBonus__content
+                    .hotelsBonus__name 20% скидка<br> на проживание
+                    .hotelsBonus__border-bottom
+                    .hotelsBonus__date
+                      p.hotelsBonus__date-name Период действия
+                      p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+                a.hotelsBonus__column
+                  img(src='images/bonus/bonus-2.jpg' alt='').hotelsBonus__image
+                  .hotelsBonus__content
+                    .hotelsBonus__name Бонус молодоженам,<br> а также отмечающим<br> "серебряную" и "золотую" свадьбу
+                    .hotelsBonus__border-bottom
+                    .hotelsBonus__date
+                      p.hotelsBonus__date-name Период действия
+                      p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+              .compare__col(data-col="2")
+                a.hotelsBonus__column
+                  img(src='images/bonus/bonus-1.jpg' alt='').hotelsBonus__image
+                  .hotelsBonus__content
+                    .hotelsBonus__name 20% скидка<br> на проживание
+                    .hotelsBonus__border-bottom
+                    .hotelsBonus__date
+                      p.hotelsBonus__date-name Период действия
+                      p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Описание
+            .compare__cols.compare__cols_description
+              .compare__col(data-col="1")
+                p.compare__hoteldescription Количесво номеров: #[span 258]
+                p.compare__hoteldescription Тип корпуса: #[span отельный комплекс/<br>большая территория]
+              .compare__col(data-col="2")
+                p.compare__hoteldescription Количесво номеров: #[span 258]
+                p.compare__hoteldescription Тип корпуса: #[span отельный комплекс/<br>большая территория]
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Регион
+            .compare__cols.compare__cols_region
+              .compare__col(data-col="1")
+                p.compare__hotelregion Южный Ари Атолле
+              .compare__col(data-col="2")
+                p.compare__hotelregion Южный Ари Атолле
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Страна
+            .compare__cols.compare__cols_country
+              .compare__col(data-col="1")
+                p.compare__hotelcountry Мальдивы
+              .compare__col(data-col="2")
+                p.compare__hotelcountry Мальдивы
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Типы отдыха
+            .compare__cols.compare__cols_rest
+              .compare__col(data-col="1")
+                ul.compare__hotelrest
+                  li Дайвинг
+                  li Пляжный отдых
+                  li Молодожены
+              .compare__col(data-col="2")
+                ul.compare__hotelrest
+                  li Яхты
+                  li Дайвинг
+                  li Семейный отдых
+                  li Молодожены
+                  li Пляжный отдых
+                  li Дайвинг
+              .compare__col(data-col="3")
+              
+            .compare__option-heading Услуги отеля
+            .compare__cols.compare__cols_services
+              .compare__col(data-col="1")
+                ul.compare__hotelservices
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442.42 512")
+                      title at-marriage
+                      path(d="M343,106.29l16.86-20.1a8.66,8.66,0,0,0,.74-10.79L318.25,4.23A8.67,8.67,0,0,0,310.79,0H131.62a8.67,8.67,0,0,0-7.45,4.23L81.47,75.91c-.09.14-.15.29-.22.44s-.13.22-.19.33l0,.13c-.1.23-.18.46-.26.69s-.11.29-.15.44-.12.52-.17.78-.06.25-.08.38a8.78,8.78,0,0,0-.09,1.17s0,.1,0,.14a8.76,8.76,0,0,0,.06,1c0,.14.05.27.08.41s.09.5.15.74.1.31.15.46.14.44.23.65.15.32.23.48.14.31.22.45l.09.14c.09.15.19.29.29.43s.26.38.41.56l.11.15,17.09,20.37a223.15,223.15,0,0,0-69.61,73.8A220.79,220.79,0,0,0,43,421.64a8.67,8.67,0,0,0,14-10.28A203.44,203.44,0,0,1,44.75,188.8a205.77,205.77,0,0,1,65.82-69.14l33.78,40.26a151.94,151.94,0,0,0-75,130.88c0,83.71,68.1,151.82,151.82,151.82S373,374.5,373,290.79a150.28,150.28,0,0,0-13.43-62.39,8.67,8.67,0,1,0-15.8,7.15,133.05,133.05,0,0,1,11.88,55.23c0,74.15-60.32,134.47-134.47,134.47S86.74,364.94,86.74,290.79A133.83,133.83,0,0,1,107.56,219a135.3,135.3,0,0,1,48.13-45.57l58.77,70.05a8.6,8.6,0,0,0,4.54,2.93,9.49,9.49,0,0,0,2.21.3,8.81,8.81,0,0,0,5.58-2,10.55,10.55,0,0,0,1.17-1.18l58.77-70.06A136.46,136.46,0,0,1,326.27,207a8.67,8.67,0,0,0,13.55-10.83,154,154,0,0,0-41.76-36.23l20.42-24.34,13.36-15.92a205.78,205.78,0,0,1,65.82,69.14,203.38,203.38,0,0,1,27.41,102c0,112.41-91.45,203.86-203.86,203.86a202.67,202.67,0,0,1-142.36-58.1A8.67,8.67,0,1,0,66.73,449a219.92,219.92,0,0,0,154.48,63c122,0,221.21-99.23,221.21-221.21a220.74,220.74,0,0,0-29.75-110.7A223.22,223.22,0,0,0,343,106.29ZM136.54,17.35h38.4l-6,13A8.67,8.67,0,1,0,184.7,37.6L194,17.35h54.31l25.09,54.33H169l2.46-5.33a8.67,8.67,0,1,0-15.75-7.27l-5.82,12.61H104.18ZM107.51,89h42.11L191.3,188.9Zm215.88,13.71h0l-16.79,20L251.11,188.9l5.07-12.15a8.67,8.67,0,0,0-16-6.68l-19,45.44L168.42,89H274L257.74,128a8.67,8.67,0,1,0,16,6.68l19-45.62H334.9ZM292.55,71.68,267.47,17.35h38.4l32.37,54.33Z")
+                    | свадебная церемония
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48")
+                      title at-arrival
+                      path(d="M16.75,37.7l8.18,3.45,2.51-5.95-8.18-3.45Zm8.6-1.64-1.27,3-5.24-2.21,1.27-3Zm0,0")
+                      path(d="M20.8,17.6c0,1.79,1.05,3.2,2.4,3.2s2.4-1.41,2.4-3.2a4.07,4.07,0,0,0-.33-1.6h.33a.8.8,0,0,0,0-1.6H5.6a.8.8,0,1,0,0,1.6H21.13a4,4,0,0,0-.32,1.6Zm3.2,0c0,1-.47,1.6-.8,1.6s-.8-.62-.8-1.6.48-1.6.8-1.6.8.63.8,1.6Zm0,0")
+                      path(d="M32,23.2h-.8V13.49A3.89,3.89,0,0,0,27.31,9.6H20V4.8h.8a2.4,2.4,0,0,0,0-4.8H11.2a2.4,2.4,0,0,0,0,4.8H12V9.6H3.89A3.89,3.89,0,0,0,0,13.49V41.71A3.88,3.88,0,0,0,2.4,45.3v.55A2.15,2.15,0,0,0,4.55,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.6H20v.25A2.15,2.15,0,0,0,22.15,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.3a3.89,3.89,0,0,0,2.4-3.59V31.2H32a4,4,0,0,0,0-8ZM13.6,3.2V1.6h1.6V3.2Zm3.2-1.6h1.6V3.2H16.8Zm4.8.8a.8.8,0,0,1-.8.8H20V1.6h.8a.8.8,0,0,1,.8.8Zm-11.2,0a.8.8,0,0,1,.8-.8H12V3.2h-.8a.8.8,0,0,1-.8-.8Zm3.2,2.4h4.8V9.6H13.6Zm-4,41.05a.55.55,0,0,1-.55.55H4.55A.55.55,0,0,1,4,45.85V45.6H9.6Zm17.6,0a.55.55,0,0,1-.55.55h-4.5a.54.54,0,0,1-.55-.55V45.6h5.6Zm2.4-4.14A2.29,2.29,0,0,1,27.31,44H3.89A2.29,2.29,0,0,1,1.6,41.71V13.49A2.29,2.29,0,0,1,3.89,11.2H27.31a2.29,2.29,0,0,1,2.29,2.29ZM32,29.6h-.8V24.8H32a2.4,2.4,0,0,1,0,4.8Zm0,0")
+                    | ранний\поздний заед
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384")
+                      title at-visa
+                      path(d="M254.28,288a8,8,0,0,1-8,8H114.12a8,8,0,1,1,0-16H246.28a8,8,0,0,1,8,8Zm2-136a80.09,80.09,0,0,1-80,80h-.18a80,80,0,0,1,0-160h.18a80.09,80.09,0,0,1,80,80Zm-143.67-8h31.56V104a31.89,31.89,0,0,1,1-8,64.14,64.14,0,0,0-32.58,48Zm32.58,64a31.89,31.89,0,0,1-1-8V160H112.61a64.14,64.14,0,0,0,32.58,48Zm47-48H160.17v40a16,16,0,0,0,32.06,0Zm0-56a16,16,0,0,0-32.06,0v40h32.06Zm47.56,56H208.23v40a31.94,31.94,0,0,1-1,8,64.14,64.14,0,0,0,32.58-48Zm0-16a64.14,64.14,0,0,0-32.58-48,31.94,31.94,0,0,1,1,8v40Zm141.76-31.79L304.34,298.54V344a40,40,0,0,1-40,40H24A24,24,0,0,1,0,360V24A24,24,0,0,1,24,0H264.34a40,40,0,0,1,40,40v5.66L364.2,70.4a32,32,0,0,1,17.35,41.81ZM48.06,16H24a8,8,0,0,0-8,8V360a8,8,0,0,0,8,8H48.06ZM288.34,40a24,24,0,0,0-24-24H64.05V368H264.34a24,24,0,0,0,24-24V121.47a7.93,7.93,0,0,1,0-2.49V51.21c0-.14,0-.28,0-.43Zm78.42,53.85a15.9,15.9,0,0,0-8.68-8.66L304.34,63v52l13.15,5.44a8,8,0,1,1-6.11,14.79l-7-2.91V256.74l44-106.3-8.51-3.51A8,8,0,0,1,346,132.14l8.52,3.52,12.25-29.57a15.87,15.87,0,0,0,0-12.24Zm0,0")
+                    | виза
+              .compare__col(data-col="2")
+                ul.compare__hotelservices
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442.42 512")
+                      title at-marriage
+                      path(d="M343,106.29l16.86-20.1a8.66,8.66,0,0,0,.74-10.79L318.25,4.23A8.67,8.67,0,0,0,310.79,0H131.62a8.67,8.67,0,0,0-7.45,4.23L81.47,75.91c-.09.14-.15.29-.22.44s-.13.22-.19.33l0,.13c-.1.23-.18.46-.26.69s-.11.29-.15.44-.12.52-.17.78-.06.25-.08.38a8.78,8.78,0,0,0-.09,1.17s0,.1,0,.14a8.76,8.76,0,0,0,.06,1c0,.14.05.27.08.41s.09.5.15.74.1.31.15.46.14.44.23.65.15.32.23.48.14.31.22.45l.09.14c.09.15.19.29.29.43s.26.38.41.56l.11.15,17.09,20.37a223.15,223.15,0,0,0-69.61,73.8A220.79,220.79,0,0,0,43,421.64a8.67,8.67,0,0,0,14-10.28A203.44,203.44,0,0,1,44.75,188.8a205.77,205.77,0,0,1,65.82-69.14l33.78,40.26a151.94,151.94,0,0,0-75,130.88c0,83.71,68.1,151.82,151.82,151.82S373,374.5,373,290.79a150.28,150.28,0,0,0-13.43-62.39,8.67,8.67,0,1,0-15.8,7.15,133.05,133.05,0,0,1,11.88,55.23c0,74.15-60.32,134.47-134.47,134.47S86.74,364.94,86.74,290.79A133.83,133.83,0,0,1,107.56,219a135.3,135.3,0,0,1,48.13-45.57l58.77,70.05a8.6,8.6,0,0,0,4.54,2.93,9.49,9.49,0,0,0,2.21.3,8.81,8.81,0,0,0,5.58-2,10.55,10.55,0,0,0,1.17-1.18l58.77-70.06A136.46,136.46,0,0,1,326.27,207a8.67,8.67,0,0,0,13.55-10.83,154,154,0,0,0-41.76-36.23l20.42-24.34,13.36-15.92a205.78,205.78,0,0,1,65.82,69.14,203.38,203.38,0,0,1,27.41,102c0,112.41-91.45,203.86-203.86,203.86a202.67,202.67,0,0,1-142.36-58.1A8.67,8.67,0,1,0,66.73,449a219.92,219.92,0,0,0,154.48,63c122,0,221.21-99.23,221.21-221.21a220.74,220.74,0,0,0-29.75-110.7A223.22,223.22,0,0,0,343,106.29ZM136.54,17.35h38.4l-6,13A8.67,8.67,0,1,0,184.7,37.6L194,17.35h54.31l25.09,54.33H169l2.46-5.33a8.67,8.67,0,1,0-15.75-7.27l-5.82,12.61H104.18ZM107.51,89h42.11L191.3,188.9Zm215.88,13.71h0l-16.79,20L251.11,188.9l5.07-12.15a8.67,8.67,0,0,0-16-6.68l-19,45.44L168.42,89H274L257.74,128a8.67,8.67,0,1,0,16,6.68l19-45.62H334.9ZM292.55,71.68,267.47,17.35h38.4l32.37,54.33Z")
+                    | свадебная церемония
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48")
+                      title at-arrival
+                      path(d="M16.75,37.7l8.18,3.45,2.51-5.95-8.18-3.45Zm8.6-1.64-1.27,3-5.24-2.21,1.27-3Zm0,0")
+                      path(d="M20.8,17.6c0,1.79,1.05,3.2,2.4,3.2s2.4-1.41,2.4-3.2a4.07,4.07,0,0,0-.33-1.6h.33a.8.8,0,0,0,0-1.6H5.6a.8.8,0,1,0,0,1.6H21.13a4,4,0,0,0-.32,1.6Zm3.2,0c0,1-.47,1.6-.8,1.6s-.8-.62-.8-1.6.48-1.6.8-1.6.8.63.8,1.6Zm0,0")
+                      path(d="M32,23.2h-.8V13.49A3.89,3.89,0,0,0,27.31,9.6H20V4.8h.8a2.4,2.4,0,0,0,0-4.8H11.2a2.4,2.4,0,0,0,0,4.8H12V9.6H3.89A3.89,3.89,0,0,0,0,13.49V41.71A3.88,3.88,0,0,0,2.4,45.3v.55A2.15,2.15,0,0,0,4.55,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.6H20v.25A2.15,2.15,0,0,0,22.15,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.3a3.89,3.89,0,0,0,2.4-3.59V31.2H32a4,4,0,0,0,0-8ZM13.6,3.2V1.6h1.6V3.2Zm3.2-1.6h1.6V3.2H16.8Zm4.8.8a.8.8,0,0,1-.8.8H20V1.6h.8a.8.8,0,0,1,.8.8Zm-11.2,0a.8.8,0,0,1,.8-.8H12V3.2h-.8a.8.8,0,0,1-.8-.8Zm3.2,2.4h4.8V9.6H13.6Zm-4,41.05a.55.55,0,0,1-.55.55H4.55A.55.55,0,0,1,4,45.85V45.6H9.6Zm17.6,0a.55.55,0,0,1-.55.55h-4.5a.54.54,0,0,1-.55-.55V45.6h5.6Zm2.4-4.14A2.29,2.29,0,0,1,27.31,44H3.89A2.29,2.29,0,0,1,1.6,41.71V13.49A2.29,2.29,0,0,1,3.89,11.2H27.31a2.29,2.29,0,0,1,2.29,2.29ZM32,29.6h-.8V24.8H32a2.4,2.4,0,0,1,0,4.8Zm0,0")
+                    | ранний\поздний заед
+                  li
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384")
+                      title at-visa
+                      path(d="M254.28,288a8,8,0,0,1-8,8H114.12a8,8,0,1,1,0-16H246.28a8,8,0,0,1,8,8Zm2-136a80.09,80.09,0,0,1-80,80h-.18a80,80,0,0,1,0-160h.18a80.09,80.09,0,0,1,80,80Zm-143.67-8h31.56V104a31.89,31.89,0,0,1,1-8,64.14,64.14,0,0,0-32.58,48Zm32.58,64a31.89,31.89,0,0,1-1-8V160H112.61a64.14,64.14,0,0,0,32.58,48Zm47-48H160.17v40a16,16,0,0,0,32.06,0Zm0-56a16,16,0,0,0-32.06,0v40h32.06Zm47.56,56H208.23v40a31.94,31.94,0,0,1-1,8,64.14,64.14,0,0,0,32.58-48Zm0-16a64.14,64.14,0,0,0-32.58-48,31.94,31.94,0,0,1,1,8v40Zm141.76-31.79L304.34,298.54V344a40,40,0,0,1-40,40H24A24,24,0,0,1,0,360V24A24,24,0,0,1,24,0H264.34a40,40,0,0,1,40,40v5.66L364.2,70.4a32,32,0,0,1,17.35,41.81ZM48.06,16H24a8,8,0,0,0-8,8V360a8,8,0,0,0,8,8H48.06ZM288.34,40a24,24,0,0,0-24-24H64.05V368H264.34a24,24,0,0,0,24-24V121.47a7.93,7.93,0,0,1,0-2.49V51.21c0-.14,0-.28,0-.43Zm78.42,53.85a15.9,15.9,0,0,0-8.68-8.66L304.34,63v52l13.15,5.44a8,8,0,1,1-6.11,14.79l-7-2.91V256.74l44-106.3-8.51-3.51A8,8,0,0,1,346,132.14l8.52,3.52,12.25-29.57a15.87,15.87,0,0,0,0-12.24Zm0,0")
+                    | виза
+              .compare__col(data-col="3")
+            
+            .compare__cols.compare__cols_reservation
+              .compare__col(data-col="1")
+                a.button.compare__reserve-button(href="#") Забронировать
+              .compare__col(data-col="2")
+                a.button.compare__reserve-button(href="#") Забронировать
+              .compare__col(data-col="3")
+        
+    .dSubscribePrice
+      .container
+        .dSubscribePrice__wrapper
+          img(src='images/bg/bg-subcribe-price.jpg' alt='').dSubscribePrice__image
+          .dSubscribePrice__content
+            span.dSubscribePrice__title Cледите за изменением цен
+            span.dSubscribePrice__description Получайте письма о понижении цен на Вашу почту
+            form.short-form.dSubscribePrice__form(action="")
+              input(type='text', placeholder='Ваш E-mail').dSubscribePrice__input
+              button.subscribe-button.dSubscribePrice__button(type='submit', data-href='#subscribe-popup')
+                svg
+                  use(xlink:href='#arrow-right')
+            
+  include layouts/footer.jade
