@@ -1,0 +1,99 @@
+@import '../base/mixins&includes.styl'
+
+.personal-area
+  display: block
+
+.personal-area-nav
+  position: relative
+  display: block
+  width: 100%
+  margin-bottom: 54px
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, .28)
+    z-index: 2
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    min-width: 100%
+    min-height: 100%
+    width: 0
+    object-fit: cover
+    z-index: 1
+
+  &__content
+    position: relative
+    display: flex
+    min-height: 114px
+    z-index: 3
+
+  &__bonuses
+    display: flex
+    flex-direction: column
+    align-self: center
+    margin-right: 63px
+
+    &-column
+      display: flex
+
+    &-icon
+      width: 54px
+      height: 49px
+      fill: #fff
+      margin-right: 18px
+
+    &-text
+      color: #fff
+      font-size: em(20px, 14px)
+      font-weight: 700
+
+      &_size_lg
+        font-size: em(40px, 14px)
+
+  &__items
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 74px
+    width: 100%
+    border-left: 1px solid rgba(255, 255, 255, .5)
+
+  &__item
+    display: block
+
+    &_active
+
+      & ^[0]__link
+        padding: 4px 19px
+        background-color: #f0f0f0
+        border-radius: 10px
+        color: #000
+        text-decoration: none
+
+        &:hover
+          color: #000
+
+  &__link
+    font-size: em(18px, 14px)
+    font-weight: 700
+    color: #fff
+    text-decoration: underline dashed
+    line-height: 1
+
+    &:hover
+      color: #fff
+      text-decoration: none
+      transition: .25s ease-in-out
+      opacity: .8

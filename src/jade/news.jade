@@ -21,10 +21,10 @@ block content
               a.catalog-sort__link(href='#') Новые
             li.catalog-sort__list-item
               a.catalog-sort__link(href='#') Последние
-            
+
           form.catalog-sort__view-toggle(action="")
             span.catalog-sort__title Поиск по новостям
-            
+
             input.dNews__search(type="text" placeholder="Например, путешествия")
             button.dNews__button
               svg
@@ -40,11 +40,11 @@ block content
                 input#sort-2.checkbox--lg(type='checkbox')
                 label(for='sort-2') последние
 
-                  
+
       include layouts/other__news.jade
       .stockBanners
         img(src="images/stock/big.png", alt="")
-      .other-news        
+      .other-news
         .other-news__collumn
           include layouts/news__item.jade
         .other-news__collumn
@@ -57,6 +57,10 @@ block content
       include layouts/other__news.jade
       .center-text
         a.button.button--more(href='#') Загрузить еще
-      include layouts/subscribe-news
+      .dSubscribe
+        .dSubscribe__title Хотите следить за нашими новостями?
+        form.short-form.dSubscribe__form
+          input(type='text', placeholder='Ваш E-mail')
+          button.subscribe-button(type='submit', data-href='#subscribe-popup')
+            | Хочу!
   include layouts/footer.jade
-  include layouts/modal-popups/thanks-for-subscribing
