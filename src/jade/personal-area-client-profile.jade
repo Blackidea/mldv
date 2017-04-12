@@ -80,4 +80,54 @@ block content
               a(href='#').personal-area__label.personal-area__link Изменить пароль
               button(type='submit').button Сохранить
 
+          .personal-area__tourists
+            .personal-area__tourists-content
+              - for (var i = 1; i <= 2; i++)
+                .personal-area-tourist
+                  .personal-area-tourist__header
+                    .personal-area-tourist__title Турист №#{i}
+                    .personal-area-tourist__controls
+                      button(disabled).personal-area-tourist__button
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 249.43 249.42').personal-area-tourist__button-icon.personal-area-tourist__button-icon_check
+                          title save
+                          path(d='M206.79,81.5a6,6,0,0,0-6,6V237.42H12V48.63H158.79a6,6,0,0,0,0-12H6a6,6,0,0,0-6,6V243.42a6,6,0,0,0,6,6H206.79a6,6,0,0,0,6-6V87.5A6,6,0,0,0,206.79,81.5Z')
+                          path(d='M247.67,1.76a6,6,0,0,0-8.49,0L80.42,160.52,41,121.13a6,6,0,1,0-8.49,8.48l43.64,43.64a6,6,0,0,0,8.49,0l163-163A6,6,0,0,0,247.67,1.76Z')
+                        .personal-area-tourist__button-text Сохранить
+                      button.personal-area-tourist__button
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 432.6 486.4').personal-area-tourist__button-icon.personal-area-tourist__button-icon_delete
+                          title delete
+                          path(d='M419.1,70H317.9V53.5A53.56,53.56,0,0,0,264.4,0H168.2a53.56,53.56,0,0,0-53.5,53.5V70H13.5a13.5,13.5,0,0,0,0,27H37.9V414.2a72.3,72.3,0,0,0,72.2,72.2H322.5a72.3,72.3,0,0,0,72.2-72.2V97h24.4a13.5,13.5,0,0,0,0-27ZM141.7,53.5A26.55,26.55,0,0,1,168.2,27h96.2a26.55,26.55,0,0,1,26.5,26.5V70H141.7Zm226,360.7a45.28,45.28,0,0,1-45.2,45.2H110.1a45.28,45.28,0,0,1-45.2-45.2V97H367.8V414.2Z')
+                          path(d='M216.3,411a13.44,13.44,0,0,0,13.5-13.5V158.9a13.5,13.5,0,0,0-27,0V397.4A13.53,13.53,0,0,0,216.3,411Z')
+                          path(d='M128.2,396.1a13.44,13.44,0,0,0,13.5-13.5V173.7a13.5,13.5,0,0,0-27,0V382.6A13.51,13.51,0,0,0,128.2,396.1Z')
+                          path(d='M304.4,396.1a13.44,13.44,0,0,0,13.5-13.5V173.7a13.5,13.5,0,1,0-27,0V382.6A13.44,13.44,0,0,0,304.4,396.1Z')
+                        .personal-area-tourist__button-text Удалить
+                  form.personal-area-tourist__form
+                    .personal-area-tourist__row
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Имя:
+                        input(value='Ксения').personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Фамилия:
+                        input(value='Путешес').personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Дата рождения:
+                        input.personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Гражданство:
+                        input(value='Россия').personal-area__text-field
+                    .personal-area-tourist__row
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Номер загранпаспорта:
+                        input(value='44 6782345').personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Кем выдан:
+                        input(value='УФМС').personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Дата выдачи
+                        input(value='15.04.2005').personal-area__text-field
+                      label.personal-area__field.personal-area__field_default
+                        span.personal-area__label.personal-area__label_size_small Окончание действия:
+                        input(value='20.04.2025').personal-area__text-field
+                  span.personal-area-tourist__text Все поля обязательные для заполнения
+            a(href='#').personal-area__tourists-add.personal-area__link Добавить туриста
   include layouts/footer.jade

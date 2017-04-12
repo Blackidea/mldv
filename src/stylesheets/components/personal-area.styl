@@ -8,6 +8,21 @@
     display: block
     width: 585px
 
+  &__tourists
+    display: block
+    margin-bottom: 50px
+
+    &-content
+      margin-bottom: 40px
+      padding: 54px 0
+      border-top: 1px solid #b9b9b9
+      border-bottom: 1px solid #b9b9b9
+
+    &-add
+      display: block
+      text-align: center
+      font-size: em(16px, 14px)
+
   &__required
     font-size: em(12px, 14px)
     color: #999
@@ -58,6 +73,14 @@
     display: flex
     align-items: center
 
+    &_default
+      flex-direction: column
+      align-items: flex-start
+
+      & ^[0]__label
+        margin-bottom: 10px
+        flex: 1
+
     &_labelless
       padding-left: 225px
 
@@ -70,6 +93,10 @@
     font-size: em(16px, 14px)
     color: #000
     text-align: right
+
+    &_size_small
+      font-size: em(12px, 14px)
+      color: #999
 
     & > span
       color: #fd2424
@@ -200,3 +227,96 @@
     display: block
     margin-top: 25px
 
+.personal-area-tourist
+  display: block
+
+  &:not(:last-of-type)
+    margin-bottom: 54px
+
+  &__header
+    display: flex
+    justify-content: space-between
+
+  &__title
+    font-family: "Open Sans Light", "Open Sans", sans-serif
+    font-weight: 300
+    font-size: em(20px, 14px)
+    color: #07405e
+    text-transform: uppercase
+
+  &__controls
+    display: flex
+    align-items: flex-end
+
+  &__button
+    display: flex
+    align-items: center
+    color: #24b3fd
+    cursor: pointer
+    background-color: transparent
+    border: 0
+    margin: 0
+    padding: 0
+    transition: .25s ease-in-out
+
+    &:hover, &:active, &:focus
+      background-color: transparent
+      cursor: pointer
+      color: #24b3fd
+      opacity: .8
+
+    &:disabled
+      color: #999
+      background: transparent
+
+      .personal-area-tourist__button-icon
+        fill: #999
+
+    &:not(:last-child)
+      margin-right: 60px
+
+    &-icon
+      display: block
+      fill: #24b3fd
+      transition: .25s ease-in-out
+
+      &_check
+        width: 18px
+        height: 18px
+
+      &_delete
+        width: 15px
+        height: 17px
+
+    &-text
+      font-size: em(16px, 14px)
+      font-weight: 700
+      margin-left: 6px
+
+  &__form
+    display: flex
+    flex-direction column
+    justify-content: space-between
+    margin-top: 20px
+    padding: 27px 17px
+    box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, .3)
+    border-radius: 10px
+
+    .personal-area__field
+      margin-bottom: 0
+
+      & > input
+        flex-basis: auto
+
+  &__row
+    display: flex
+    justify-content: space-between
+
+    &:not(:last-child)
+      margin-bottom: 18px
+
+  &__text
+    display: block
+    margin-top: 15px
+    color: #999999
+    font-size: em(12px, 14px)
