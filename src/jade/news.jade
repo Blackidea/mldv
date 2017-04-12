@@ -57,10 +57,6 @@ block content
       include layouts/other__news.jade
       .center-text
         a.button.button--more(href='#') Загрузить еще
-      .dSubscribe
-        .dSubscribe__title Хотите следить за нашими новостями?
-        form.short-form.dSubscribe__form
-          input(type='text', placeholder='Ваш E-mail')
-          button.subscribe-button(type='submit', data-href='#subscribe-popup')
-            | Хочу! 
+      include layouts/subscribe-news
   include layouts/footer.jade
+  include layouts/modal-popups/thanks-for-subscribing

@@ -58,12 +58,7 @@ block content
         .social-share__icons
           .ya-share2( data-services="vkontakte,facebook,odnoklassniki,moimir" data-counter="")          
       .border-hor
-      .dSubscribe
-        .dSubscribe__title Хотите следить за нашими новостями?
-        form.short-form.dSubscribe__form
-          input(type='text', placeholder='Ваш E-mail')
-          button.subscribe-button(type='submit', data-href='#subscribe-popup')
-            | Хочу!
+      include layouts/subscribe-news
     .section__title
       h2.h2 Другие новости
     .container
@@ -94,3 +89,4 @@ block content
 
       
   include layouts/footer.jade
+  include layouts/modal-popups/thanks-for-subscribing
