@@ -512,9 +512,12 @@
     overflow hidden
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
     transition all 0.3s ease-in-out 0s
+    transform translate3d(0,0,0)
 
     +b(mobile)
       margin: 0 15px 30px
+      &:nth-child(n+4)
+        display none
 
     &:hover
       cursor pointer
@@ -757,6 +760,8 @@
     display: inline-block
     position: relative
     z-index: 3
+    +below(1220px)
+      width: 95%
 
   &__sumBonus, &__paymentMethods
     display: flex
@@ -893,6 +898,8 @@
     vertical-align middle
     margin-top: 26px
     margin-bottom 26px
+    +below(1220px)
+      width: 100%
 
     +b(mobile)
       display: none
@@ -918,6 +925,8 @@
 
       &.__food
         width 218px
+        +below(1220px)
+          width 33%
         +b(mobile)
           width 100%
         & > label
@@ -941,6 +950,8 @@
           border none
       &.__typeNumbers
         width 260px
+        +below(1220px)
+          width 33%
         +b(mobile)
           width 100%
         & > label
@@ -964,6 +975,8 @@
           border none
       &.__airCompanie
         width 240px
+        +below(1220px)
+          width 33%
         +b(mobile)
           width 100%
         & > label
@@ -990,6 +1003,9 @@
       vertical-align middle
       width 400px
       padding-left 30px
+      +below(1220px)
+          display block
+          margin 20px auto 0
       +b(mobile)
         display none
     &Title
@@ -1066,7 +1082,7 @@
       &.__airCompanie
         width 162px
       &.__price
-        width 58px
+        width 61px
         color #24b3fd
         font-size 18px
         font-weight bold
@@ -1081,6 +1097,8 @@
 .sliderHotelsAround
   position relative
   height 357px
+  +below(1220px)
+    height 380px
   +b(mobile)
     height auto
   .slick-dots
