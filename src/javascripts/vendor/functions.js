@@ -894,7 +894,7 @@ function fixedNav() {
       inited = false;
 
   function init() {
-    if (window.innerWidth > 767 && !inited) {
+    if (window.innerWidth > 960 && !inited) {
 
       $(window).on('scroll.fix-header', function() {
          if ( $(window).scrollTop() >= headerHeight) { 
@@ -908,7 +908,7 @@ function fixedNav() {
       });
       inited = true;
 
-    } else if(window.innerWidth <= 767 && inited) {
+    } else if(window.innerWidth <= 960 && inited) {
 
       $nav.removeClass('header__bottom--fixed');
       $(window).off('scroll.fix-header');
