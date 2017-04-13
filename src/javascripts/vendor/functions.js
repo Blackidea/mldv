@@ -1617,15 +1617,7 @@ if ($('#contacts-map').length > 0) {
       },
       {
         breakpoint: 767,
-        settings: {
-        slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-        slidesToShow: 1
-        }
+        settings: 'unslick'
       }
       ]
     });
@@ -1684,7 +1676,11 @@ if ($('#contacts-map').length > 0) {
 
   function showWishList(){
     $('.js-wishlist').click(function(){      
-      $('.popup__wishlist').show();
+      if ( $(window).width() > 960 ) {
+        $('.popup__wishlist').show();
+      } else {
+        $('.hotelsAddtofavorite').click();
+      }
     });
     $('.popup__close').click(function(){
       $('.popup__wishlist').hide();
@@ -1696,6 +1692,19 @@ if ($('#contacts-map').length > 0) {
     });
     $('.popup__close').click(function(){
       $('.popup__compare').hide();
+    });
+  }
+  function showBonusDetail(){
+    $('.hotelsBonus__column').click(function(e){
+      if ( $(window).width() > 960 ) {
+        e.preventDefault();
+      } else {
+        $('.hotelsBonusdetail').click();
+        $('.js-discount-for-accommodation-popup .hotelsBonus__hover').remove();
+        var bonusDetail = $(this).find('.hotelsBonus__hover');
+        bonusDetail.clone().insertAfter('.js-discount-for-accommodation-popup .modal-popup__header');
+        $('.js-discount-for-accommodation-popup .hotelsBonus__hover').addClass('popup');
+      }
     });
   }
 
@@ -2259,6 +2268,7 @@ function countryTabs(){
         });
   }
 
+
   sliderNumbers();
   sliderNumber();
   sliderHotelsAround();
@@ -2268,6 +2278,7 @@ function countryTabs(){
   hotelsArticleShow();
   showWishList();
   showCompare();
+  showBonusDetail();
   showHotelsOnMap();
   contactsMap();
   otherRegionsSlider();

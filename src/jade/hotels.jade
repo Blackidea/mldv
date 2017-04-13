@@ -229,6 +229,24 @@ block content
                 .hotelsBonus__date
                   p.hotelsBonus__date-name Период действия
                   p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+              .hotelsBonus__hover
+                p.hotelsBonus__hover-heading 20% скидка на проживание
+                ul.hotelsBonus__hover-optionlist
+                  li
+                    span.hotelsBonus__hover-optionname Типы номеров:
+                    | Все
+                  li
+                    span.hotelsBonus__hover-optionname Пансион:
+                    | Все
+                  li
+                    span.hotelsBonus__hover-optionname Комбинируется с другими бонусами:
+                    | Да
+                  li
+                    span.hotelsBonus__hover-optionname Бонус учтен в ценах на сайте:
+                    | Да
+                .hotelsBonus__hover-attention
+                  p.hotelsBonus__hover-attentionheading Внимание:
+                  p.hotelsBonus__hover-attentiontext Бонусные (бесплатные) ночи расчитываются на базовом питании. Разницу между выбранным и базовым питанием необходимо будет оплатить
 
             a.hotelsBonus__column
               img(src='images/bonus/bonus-2.jpg' alt='').hotelsBonus__image
@@ -240,6 +258,24 @@ block content
                 .hotelsBonus__date
                   p.hotelsBonus__date-name Период действия
                   p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
+              .hotelsBonus__hover
+                p.hotelsBonus__hover-heading Бонус молодоженам, а также отмечающим "серебряную" и "золотую" свадьбу
+                ul.hotelsBonus__hover-optionlist
+                  li
+                    span.hotelsBonus__hover-optionname Типы номеров:
+                    | Все
+                  li
+                    span.hotelsBonus__hover-optionname Пансион:
+                    | Все
+                  li
+                    span.hotelsBonus__hover-optionname Комбинируется с другими бонусами:
+                    | Да
+                  li
+                    span.hotelsBonus__hover-optionname Бонус учтен в ценах на сайте:
+                    | Да
+                .hotelsBonus__hover-attention
+                  p.hotelsBonus__hover-attentionheading Внимание:
+                  p.hotelsBonus__hover-attentiontext Бонусные (бесплатные) ночи расчитываются на базовом питании. Разницу между выбранным и базовым питанием необходимо будет оплатить
                 
         p#sliderFeedbackMobile.mobShow.hotelsDescription__accordTitle.hotelsTabsDrop-4 Отзывы
         #hotelsTabs-4.hotelsTabs__block
@@ -637,5 +673,5 @@ block content
   include layouts/modal-popups/discount-for-accommodation
   include layouts/modal-popups/hotel-added-to-favourites
 
-  //-button(data-modal-popup='.js-discount-for-accommodation-popup').js-open-modal-popup discount-for-accommodation
-  //-button(data-modal-popup='.js-hotel-added-to-favourites-popup').js-open-modal-popup hotel-added-to-favourites
+  button(data-modal-popup='.js-discount-for-accommodation-popup').js-open-modal-popup.hotelsBonusdetail discount-for-accommodation
+  button(data-modal-popup='.js-hotel-added-to-favourites-popup').js-open-modal-popup.hotelsAddtofavorite hotel-added-to-favourites
