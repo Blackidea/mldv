@@ -73,7 +73,7 @@
   margin-top: 35px
 
   +b(mobile)
-    margin-top: 25px
+    margin-top: 22px
 
   &__bonus
     clearfix()
@@ -155,7 +155,7 @@
   clearfix()
 
   +b(mobile)
-    margin-top: 13px
+    margin-top: 23px
 
   &__accordTitle
     position relative
@@ -175,7 +175,7 @@
       font-family: "Open Sans Light", "Open Sans", sans-serif;
       font-weight: 300
       border-bottom: 1px solid #c6c6c6
-      padding: 13px 0
+      padding: 8px 0 9px
       transition: all .25s ease-in-out
 
       &:first-of-type
@@ -233,20 +233,32 @@
     color #07405e
     padding-left 10px
     align-self: center
+    +b(mobile)
+      font-size 18px
+      text-transform uppercase
 
   &__value
     margin 20px 0
     font-size 14px
     font-weight 400
+    +b(mobile)
+      margin 12px 0 3px
   &__name 
     font-weight 600
   &__list
     margin 20px 0
+    +b(mobile)
+      margin 13px 0 15px
   &__li
     position relative
     font-size: 14px
     padding-left: 20px
     font-weight: normal
+    +b(mobile)
+      margin-top 5px
+      padding-left 13px
+      &:first-of-type
+        margin-top 0
     // padding-top: 10px
     // padding-bottom: 10px
   &__li:before
@@ -259,6 +271,11 @@
     width: 5px
     background: #677e8a
     border-radius: 53px
+  &__info
+    +b(mobile)
+      margin-top 34px
+      &:first-child
+        margin-top 0
   
 .hotelsBonus
 
@@ -271,15 +288,28 @@
     color #fff    
     text-decoration none
     padding 60px 60px 0
+    transition all .25s ease-in-out
+    overflow hidden
     
     &:hover
-      color #fff
-      
+      box-shadow: 0px 0px 9.5px 0.5px rgba(35, 41, 50, 0.3)
+      .hotelsBonus__hover
+        opacity 1
+        pointer-events all
+
     +b(mobile)
       unstack()
-      padding 20px 20px 0
+      padding 20px 20px
       margin-top 10px
       margin-bottom 10px
+      height auto
+      width 100%
+      min-height 400px
+      &:hover
+        box-shadow: none
+        .hotelsBonus__hover
+          opacity 0
+          pointer-events none
 
   &__image
     position: absolute
@@ -295,9 +325,82 @@
 
   &__content
     position: relative
-    magin: auto
+    margin: auto
     display: block
     z-index: 1
+  
+  &__hover
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background-color #fff
+    z-index 2
+    padding 39px 24px
+    opacity 0
+    pointer-events none
+    transition all .25s ease-in-out
+      
+    p
+      padding 0
+      
+    &-heading
+      font-size 22px
+      font-weight 600
+      color #07405e
+      text-transform uppercase
+      line-height 1.2em
+      letter-spacing 0.02em
+        
+    &-optionlist
+      margin-top 31px
+      font-size 14px
+      color #333333
+      letter-spacing 0.02em
+        
+      li
+        margin-top 14px
+        &:first-child
+          margin-top 0
+          
+    &-optionname
+      font-weight 600
+      color #000
+      margin-right 5px
+      
+    &-attention
+      border-top 1px solid #c6c6c6
+      margin-top 16px
+      padding-top 13px
+      
+    &-attentionheading
+      font-size 14px
+      font-weight 600
+      color #e13838
+      letter-spacing 0.02em
+      
+    &-attentiontext
+      font-size 14px
+      color #333333
+      margin-top 2px
+      line-height 1.5em
+        
+    &.popup
+      position relative
+      padding 0 15px 35px
+      opacity 1
+      pointer-events all
+      background-color transparent
+      margin-top -10px
+      .hotelsBonus__hover-heading
+        color #24b3fd
+        text-transform none
+        letter-spacing -0.04em
+        text-align center
+      .hotelsBonus__hover-optionlist
+        margin-top 20px
+        
 
   &__name
     text-align center
@@ -305,9 +408,11 @@
     font-size 22px
     margin-bottom 24px
     line-height 30px
+    text-transform uppercase
     
     +b(mobile)
       font-size 18px
+      text-transform uppercase
   &__info
     text-align center
     margin-bottom 25px
@@ -355,13 +460,14 @@
   margin-top: 300px
 
   +b(mobile)
-    margin-top 20px
+    margin-top 18px
+    padding-bottom 15px
 
     & > .section__title .h2
       font-family: Roboto, "Open Sans"
       font-weight 700
       font-size: 22px
-      line-height: 1.3
+      line-height: 1.35em
       padding: 0 35px
 
   &__filterMob, .hotelsTours__filterMob
@@ -485,6 +591,8 @@
     min-height 700px
     +b(mobile)
       min-height auto
+      margin-top 22px
+      margin-bottom 0
 
     &__arrow
       position absolute
@@ -515,7 +623,9 @@
     transform translate3d(0,0,0)
 
     +b(mobile)
-      margin: 0 15px 30px
+      margin: 30px 0 0
+      &:first-child
+        margin-top 0
       &:nth-child(n+4)
         display none
 
@@ -621,6 +731,8 @@
 
     +b(mobile)
       border-bottom: none
+      margin 0 23px
+      height 74px
 
   &__info
     display: flex
@@ -848,6 +960,8 @@
       
 .hotelsTours
   margin-top: 80px
+  +b(mobile)
+    margin-top 19px
 
   & .hotelsToursfilter__buttonMob
     display: none
@@ -857,6 +971,7 @@
       width: 100%
       height: 40px
       padding: 0
+      margin-top 9px
 
   & > .section__title .pick-up
     +b(mobile)
@@ -864,7 +979,8 @@
       margin: 0
       padding: 0
       color: #677e8a
-      font-size: 22px;
+      font-size: 22px
+      line-height: 27px
 
     .dropdown__box
       padding: 10px
@@ -1033,6 +1149,7 @@
     display none
     +b(mobile)
       display block
+      margin-top 22px
   &__table
     +b(mobile)
       display none
@@ -1116,12 +1233,33 @@
     }
   &__list
     +b(mobile)
-      .sliderHotelsAround__list-item {
-        padding: 0 0 30px 0
-      }
+      .sliderHotelsAround__list-item
+        padding: 0 0 28px 0
+        &:nth-child(n+4)
+          display none
       .mob-hide {
         display: none
       }
+      .card__rating-icon
+        left 24px
+      .card__bonuses
+        display none
+      .card__icon-heart
+        margin-right 23px
+      .card__content
+        padding: 2px 23px 27px
+      .card__rating
+        margin-right 0
+      .card__rating .card__rating-star
+        margin-left 0
+      .card__title
+        border-bottom: 1px solid #898989
+      .card__description
+        display block
+        padding 0
+        margin-top 4px
+      .card__description-icon
+        margin-right 2px
     @media (min-width: 768px)
       &--tiles-view
         margin: 0 -15px
@@ -1422,6 +1560,8 @@
   font-size 25px
   font-weight 300
   width 430px
+  +below(1220px)
+    width 400px
 .popup__column
   display inline-block
   height 100%
@@ -1434,6 +1574,8 @@
   padding-left 56px
   border-left 1px solid #fff
   border-right 1px solid #fff
+  +below(1220px)
+    width 490px
 .popup__link
   display inline-block
   vertical-align middle
@@ -1495,8 +1637,8 @@
         text-align center
         color #666666
         font-size 16px
-        padding-top 12px
-        padding-bottom 10px
+        padding-top 8px
+        padding-bottom 12px
         & > img
           display inline-block
           vertical-align middle
@@ -1551,7 +1693,11 @@
   +b(mobile)
     width 100%
     display block
-    margin-top 10px
+    margin-top 16px
     margin-bottom 20px
     height: 40px
     padding: 0
+
+.hotelsBonusdetail,
+.hotelsAddtofavorite
+  display none
