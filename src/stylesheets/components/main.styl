@@ -1588,6 +1588,7 @@ input.calendar__nights
     height: 115px
     position: relative
     overflow: hidden
+    
     img
       min-width: 100%
       min-height: 100%
@@ -1980,7 +1981,22 @@ input.calendar__nights
     height: 203px
     display: block
     overflow: hidden
+    position relative
+    
+    +b(tablet)
+        height 135px
+    
     img
+      min-height 100%
+      min-width 100%
+      width 0
+      position absolute
+      top 0
+      right 0
+      bottom 0 
+      left 0
+      margin auto
+      object-fit cover
       // min-width: 100%;
       // min-height: 100%;
   &__content
@@ -2150,7 +2166,7 @@ input.calendar__nights
   input
     border: none
     font-size: 16px
-    padding: 15px 7px
+    padding: 15px 12px
     float: left
     max-height: 50px
   button
@@ -2461,7 +2477,6 @@ input.calendar__nights
 //catalog sort ------------------
 .catalog-sort
   padding-bottom: 10px
-  border-bottom: 1px solid #e5e5e5
 
   clearfix()
   &__title
@@ -2756,10 +2771,16 @@ input.calendar__nights
   &__icons
     display inline-block
     vertical-align middle
+    margin-left 15px
 
     +b(mobile)
-      margin-top: 15px
+        width 100%
+        margin-top: 15px
+        margin-left 0
 
+.section__title + .container .other-news:first-child .other-news__collumn:first-child
+    border-top 0
+      
 .dSubscribe
   position: relative
   display: block
@@ -2769,7 +2790,11 @@ input.calendar__nights
   overflow: hidden
   box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
   width: 100%
-  min-height: 139px
+  box-sizing border-box
+  padding 23px 23px 30px
+  
+  &_nomargin
+      margin-top 0
 
   &__wrapper
     position: absolute
@@ -2804,15 +2829,10 @@ input.calendar__nights
   &__content
     position: relative
     display: block
-    padding-top 30px
-    padding-bottom 30px
     width: 100%
     height: 100%
     text-align: center
     z-index: 1
-
-    +b(mobile)
-      padding: 15px
 
   &__title
     font-size 18px
@@ -2821,6 +2841,7 @@ input.calendar__nights
     text-align center
     margin-bottom 20px
     text-transform uppercase
+    position relative
 
     +b(mobile)
       font-size: 16px
@@ -2829,11 +2850,12 @@ input.calendar__nights
     width 420px
     margin 0 auto
     padding 0 120px 0 0
+    position relative
     & > button
       margin 0 -120px 0 0
       width 120px
     +b(mobile)
-      width 90%
+      width 100%
 
       & > input, button
         height: 40px
@@ -2944,19 +2966,34 @@ input.calendar__nights
     +b(mobile)
       height: 40px !important
 
+.non-mobile-banner
+    +b(mobile)
+        display none
+      
 .other-news
-  margin-top 40px
+  margin-top 30px
   margin-bottom 30px
+  display flex
   
   +b(mobile)
     margin-top 0
+    margin-bottom 0
+    display block
+    
+    & + .center-text
+        margin-top 15px
+        .button 
+            float: none;
+            padding: 10px 44px;
+            width: 100%;
+    
   &__collumn
     col(1/4,cycle:4)
-    margin-top 10px
-    margin-bottom 22px
+    width 24%
+    margin-right 30px
+    // margin-top 10px
+    // margin-bottom 22px
     +b(tablet)      
-      col(1/2, cycle:2)
-      margin-top 30px
       & > div > a 
         overflow hidden
         & > img 
@@ -2964,27 +3001,41 @@ input.calendar__nights
           min-width 100%
     +b(mobile)
       col(1)
-      margin-top 30px
+      padding 10px 0 11px 0
+      border-top 1px solid #252626
+      margin-top 0px
+      margin-right 0
     
+.catalog-sort + .other-news
+    .other-news__collumn:first-child
+        border-top 0
+
+        
+        
 .stockBanners
-  overflow hidden
   margin-top 30px
   margin-bottom 30px
+  display flex
+  +b(mobile)
+      margin-top 0
+  +below(480px)
+      display block
   &__big
     width 100%
   &__collumn
     col(1/3, cycle:3)
+    margin-right 30px
+    width 33.333%
     & > a 
       display block
-    +b(tablet)
-      col(1/2,cycle:2)
-      
-    +b(mobile)
+    +below(480px)
       col(1)
       height auto
       margin-top 20px
+      margin-right 0
   &__images
     width 100%
+    float left
 
 .featuresHoliday
   &__title
