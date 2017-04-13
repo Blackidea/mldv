@@ -30,7 +30,12 @@ block content
 
     .container
       .personal-area-section
-        h2.personal-area-section__heading Заказ #456328
+        .personal-area-section__header
+          a(href='#').personal-area-section__back
+            svg.personal-area-section__back-icon
+              use(xlink:href='#caret-down')
+            span.personal-area-section__back-text Все заказы
+          h2.personal-area-section__heading Заказ #456328
         .personal-area-section__content
           .personal-area__orders-detail
             .about-tour

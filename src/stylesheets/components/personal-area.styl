@@ -404,6 +404,37 @@
   display: block
   margin-top: 63px
 
+  &__header
+    position: relative
+    justify-content: center
+    align-items: flex-end
+    display: flex
+
+  &__back
+    position: absolute
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    text-decoration: none
+    transition: .25s ease-in-out
+
+    &:hover
+      opacity: .8
+
+    &-icon
+      width: 10px
+      height: 5px
+      fill: #748893
+      transform: rotate(90deg)
+
+    &-text
+      padding-left: 11px
+      font-family: "Open Sans Light", "Open Sans", sans-serif
+      font-weight: 300
+      font-size: 1em
+      color: #999999
+
   &__heading
     display: block
     font-size: em(25px, 14px)
