@@ -23,7 +23,7 @@ block content
             span.personal-area-nav__bonuses-text Мальдивбонусов
 
           ul.personal-area-nav__items
-            - var links = [{ path: '#', title: 'Заказы' }, { path: '#', title: 'Избранное', active: true }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }];
+            - var links = [{ path: '#', title: 'Заказы', active: true }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }];
             each link in links
               li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
                 a(href=link.path).personal-area-nav__link= link.title
