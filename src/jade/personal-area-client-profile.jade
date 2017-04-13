@@ -77,7 +77,7 @@ block content
                 span.personal-area__checkbox-box
                 span.personal-area__checkbox-text я согласен  с получать рассылку о новых предложениях и акциях
             .personal-area__field
-              a(href='#').personal-area__label.personal-area__link Изменить пароль
+              a(href='#' data-modal-popup='.js-change-password-popup').personal-area__label.personal-area__link.js-open-modal-popup Изменить пароль
               button(type='submit').button Сохранить
 
           .personal-area__tourists
@@ -130,4 +130,6 @@ block content
                         input(value='20.04.2025').personal-area__text-field
                   span.personal-area-tourist__text Все поля обязательные для заполнения
             a(href='#').personal-area__tourists-add.personal-area__link Добавить туриста
+
   include layouts/footer.jade
+  include layouts/modal-popups/change-password
