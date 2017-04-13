@@ -8,6 +8,45 @@
     display: block
     width: 585px
 
+  &__no-orders
+    display: flex
+    justify-content: space-between
+    margin-bottom: 65px
+
+    &-image-grid
+      width: 360px
+
+    &-tour
+      display: block
+      margin-top: 100px
+      width: 295px
+
+    &-heading
+      font-family: "Roboto", "Open Sans", sans-serif
+      font-size: em(26px, 14px)
+      line-height: .84
+      color: #252525
+      text-align: center
+
+      &::after
+        content: ''
+        display: block
+        margin: 22px auto 0
+        width: 62%
+        height: 1px
+        background-color: #000000
+
+    &-button
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 76px auto 0
+      padding: 0
+      width: 263px
+      min-height: 85px
+      font-size: em(30px, 14px)
+      font-weight: 700
+
   &__favorites
     display: flex
     margin-bottom: 65px
@@ -403,3 +442,44 @@
     margin-top: 15px
     color: #999999
     font-size: em(12px, 14px)
+
+
+.personal-area-image-grid
+  display: flex
+  width: 100%
+  flex-direction: column
+
+  &__row
+    display: flex
+
+  &__column
+    position: relative
+    display: block
+    flex: 1
+    height: 180px
+    box-shadow: 0 0 3.8px .2px rgba(35, 41, 50, .3)
+    overflow: hidden
+
+    &_half_width
+      flex: 0 0 50%
+
+    &_push_right
+      margin-left: auto
+
+    for angle in 'top-left' 'top-right' 'bottom-left' 'bottom-right'
+      &_round_{angle}
+        border-{angle}-radius: 5px
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    min-width: 100%
+    min-height: 100%
+    width: 0
+    height: 0
+    object-fit: cover
+    z-index: 1
