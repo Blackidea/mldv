@@ -3,7 +3,7 @@
 .personal-area
   display: block
 
-  &__profile
+  &__profile, &__request
     margin: 0 auto 65px
     display: block
     width: 585px
@@ -69,9 +69,52 @@
     font-weight: 700
     text-decoration: underline dashed
 
+  &__select
+    position: relative
+    display: flex
+    align-items: center
+    flex: 1
+    padding: 0 12px
+    height: 40px
+    border-radius: 5px
+    border: 1px solid #ddd
+    font-size: em(16px, 14px)
+    color: #000
+    font-weight: 700
+    transition: all .25s ease-in-out
+
+    &:focus
+      border-color: #748893
+      font-weight: 400
+
+    &-field
+      display: block
+      border: 0
+      padding: 0 22px 0 0
+      margin: 0
+      background-color: transparent
+      outline: none
+      appearance: none
+
+    &-icon
+      position: absolute
+      top: 50%
+      display: block
+      pointer-events: none
+      right: 12px
+      transform: translateY(-50%)
+      width: 10px
+      height: 6px
+      fill: #748893
+
   &__field
     display: flex
     align-items: center
+
+    &-text
+      padding-left: 30px
+      font-size: em(18px, 14px)
+      color: #000
 
     &_default
       flex-direction: column
@@ -101,7 +144,7 @@
     & > span
       color: #fd2424
 
-  &__text-field
+  &__text-field, &__text-area
     display: flex
     align-items: center
     flex: 1
@@ -117,6 +160,10 @@
     &:focus
       border-color: #748893
       font-weight: 400
+
+  &__text-area
+    height: 170px
+    padding: 12px
 
 .personal-area-nav
   position: relative

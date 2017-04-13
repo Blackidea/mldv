@@ -1,0 +1,28 @@
+.interactive-stars
+  display: flex
+  flex-direction: row-reverse
+  justify-content: flex-end
+  flex: 1
+
+  &__star
+    display: block
+
+    &:not(:first-child)
+      margin-right: 30px
+
+    &:hover ~ ^[0]__star ^[0]__icon,
+    &:hover ^[0]__icon,
+    &_checked ~ ^[0]__star ^[0]__icon,
+    &_checked ^[0]__icon
+      fill: #24b3fd
+      stroke: 0
+
+  &__field
+    display: none
+
+  &__icon
+    width: 23px
+    height: 22px
+    fill: transparent
+    stroke: #aeaeae
+    transition: all .25s ease-in-out

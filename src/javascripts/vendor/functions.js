@@ -1421,7 +1421,6 @@ $(document).ready(function(){
   $('#checkoutTabs').tabs();
   $('#payAnOrderTabs').tabs();
 
-
   // Обработка клика (след таб)
   $('.js-checkout-next-tab').click(function(e) {
       e.preventDefault();

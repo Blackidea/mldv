@@ -1,0 +1,7 @@
+mixin interactive-stars(num, name)
+    .interactive-stars.js-interactive-stars
+        - for (var i = num; i >= 1; i--)
+            label.interactive-stars__star.js-interactive-stars__star
+                input(type='radio' name=name value=i).interactive-stars__field.js-interactive-stars__field
+                svg.interactive-stars__icon
+                    use(xlink:href='#star-fill')
