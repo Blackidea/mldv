@@ -12,7 +12,7 @@
     text-align center
     margin 32px 0 46px
     +b(mobile)
-      margin 28px 0 16px
+      margin 0px 0 25px
       font-size 30px
   &Form
     &__title
@@ -229,6 +229,12 @@
   vertical-align middle
   overflow hidden
   text-overflow ellipsis
+  +b(tablet)
+      width 91%
+      margin-right: 2%
+    +below(700px)
+        width 82%
+        margin-right 4%
 
 .file_upload > button > svg
   float: left;
@@ -241,6 +247,10 @@
   margin-top 1px
   margin-bottom 1px
   transition all 0.2s ease-in-out
+  +b(tablet)
+      width 7%
+  +below(700px)
+      width 14%
 
 .file_upload > button > svg:hover
   background #677e8a
@@ -265,7 +275,7 @@
   font-size 12px
   font-weight 400
   margin-top 10px
-  +b(mobile)
+  +b(tablet)
     letter-spacing -0.06px
     width 100%
     margin-left 0
