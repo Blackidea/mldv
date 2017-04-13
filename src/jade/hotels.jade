@@ -254,6 +254,65 @@ block content
         img(src='images/bg/filter-hotels.jpg' alt='@').holidayCreate__filter-image
         .container.holidayCreate__filter-content
 
+          form.search__form.search__form_hotels(action='')
+            .search__items
+              .search__item
+                svg.search__icon.icon-compass
+                  use(xlink:href='#compass')
+                input.search__input.js-init-autocomplete(type='text', placeholder='Куда', data-source='places')
+                
+              .search__item.search__item--people
+                .search__chosen-count
+                  .search__people
+                    svg.search__people-icon
+                      use(xlink:href='#man')
+                    span.search__people-delete
+                  .search__people
+                    svg.search__people-icon
+                      use(xlink:href='#man')
+                    span.search__people-delete
+                  .search__people.search__people_baby
+                    span.search__baby-count 4
+                    svg.search__people-icon.search__people-icon_baby
+                      use(xlink:href='#baby')
+                    span.search__people-delete
+                .search__add-count
+                  .search__people
+                    span.search__people-add
+                    svg.search__people-icon
+                      use(xlink:href='#man')
+                  .search__people
+                    span.search__people-add
+                    svg.search__people-icon.search__people-icon_baby
+                      use(xlink:href='#baby')
+                      
+              .search__item.search__item--lg
+                svg.search__icon.icon-calendar
+                  use(xlink:href='#calendar')
+                input.search__input.search__input_calendar.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
+                svg.search__arrow
+                  use(xlink:href='#caret-down')
+              .search__item.search__item_location
+                svg.search__icon.icon-location
+                  use(xlink:href='#location')
+                input.search__input.search__input_location.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
+                svg.search__arrow
+                  use(xlink:href='#caret-down')
+                  
+              .search__item.search__item_mobile
+                svg.search__icon.icon-man
+                  use(xlink:href='#man')
+                input.search__input.search__input_adults.js-init-autocomplete(type='text', placeholder='Взрослые')
+                svg.search__arrow
+                  use(xlink:href='#caret-down')
+              .search__item.search__item_mobile
+                svg.search__icon.icon-baby
+                  use(xlink:href='#baby')
+                input.search__input.search__input_babies.js-init-autocomplete(type='text', placeholder='Дети')
+                svg.search__arrow
+                  use(xlink:href='#caret-down')
+            button.search__button.button(type='submit') Найти
+
           .holidayCreate__selectors
             .holidayCreate__selectors-item
               label(for="test")
