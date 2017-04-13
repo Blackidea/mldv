@@ -22,7 +22,7 @@ block content
             li.catalog-sort__list-item
               a.catalog-sort__link(href='#') Последние
 
-          form.catalog-sort__view-toggle(action="")
+          form.catalog-sort__view-toggle.news-searchform(action="")
             span.catalog-sort__title Поиск по новостям
 
             input.dNews__search(type="text" placeholder="Например, путешествия")
@@ -42,7 +42,7 @@ block content
 
 
       include layouts/other__news.jade
-      .stockBanners
+      .stockBanners.banner-img-wrapper.non-mobile-banner
         img(src="images/stock/big.png", alt="")
       .other-news
         .other-news__collumn
@@ -51,13 +51,15 @@ block content
           include layouts/news__item.jade
         .other-news__collumn
           include layouts/news__item.jade
-        .other-news__collumn
-          img.stockBanners__right(src="images/stock/right.png", alt="")
+        .other-news__collumn.non-mobile-banner
+          .banner-img-wrapper
+            img.stockBanners__right.banner-img-wrapper__full(src="images/stock/right.png", alt="")
         .clearfix
       include layouts/other__news.jade
       .center-text
         a.button.button--more(href='#') Загрузить еще
-      .dSubscribe
+      .dSubscribe.dSubscribe_nomargin
+        img.dSubscribe__image(src="images/stock/regform.png", alt="")
         .dSubscribe__title Хотите следить за нашими новостями?
         form.short-form.dSubscribe__form
           input(type='text', placeholder='Ваш E-mail')
