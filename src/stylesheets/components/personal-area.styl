@@ -8,6 +8,16 @@
     display: block
     width: 585px
 
+  &__orders-detail
+    display: block
+    margin-bottom: 65px
+
+    .about-tour
+      margin-bottom: 54px
+
+    & ^[0]-tourist:first-of-type
+      margin-top: 54px
+
   &__orders
     display: block
     margin-bottom: 65px
@@ -232,6 +242,7 @@
   &__field
     display: flex
     align-items: center
+    flex: 1
 
     &-text
       padding-left: 30px
@@ -392,6 +403,9 @@
     color: #07405e
     text-align: center
 
+    &_align_left
+      text-align: left
+
   &__content
     display: block
     margin-top: 25px
@@ -490,6 +504,11 @@
     color: #999999
     font-size: em(12px, 14px)
 
+    &-field
+      display: block
+      color: #000
+      font-size: em(16px, 14px)
+      font-weight: 700
 
 .personal-area-image-grid
   display: flex
@@ -594,3 +613,69 @@
       color: #ffffff
       text-transform: uppercase
       z-index: 2
+
+.personal-area-payment
+  display: block
+
+  &__container
+    position: relative
+    display: block
+    width: 100%
+    margin-top: 30px
+    background-color: #07405e
+    box-shadow: 0 0 3.8px .2px rgba(35, 41, 50, .3)
+    border-radius: 10px
+    overflow: hidden
+
+  &__image
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    min-width: 100%
+    min-height: 100%
+    width: 0
+    object-fit: cover
+    opacity: .35
+
+  &__content
+    position: relative
+    display: flex
+    width: 100%
+    min-height: 244px
+    padding: 19px
+    z-index: 1
+    color: #fff
+
+  &__column
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 1
+
+    &:first-of-type
+      flex: 0 0 488px
+      border-right: 1px solid #fff
+
+  &__price
+    display: block
+
+    &-heading
+      display: block
+      font-size: 1em
+      line-height: 1
+
+    &-sum
+      display: block
+      font-size: em(60px, 14px)
+      font-weight: 700
+      line-height: 1
+
+  &__detail
+    display: flex
+    padding: 15px 0
+    height: 100%
+    flex-direction: column
+    justify-content: space-between
