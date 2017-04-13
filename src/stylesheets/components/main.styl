@@ -177,12 +177,16 @@
   fill: #24b3fd
 .icon-man
   width: 19px
-  height: 44px
-  fill: #24b3fd
+  height: 26px
+  fill: none
+  stroke: #24b3fd
+  stroke-width: 9
 .icon-baby
-  width: 21px
-  height: 37px
-  fill: #24b3fd
+  width: 19px
+  height: 22px
+  fill: none
+  stroke: #24b3fd
+  stroke-width: 5
 .icon-minus
   width: 20px
   height: 4px
@@ -669,23 +673,41 @@
 .search
   clearfix()
   position: relative
+  &__form
+    display: flex
+    overflow hidden
+    +b(mobile)
+      flex-direction: column
+    &_hotels
+      border-radius: 5px 0 0 5px
+      .search__item
+        background-color #eaecec
+        width: 33.33333%
+        &_location
+          display: none
   &__items
-    float: left
-    width: 100%
-    padding-right: 168px
+    display: flex
+    flex-grow: 1
+    +b(mobile)
+      flex-direction: column
   &__item
-    float: left
-    width: 24.5%
+    width: 25%
     position: relative
-    padding: 6px 0 5px 0
     border-left: 1px solid #dcdcdc
     height: 50px
+    background-color #fff
     &:first-child
       border-left: none
-    &:last-child
-      width: 25.3%
-    &--lg
-      width: 25.1%
+    &--people
+      display: flex
+      justify-content: space-between
+      padding: 0 15px 12px
+      +b(mobile)
+        display: none
+    &_mobile
+      display: none
+      +b(mobile)
+        display: block
   &__icon
     cursor: pointer
     position: absolute
@@ -702,9 +724,7 @@
     top: 50%
     transform: translateY(-50%)
   &__button
-    float: left
     width: 168px
-    margin-left: -168px
     height: 50px
     font-size: 20px
   &__label
@@ -727,6 +747,91 @@
   &__back
     display: none
     margin: 0 -15px 15px
+  &__add-count
+    .search__people-icon
+      fill: none
+      stroke: #000
+      stroke-width: 9
+      &_baby
+        stroke-width: 5
+    .search__people
+      padding-left: 16px
+      margin-left: 17px
+      cursor: pointer
+      &:first-child
+        margin-left: 0
+  &__people
+    position: relative
+    display: inline-flex
+    align-items: flex-end
+    height: 100%
+    margin-left: 2px
+    &_baby
+      margin-left: 10px
+    &:hover
+      .search__people-delete
+        opacity: 1
+        pointer-events: all
+  &__people-icon
+    width: 11px
+    height: 26px
+    fill: #24b3fd
+    &_baby
+      height: 20px
+  &__people-delete
+    position: absolute
+    width: 10px
+    height: 10px
+    left: 0
+    right: 0
+    top: 0
+    margin: auto
+    opacity: 0
+    pointer-events: none
+    transition: all 0.25s ease-in-out;
+    cursor: pointer
+    &:before, &:after
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      background-color: #333333
+      width: 10px
+      height: 1px
+    &:before
+      transform: rotate(45deg)
+    &:after
+      transform: rotate(-45deg)
+  &__baby-count
+    position: absolute
+    left: -7px
+    bottom: -5px
+    font-size: 11px
+    font-weight: 500
+  &__people-add
+    position: absolute
+    width: 10px
+    height: 10px
+    left: 0
+    top: 10px
+    bottom: 0
+    margin: auto
+    &:before, &:after
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      background-color: #333333
+      width: 10px
+      height: 1px
+    &:after
+      transform: rotate(90deg)
   &--sm
     padding-top: 10px
     margin-bottom: 13px
@@ -749,11 +854,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 15px 15px 0;
 
-    &__items {
-      padding-right: 0;
-      padding-bottom: 56px;
-    }
-
     &__item {
       float: none;
       width: 100%;
@@ -763,14 +863,14 @@
       border-radius: 5px;
       height: 40px
       overflow: hidden
-      //
+      
       //&--people {
       //  display: none;
       //}
     }
 
     &__button {
-      margin: 20px 0;
+      margin: 10px 0 0;
       display: block;
       float: none;
       width: 100%;
@@ -876,21 +976,14 @@ input.search__input
   font-weight: 700
   color: #040404
   padding-left: 0
-  padding-right: 0
-  padding-left: 50px
-  padding-right: 25px
-  padding-top: 9px
-  padding-bottom: 9px
+  padding: 0 25px 0 50px
+  line-height: 50px
   cursor: pointer
+  background-color: transparent
   placeholderColor(#040404)
   +b(mobile)
-    padding-left: 37px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  &_calendar
-    padding-left: 55px
-  &_location
-    padding-left: 46px
+    padding-left: 37px
+    line-height 40px
     
 // autocomplete
 //----------------------------------------------------//

@@ -2214,13 +2214,12 @@ function countryTabs(){
         });
   }
 
-  specialOffersMap();
   sliderNumbers();
   sliderNumber();
-  countryTabs();
-  signupOrSigninTabs();
   sliderHotelsAround();
   sliderHotelsSimilar();
+  countryTabs();
+  signupOrSigninTabs();
   hotelsArticleShow();
   showWishList();
   showCompare();
@@ -2229,4 +2228,4 @@ function countryTabs(){
   otherRegionsSlider();
   holidayCreateFilterMob();
   hotelsTourFilterMob();
-
+  specialOffersMap();
