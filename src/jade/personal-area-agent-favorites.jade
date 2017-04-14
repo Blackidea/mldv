@@ -1,0 +1,74 @@
+extends layouts/application.jade
+include layouts/interactive-stars
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы' }, { path: '#', title: 'Избранное', active: true }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+    .container
+      .personal-area-section
+        h2.personal-area-section__heading Избранное
+        .personal-area-section__content
+
+          .personal-area__favorites
+            .personal-area__favorites-catalog
+              ul.catalog__list.catalog__list--lines-view
+                - for (var i = 0; i < 4; i++)
+                  li.catalog__list-item
+                    .card
+                      a(href='#')
+                        .card__img-box
+                          img(src='images/card-image/card-image-04.jpg', alt='')
+                          span.card__price от 5 500 $
+                          svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 23 20.13').card__icon-heart
+                            title heart
+                            path(d='M16.53.5c-2.11,0-4,2.22-5,3.94C10.44,2.72,8.58.5,6.47.5a6.1,6.1,0,0,0-6,6.22c0,4.06,2.89,6.33,5.78,8.69,2.57,2.1,5.22,4.08,5.22,4.08s2.64-2,5.22-4.08c2.89-2.36,5.78-4.63,5.78-8.69A6.1,6.1,0,0,0,16.53.5Z', fill='none', stroke='#000', stroke-width="2" stroke-miterlimit='10')
+
+                        .card__content
+                          span.card__country Мальдивы
+                          .card__title
+                            span.card__rating
+                              | 5
+                              svg.card__rating-star
+                                use(xlink:href='#star-fill')
+                            h3 Kurumba Village
+                          .card__row
+                            .card__description-box
+                              span.card__description
+                                svg.card__description-icon
+                                  use(xlink:href='#night')
+                                |                       7 ночей на двоих
+                              span.card__description
+                                svg.card__description-icon
+                                  use(xlink:href='#breakfest')
+                                |                       только завтраки
+                            ul.card__tag-items
+                              li.card__tag-box
+                                a(href='#').card__tag эксклюзив
+                              li.card__tag-box
+                                a(href='#').card__tag семейный отдых
+                              li.card__tag-box
+                                a(href='#').card__tag LUXE коллекция
+                              li.card__tag-box
+                                a(href='#').card__tag экономичный отдых
+
+            aside.personal-area__favorites-sidebar
+              a(href='#').personal-area__favorites-banner
+                img(src='images/stock/stock-4.jpg' alt='').personal-area__favorites-banner-image
+              a(href='#').personal-area__favorites-banner
+                img(src='images/stock/stock-5.jpg' alt='').personal-area__favorites-banner-image
+  include layouts/footer.jade

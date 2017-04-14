@@ -840,10 +840,15 @@ $footerHeight = 329px
     margin-top: 14px
     padding: 12px
     width: 95%
+    +b(mobile)
+      width 100%
   &__social-list
     &-item
       display: inline-block
       padding: 0 7px 0 0
+      +b(mobile)
+        padding 0
+        margin 0 14px
     &-icon
       width: 34px
       height: 34px
@@ -950,7 +955,7 @@ $footerHeight = 329px
       display: none;
     }
     &__social-list {
-      padding: 0 0 5px 0;
+      padding: 0 15px 5px 0;
       position: relative;
       &:after {
         content: '';

@@ -1,0 +1,61 @@
+extends layouts/application.jade
+include layouts/interactive-stars
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы' }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку', active: true }, { path: '#', title: 'Профиль' }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+
+    .container
+      .personal-area-section
+        h2.personal-area-section__heading Оставить заявку
+        .personal-area-section__content
+
+          form.personal-area__request
+            label.personal-area__field
+              span.personal-area__label Телефон:
+              input(value='+7 (925) 123 23 55').personal-area__text-field
+            label.personal-area__field
+              span.personal-area__label Куда:
+              .personal-area__select
+                select.personal-area__select-field
+                  option Доминикана
+                  option Текст
+                svg.personal-area__select-icon
+                  use(xlink:href='#caret-down')
+            // TODO ПО КЛИКУ НА ПОЛЕ ДОЛЖЕН ОТКРЫВАТЬСЯ НЕ СЕЛЕКТ, А КАЛЕНДАРЬ.
+            label.personal-area__field
+              span.personal-area__label Когда:
+              .personal-area__select
+                select.personal-area__select-field
+                  option Текст
+                  option Текст
+                svg.personal-area__select-icon
+                  use(xlink:href='#caret-down')
+            .personal-area__field
+              span.personal-area__label Категория отеля:
+              +interactive-stars(5, 'hotel-category')
+            label.personal-area__field
+              span.personal-area__label Бюджет:
+              input(value='100 000 руб.').personal-area__text-field
+              span.personal-area__field-text на всех
+            label.personal-area__field
+              span.personal-area__label Комментарий:
+              textarea.personal-area__text-area Нужно очень срочно!
+            .personal-area__field_labelless
+              button(type='submit').button Отправить
+  include layouts/footer.jade

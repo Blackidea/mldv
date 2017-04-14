@@ -1,0 +1,102 @@
+extends layouts/application.jade
+
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы' }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль', active: true }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+    .container
+      .personal-area-section
+        h2.personal-area-section__heading Туристы
+        .personal-area-section__content
+          .personal-area__profile.personal-area__profile_agent
+            form.b-agentsForm
+              .b-agentsForm__section.b-agentsForm__section_organization
+                h3.b-agentsForm__title Сведения об организации:
+                .b-agentsForm__data
+                  label.b-agentsForm__label Название компании на русском языке:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Свидетельство о внесении в Единый государственный реестр юр. лиц (дата, №, кем выдано):
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label ОГРН
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label ИНН
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label КПП
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label ОКПО
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Расчетный счет -№
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Корреспондентский счет-№
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Код БИК:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Наименование и адрес обслуживающего банка:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data.upload
+                  label.b-agentsForm__label Добавить файл:
+                  .file_upload.b-agentsForm__input
+                    //- div(style="float:right;width:30px;border-radius:4px;border:1px solid #000;height:100%;")
+                    button(type="button")
+                      div#uploadfilename
+                      svg
+                        use(xlink:href="#screpka")
+                    input(type="file")
+                  .file-upload__text  Если необходимо, прикрепите подтверждающие документы
+              .b-agentsForm__section.b-agentsForm__section_contacts
+                h3.b-agentsForm__title Адресные данные:
+                .b-agentsForm__data
+                  label.b-agentsForm__label Юридический адрес:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Фактический адрес:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Телефон:
+                  input.b-agentsForm__input(type="tel")
+                .b-agentsForm__data.last
+                  label.b-agentsForm__label Email:
+                  input.b-agentsForm__input(type="email")
+              .b-agentsForm__section.b-agentsForm__section_chief
+                h3.b-agentsForm__title  Сведения о руководителе, от имени которого заключается договор:
+                .b-agentsForm__data
+                  label.b-agentsForm__label ФИО:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label Должность:
+                  input.b-agentsForm__input(type="text")
+                .b-agentsForm__data
+                  label.b-agentsForm__label На основании чего действует:
+                  input.b-agentsForm__input(type="text")
+              .b-agentsForm__section.b-agentsForm__section_submit
+                .b-agentsForm__title
+                .row.b-agentsForm__checkbox
+                  .filter__li
+                    input#license2.checkbox--inline(type='checkbox')
+                    label(for='license2') Получать уведомления по email
+                  button.b-agentsForm__button(type="submit") Сохранить
+  include layouts/footer.jade
