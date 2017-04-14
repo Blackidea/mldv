@@ -2394,8 +2394,41 @@ $("form.short-form button").click(function(e){
 
 
 
+function cloneTouristForm() {
+    $('.js-personal-area__tourists-add').on('click', function (e) {
+        e.preventDefault();
+        var touristsContainer = $('.js-personal-area-tourists'),
+            tourists = touristsContainer.find('.js-personal-area-tourist'),
+            tourist = $(tourists[tourists.length - 1]);
 
+        var nextTourist = tourist.clone(true, true),
+            title = nextTourist.find('.personal-area-tourist__title');
 
+        // increment title number
+        var nextTitle = title.text().replace(/\d+/, Number(title.text().match(/\d+/)[0]) + 1);
+        title.text(nextTitle);
+
+        // clear fields
+        nextTourist
+            .find('form')
+            .find('input')
+            .not(':input[type=button], :input[type=submit], :input[type=hidden]')
+            .val('')
+            .removeAttr('checked')
+            .removeAttr('selected');
+
+        // disable controls button
+        nextTourist.find('.js-personal-area-tourist__button_save').prop('disabled', true);
+        nextTourist.find('.js-personal-area-tourist__button_delete').prop('disabled', true);
+
+        // append to container
+        nextTourist.css('display', 'none');
+        nextTourist.appendTo(touristsContainer);
+        nextTourist.slideToggle();
+    });
+}
+
+  cloneTouristForm();
   sliderNumbers();
   sliderNumber();
   sliderHotelsAround();
