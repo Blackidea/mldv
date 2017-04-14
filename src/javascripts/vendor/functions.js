@@ -1681,7 +1681,7 @@ $("#checkoutTabs").submit(function(e){
           content = $(currentBlock).find('.hotelsArticle__content');
 
       if (content.hasClass('active')) {
-          btn.text('Подбронее');
+          btn.text('Подробнее');
       } else {
           btn.text('Свернуть');
       }
@@ -2286,6 +2286,34 @@ function countryTabs(){
           icon: contactsImage
         });
   }
+
+//Открытие второго попапа
+$('.modal-popup [data-modal-popup]').click(function(){
+  $(this).parents('.modal-popup').hide();
+});
+
+// Вход из ЛК
+$('.signup-or-signin-popup__form button').click(function(e){
+  e.stopPropagation();
+  $(this).parents('.modal-popup').hide();
+  $('.nav__sign-enter').hide();
+  $('.nav__sign-entered').show();
+});
+
+// Выход из ЛК
+$('.nav__sign-link--exit').click(function(e){
+  e.preventDefault();
+  $('.nav__sign-entered').hide();
+  $('.nav__sign-enter').show();
+});
+
+// Кнопка скролла вверх в мобиле
+$(".footer__scrolltop").click(function(e){
+   e.preventDefault();
+    $("html, body").animate({ scrollTop: "0"}, 1000);
+});
+
+
 
 
   sliderNumbers();

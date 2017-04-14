@@ -48,9 +48,10 @@ header.header
                       .scroll-wrapper
                         .dropdown__col
                           span.dropdown__title
-                            | Африка
-                            br
-                            |  и Индийский океан
+                            a(href="#")
+                              | Африка
+                              br
+                              |  и Индийский океан
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Мальдивы
@@ -62,9 +63,10 @@ header.header
                               a.dropdown__link(href='#') Маврикий
                         .dropdown__col
                           span.dropdown__title
-                            | Америка и
-                            br
-                            |  Карибский бассейн
+                            a(href="#")
+                              | Америка и
+                              br
+                              |  Карибский бассейн
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Доминикана
@@ -72,9 +74,10 @@ header.header
                               a.dropdown__link(href='#') Куба
                         .dropdown__col
                           span.dropdown__title
-                            | Азия, Ближний и
-                            br
-                            |  Средний Восток
+                            a(href="#")
+                              | Азия, Ближний и
+                              br
+                              |  Средний Восток
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Китай (КНР)
@@ -89,7 +92,8 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Индонезия
                         .dropdown__col
-                          span.dropdown__title Европа
+                          span.dropdown__title
+                            a(href="#") Европа
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Россия
@@ -98,7 +102,8 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Автобусные туры
                         .dropdown__col
-                          span.dropdown__title Австралия и Океания
+                          span.dropdown__title
+                            a(href="#") Австралия и Океания
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Французская Полинезия
@@ -112,7 +117,11 @@ header.header
                       span.dropdown__triangle
                       .scroll-wrapper
                         .dropdown__col
-                          span.dropdown__title Африка и Индийский океан
+                          span.dropdown__title
+                            a(href="#")
+                              | Африка
+                              br
+                              |  и Индийский океан
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#1') Мальдивы
@@ -123,14 +132,22 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Маврикий
                         .dropdown__col
-                          span.dropdown__title Америка и Карибский бассейн
+                          span.dropdown__title
+                            a(href="#")
+                              | Америка и
+                              br
+                              |  Карибский бассейн
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Доминикана
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Куба
                         .dropdown__col
-                          span.dropdown__title Азия, Ближний и Средний Восток
+                          span.dropdown__title
+                            a(href="#")
+                              | Азия, Ближний и
+                              br
+                              |  Средний Восток
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Китай (КНР)
@@ -145,7 +162,8 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Индонезия
                         .dropdown__col
-                          span.dropdown__title Европа
+                          span.dropdown__title
+                            a(href="#") Европа
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Россия
@@ -154,7 +172,8 @@ header.header
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Автобусные туры
                         .dropdown__col
-                          span.dropdown__title Австралия и Океания
+                          span.dropdown__title
+                            a(href="#") Австралия и Океания
                           ul.dropdown__list
                             li.dropdown__list-item
                               a.dropdown__link(href='#') Французская Полинезия
@@ -188,12 +207,12 @@ header.header
                   a.nav__compare-link Сравнение
                 .nav__sign
                   span.nav__sign-enter
-                    a.nav__sign-link(href='#')
+                    a.nav__sign-link.js-open-modal-popup(href='#', data-modal-popup='.js-signup-or-signin-popup')
                       svg.nav__sign-icon
                         use(xlink:href='#user')
                       span.hide Войти в личный кабинет
                   span.nav__sign-entered
-                    a.nav__sign-link(href='#')
+                    a.nav__sign-link.js-open-modal-popup(href='#', data-modal-popup='.js-change-password-popup')
                       img(src='images/icons/svg/user-entered.svg', alt='@@', width='22')
                       span.hide Konstantinova Valentina
                     a.nav__sign-link.nav__sign-link--exit.hide(href='#') Выход

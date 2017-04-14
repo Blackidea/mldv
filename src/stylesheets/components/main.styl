@@ -1336,7 +1336,6 @@ input.calendar__nights
       margin-bottom: 39px
     .hotelsArticle__content
       padding-top: 4px
-      height: 298px
     .hotelsArticle__history-column
       margin-left: 1.3%
       margin-right: 2.4%
@@ -1578,6 +1577,36 @@ input.calendar__nights
         color: $secondFontColor
 //footer nav list end ----------------
 //card -------------------
+
+.footer
+    position relative
+    
+.footer__scrolltop
+    display none
+    +b(mobile)
+        display block
+        width 30px
+        height 22px
+        background-color #457086
+        border-radius 5px 5px 0 0
+        position absolute
+        bottom 100%
+        left 0
+        right 0
+        margin auto
+        svg
+            transform rotate(180deg)
+            position absolute
+            top 0
+            left 0
+            right 0
+            bottom 0
+            margin auto
+            width: 14px
+            height: 8px
+            display: inline-block
+            fill: #fff
+
 .card
   border-radius: 10px
   box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, 0.3)
