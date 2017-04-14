@@ -80,8 +80,12 @@
         padding-bottom: 7px
 
     .card__links
+      display: none
       padding: 14px 0
       text-align: center
+
+      +b(mobile)
+        display: block
 
       & > .button
         margin-top: 6px
@@ -705,6 +709,12 @@
 .personal-area-tourist
   display: block
 
+  & > ^[0]__controls
+    display: none
+
+    +b(mobile)
+      display: flex
+
   &:not(:last-of-type)
     margin-bottom: 54px
 
@@ -715,7 +725,7 @@
     display: flex
     justify-content: space-between
 
-    .personal-area-tourist__controls
+    & > ^[0]__controls
       +b(mobile)
         display: none
 
@@ -905,7 +915,7 @@
     +b(mobile)
       width: 100%
       margin-bottom: 25px
-      height: 173px
+      min-height: 173px
 
   &__banner
     position: relative

@@ -1472,7 +1472,7 @@ function mapPrice() {
         zoom: 11,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(1.979990, 73.535506), // New York
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
@@ -1486,12 +1486,156 @@ function mapPrice() {
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
-    // Let's also add a marker while we're at it
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(40.6700, -73.9400),
-        map: map,
-        title: 'Snazzy!'
+    var marker1 = {
+      'lat': '1.979990',
+      'lang': '73.535506',
+      'title': 'testTitle'
+    };
+    var marker2 = {
+      'lat': '1.981047',
+      'lang': '73.535559',
+      'title': 'testTitle'
+    };
+    var marker3 = {
+      'lat': '1.975831',
+      'lang': '73.536821',
+      'title': 'testTitle'
+    };
+    var marker4 = {
+      'lat': '1.980980',
+      'lang': '73.535727',
+      'title': 'testTitle'
+    };
+    
+    var markers = [
+      marker1,
+      marker2,
+      marker3,
+      marker4
+    ];
+
+    var marker;
+    // var ibLabel;
+
+    $.each(markers, function(index, value){
+      console.log(value.lat);
+      console.log(value.lang);
+      console.log(value.title);
+
+
+      ///label start
+      // var labelText = value.title;
+
+      // var myOptionsMarker = {
+      //    content: labelText
+      //   ,boxStyle: {
+      //      border: "1px solid black"
+      //     ,textAlign: "center"
+      //     ,fontSize: "8pt"
+      //     ,width: "50px"
+      //    }
+      //   ,disableAutoPan: true
+      //   ,pixelOffset: new google.maps.Size(-25, 0)
+      //   ,position: new google.maps.LatLng(parseFloat(value.lat), parseFloat(value.lang))
+      //   ,closeBoxURL: ""
+      //   ,isHidden: false
+      //   ,pane: "mapPane"
+      //   ,enableEventPropagation: true
+      // };
+
+      // ibLabel = new InfoBox(myOptionsMarker);
+      // ibLabel.open(map);
+      ///label end
+
+      marker = new RichMarker({
+          position: new google.maps.LatLng(parseFloat(value.lat), parseFloat(value.lang)),
+          map: map,
+          flat: true,
+          draggable: false,          
+          content: '<div class="infoWindowMarker">' +
+                '<svg>' +
+                  '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#markersMap"></use>' +
+                '</svg><span>test</span>' +
+              '</div>'
+          });
+
+      
     });
+
+    
+
+    var contentString = '<li class="infoWindow __big">' +
+                '<div class="infoWindowCard"><a href="#">' +
+                     '<div class="infoWindowCard__img-box"><img src="images/card-image/card-image-01.jpg" alt=""><span class="infoWindowCard__price">от 5 500 USD</span><span class="infoWindowCard__offer">Спец. предложений: 5</span></div>' +
+                    '<div class="infoWindowCard__content"><span class="infoWindowCard__country">Мальдивы</span>' +
+                      '<div class="infoWindowCard__title"><span class="infoWindowCard__rating">5' +
+                          '<svg class="infoWindowCard__rating-star">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-fill"></use>' +
+                          '</svg></span>' +
+                        '<h3>Kurumba Village</h3>' +
+                      '</div>' +
+                      '<div class="infoWindowCard__description-box"><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#night"></use>' +
+                          '</svg>                      7 ночей на двоих</span><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>' +
+                          '</svg>                      с 25.09 - по 10.10</span><span class="infoWindowCard__description">' +
+                          '<svg class="infoWindowCard__description-icon">' +
+                            '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#food"></use>' +
+                          '</svg>                      завтраки и обеды</span></div>' +
+                      '<div class="infoWindowCard__tag-box"><span class="infoWindowCard__tag">эксклюзив</span><span class="infoWindowCard__tag">семейный отдых</span><span class="infoWindowCard__tag">LUXE  коллекция</span><span class="infoWindowCard__tag">экономичный отдых</span></div>' +
+                    '</div></a></div>' +
+              '</li>';
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+    ////info start
+    var myOptions = {
+       content: contentString
+      ,disableAutoPan: false
+      ,maxWidth: 0
+      ,pixelOffset: new google.maps.Size(-140, 0)
+      ,zIndex: null
+      ,boxStyle: { 
+        background: ""
+        ,opacity: 1
+        ,width: "280px"
+        ,'border-radius':'12px'
+       }
+      ,closeBoxMargin: "10px 2px 2px 2px"
+      ,closeBoxURL: ""
+      ,infoBoxClearance: new google.maps.Size(1, 1)
+      ,isHidden: false
+      ,pane: "floatPane"
+      ,enableEventPropagation: false
+    };
+
+
+    function toggleVisible(marker) {
+        marker.setVisible(!marker.getVisible());
+    }
+
+    google.maps.event.addListener(marker, "click", function (e) {
+      ib.open(map, this);
+      toggleVisible(this);
+      console.log('click success');
+    });
+
+    
+
+    var ib = new InfoBox(myOptions);
+
+    // ib.open(map, marker);
+    ////info end
+
+    
+
+    // google.maps.event.addListener(map, 'click', function() {
+    //   ib.close();
+    // });
+
+    // Let's also add a marker while we're at it
 
 }
 
@@ -1613,13 +1757,13 @@ $("#checkoutTabs").submit(function(e){
       focusOnSelect: false,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 1220,
           settings: {
             slidesToShow: 2
           }
         },
         {
-          breakpoint: 767,
+          breakpoint: 960,
           settings: 'unslick'
         }
       ]
@@ -2224,16 +2368,18 @@ $("#checkoutTabs").submit(function(e){
   });
   function holidayCreateFilterMob(){
 
-    var filterBlock = $('.holidayCreate__filterMob');
+    var filterBlock = $('.holidayCreate__filter');
     
    
     if (!filterBlock.hasClass('active')){
       filterBlock.addClass('active');
       filterBlock.toggle('slide');
+      fixscreen();
     }
     else{
       filterBlock.removeClass('active');
       filterBlock.toggle('slide');
+      unfixscreen();
     }
   }
 
@@ -2392,10 +2538,92 @@ $("form.short-form button").click(function(e){
   }
 });
 
+/* Выпадающие списки */
+$(".selectbox").each(function(){
+    var ul = "<ul></ul>";
+    $(this).find('select').after(ul);
+    $(this).find("option").each(function(){
+        var ttext = $(this).text();
+        var vval = $(this).val();
+        var li = "<li data-val="+vval+">"+ttext+"</li>";
+        $(this).parents(".selectbox").find("ul").append(li);
+    });
+
+    $(this).find("ul li").click(function(){
+        var newval = $(this).data("val");
+        $(this).parent().parent().find("select").val(newval);
+		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
+		$(this).parent().parent().find("input").val(inputval);
+    });
+
+    $(this).find("select").on("mousedown click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        this.blur();
+        window.focus();
+        $(this).parents(".selectbox").addClass("active");
+    });
+
+    $(this).find("ul").click(function(){
+        $(this).removeClass("active");
+    });
+
+    $("html").click(function(){
+        $(".selectbox").removeClass("active");
+    });
+});
 
 
 
+function cloneTouristForm() {
+    $('.js-personal-area__tourists-add').on('click', function (e) {
+        e.preventDefault();
+        var touristsContainer = $('.js-personal-area-tourists'),
+            tourists = touristsContainer.find('.js-personal-area-tourist'),
+            tourist = $(tourists[tourists.length - 1]);
 
+        var nextTourist = tourist.clone(true, true),
+            title = nextTourist.find('.personal-area-tourist__title');
+
+        // increment title number
+        var nextTitle = title.text().replace(/\d+/, Number(title.text().match(/\d+/)[0]) + 1);
+        title.text(nextTitle);
+
+        // clear fields
+        nextTourist
+            .find('form')
+            .find('input')
+            .not(':input[type=button], :input[type=submit], :input[type=hidden]')
+            .val('')
+            .removeAttr('checked')
+            .removeAttr('selected');
+
+        // disable controls button
+        nextTourist.find('.js-personal-area-tourist__button_save').prop('disabled', true);
+        nextTourist.find('.js-personal-area-tourist__button_delete').prop('disabled', true);
+
+        // append to container
+        nextTourist.css('display', 'none');
+        nextTourist.appendTo(touristsContainer);
+        nextTourist.slideToggle();
+    });
+}
+
+
+// Фиксировать экран для самописных модальных окон
+function fixscreen() {
+  window.scroll = $(window).scrollTop();
+  $("body").css('top', -scroll + 'px').toggleClass('noscroll');
+}
+
+function unfixscreen() {
+  $("body").css('top', "0").toggleClass('noscroll');
+  $(window).scrollTop(scroll);
+}
+
+
+
+  cloneTouristForm();
   sliderNumbers();
   sliderNumber();
   sliderHotelsAround();
@@ -2408,7 +2636,5 @@ $("form.short-form button").click(function(e){
   showBonusDetail();
   showHotelsOnMap();
   otherRegionsSlider();
-  holidayCreateFilterMob();
-  hotelsTourFilterMob();
   specialOffersMap();
   contactsMap();

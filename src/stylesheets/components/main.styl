@@ -699,11 +699,19 @@
       flex-direction: column
     &_hotels
       border-radius: 5px 0 0 5px
+      +b(mobile)
+        border-radius 0
       .search__item
         background-color #eaecec
         width: 33.33333%
         &_location
           display: none
+        +b(mobile)
+          width 100%
+          background-color #fff
+          border 1px solid #d1d1d1
+          &:first-child
+            border-left 1px solid #d1d1d1
   &__items
     display: flex
     flex-grow: 1
@@ -3182,3 +3190,80 @@ input.calendar__nights
     text-align center
     margin-top 20px
     margin-bottom 20px
+
+.selectbox 
+  position relative
+  select 
+    cursor pointer
+    width 100%
+    -webkit-appearance none
+    -moz-appearance none
+    appearance none
+  .select-arrow
+    transition all .25s ease-in-out
+  ul
+    position absolute
+    left 0
+    top 100%
+    width 100%
+    opacity 0
+    pointer-events none
+    transition all .25s ease-in-out
+    z-index 3
+    background-color #fff
+    border-radius 10px
+    box-shadow 0 0 3.8px 0.2px rgba(35,41,50,0.3)
+    &:before
+      content ""
+      position absolute
+      left 0
+      right 0
+      top 0
+      margin auto
+      width 24px
+      height 12px
+      background-color #fff
+      z-index 2
+    &:after
+      content ""
+      position absolute
+      left 0
+      right 0
+      top -6px
+      margin auto
+      box-shadow 0 0 3.8px 0.2px rgba(35,41,50,0.3)
+      width 12px
+      height 12px
+      transform rotate(45deg) skew(10deg, 10deg)
+      background-color #fff
+  li
+    cursor pointer
+    transition all .25s ease-in-out
+    position relative
+    z-index 3
+    padding 5px 10px
+    &:hover
+      color #24b3fd
+  &.active 
+    ul
+      opacity 1
+      pointer-events all
+    .select-arrow
+      transform rotate(180deg)
+  &_form
+    ul
+      border-radius 5px
+      color #fff
+      background rgba(9,60,87,0.9)
+      border 1px solid #fff
+      overflow hidden
+      &:before, &:after
+        display none
+    li
+      font-size 14px
+      line-height 40px
+      height 40px
+      padding 0 10px
+      &:hover
+        background rgba(9,60,87,1)
+        color #fff
