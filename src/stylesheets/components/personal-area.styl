@@ -167,9 +167,16 @@
     &-catalog
       flex: 1
 
+      +b(mobile)
+        flex: initial
+        width: 100%
+
     &-sidebar
       width: 263px
       margin-left: 30px
+
+      +b(mobile)
+        display: none
 
     &-banner
       position: relative
