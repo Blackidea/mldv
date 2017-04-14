@@ -512,7 +512,7 @@ block content
                                         = ' '
                                         | (165 000Р)
 
-                                button.button.pay-an-order__button Оплатить
+                                button.button.pay-an-order__button(data-modal-popup='.js-thanks-for-an-order-popup').js-open-modal-popup Оплатить
 
                             #payAnOrderTabs-2.pay-an-order__block
                                 div.pay-an-order__text
@@ -532,7 +532,7 @@ block content
                                     span Вс: выходной
                                     p К оплате принимаем наличные и банковские карты
 
-                                button.button.pay-an-order__button Оплатить в офисе
+                                button.button.pay-an-order__button(data-modal-popup='.js-thanks-for-an-order-popup').js-open-modal-popup Оплатить в офисе
 
     include layouts/footer.jade
 

@@ -1508,6 +1508,25 @@ if ($('#contacts-map').length > 0) {
 
 
 
+
+
+
+
+$("#checkoutTabs").submit(function(e){
+    e.preventDefault();
+    
+    // AJAX REQUEST
+    
+    return false;
+});
+
+
+
+
+
+
+
+
   $('#hotelsTabs').tabs();
   // $( '#hotelsTabs' ).on( "tabsload", mapPrice() );
 
@@ -2284,4 +2303,6 @@ function countryTabs(){
   otherRegionsSlider();
   holidayCreateFilterMob();
   hotelsTourFilterMob();
+if ($('#specialOffers__map').length > 0) {
   specialOffersMap();
+    }

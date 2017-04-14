@@ -10,13 +10,26 @@
     display flex
     align-items center
     margin 0 auto
-    width 315px
+    max-width 390px
     min-height 180px
     text-align center
+    +b(mobile)
+        min-height 0
+        padding-bottom 40px
 
   &__text
     line-height em(24px, 16px)
     padding 0
+    font-size 16px
+    font-family "Open Sans"
+    font-weight 400
+    
+    a
+        font-weight 600
+        border-bottom 1px dotted
+        text-decoration none
+        color inherit
+        
 
 //////////////////////////////////////////////////////////
 // thanks for registration, hotel added to favourites
