@@ -14,6 +14,19 @@
     padding: 0;
 // catalog-page
 //----------------------------------------------------//
+.hide-mobile
+  +b(mobile)
+    display: none !important
+.hide-tablet
+  +b(tablet)
+    display: none !important
+.hide-laptop
+  +b(laptop)
+    display: none !important
+.hide-desktop
+  +b(desktop)
+    display: none !important
+
 .catalog-page
   .container
     position: relative
@@ -1701,10 +1714,17 @@ input.calendar__nights
     margin-right: 18px
     margin-bottom: 8px
 
+    +b(mobile)
+      position: static
+      margin: 0
+
     &-icon
       width: 16px
       height: 16px
       fill: #fff
+
+      +b(mobile)
+        fill: #000
 
     &-text
       display: inline-block
@@ -1714,6 +1734,9 @@ input.calendar__nights
       text-decoration: underline dashed
       vertical-align: top
       line-height: 1.45
+
+      +b(mobile)
+        color: #000000
 
   &__icon-wishlist
     position absolute
