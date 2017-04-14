@@ -627,9 +627,13 @@
     width: 100%
     height: 100%
     box-shadow: 0 0 3.8px .2px rgba(35, 41, 50, .3)
+    background-color: #000000
     border-radius: 10px
     overflow: hidden
     text-decoration: none
+
+    &_with_overlay &-image
+      opacity: .62
 
     &-image
       position: absolute
@@ -700,6 +704,9 @@
     align-items: center
     flex: 1
 
+    &_align_left
+      justify-content: flex-start
+
     &:first-of-type
       flex: 0 0 488px
       border-right: 1px solid #fff
@@ -724,3 +731,16 @@
     height: 100%
     flex-direction: column
     justify-content: space-between
+
+    &_default
+      justify-content: flex-start
+      height: auto
+
+      &:first-child
+        margin-left: 63px
+
+      &:not(:last-child)
+        margin-right: 95px
+
+      & ^[0]__detail-text:not(:last-child)
+        margin-bottom: 24px

@@ -1,0 +1,248 @@
+extends layouts/application.jade
+include layouts/interactive-stars
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы', active: true }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+    .container
+      .personal-area-section
+        h2.personal-area-section__heading Заказы
+        .personal-area-section__content
+          .personal-area__orders
+            // tour
+            .personal-area-order
+              .personal-area-order__heading заказ #45674455
+              .personal-area-order__items
+                // card
+                .personal-area-order__item
+                  .card
+                    a(href='#')
+                      .card__img-box
+                        img(src='images/card-image/card-image-01.jpg', alt='')
+                        span.card__price <b>Статус:</b> Внесена предоплата
+                        a(href='#').card__download
+                          svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 349.16 336.71').card__download-icon
+                            title contract
+                            path(d='M341.66,0H83.46A7.5,7.5,0,0,0,76,7.5V156.6H7.5A7.5,7.5,0,0,0,0,164.1V291.23a45.53,45.53,0,0,0,45.48,45.48h258.2a45.53,45.53,0,0,0,45.48-45.48V7.5A7.5,7.5,0,0,0,341.66,0ZM15,291.23V171.6H76V291.23a30.48,30.48,0,1,1-61,0Zm319.16,0a30.51,30.51,0,0,1-30.48,30.48H79.2A45.31,45.31,0,0,0,91,291.23V15h243.2V291.23Z')
+                            path(d='M202,86.63h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M202,169h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M202,251.42h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M132.81,95.07a7.51,7.51,0,0,0,5.45,2.35h.06A7.5,7.5,0,0,0,143.81,95L185,49.85a7.5,7.5,0,1,0-11.08-10.11L138.17,78.9,127,67.11a7.5,7.5,0,0,0-10.91,10.3Z')
+                            path(d='M173.93,125.71l-35.75,39.15L127,153.08a7.5,7.5,0,0,0-10.9,10.3L132.81,181a7.51,7.51,0,0,0,5.45,2.35h.06a7.5,7.5,0,0,0,5.48-2.44L185,135.83a7.5,7.5,0,0,0-11.08-10.11Z')
+                            path(d='M173.93,211.69l-35.75,39.15L127,239.06a7.5,7.5,0,0,0-10.9,10.3L132.81,267a7.51,7.51,0,0,0,5.45,2.35h.06a7.5,7.5,0,0,0,5.48-2.44L185,221.8a7.5,7.5,0,0,0-11.08-10.11Z')
+                          span.card__download-text Скачать договор
+                      .card__content
+                        span.card__country Мальдивы
+                        .card__title
+                          span.card__rating
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                          h3 Kurumba Village
+                        .card__description-box
+                          .card__description
+                            span <b>8-13 янв. 2017 г.</b>
+                            span <b>7 ночей</b> на двоих
+                            span + ребенок (3 года)
+                          .card__description
+                            span к оплате:
+                            span <b>125 000 руб</b>
+                            span коммиссия:
+                            span <b>10 000 руб</b>
+                          .card__description
+                            a(href='#').button Подробнее
+
+                // tickets
+                .personal-area-order__item
+                  ul.about-tour__tickets-list
+                    li.about-tour__tickets-item
+                      ul.about-tour__tickets-logos
+                        li.about-tour__tickets-logos-item
+                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                        li.about-tour__tickets-logos-item
+                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                      .about-tour__tickets-info
+                        img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                        .about-tour__tickets-info-content
+                          .about-tour__tickets-info-row
+                            .about-tour__tickets-info-time 12:40
+                            .about-tour__tickets-info-travel-time
+                              svg.about-tour__tickets-info-travel-time-icon
+                                use(xlink:href='#plane-up')
+                              .about-tour__tickets-info-travel-time-text
+                                span Всего: 24ч 5м
+                                span 1 пересадка (7ч)
+                              svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                                use(xlink:href='#plane-up')
+                            .about-tour__tickets-info-time 14:45
+                          .about-tour__tickets-info-row
+                            .about-tour__tickets-info-direction
+                              span Москва
+                              span 09 янв 2017, Сб
+                            ul.about-tour__tickets-info-airports
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport DME
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport AUH
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport MLE
+                            .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                              span Москва
+                              span 09 янв 2017, Сб
+
+                    li.about-tour__tickets-item
+                      ul.about-tour__tickets-logos
+                        li.about-tour__tickets-logos-item
+                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                        li.about-tour__tickets-logos-item
+                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                      .about-tour__tickets-info
+                        img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                        .about-tour__tickets-info-content
+                          .about-tour__tickets-info-row
+                            .about-tour__tickets-info-time 19:30
+                            .about-tour__tickets-info-travel-time
+                              svg.about-tour__tickets-info-travel-time-icon
+                                use(xlink:href='#plane-up')
+                              .about-tour__tickets-info-travel-time-text
+                                span Всего: 13ч 5м
+                                span 1 пересадка (2ч)
+                              svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                                use(xlink:href='#plane-up')
+                            .about-tour__tickets-info-time 07:15
+                          .about-tour__tickets-info-row
+                            .about-tour__tickets-info-direction
+                              span Мале
+                              span 16 янв 2017, Пт
+                            ul.about-tour__tickets-info-airports
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport MLE
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport AUH
+                              li.about-tour__tickets-info-airports-item
+                                .about-tour__tickets-info-airport DME
+                            .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                              span Москва
+                              span 16 янв 2017, Сб
+                  // MOBILE TICKETS BLOCK
+                  ul.about-tour__tickets-list.about-tour__tickets-list_mobile
+                    li.about-tour__tickets-item
+                      ul.about-tour__tickets-item-info-list
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text Москва
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue DME, Домодедово
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 12:40
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 09 янв,сб
+                          .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                            img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text 1 пересадка (7ч)
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue AUH
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text Мале
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue MLE, Мальдивы
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 14:45
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 10 янв,вс
+                          .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                            img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                    li.about-tour__tickets-item
+                      ul.about-tour__tickets-item-info-list
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text Мале
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue MLE, Мальдивы
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 14:45
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 10 янв,вс
+                          .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                            img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text 1 пересадка (7ч)
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue AUH
+                        li.about-tour__tickets-item-info-item
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text Москва
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue DME, Домодедово
+                          .about-tour__tickets-item-info-col
+                            b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 12:40
+                            span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 09 янв,сб
+                          .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                            img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+
+            // hotel
+            .personal-area-order
+              .personal-area-order__heading заказ #45674455
+              .personal-area-order__items
+                // card
+                .personal-area-order__item
+                  .card
+                    a(href='#')
+                      .card__img-box
+                        img(src='images/card-image/card-image-01.jpg', alt='')
+                        span.card__price <b>Статус:</b> Новый, ожидание оплаты
+                        a(href='#').card__download
+                          svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 349.16 336.71').card__download-icon
+                            title contract
+                            path(d='M341.66,0H83.46A7.5,7.5,0,0,0,76,7.5V156.6H7.5A7.5,7.5,0,0,0,0,164.1V291.23a45.53,45.53,0,0,0,45.48,45.48h258.2a45.53,45.53,0,0,0,45.48-45.48V7.5A7.5,7.5,0,0,0,341.66,0ZM15,291.23V171.6H76V291.23a30.48,30.48,0,1,1-61,0Zm319.16,0a30.51,30.51,0,0,1-30.48,30.48H79.2A45.31,45.31,0,0,0,91,291.23V15h243.2V291.23Z')
+                            path(d='M202,86.63h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M202,169h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M202,251.42h96.13a7.5,7.5,0,0,0,0-15H202a7.5,7.5,0,0,0,0,15Z')
+                            path(d='M132.81,95.07a7.51,7.51,0,0,0,5.45,2.35h.06A7.5,7.5,0,0,0,143.81,95L185,49.85a7.5,7.5,0,1,0-11.08-10.11L138.17,78.9,127,67.11a7.5,7.5,0,0,0-10.91,10.3Z')
+                            path(d='M173.93,125.71l-35.75,39.15L127,153.08a7.5,7.5,0,0,0-10.9,10.3L132.81,181a7.51,7.51,0,0,0,5.45,2.35h.06a7.5,7.5,0,0,0,5.48-2.44L185,135.83a7.5,7.5,0,0,0-11.08-10.11Z')
+                            path(d='M173.93,211.69l-35.75,39.15L127,239.06a7.5,7.5,0,0,0-10.9,10.3L132.81,267a7.51,7.51,0,0,0,5.45,2.35h.06a7.5,7.5,0,0,0,5.48-2.44L185,221.8a7.5,7.5,0,0,0-11.08-10.11Z')
+                          span.card__download-text Скачать договор
+                      .card__content
+                        span.card__country Мальдивы
+                        .card__title
+                          span.card__rating
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                            svg.card__rating-star
+                              use(xlink:href='#star-fill')
+                          h3 Kurumba Village
+                        .card__description-box
+                          .card__description
+                            span <b>8-13 янв. 2017 г.</b>
+                            span <b>7 ночей</b> на двоих
+                          .card__description
+                            span к оплате:
+                            span <b>125 000 руб</b>
+                            span коммиссия:
+                            span <b>10 000 руб</b>
+                          .card__description
+                            a(href='#').button Подробнее
+                .personal-area-order__item
+                  a(href='#').personal-area-order__banner.personal-area-order__banner_with_overlay
+                    img(src='images/personal-area/banner/2.jpg' alt='').personal-area-order__banner-image
+                    .personal-area-order__banner-content ПОМОЧЬ ПОДОБРАТЬ БИЛЕТЫ  ПО ЭТОМУ НАПРАВЛЕНИЮ?
+  include layouts/footer.jade
