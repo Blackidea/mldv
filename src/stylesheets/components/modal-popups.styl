@@ -436,7 +436,7 @@
 
 
 //////////////////////////////////////////////////////////
-// thanks for subscribing, thanks for request
+// thanks for subscribing, thanks for request, maldiv bonuses
 //////////////////////////////////////////////////////////
 .thanks-for-subscribing-popup, .thanks-for-request-popup
   display inherit
@@ -446,9 +446,46 @@
     align-items center
     margin 0 auto
     width 315px
-    min-height 265px
+    min-height 114px
     text-align center
 
   &__text
     line-height em(24px, 16px)
     padding 0
+
+//////////////////////////////////////////////////////////
+// maldiv bonuses
+//////////////////////////////////////////////////////////
+.maldiv-bonuses-popup
+  display: inherit
+
+  &__content
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    min-height 150px
+
+  &__bonuses
+    margin-top: 5px
+    display: flex
+    width: 100%
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    &-column
+      display: flex
+
+    &-icon
+      width: 54px
+      height: 49px
+      fill: #24b3fd
+      margin-right: 18px
+
+    &-text
+      color: #24b3fd
+      font-size: em(20px, 14px)
+      font-weight: 700
+
+      &_size_lg
+        font-size: em(58px, 14px)
