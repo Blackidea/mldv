@@ -1,0 +1,353 @@
+extends layouts/application.jade
+include layouts/interactive-stars
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы', active: true }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+    .container
+      .personal-area-section
+        .personal-area-section__header
+          a(href='#').personal-area-section__back
+            svg.personal-area-section__back-icon
+              use(xlink:href='#caret-down')
+            span.personal-area-section__back-text Все заказы
+          h2.personal-area-section__heading Заказ #456328
+        .personal-area-section__content
+          .personal-area__orders-detail
+            .about-tour
+              .about-tour__title Информация о туре:
+              .about-tour__column.about-tour__column_left
+                .about-tour__icon-list-wrapper
+                  span.about-tour__heading Проживание в отеле Sol Cayo Largo 4*
+                  ul.about-tour__icon-list
+                    li.about-tour__icon-list-item
+                      div.about-tour__icon-list-icon-wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 58 57').about-tour__icon-list-icon.about-tour__icon-list-icon_calendar
+                          title at-calendar
+                          path(d='M42.9,4A5,5,0,0,0,38,0a1,1,0,0,0,0,2,3,3,0,0,1,0,6,1,1,0,0,0,0,2,5,5,0,0,0,4.9-4H56v9H2V6H19a1,1,0,0,0,0-2H17.18A3,3,0,1,1,20,8a1,1,0,0,0,0,2,5,5,0,1,0-4.9-6H0V57H58V4ZM56,55H2V17H56Z')
+                          path(d='M12.29,29.71a1,1,0,0,0,1.41,0L18,25.41V48H15a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2H20V23a1,1,0,0,0-.08-.38,1,1,0,0,0-1.31-.54,1,1,0,0,0-.33.22l-6,6A1,1,0,0,0,12.29,29.71Z')
+                          path(d='M38,48a5,5,0,0,1-5-5,1,1,0,0,0-2,0,7,7,0,0,0,14,0V29a7,7,0,1,0-2,4.89V43A5,5,0,0,1,38,48Zm0-14a5,5,0,1,1,5-5A5,5,0,0,1,38,34Z')
+                          path(d='M26,2a3,3,0,0,1,0,6,1,1,0,0,0,0,2A5,5,0,0,0,26,0a1,1,0,0,0,0,2Z')
+                          path(d='M32,2a3,3,0,0,1,0,6,1,1,0,0,0,0,2A5,5,0,0,0,32,0a1,1,0,0,0,0,2Z')
+                      span.about-tour__icon-list-text 09 января — 16 января
+                    li.about-tour__icon-list-item
+                      div.about-tour__icon-list-icon-wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 311.05 221.02').about-tour__icon-list-icon.about-tour__icon-list-icon_deluxe
+                          title at-deluxe
+                          path(d='M295,95.72V19.05A19.08,19.08,0,0,0,275.95,0H35.11A19.07,19.07,0,0,0,16.05,19.05V95.72A18.93,18.93,0,0,0,0,114.41v47.45a6,6,0,0,0,6,6h6.43v29.6a6,6,0,0,0,6,6H29.26V215a6,6,0,1,0,12,0V203.47H269.8V215a6,6,0,0,0,12,0V203.47h10.83a6,6,0,0,0,6-6v-29.6h6.43a6,6,0,0,0,6-6V114.41A18.93,18.93,0,0,0,295,95.72Zm-267-76.67A7.06,7.06,0,0,1,35.11,12H275.95A7.06,7.06,0,0,1,283,19.05V95.5H261.93c4.19-4.51,8.46-9.26,12.87-14.34a6,6,0,0,0,0-7.87A489.55,489.55,0,0,0,223,21.46a6,6,0,0,0-7.88,0,489.46,489.46,0,0,0-51.84,51.84,6,6,0,0,0,0,7.87c4.42,5.08,8.68,9.82,12.87,14.34h-41.2c4.19-4.51,8.45-9.26,12.87-14.34a6,6,0,0,0,0-7.87A489.93,489.93,0,0,0,96,21.46a6,6,0,0,0-7.88,0A489.93,489.93,0,0,0,36.25,73.29a6,6,0,0,0,0,7.87C40.66,86.25,44.93,91,49.12,95.5H28.05ZM192.68,95.5c-5.52-5.66-11.1-11.69-16.92-18.27A468.67,468.67,0,0,1,219,34,468.19,468.19,0,0,1,262.3,77.23c-5.82,6.59-11.4,12.61-16.92,18.27Zm-127,0c-5.52-5.67-11.1-11.69-16.92-18.27A468.3,468.3,0,0,1,92,34a468.69,468.69,0,0,1,43.27,43.27c-5.82,6.59-11.4,12.61-16.92,18.27Zm221,96H24.43v-23.6h262.2Zm12.43-35.6H12V114.41a6.92,6.92,0,0,1,6.91-6.91H292.14a6.92,6.92,0,0,1,6.91,6.91Zm0,0')
+                      span.about-tour__icon-list-text DELUXE ROOM
+                    li.about-tour__icon-list-item
+                      div.about-tour__icon-list-icon-wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 329.54 325.08').about-tour__icon-list-icon.about-tour__icon-list-icon_night
+                          title at-night
+                          path(d='M314.14,162.19A90.92,90.92,0,0,1,225.88,11.52L236.76,0,220.93.68A112.15,112.15,0,0,0,115.3,133a78.64,78.64,0,0,0-15.19-1.63A79.79,79.79,0,0,0,20.4,211.07a74.6,74.6,0,0,0,.63,9.51A59.24,59.24,0,0,0,59.3,325.08H230.88A59.35,59.35,0,0,0,265.69,217.7a111.78,111.78,0,0,0,55.51-45.9l8.34-13.49Zm-36.83,103.6a46.5,46.5,0,0,1-46.45,46.44H59.29a46.5,46.5,0,0,1-46.45-46.44,46,46,0,0,1,18.9-37.31l3.18-2.35-.66-3.89a66.43,66.43,0,0,1,65.84-78,66,66,0,0,1,22.42,4.06c1.65.59,3.28,1.22,4.88,1.93.25.12.48.25.73.36a66.84,66.84,0,0,1,7.84,4.32c1,.63,2,1.26,2.9,1.93s1.95,1.42,2.89,2.17c1.55,1.24,3.06,2.53,4.49,3.91.6.57,1.18,1.16,1.76,1.75q2.16,2.23,4.13,4.67c.48.59.94,1.19,1.4,1.79a66.33,66.33,0,0,1,4.34,6.43l3.43,5.91,5.69-3.79a39.93,39.93,0,0,1,62.08,33.49v5.89h0l5.86.51a42.83,42.83,0,0,1,5.63.87l.19,0a48.25,48.25,0,0,1,5.59,1.61l1.74.62.08,0A46.07,46.07,0,0,1,277.31,265.79Zm-25.63-57c-.88.24-1.77.4-2.65.59l-.08,0a59,59,0,0,0-7.29-1.86,52.42,52.42,0,0,0-9.58-25.17c-.35-.49-.67-1-1-1.5s-.66-.76-1-1.15c-.68-.84-1.36-1.7-2.09-2.49-.24-.26-.51-.5-.76-.76-.85-.89-1.7-1.76-2.6-2.59l-.06,0a52.8,52.8,0,0,0-11.69-8h0a52.77,52.77,0,0,0-47.29-.06,77.59,77.59,0,0,0-5.26-6.66c-.44-.51-.88-1-1.34-1.53q-2.63-2.87-5.52-5.48c-.67-.6-1.35-1.16-2-1.73-1.46-1.23-3-2.4-4.51-3.51-1.18-.86-2.38-1.68-3.61-2.47-1.41-.91-2.85-1.79-4.32-2.61q-1.87-1.05-3.8-2c-.95-.46-1.92-.88-2.89-1.3s-2-1-3-1.36A99.53,99.53,0,0,1,199.68,16.9c2.17-.59,4.38-1.11,6.61-1.55a103.82,103.82,0,0,0,85.55,162.49c3.14,0,6.28-.13,9.4-.42A99.05,99.05,0,0,1,251.68,208.78Z')
+                      span.about-tour__icon-list-text 7 ночей
+                    li.about-tour__icon-list-item
+                      div.about-tour__icon-list-icon-wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 399 463').about-tour__icon-list-icon.about-tour__icon-list-icon_breakfast
+                          title at-breakfast
+                          path(d='M335.5,232a63.39,63.39,0,0,0-16.5,2.18V231.5A23.53,23.53,0,0,0,295.5,208H23.5A23.53,23.53,0,0,0,0,231.5v112c0,32.59,15.24,64.3,40,83.74V439.5A23.53,23.53,0,0,0,63.5,463h192A23.53,23.53,0,0,0,279,439.5V427.24c17.49-13.73,30.23-33.59,36.2-55.56A63.53,63.53,0,0,0,399,311.5v-16A63.57,63.57,0,0,0,335.5,232ZM319,295.5a16.5,16.5,0,0,1,33,0v16a16.5,16.5,0,0,1-33,0ZM255.5,448H63.5a8.51,8.51,0,0,1-8.5-8.5V431H264v8.5A8.51,8.51,0,0,1,255.5,448ZM304,343.5c0,28.38-13.35,55.92-35,72.5H50c-21.64-16.58-35-44.12-35-72.5v-112a8.51,8.51,0,0,1,8.5-8.5h272a8.51,8.51,0,0,1,8.5,8.5v112Zm80-32a48.5,48.5,0,0,1-65.85,45.29A106.08,106.08,0,0,0,319,343.5v-5.18a31.48,31.48,0,0,0,48-26.82v-16a31.48,31.48,0,0,0-48-26.82V249.89a48.51,48.51,0,0,1,65,45.61Z')
+                          path(d='M154.43,148.65C146.22,156.17,136,165.54,136,183.5a7.5,7.5,0,0,0,15,0c0-11.36,6-16.85,13.57-23.79,8.21-7.52,18.43-16.89,18.43-34.85S172.78,97.52,164.57,90C157,83,151,77.55,151,66.18s6-16.86,13.57-23.81C172.78,34.84,183,25.47,183,7.5a7.5,7.5,0,0,0-15,0c0,11.37-6,16.86-13.57,23.81C146.22,38.84,136,48.21,136,66.18S146.22,93.52,154.43,101C162,108,168,113.49,168,124.86S162,141.71,154.43,148.65Z')
+                          path(d='M202.43,148.65C194.22,156.17,184,165.54,184,183.5a7.5,7.5,0,0,0,15,0c0-11.36,6-16.85,13.57-23.79,8.21-7.52,18.43-16.89,18.43-34.85S220.78,97.52,212.57,90C205,83,199,77.55,199,66.18a7.5,7.5,0,1,0-15,0c0,18,10.22,27.34,18.43,34.87C210,108,216,113.49,216,124.86S210,141.71,202.43,148.65Z')
+                          path(d='M106.43,148.65C98.22,156.17,88,165.54,88,183.5a7.5,7.5,0,1,0,15,0c0-11.36,6-16.85,13.57-23.79,8.21-7.52,18.43-16.89,18.43-34.85S124.78,97.52,116.57,90C109,83,103,77.55,103,66.18a7.5,7.5,0,0,0-15,0c0,18,10.22,27.34,18.43,34.87C114,108,120,113.49,120,124.86S114,141.71,106.43,148.65Z')
+                      span.about-tour__icon-list-text Завтраки
+                    li.about-tour__icon-list-item
+                      div.about-tour__icon-list-icon-wrapper
+                        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 60 55').about-tour__icon-list-icon.about-tour__icon-list-icon_people
+                          title at-people
+                          path(d='M55.52,44l-9.77-4.23A2,2,0,0,1,45,39h6.53a11.56,11.56,0,0,0,5-.67,3,3,0,0,0,1.24-4.43c-1.87-2.65-6.22-9.59-6.35-16.62,0-.12-.4-12.08-12.21-12.18A14.05,14.05,0,0,0,34.4,6a8.32,8.32,0,0,0-1.49-2.46C30.85,1.19,27.52,0,23,0s-7.85,1.19-9.91,3.53A9,9,0,0,0,11,10.06v5.32A4,4,0,0,0,10,18v4a4,4,0,0,0,1.5,3.11A21,21,0,0,0,15,32.35v3.31A2.64,2.64,0,0,1,13.62,38L4.7,42.84A9,9,0,0,0,0,50.76V55H60V51.3A8.07,8.07,0,0,0,55.52,44ZM44,53H2V50.76A7,7,0,0,1,5.66,44.6l8.92-4.87A4.64,4.64,0,0,0,17,35.65v-4l-.23-.28a18.88,18.88,0,0,1-3.41-7.07l-.09-.4-.34-.22A2,2,0,0,1,12,22V18a2,2,0,0,1,.67-1.48l.33-.3V9.87a6.94,6.94,0,0,1,1.61-5C16.25,3,19.08,2,23,2s6.73,1,8.39,2.83a6.5,6.5,0,0,1,1.45,2.87l0,.21c0,.07,0,.14,0,.21l0,.23,0,.16c0,.12,0,.24,0,.35v0c0,.11,0,.21,0,.3s0,0,0,.05,0,.16,0,.23v0c0,.23,0,.38,0,.38v6.36l.33.3A2,2,0,0,1,34,18v4a2,2,0,0,1-1.42,1.9l-.5.15-.16.5a20.93,20.93,0,0,1-2.83,5.71,13.16,13.16,0,0,1-.84,1.08l-.25.28v4.13a4.71,4.71,0,0,0,.06.74c0,.05,0,.1,0,.15a4.69,4.69,0,0,0,.16.59l0,.13a4.65,4.65,0,0,0,.27.6l0,.07a4.56,4.56,0,0,0,.5.72l.23.28h0a4.66,4.66,0,0,0,1.18.86l9.55,4.78A7,7,0,0,1,44,51Zm14,0H46V51a9,9,0,0,0-5-8.07l-6.86-3.43A1.73,1.73,0,0,0,32.57,37H30.35a2.55,2.55,0,0,1-.11-.26,2.18,2.18,0,0,1-.24-1V32.37c.23-.28.47-.6.72-1a22.89,22.89,0,0,0,3-5.8A4,4,0,0,0,36,22V18a4,4,0,0,0-1-2.62V10.06a8.8,8.8,0,0,0-.08-2.14,12,12,0,0,1,4.29-.78c9.84.08,10.2,9.81,10.21,10.22.15,7.58,4.75,14.93,6.72,17.73a1,1,0,0,1,.14.83.93.93,0,0,1-.53.62,9.83,9.83,0,0,1-4.08.51H44.78a1.84,1.84,0,0,0-1.65,2.66,4.17,4.17,0,0,0,1.78,1.93l9.75,4.22A6.07,6.07,0,0,1,58,51.3Z')
+
+                      span.about-tour__icon-list-text 2 взрослых
+
+                .about-tour__icon-list-wrapper
+                span.about-tour__heading Дополнительно включено:
+                ul.about-tour__icon-list
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 289.37 409.6').about-tour__icon-list-icon.about-tour__icon-list-icon_christmas
+                        title at-christmas
+                        path(d='M161.83,198a20.48,20.48,0,1,0-20.48,20.48A20.51,20.51,0,0,0,161.83,198Zm-27.3,0a6.83,6.83,0,1,1,6.82,6.83,6.83,6.83,0,0,1-6.82-6.83Zm0,0')
+                        path(d='M107.22,307.2a20.48,20.48,0,1,0,20.48-20.48,20.51,20.51,0,0,0-20.48,20.48Zm27.31,0a6.83,6.83,0,1,1-6.83-6.82,6.84,6.84,0,0,1,6.83,6.82Zm0,0')
+                        path(d='M175.48,244.87a6.79,6.79,0,0,0-7.09-6.56c-10.67.41-22.07.62-33.87.62-44.29,0-71.22-2.93-84.29-4.9l33.28-51.56A6.83,6.83,0,1,0,72,175.07L33.22,235.23a6.82,6.82,0,0,0,4.07,10.32c1.15.29,28.91,7,97.23,7,12,0,23.55-.21,34.4-.63a6.82,6.82,0,0,0,6.56-7.08Zm0,0')
+                        path(d='M83.76,114.81a6.82,6.82,0,0,0,9.56-1.32l41.06-54.18L191.29,139c-4.71.88-11.18,1.89-19.4,2.71a6.83,6.83,0,0,0-5.09,10.46L218.88,234c-5.69.86-14,1.91-24.95,2.8a6.83,6.83,0,0,0-5.16,10.54l2.66,4.06a6.83,6.83,0,0,0,12.25-1.77c18.72-1.88,27.59-4,28-4.07a6.82,6.82,0,0,0,4.17-10.3L184.14,154c13.51-1.9,20.34-4,20.7-4.12a6.82,6.82,0,0,0,3.5-10.48l-67-93.8V39.14l7.5,4.33a6.83,6.83,0,0,0,6.83-11.83l-7.49-4.32,7.5-4.33a6.83,6.83,0,0,0-6.83-11.82l-7.5,4.33V6.83a6.83,6.83,0,0,0-13.66,0v8.65l-7.5-4.32A6.83,6.83,0,1,0,113.38,23l7.49,4.32-7.49,4.33a6.83,6.83,0,1,0,6.83,11.83l7.5-4.32v6.36L82.44,105.25a6.83,6.83,0,0,0,1.32,9.57Zm0,0')
+                        path(d='M45.79,300.38A20.48,20.48,0,1,0,25.3,279.9a20.51,20.51,0,0,0,20.48,20.48Zm0-27.31A6.83,6.83,0,1,1,39,279.9a6.84,6.84,0,0,1,6.83-6.83Zm0,0')
+                        path(d='M5.14,336.56a6.85,6.85,0,0,0,4,4.29C10.56,341.42,45.5,355,134.53,355s124-13.56,125.41-14.14A6.82,6.82,0,0,0,263,330.62l-25.18-36.36a20.46,20.46,0,1,0-14.56,6.11c.7,0,1.35-.14,2-.2l21.15,30.52c-14.79,3.83-49.85,10.65-111.93,10.65-62.42,0-97.52-6.9-112.16-10.7L32.5,315.22a6.82,6.82,0,0,0-11.41-7.5l-15.14,23a6.84,6.84,0,0,0-.81,5.8Zm218.14-49.84a6.83,6.83,0,1,1,6.82-6.82,6.83,6.83,0,0,1-6.82,6.82Zm0,0')
+                        path(d='M86.74,163.84a20.37,20.37,0,0,0,16.07-7.93c5.64.42,17,1.1,31.72,1.1q7.35,0,13.86-.2a6.83,6.83,0,0,0,6.62-7,6.75,6.75,0,0,0-7-6.61q-6.32.19-13.44.2c-11.71,0-21.32-.46-27.4-.84a20.44,20.44,0,1,0-20.39,21.32Zm0-27.3a6.83,6.83,0,1,1-6.82,6.82,6.84,6.84,0,0,1,6.82-6.82Zm0,0')
+                        path(d='M282.54,395.95H161.83v-27.3a6.83,6.83,0,1,0-13.65,0v27.3H120.88v-27.3a6.83,6.83,0,1,0-13.65,0v27.3H6.82a6.83,6.83,0,0,0,0,13.66H282.54a6.83,6.83,0,1,0,0-13.66Zm0,0')
+                    span.about-tour__icon-list-text рождественские ужины
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 442.42 512').about-tour__icon-list-icon.about-tour__icon-list-icon_marriage
+                        title at-marriage
+                        path(d='M343,106.29l16.86-20.1a8.66,8.66,0,0,0,.74-10.79L318.25,4.23A8.67,8.67,0,0,0,310.79,0H131.62a8.67,8.67,0,0,0-7.45,4.23L81.47,75.91c-.09.14-.15.29-.22.44s-.13.22-.19.33l0,.13c-.1.23-.18.46-.26.69s-.11.29-.15.44-.12.52-.17.78-.06.25-.08.38a8.78,8.78,0,0,0-.09,1.17s0,.1,0,.14a8.76,8.76,0,0,0,.06,1c0,.14.05.27.08.41s.09.5.15.74.1.31.15.46.14.44.23.65.15.32.23.48.14.31.22.45l.09.14c.09.15.19.29.29.43s.26.38.41.56l.11.15,17.09,20.37a223.15,223.15,0,0,0-69.61,73.8A220.79,220.79,0,0,0,43,421.64a8.67,8.67,0,0,0,14-10.28A203.44,203.44,0,0,1,44.75,188.8a205.77,205.77,0,0,1,65.82-69.14l33.78,40.26a151.94,151.94,0,0,0-75,130.88c0,83.71,68.1,151.82,151.82,151.82S373,374.5,373,290.79a150.28,150.28,0,0,0-13.43-62.39,8.67,8.67,0,1,0-15.8,7.15,133.05,133.05,0,0,1,11.88,55.23c0,74.15-60.32,134.47-134.47,134.47S86.74,364.94,86.74,290.79A133.83,133.83,0,0,1,107.56,219a135.3,135.3,0,0,1,48.13-45.57l58.77,70.05a8.6,8.6,0,0,0,4.54,2.93,9.49,9.49,0,0,0,2.21.3,8.81,8.81,0,0,0,5.58-2,10.55,10.55,0,0,0,1.17-1.18l58.77-70.06A136.46,136.46,0,0,1,326.27,207a8.67,8.67,0,0,0,13.55-10.83,154,154,0,0,0-41.76-36.23l20.42-24.34,13.36-15.92a205.78,205.78,0,0,1,65.82,69.14,203.38,203.38,0,0,1,27.41,102c0,112.41-91.45,203.86-203.86,203.86a202.67,202.67,0,0,1-142.36-58.1A8.67,8.67,0,1,0,66.73,449a219.92,219.92,0,0,0,154.48,63c122,0,221.21-99.23,221.21-221.21a220.74,220.74,0,0,0-29.75-110.7A223.22,223.22,0,0,0,343,106.29ZM136.54,17.35h38.4l-6,13A8.67,8.67,0,1,0,184.7,37.6L194,17.35h54.31l25.09,54.33H169l2.46-5.33a8.67,8.67,0,1,0-15.75-7.27l-5.82,12.61H104.18ZM107.51,89h42.11L191.3,188.9Zm215.88,13.71h0l-16.79,20L251.11,188.9l5.07-12.15a8.67,8.67,0,0,0-16-6.68l-19,45.44L168.42,89H274L257.74,128a8.67,8.67,0,1,0,16,6.68l19-45.62H334.9ZM292.55,71.68,267.47,17.35h38.4l32.37,54.33Z')
+                    span.about-tour__icon-list-text свадебная церемония
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 324.83 402.6').about-tour__icon-list-icon.about-tour__icon-list-icon_excursion
+                        title at-excursion
+                        path(d='M184.19,0H140.64a26.6,26.6,0,0,0-26.57,26.57v18l-2.28.85A125,125,0,0,0,30.1,162.75v42.17l-1.74,1A57.23,57.23,0,0,0,0,255.24v98A49.44,49.44,0,0,0,49.39,402.6H275.44a49.44,49.44,0,0,0,49.39-49.39v-98a57.23,57.23,0,0,0-28.37-49.31l-1.74-1V162.75A125,125,0,0,0,213,45.44l-2.28-.85v-18A26.6,26.6,0,0,0,184.19,0ZM127.81,26.57a12.85,12.85,0,0,1,12.83-12.83h43.55A12.85,12.85,0,0,1,197,26.57v14l-4.15-.79a125.23,125.23,0,0,0-23.26-2.19H155.22A125.22,125.22,0,0,0,132,39.82l-4.15.79Zm103,362.29H94V307.42a15.23,15.23,0,0,1,15.21-15.21H215.6a15.22,15.22,0,0,1,15.21,15.21ZM279.06,139.6,280.25,150a112.56,112.56,0,0,1,.73,12.73V322h13.74V220l6.18,7.34a43.35,43.35,0,0,1,10.19,27.86v98a35.69,35.69,0,0,1-35.65,35.64H244.55V307.42a29,29,0,0,0-28.95-28.95H109.23a29,29,0,0,0-28.95,28.95v81.44H49.39a35.69,35.69,0,0,1-35.65-35.64v-98a43.36,43.36,0,0,1,10.19-27.86L30.1,220V322H43.84V162.75A112.47,112.47,0,0,1,44.58,150l1.19-10.41,5.3,9c18.68,31.83,48.43,54,81.62,60.93l2.79.58v21a20.94,20.94,0,0,0,20.92,20.92h12a20.94,20.94,0,0,0,20.92-20.92v-21l2.79-.58c33.18-6.89,62.93-29.1,81.61-60.93ZM149.21,231.16V189a7.19,7.19,0,0,1,7.18-7.18h12a7.19,7.19,0,0,1,7.18,7.18v42.15a7.19,7.19,0,0,1-7.18,7.18h-12A7.19,7.19,0,0,1,149.21,231.16ZM228.77,71c17.66,12.76,31.82,30.89,40.95,52.4l.58,1.37-.58,1.37c-15,35.29-42.66,60.43-76,69l-4.37,1.12V189a20.94,20.94,0,0,0-20.92-20.92h-12A20.94,20.94,0,0,0,135.48,189v7.23l-4.37-1.12c-33.34-8.54-61-33.68-76-69l-.58-1.37.58-1.37C64.23,101.9,78.39,83.78,96.06,71s38.24-19.64,59.16-19.64h14.39C190.53,51.37,211,58.16,228.77,71Z', fill='#2d527c')
+                    span.about-tour__icon-list-text экскурсии
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 36 48').about-tour__icon-list-icon.about-tour__icon-list-icon_arrival
+                        title at-arrival
+                        path(d='M16.75,37.7l8.18,3.45,2.51-5.95-8.18-3.45Zm8.6-1.64-1.27,3-5.24-2.21,1.27-3Zm0,0')
+                        path(d='M20.8,17.6c0,1.79,1.05,3.2,2.4,3.2s2.4-1.41,2.4-3.2a4.07,4.07,0,0,0-.33-1.6h.33a.8.8,0,0,0,0-1.6H5.6a.8.8,0,1,0,0,1.6H21.13a4,4,0,0,0-.32,1.6Zm3.2,0c0,1-.47,1.6-.8,1.6s-.8-.62-.8-1.6.48-1.6.8-1.6.8.63.8,1.6Zm0,0')
+                        path(d='M32,23.2h-.8V13.49A3.89,3.89,0,0,0,27.31,9.6H20V4.8h.8a2.4,2.4,0,0,0,0-4.8H11.2a2.4,2.4,0,0,0,0,4.8H12V9.6H3.89A3.89,3.89,0,0,0,0,13.49V41.71A3.88,3.88,0,0,0,2.4,45.3v.55A2.15,2.15,0,0,0,4.55,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.6H20v.25A2.15,2.15,0,0,0,22.15,48h4.5a2.15,2.15,0,0,0,2.15-2.15V45.3a3.89,3.89,0,0,0,2.4-3.59V31.2H32a4,4,0,0,0,0-8ZM13.6,3.2V1.6h1.6V3.2Zm3.2-1.6h1.6V3.2H16.8Zm4.8.8a.8.8,0,0,1-.8.8H20V1.6h.8a.8.8,0,0,1,.8.8Zm-11.2,0a.8.8,0,0,1,.8-.8H12V3.2h-.8a.8.8,0,0,1-.8-.8Zm3.2,2.4h4.8V9.6H13.6Zm-4,41.05a.55.55,0,0,1-.55.55H4.55A.55.55,0,0,1,4,45.85V45.6H9.6Zm17.6,0a.55.55,0,0,1-.55.55h-4.5a.54.54,0,0,1-.55-.55V45.6h5.6Zm2.4-4.14A2.29,2.29,0,0,1,27.31,44H3.89A2.29,2.29,0,0,1,1.6,41.71V13.49A2.29,2.29,0,0,1,3.89,11.2H27.31a2.29,2.29,0,0,1,2.29,2.29ZM32,29.6h-.8V24.8H32a2.4,2.4,0,0,1,0,4.8Zm0,0')
+                    span.about-tour__icon-list-text ранний\поздний заезд
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 250.61 301.59').about-tour__icon-list-icon.about-tour__icon-list-icon_insurance
+                        title at-insurance
+                        path(d='M250.61,246.5V194.31a6,6,0,0,0-4.93-5.9c-5.26-1-10.64-1.76-16-2.41l-1.76-.21V60.93a5.84,5.84,0,0,0-.1-1.14l0-.25a6,6,0,0,0-1.07-2.29h-1.09V56.07L171.3,1.72A6,6,0,0,0,167.12,0H6A6,6,0,0,0,0,6V280.48a6,6,0,0,0,6,6H157.66l.57.53a55.06,55.06,0,0,0,92.38-40.5Zm-77.52-226,34.37,34.38H173.09ZM12,274.48V12H161.09V60.86a6,6,0,0,0,6,6h48.86V184.68l-2.13-.13c-6-.38-12.16-.57-18.29-.57a281.65,281.65,0,0,0-50.15,4.44,6,6,0,0,0-4.93,5.9V246.5a54.39,54.39,0,0,0,6,25.06l1.49,2.91Zm140.44-28V199.37l1.7-.26a276.23,276.23,0,0,1,82.78,0l1.7.26V246.5a43.09,43.09,0,0,1-86.17,0Z')
+                        path(d='M54,196h54.34a6,6,0,0,0,0-12H54a6,6,0,0,0,0,12Z')
+                        path(d='M108.87,125.89H54a6,6,0,1,0,0,12h54.86a6,6,0,1,0,0-12Z')
+                        path(d='M143.61,137.89h30.33a6,6,0,0,0,0-12H143.61a6,6,0,1,0,0,12Z')
+                        path(d='M173.94,93.47H143.61a6,6,0,0,0,0,12h30.33a6,6,0,0,0,0-12Z')
+                        path(d='M84.34,217.69H54a6,6,0,0,0,0,12H84.34a6,6,0,0,0,0-12Z')
+                        path(d='M195.53,270.63a6,6,0,0,0,6-6V248.78h15.85a6,6,0,0,0,0-12H201.53V220.93a6,6,0,0,0-12,0v15.85H173.68a6,6,0,0,0,0,12h15.85v15.85A6,6,0,0,0,195.53,270.63Z')
+                        path(d='M108.87,93.47H54a6,6,0,0,0,0,12h54.86a6,6,0,0,0,0-12Z')
+                    span.about-tour__icon-list-text страховка
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 384 384').about-tour__icon-list-icon.about-tour__icon-list-icon_visa
+                        title at-visa
+                        path(d='M254.28,288a8,8,0,0,1-8,8H114.12a8,8,0,1,1,0-16H246.28a8,8,0,0,1,8,8Zm2-136a80.09,80.09,0,0,1-80,80h-.18a80,80,0,0,1,0-160h.18a80.09,80.09,0,0,1,80,80Zm-143.67-8h31.56V104a31.89,31.89,0,0,1,1-8,64.14,64.14,0,0,0-32.58,48Zm32.58,64a31.89,31.89,0,0,1-1-8V160H112.61a64.14,64.14,0,0,0,32.58,48Zm47-48H160.17v40a16,16,0,0,0,32.06,0Zm0-56a16,16,0,0,0-32.06,0v40h32.06Zm47.56,56H208.23v40a31.94,31.94,0,0,1-1,8,64.14,64.14,0,0,0,32.58-48Zm0-16a64.14,64.14,0,0,0-32.58-48,31.94,31.94,0,0,1,1,8v40Zm141.76-31.79L304.34,298.54V344a40,40,0,0,1-40,40H24A24,24,0,0,1,0,360V24A24,24,0,0,1,24,0H264.34a40,40,0,0,1,40,40v5.66L364.2,70.4a32,32,0,0,1,17.35,41.81ZM48.06,16H24a8,8,0,0,0-8,8V360a8,8,0,0,0,8,8H48.06ZM288.34,40a24,24,0,0,0-24-24H64.05V368H264.34a24,24,0,0,0,24-24V121.47a7.93,7.93,0,0,1,0-2.49V51.21c0-.14,0-.28,0-.43Zm78.42,53.85a15.9,15.9,0,0,0-8.68-8.66L304.34,63v52l13.15,5.44a8,8,0,1,1-6.11,14.79l-7-2.91V256.74l44-106.3-8.51-3.51A8,8,0,0,1,346,132.14l8.52,3.52,12.25-29.57a15.87,15.87,0,0,0,0-12.24Zm0,0')
+                    span.about-tour__icon-list-text виза
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 512 512').about-tour__icon-list-icon.about-tour__icon-list-icon_vip
+                        title at-vip
+                        polygon(points='175.85 291.39 137.65 182.27 110.17 182.27 162.15 327.19 163.07 329.73 188.63 329.73 239.73 187.41 241.55 182.27 214.05 182.27 175.85 291.39')
+                        rect(x='252.2', y='182.27', width='27', height='147.45')
+                        path(d='M384.08,193.15a55.56,55.56,0,0,0-18.28-8.23,88.44,88.44,0,0,0-22.05-2.64H306.12V329.73h27v-55.2h5.8a88.78,88.78,0,0,0,24.15-3.17,63.15,63.15,0,0,0,19.75-9.3,45.29,45.29,0,0,0,13.42-15,44.18,44.18,0,0,0,.3-39.75A40.58,40.58,0,0,0,384.08,193.15Zm-44.53,58.17h-6.43V205.47h10a60.56,60.56,0,0,1,12.72,1.3,29.2,29.2,0,0,1,9.85,3.87,18.91,18.91,0,0,1,6.2,6.46,19.33,19.33,0,0,1,2.23,9.73A21.18,21.18,0,0,1,371.75,237a22.4,22.4,0,0,1-6.83,7.61,33.81,33.81,0,0,1-10.95,5A55.43,55.43,0,0,1,339.55,251.32Z')
+                        path(d='M504.51,237.9l-60-60V93.09a25.6,25.6,0,0,0-25.6-25.6H334.09l-60-60a25.59,25.59,0,0,0-36.21,0l-60,60H93.08a25.6,25.6,0,0,0-25.6,25.6v84.83l-60,60a25.6,25.6,0,0,0,0,36.21l60,60v84.83a25.6,25.6,0,0,0,25.6,25.6h84.84l60,60a25.58,25.58,0,0,0,36.2,0l60-60h84.84a25.6,25.6,0,0,0,25.6-25.6V334.09l60-60A25.6,25.6,0,0,0,504.51,237.9Zm-85.59,85.58v95.44H323.48L256,486.4l-67.48-67.48H93.08V323.48L25.6,256l67.48-67.48V93.08h95.44L256,25.6l67.48,67.48h95.44v95.44L486.4,256Z')
+                        circle(cx='256', cy='76.8', r='12.8')
+                        circle(cx='256', cy='435.2', r='12.8')
+                        circle(cx='129.28', cy='129.28', r='12.8')
+                        circle(cx='382.71', cy='382.71', r='12.8')
+                        circle(cx='382.71', cy='129.28', r='12.8')
+                        circle(cx='129.28', cy='382.71', r='12.8')
+                        circle(cx='435.2', cy='256', r='12.8')
+                        circle(cx='76.8', cy='256', r='12.8')
+                    span.about-tour__icon-list-text вип сервис
+                  li.about-tour__icon-list-item
+                    div.about-tour__icon-list-icon-wrapper
+                      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 410.52 271.49').about-tour__icon-list-icon.about-tour__icon-list-icon_transfer
+                        title at-transfer
+                        path(d='M98.64,205.87a20.62,20.62,0,1,0,20.62,20.62A20.64,20.64,0,0,0,98.64,205.87Zm0,26.24a5.62,5.62,0,1,1,5.62-5.62A5.62,5.62,0,0,1,98.64,232.11Z')
+                        path(d='M311.88,205.87a20.62,20.62,0,1,0,20.62,20.62A20.64,20.64,0,0,0,311.88,205.87Zm0,26.24a5.62,5.62,0,1,1,5.62-5.62A5.62,5.62,0,0,1,311.88,232.11Z')
+                        path(d='M401,190.31v-147A43.34,43.34,0,0,0,357.71,0H76.77A67.33,67.33,0,0,0,9.52,67.25V190.31a23.74,23.74,0,0,0-9.52,19v.92A23.78,23.78,0,0,0,23.75,234H54.28A45,45,0,0,0,143,234H267.52a45,45,0,0,0,88.72,0h30.53a23.78,23.78,0,0,0,23.75-23.75v-.92A23.75,23.75,0,0,0,401,190.31Zm-15-77.87H365.42a1.91,1.91,0,0,1-1.91-1.91V52.7a1.91,1.91,0,0,1,1.91-1.91H386ZM15,210.24v-.92a8.76,8.76,0,0,1,8.75-8.76H61.9A44.75,44.75,0,0,0,54.28,219H23.75A8.76,8.76,0,0,1,15,210.24Zm83.64,46.25a30,30,0,1,1,30-30A30,30,0,0,1,98.64,256.49ZM267.52,219H143a45,45,0,0,0-63-33.43H24.52V67.25A52.31,52.31,0,0,1,76.77,15H357.71A28.34,28.34,0,0,1,385,35.79H365.42A16.93,16.93,0,0,0,348.51,52.7v57.82a16.93,16.93,0,0,0,16.91,16.91H386v58.13H330.54a45,45,0,0,0-63,33.43Zm44.36,37.5a30,30,0,1,1,30-30A30,30,0,0,1,311.88,256.49Zm83.64-46.25a8.76,8.76,0,0,1-8.75,8.75H356.24a44.75,44.75,0,0,0-7.62-18.43h38.15a8.76,8.76,0,0,1,8.75,8.76Z')
+                        path(d='M326.38,110.53V52.7a16.93,16.93,0,0,0-16.91-16.91H78.54A36.22,36.22,0,0,0,42.36,72v38.55a16.93,16.93,0,0,0,16.91,16.91h250.2A16.93,16.93,0,0,0,326.38,110.53ZM191.87,50.79h59v61.64h-59Zm-15,61.64h-59V50.79h59ZM57.36,110.53V72A21.21,21.21,0,0,1,78.54,50.79h24.37v61.64H59.27A1.91,1.91,0,0,1,57.36,110.53Zm254,0a1.91,1.91,0,0,1-1.91,1.91H265.83V50.79h43.64a1.91,1.91,0,0,1,1.91,1.91Z')
+                        path(d='M369.54,173.9a7.5,7.5,0,0,0,7.5-7.5v-6.67a7.5,7.5,0,1,0-15,0v6.67A7.5,7.5,0,0,0,369.54,173.9Z')
+                    span.about-tour__icon-list-text
+                      | трансфер
+                      = ' '
+                      small (Airport Herawaly-Airport)
+
+
+              .about-tour__column.about-tour__column_right
+                .about-tour__photos
+                  span.about-tour__heading Фотографии номера:
+                  ul.about-tour__photos-list
+                    - for (var i = 1; i <= 6; i++)
+                      li.about-tour__photos-item
+                        - var src = 'images/about-tour/photos/photo-' + i + '.jpg';
+                        img(src=src alt='').about-tour__photos-image
+
+              .about-tour__tickets
+                span.about-tour__heading Перелет
+                span.about-tour__description
+                  b Внимание!
+                  = ' '
+                  | Условия перелётов могут измениться.
+                ul.about-tour__tickets-list
+                  li.about-tour__tickets-item
+                    ul.about-tour__tickets-logos
+                      li.about-tour__tickets-logos-item
+                        img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                      li.about-tour__tickets-logos-item
+                        img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                    .about-tour__tickets-info
+                      img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                      .about-tour__tickets-info-content
+                        .about-tour__tickets-info-row
+                          .about-tour__tickets-info-time 12:40
+                          .about-tour__tickets-info-travel-time
+                            svg.about-tour__tickets-info-travel-time-icon
+                              use(xlink:href='#plane-up')
+                            .about-tour__tickets-info-travel-time-text
+                              span Всего: 24ч 5м
+                              span 1 пересадка (7ч)
+                            svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                              use(xlink:href='#plane-up')
+                          .about-tour__tickets-info-time 14:45
+                        .about-tour__tickets-info-row
+                          .about-tour__tickets-info-direction
+                            span Москва
+                            span 09 янв 2017, Сб
+                          ul.about-tour__tickets-info-airports
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport DME
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport AUH
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport MLE
+                          .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                            span Москва
+                            span 09 янв 2017, Сб
+
+                  li.about-tour__tickets-item
+                    ul.about-tour__tickets-logos
+                      li.about-tour__tickets-logos-item
+                        img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                      li.about-tour__tickets-logos-item
+                        img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                    .about-tour__tickets-info
+                      img(src='images/about-tour/ticket-bg/bg.jpg' alt='').about-tour__tickets-info-image
+                      .about-tour__tickets-info-content
+                        .about-tour__tickets-info-row
+                          .about-tour__tickets-info-time 19:30
+                          .about-tour__tickets-info-travel-time
+                            svg.about-tour__tickets-info-travel-time-icon
+                              use(xlink:href='#plane-up')
+                            .about-tour__tickets-info-travel-time-text
+                              span Всего: 13ч 5м
+                              span 1 пересадка (2ч)
+                            svg.about-tour__tickets-info-travel-time-icon.about-tour__tickets-info-travel-time-icon_down
+                              use(xlink:href='#plane-up')
+                          .about-tour__tickets-info-time 07:15
+                        .about-tour__tickets-info-row
+                          .about-tour__tickets-info-direction
+                            span Мале
+                            span 16 янв 2017, Пт
+                          ul.about-tour__tickets-info-airports
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport MLE
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport AUH
+                            li.about-tour__tickets-info-airports-item
+                              .about-tour__tickets-info-airport DME
+                          .about-tour__tickets-info-direction.about-tour__tickets-info-direction_right
+                            span Москва
+                            span 16 янв 2017, Сб
+                // MOBILE TICKETS BLOCK
+                ul.about-tour__tickets-list.about-tour__tickets-list_mobile
+                  li.about-tour__tickets-item
+                    ul.about-tour__tickets-item-info-list
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text Москва
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue DME, Домодедово
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 12:40
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 09 янв,сб
+                        .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text 1 пересадка (7ч)
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue AUH
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text Мале
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue MLE, Мальдивы
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 14:45
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 10 янв,вс
+                        .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                  li.about-tour__tickets-item
+                    ul.about-tour__tickets-item-info-list
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text Мале
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue MLE, Мальдивы
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 14:45
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 10 янв,вс
+                        .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                          img(src='images/about-tour/ticket-logos/logo-1.png' alt='').about-tour__tickets-logos-image
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text 1 пересадка (7ч)
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue AUH
+                      li.about-tour__tickets-item-info-item
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text Москва
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue DME, Домодедово
+                        .about-tour__tickets-item-info-col
+                          b.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 12:40
+                          span.about-tour__tickets-item-info-text.about-tour__tickets-item-info-text_blue 09 янв,сб
+                        .about-tour__tickets-item-info-col.about-tour__tickets-item-info-col_logo
+                          img(src='images/about-tour/ticket-logos/logo.png' alt='').about-tour__tickets-logos-image
+
+            .personal-area__tourists
+              .personal-area__tourists-content
+                h3.personal-area-section__heading.personal-area-section__heading_align_left Данные о туристах
+                - for (var i = 1; i <= 2; i++)
+                  .personal-area-tourist
+                    .personal-area-tourist__header
+                      .personal-area-tourist__title Турист №#{i}
+                    .personal-area-tourist__form
+                      .personal-area-tourist__row
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Имя:
+                          span.personal-area-tourist__text-field Ксения
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Фамилия:
+                          span.personal-area-tourist__text-field Путешественикова
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Дата рождения:
+                          span.personal-area-tourist__text-field 21.03.1970
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Гражданство:
+                          span.personal-area-tourist__text-field Россия
+                      .personal-area-tourist__row
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Номер загранпаспорта:
+                          span.personal-area-tourist__text-field 44 6782345
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Кем выдан:
+                          span.personal-area-tourist__text-field УФМС
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Дата выдачи
+                          span.personal-area-tourist__text-field 15.04.2005
+                        .personal-area__field.personal-area__field_default
+                          span.personal-area__label.personal-area__label_size_small Окончание действия:
+                          span.personal-area-tourist__text-field 20.04.2025
+            .personal-area-payment
+              h3.personal-area-section__heading.personal-area-section__heading_align_left Оплата заказа
+              .personal-area-payment__container
+                img(src='images/personal-area/payment/1.jpg' alt='').personal-area-payment__image
+                .personal-area-payment__content
+                  .personal-area-payment__column
+                    .personal-area-payment__price
+                      .personal-area-payment__price-heading Сумма:
+                      .personal-area-payment__price-sum 5 500 $
+                  .personal-area-payment__column.personal-area-payment__column_align_left
+                    ul.personal-area-payment__detail.personal-area-payment__detail_default
+                      li.personal-area-payment__detail-text <b>Статус:</b> Внесена предоплата
+                      li.personal-area-payment__detail-text <b>Способ оплаты:</b> Банковская карта
+                      li.personal-area-payment__detail-text <b>Коммиссия:</b> 500 $
+                    ul.personal-area-payment__detail.personal-area-payment__detail_default
+                      li.personal-area-payment__detail-text <b>Оплачено:</b> 500 $
+                      li.personal-area-payment__detail-text <b>К оплате:</b> 50 000 $
+                      li.personal-area-payment__detail-text <b>Всего:</b> 50 500$
+
+  include layouts/footer.jade

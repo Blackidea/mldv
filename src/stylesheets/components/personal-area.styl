@@ -704,6 +704,9 @@
     align-items: center
     flex: 1
 
+    &_align_left
+      justify-content: flex-start
+
     &:first-of-type
       flex: 0 0 488px
       border-right: 1px solid #fff
@@ -728,3 +731,16 @@
     height: 100%
     flex-direction: column
     justify-content: space-between
+
+    &_default
+      justify-content: flex-start
+      height: auto
+
+      &:first-child
+        margin-left: 63px
+
+      &:not(:last-child)
+        margin-right: 95px
+
+      & ^[0]__detail-text:not(:last-child)
+        margin-bottom: 24px
