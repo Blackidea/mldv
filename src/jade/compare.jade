@@ -153,7 +153,7 @@ block content
             .compare__option-heading Бонусы отеля
             .compare__cols.compare__cols_bonuses
               .compare__col(data-col="1")
-                a.hotelsBonus__column
+                a.hotelsBonus__column(data-modal-popup='.js-discount-for-accommodation-popup').js-open-modal-popup
                   img(src='images/bonus/bonus-1.jpg' alt='').hotelsBonus__image
                   .hotelsBonus__content
                     .hotelsBonus__name 20% скидка<br> на проживание
@@ -161,7 +161,7 @@ block content
                     .hotelsBonus__date
                       p.hotelsBonus__date-name Период действия
                       p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
-                a.hotelsBonus__column
+                a.hotelsBonus__column(data-modal-popup='.js-discount-for-accommodation-popup').js-open-modal-popup
                   img(src='images/bonus/bonus-2.jpg' alt='').hotelsBonus__image
                   .hotelsBonus__content
                     .hotelsBonus__name Бонус молодоженам,<br> а также отмечающим<br> "серебряную" и "золотую" свадьбу
@@ -170,7 +170,7 @@ block content
                       p.hotelsBonus__date-name Период действия
                       p.hotelsBonus__date-value 26.12.2016 - 16.04.2017
               .compare__col(data-col="2")
-                a.hotelsBonus__column
+                a.hotelsBonus__column(data-modal-popup='.js-discount-for-accommodation-popup').js-open-modal-popup
                   img(src='images/bonus/bonus-1.jpg' alt='').hotelsBonus__image
                   .hotelsBonus__content
                     .hotelsBonus__name 20% скидка<br> на проживание
@@ -286,3 +286,4 @@ block content
                   use(xlink:href='#arrow-right')
             
   include layouts/footer.jade
+  include layouts/modal-popups/discount-for-accommodation

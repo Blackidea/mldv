@@ -2,7 +2,7 @@
 
 .compare-page
   .dSubscribePrice
-    margin-bottom: 42px
+    margin-bottom: 30px
 
 .compare
   p
@@ -30,6 +30,9 @@
       margin-bottom: 23px
       display: inline-block
       width: auto
+      display: block;
+      margin: 0 auto 20px;
+      width: 150px;
     img
       position: absolute
       left: 0
@@ -56,8 +59,9 @@
       overflow-x: scroll
   &__main
     padding-bottom: 11px
+    min-width 800px
     +b(mobile)
-      width: 200%
+      width: auto
   &__cols
     display: flex
     justify-content: space-between
@@ -67,17 +71,28 @@
     min-height: 118px
     +b(mobile)
       justify-content: space-around
+      min-height 0
     .search__arrow
       position: static
       transform: translateY(-20%)
+      +b(mobile)
+        display: block;
+        margin: 13px auto 0;
     &_images
       padding: 27px 0 39px
     &_food
       min-height: 145px
       padding: 0 0 20px
+      +b(mobile)
+          min-height 0
+          padding-top 30px
+          padding-bottom 30px
     &_bonuses
       padding: 46px 0
       align-items: flex-start
+      +b(mobile)
+          padding 10px 0
+    
       .hotelsBonus__column
         float: none
         width: 100%
@@ -90,12 +105,16 @@
         justify-content: center
         & + .hotelsBonus__column
           margin-top: 30px
+          +b(mobile)
+              margin-top 15px
       .hotelsBonus__name
         font-size: 17px
         font-weight: 500
         text-transform: uppercase
         line-height: 1.4em
         margin-bottom: 12px
+        +b(mobile)
+            font-size 14px
       .hotelsBonus__border-bottom
         width: 50%
       .hotelsBonus__date
@@ -103,19 +122,25 @@
       .hotelsBonus__date-value
         margin-top: 1px
         font-size: 18px
+        +b(mobile)
+            font-size 14px
     &_description
       padding: 42px 0 39px
+      +b(mobile)
+          padding: 15px 0
     &_rest
       padding: 42px 0 36px
       align-items: flex-start
+      +b(mobile)
+          padding: 15px 0
     &_services
       padding: 47px 0 38px
+      +b(mobile)
+          padding: 15px 0
     &_reservation
       border-top: 1px solid #c6c6c6
   &__col
     width: 31.58%
-    +b(tablet)
-      width: 48%
   &__imgblock
     height: 180px
     border-radius: 9px
@@ -216,10 +241,14 @@
     padding: 17px 0 23px
     border-top: 1px solid #c6c6c6
     border-bottom: 1px solid #c6c6c6
+    +b(mobile)
+        font-size 18px
   &__hoteltype
     text-decoration: none
     color: #000
     font-size: 16px
+    +b(mobile)
+        font-size 14px
   &__hotelprice
     font-size: 20px
     font-weight: 500
@@ -233,11 +262,15 @@
     font-size: 20px
     font-weight: 300
     color: #000
+    +b(mobile)
+        font-size 18px
     span
       font-weight: 500
   &__hotelfood
     font-size: 16px
     color: #000
+    +b(mobile)
+        font-size 14px
     svg
       width: 18px
       height: 23px
@@ -248,6 +281,8 @@
   &__hoteldescription
     font-size: 16px
     line-height: 1.4em
+    +b(mobile)
+        font-size 14px
     span
       font-weight: 600
       color: #000
@@ -259,6 +294,8 @@
     font-size: 16px
     color: #000
     font-weight: 600
+    +b(mobile)
+        font-size 14px
   &__hotelrest
     li
       margin-top: 14px
@@ -268,6 +305,8 @@
     display: inline-block
     text-align: left
     font-size: 16px
+    +b(mobile)
+        font-size 14px
     li
       margin-top: 10px
       &:first-child
@@ -282,7 +321,5 @@
     font-size: 18px
     line-height: 40px
     padding: 0 10px
-    
-[data-col="2"]
-  +b(tablet)
-    display: none
+    +b(mobile)
+        font-size 14px

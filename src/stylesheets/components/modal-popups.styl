@@ -382,7 +382,16 @@
   &__content
     margin 0 auto
     min-height 180px
-    font-size 1em
+    font-size 16px
+    line-height (22/16)*1em
+    margin 30px auto
+    max-width 510px
+    
+    +b(mobile)
+        font-size 14px
+        line-height (22/14)*1em
+        margin 0 auto
+        min-height 0
 
   &__list
     display block
@@ -391,7 +400,9 @@
     display block
 
     &:not(:last-child)
-      margin-bottom 5px
+      margin-bottom 12px
+      +b(mobile)
+          margin-bottom 5px
 
     &-text
       color #333
@@ -408,6 +419,10 @@
       padding-top 17px
       display block
       border-top 1px solid #c6c6c6
+      
+      +b(mobile)
+          margin-top 10px
+          padding-top 10px
 
     &_red
       color #e13838
