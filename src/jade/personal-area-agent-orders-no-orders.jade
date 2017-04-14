@@ -1,0 +1,56 @@
+extends layouts/application.jade
+include layouts/interactive-stars
+
+
+block content
+
+  .wrapper.personal-area
+    include layouts/header.jade
+    h2.dNews__h2 Личный кабинет
+
+    .personal-area-nav
+      img(src='images/bg/personal-area-nav.jpg' alt='').personal-area-nav__image
+      .container
+        .personal-area-nav__content
+          a(href='#').button.personal-area-nav__master-web MasterWeb
+          ul.personal-area-nav__items
+            - var links = [{ path: '#', title: 'Заказы', active: true }, { path: '#', title: 'Избранное' }, { path: '#', title: 'Оставить заявку' }, { path: '#', title: 'Профиль' }, { path: '#', title: 'Туристы' }];
+            each link in links
+              li.personal-area-nav__item(class=link.active ? 'personal-area-nav__item_active' : '')
+                a(href=link.path).personal-area-nav__link= link.title
+
+    .container
+      .personal-area-section
+        h2.personal-area-section__heading Заказы
+        .personal-area-section__content
+          .personal-area__no-orders
+            .personal-area__no-orders-image-grid
+              .personal-area-image-grid
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column.personal-area-image-grid__column_half_width.personal-area-image-grid__column_push_right.personal-area-image-grid__column_round_top-left.personal-area-image-grid__column_round_top-right.personal-area-image-grid__column_round_bottom-right
+                    img(src='images/personal-area/image-grid/1.jpg' alt='').personal-area-image-grid__image
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column.personal-area-image-grid__column_half_width.personal-area-image-grid__column_round_top-left
+                    img(src='images/personal-area/image-grid/2.jpg' alt='').personal-area-image-grid__image
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column.personal-area-image-grid__column_round_top-right.personal-area-image-grid__column_round_bottom-left.personal-area-image-grid__column_round_bottom-right
+                    img(src='images/personal-area/image-grid/3.jpg' alt='').personal-area-image-grid__image
+
+            .personal-area__no-orders-tour
+              .personal-area__no-orders-heading Кажется настало время отдыхать
+              a(href='#').button.personal-area__no-orders-button Подобрать тур
+
+            .personal-area__no-orders-image-grid
+              .personal-area-image-grid
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column
+                    img(src='images/personal-area/image-grid/4.jpg' alt='').personal-area-image-grid__image
+                  .personal-area-image-grid__column.personal-area-image-grid__column_round_top-right
+                    img(src='images/personal-area/image-grid/5.jpg' alt='').personal-area-image-grid__image
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column.personal-area-image-grid__column_round_bottom-left
+                    img(src='images/personal-area/image-grid/6.jpg' alt='').personal-area-image-grid__image
+                .personal-area-image-grid__row
+                  .personal-area-image-grid__column.personal-area-image-grid__column_half_width.personal-area-image-grid__column_push_right.personal-area-image-grid__column_round_bottom-left.personal-area-image-grid__column_round_bottom-right
+                    img(src='images/personal-area/image-grid/7.jpg' alt='').personal-area-image-grid__image
+  include layouts/footer.jade
