@@ -3,10 +3,26 @@
 .personal-area
   display: block
 
+  .interactive-stars
+    +b(mobile)
+      width: 100%
+      justify-content: space-between
+
   &__profile, &__request
     margin: 0 auto 65px
     display: block
     width: 585px
+
+    +b(mobile)
+      width: 100%
+
+      .button
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0
+        width: 100%
+        height: 40px
 
   &__profile_agent
     width: 100%
@@ -285,6 +301,10 @@
     font-weight: 700
     transition: all .25s ease-in-out
 
+    +b(mobile)
+      width: 100%
+      min-height: 40px
+
     &:focus
       border-color: #748893
       font-weight: 400
@@ -314,10 +334,17 @@
     align-items: center
     flex: 1
 
+    +b(mobile)
+      flex-direction: column
+      align-items: flex-start
+
     &-text
       padding-left: 30px
       font-size: em(18px, 14px)
       color: #000
+
+      +b(mobile)
+        display: none
 
     &_default
       flex-direction: column
@@ -337,6 +364,9 @@
     &_labelless
       padding-left: 225px
 
+      +b(mobile)
+        padding-left: 0
+
     &:not(:last-child)
       margin-bottom: 20px
 
@@ -346,6 +376,15 @@
     font-size: em(16px, 14px)
     color: #000
     text-align: right
+
+    +b(mobile)
+      display: block
+      flex: 0
+      text-align: left
+      margin-bottom: 10px
+      margin-right: 0
+      font-size: 1em
+      color: #252525
 
     &_size_small
       font-size: em(12px, 14px)
@@ -367,6 +406,10 @@
     font-weight: 700
     transition: all .25s ease-in-out
 
+    +b(mobile)
+      width: 100%
+      min-height: 40px
+
     &:focus
       border-color: #748893
       font-weight: 400
@@ -374,6 +417,9 @@
   &__text-area
     height: 170px
     padding: 12px
+
+    +b(mobile)
+      height: 75px
 
 .personal-area-nav-mobile
   position: fixed
