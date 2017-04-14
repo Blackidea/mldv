@@ -10,7 +10,7 @@ var DATA = {
     'ОАЭ',
     'Россия',
     'Китай',
-    'Благовещенкс'
+    'Благовещенск'
   ],
 
   from: [
@@ -23,7 +23,38 @@ var DATA = {
     'Астрахань',
     'Барнаул',
     'Белгород',
-    'Благовещенкс'
+    'Благовещенск'
+  ],
+  
+  babyage: [
+    '> 1 года',
+    '1 год',
+    '2 года',
+    '3 года',
+    '4 года',
+    '5 лет',
+    '6 лет',
+    '7 лет'
+  ],
+  
+  adults: [
+    '1 взрослый',
+    '2 взрослых',
+    '3 взрослых',
+    '4 взрослых',
+    '5 взрослых',
+    '6 взрослых',
+    '7 взрослых'
+  ],
+  
+  babies: [
+    '1 ребенок',
+    '2 детей',
+    '3 детей',
+    '4 детей',
+    '5 детей',
+    '6 детей',
+    '7 детей'
   ]
 }
 /* GLOBAL END */
@@ -2287,12 +2318,12 @@ function countryTabs(){
         });
   }
 
-//Открытие второго попапа
+// Открытие второго попапа
 $('.modal-popup [data-modal-popup]').click(function(){
   $(this).parents('.modal-popup').hide();
 });
 
-// Вход из ЛК
+// Вход в ЛК
 $('.signup-or-signin-popup__form button').click(function(e){
   e.stopPropagation();
   $(this).parents('.modal-popup').hide();
@@ -2311,6 +2342,40 @@ $('.nav__sign-link--exit').click(function(e){
 $(".footer__scrolltop").click(function(e){
    e.preventDefault();
     $("html, body").animate({ scrollTop: "0"}, 1000);
+});
+
+// Добавление людей в форме
+$(document).ready(function(){
+  $('.search__add-count .search__people').click(function(){
+    if ( $(this).hasClass('search__people_adult') ) {
+      $(this).parent().siblings('.search__chosen-count').find('.search__people:first-child').clone(true).prependTo($(this).parent().siblings('.search__chosen-count'));
+      var adultcount = $(this).parent().siblings('.search__chosen-count').find('.search__people_adult').length;
+      $(this).parent().siblings('[name="adults"]').val(adultcount);
+    } else {
+      var babycount = $(this).parent().siblings('.search__chosen-count').find('.search__baby-count').text();
+      babycount ++;
+      if (babycount > 7) {babycount = 7}
+      $(this).parent().siblings('.search__chosen-count').find('.search__baby-count').text(babycount);
+      $(this).parent().siblings('[name="babies"]').val(babycount);
+    }
+  });
+});
+
+// Удаление людей в форме
+$(document).ready(function(){
+  $('.search__people-delete').click(function(){
+    if ( $(this).parent().hasClass('search__people_adult') ) {
+      var adultcount = $(this).parent().siblings('.search__people_adult').length;
+      $(this).parent().siblings('[name="adults"]').val(adultcount);
+      $(this).parent().remove();
+    } else {
+      var babycount = $(this).siblings('.search__baby-count').text();
+      babycount --;
+      if (babycount < 0) {babycount = 0}
+      $(this).siblings('.search__baby-count').text(babycount);
+      $(this).parent().siblings('[name="babies"]').val(babycount);
+    }
+  });
 });
 
 

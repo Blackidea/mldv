@@ -3,8 +3,34 @@ extends layouts/application.jade
 
 
 block content
-  .wrapper.country-page
+  .wrapper.country-page.catalog-page
     include layouts/header.jade
+    
+    .container
+        .catalog-looking-for
+          .catalog-looking-for__content
+            .catalog-looking-for__row
+              span.catalog-looking-for__text Москва
+              svg.catalog-looking-for__direction
+                use(xlink:href='#arrow-direction')
+              span.catalog-looking-for__text Фр. Полинезия
+            .catalog-looking-for__row
+              span.catalog-looking-for__text
+                b 2
+                = ' '
+                | взрослых
+                = ' '
+                b 1
+                = ' '
+                | ребёнок,
+                = ' '
+                b 10 авг.
+                = ' '
+                | на 5-7 ночей
+    
+          svg.catalog-looking-for__pen
+            use(xlink:href='#pen')
+    
     h2.dNews__h2 Мальдивы– лучший отдых!
     //slider
     - var gallerySliderNoDescription = true
