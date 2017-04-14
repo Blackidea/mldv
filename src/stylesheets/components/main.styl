@@ -772,6 +772,10 @@
     align-items: flex-end
     height: 100%
     margin-left: 2px
+    &_adult
+      &:first-child
+        .search__people-delete
+          display none
     &_baby
       margin-left: 10px
     &:hover
@@ -796,6 +800,7 @@
     pointer-events: none
     transition: all 0.25s ease-in-out;
     cursor: pointer
+    z-index 2
     &:before, &:after
       content: ""
       position: absolute
@@ -990,6 +995,22 @@ input.search__input
   +b(mobile)
     padding-left: 37px
     line-height 40px
+input.search__baby-age
+  background: transparent
+  border: 0
+  line-height: 0
+  padding: 0
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  cursor: pointer
+  font-size: 0
+  &:focus
+    background: transparent
+input.search__hidden
+  display none
     
 // autocomplete
 //----------------------------------------------------//
@@ -1067,6 +1088,7 @@ input.search__input
   &.active
     display: block
   +b(mobile)
+    width: 290px
     padding-top: 5px;
 
     &__item {
@@ -1160,10 +1182,20 @@ input.people__input
   &__right
     float: left
     width: 50%
+    +b(mobile)
+      width 100%
   &__left
     padding-right: 25px
+    +b(mobile)
+      padding-right 0
   &__right
     padding-left: 15px
+    +b(mobile)
+      padding-left 0
+      margin-top 10px
+    input[type="radio"].radio--toggle + label
+      +b(mobile)
+        min-width 50%
   &__top
     clearfix()
     margin-bottom: 16px
@@ -1248,6 +1280,7 @@ input.calendar__nights
       color: #24b3fd
   +b(mobile)
     display: block;
+    padding 0 25px
 .ui-datepicker-today
   a
     color: #24b3fd
