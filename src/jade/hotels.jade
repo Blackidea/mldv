@@ -288,6 +288,10 @@ block content
 
       .holidayCreate__filter
         img(src='images/bg/filter-hotels.jpg' alt='@').holidayCreate__filter-image
+        a.filter__back.back.js-close-filterMob(href='#')
+          svg.icon-arrow-left
+            use(xlink:href='#arrow-left')
+          | Назад
         .container.holidayCreate__filter-content
 
           form.search__form.search__form_hotels(action='')
@@ -347,8 +351,8 @@ block content
             button.search__button.button(type='submit') Поиск
 
           .holidayCreate__selectors
-            .holidayCreate__selectors-item.selectbox
-              label(for="test")
+            .holidayCreate__selectors-item.selectbox.selectbox_form
+              label.select-arrow(for="test")
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
@@ -356,9 +360,8 @@ block content
                 option(value='Тип1') Тип 1
                 option(value='Тип2') Тип 2
                 option(value='Тип3') Тип 3
-              ul
-            .holidayCreate__selectors-item.selectbox
-              label(for="test")
+            .holidayCreate__selectors-item.selectbox.selectbox_form
+              label.select-arrow(for="test")
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
@@ -366,7 +369,6 @@ block content
                 option(value='Тип1') Тип 1
                 option(value='Тип2') Тип 2
                 option(value='Тип3') Тип 3
-              ul
           .holidayCreate__sort
             .container
               .catalog-sort.js-mobile-screen
@@ -388,6 +390,32 @@ block content
 
       .container
         button.filter__buttonMob Фильтр
+      //- // calendar-drop
+      .calendar-drop.dropdown__box
+        .dropdown__triangle
+        .calendar
+          .calendar__top
+            strong.calendar__title Выберите кол-во ночей
+            .calendar__left
+              .calendar__amount
+                .calendar__minus
+                  svg.icon-minus
+                    use(xlink:href='#minus')
+                input.calendar__nights(type='text', value='7 ночей', data-min='0', data-max='100')
+                .calendar__plus
+                  svg.icon-plus
+                    use(xlink:href='#plus')
+            .calendar__right
+              .calendar__toggle.toggle
+                input#input-calendar-1.radio--toggle(type='radio', name='calendar', value='1', checked='checked')
+                label(for='input-calendar-1') ± 2 Ночи
+                input#input-calendar-2.radio--toggle(type='radio', name='calendar', value='2')
+                label(for='input-calendar-2') Ровно
+          .calendar__bottom
+            strong.calendar__title Выберите дату вылета
+            .calendar__datepicker
+            button.calendar__button.button Сохранить
+      //- // calendar-drop end
       //- .holidayCreate__sliderMob
       //-  .container
       //-    include layouts/slider__catalog.jade
@@ -493,7 +521,6 @@ block content
                 option(value="Тип1") Тип 1
                 option(value="Тип2") Тип 2
                 option(value="Тип3") Тип 3
-              ul
             .hotelsTours__sortingSelectors.__typeNumbers.selectbox
               label(for="test2") 
                 svg
@@ -503,7 +530,6 @@ block content
                 option(value="Тип1") Тип 1
                 option(value="Тип2") Тип 2
                 option(value="Тип3") Тип 3
-              ul
             .hotelsTours__sortingSelectors.__airCompanie.selectbox
               label(for="test3") 
                 svg
@@ -513,7 +539,6 @@ block content
                 option(value="Авиакомпания2") Авиакомпания2
                 option(value="Авиакомпания3") Авиакомпания3
                 option(value="Авиакомпания4") Авиакомпания4
-              ul
             .hotelsTours__sortingSwitch
               //- .catalog-sort__desctop.holidayCreate__sort-inner
               span.hotelsTours__sortingTitle Сортировать по:
