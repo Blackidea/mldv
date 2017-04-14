@@ -1681,7 +1681,7 @@ $("#checkoutTabs").submit(function(e){
           content = $(currentBlock).find('.hotelsArticle__content');
 
       if (content.hasClass('active')) {
-          btn.text('Подбронее');
+          btn.text('Подробнее');
       } else {
           btn.text('Свернуть');
       }
