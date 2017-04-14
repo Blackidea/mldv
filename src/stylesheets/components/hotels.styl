@@ -530,13 +530,30 @@
           border: 0
 
   &__selectors
-    overflow hidden
+    display flex
     width 50%
     margin 20px auto 20px
 
   &__selectors-item
     position relative
     col(1/2)
+    float none
+    &.active
+       > label
+        transform translateY(-50%) rotate(180deg)
+    &.selectbox
+      ul
+        border-radius 5px
+        color #fff
+        background rgba(9,60,87,0.9)
+        border 1px solid #fff
+      li
+        font-size 14px
+        line-height 40px
+        height 40px
+        padding 0 10px
+        &:hover
+          background rgba(9,60,87,1)
     
     & > label
       position absolute
@@ -545,6 +562,7 @@
       right 10px
       top 50%
       transform translateY(-50%)
+      transition all .25s ease-in-out
       & > svg
         display block
         width 100%

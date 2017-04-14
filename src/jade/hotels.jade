@@ -298,12 +298,14 @@ block content
                 input.search__input.js-init-autocomplete(type='text', placeholder='Куда', data-source='places')
                 
               .search__item.search__item--people
+                input.search__hidden(type='text', name='adults')
+                input.search__hidden(type='text', name='babies')
                 .search__chosen-count
-                  .search__people
+                  .search__people.search__people_adult
                     svg.search__people-icon
                       use(xlink:href='#man')
                     span.search__people-delete
-                  .search__people
+                  .search__people.search__people_adult
                     svg.search__people-icon
                       use(xlink:href='#man')
                     span.search__people-delete
@@ -313,11 +315,12 @@ block content
                       use(xlink:href='#baby')
                     span.search__people-delete
                 .search__add-count
-                  .search__people
+                  .search__people.search__people_adult
                     span.search__people-add
                     svg.search__people-icon
                       use(xlink:href='#man')
-                  .search__people
+                  .search__people.search__people_baby
+                    input.search__baby-age.js-init-autocomplete(type='text' data-source='babyage')
                     span.search__people-add
                     svg.search__people-icon.search__people-icon_baby
                       use(xlink:href='#baby')
@@ -328,46 +331,42 @@ block content
                 input.search__input.search__input_calendar.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
                 svg.search__arrow
                   use(xlink:href='#caret-down')
-              .search__item.search__item_location
-                svg.search__icon.icon-location
-                  use(xlink:href='#location')
-                input.search__input.search__input_location.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
-                svg.search__arrow
-                  use(xlink:href='#caret-down')
                   
               .search__item.search__item_mobile
                 svg.search__icon.icon-man
                   use(xlink:href='#man')
-                input.search__input.search__input_adults.js-init-autocomplete(type='text', placeholder='Взрослые')
+                input.search__input.search__input_adults.js-init-autocomplete(type='text', placeholder='Взрослые', data-source='adults')
                 svg.search__arrow
                   use(xlink:href='#caret-down')
               .search__item.search__item_mobile
                 svg.search__icon.icon-baby
                   use(xlink:href='#baby')
-                input.search__input.search__input_babies.js-init-autocomplete(type='text', placeholder='Дети')
+                input.search__input.search__input_babies.js-init-autocomplete(type='text', placeholder='Дети', data-source='babies')
                 svg.search__arrow
                   use(xlink:href='#caret-down')
-            button.search__button.button(type='submit') Найти
+            button.search__button.button(type='submit') Поиск
 
           .holidayCreate__selectors
-            .holidayCreate__selectors-item
+            .holidayCreate__selectors-item.selectbox
               label(for="test")
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
-                option Любой тип питания
-                option test2
-                option test3
-                option test4
-            .holidayCreate__selectors-item
+                option(value='Любой') Любой тип питания
+                option(value='Тип1') Тип 1
+                option(value='Тип2') Тип 2
+                option(value='Тип3') Тип 3
+              ul
+            .holidayCreate__selectors-item.selectbox
               label(for="test")
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
-                option Любой тип номера
-                option test2
-                option test3
-                option test4
+                option(value='Любой') Любой тип номера
+                option(value='Тип1') Тип 1
+                option(value='Тип2') Тип 2
+                option(value='Тип3') Тип 3
+              ul
           .holidayCreate__sort
             .container
               .catalog-sort.js-mobile-screen
@@ -485,33 +484,36 @@ block content
           button.hotelsToursfilter__buttonMob Фильтр
 
           .hotelsTours__sorting
-            .hotelsTours__sortingSelectors.__food
+            .hotelsTours__sortingSelectors.__food.selectbox
               label(for="test") 
                 svg
                   use(xlink:href='#caret-down')
               select(name="test")
-                option Любой тип питания
-                option test2
-                option test3
-                option test4
-            .hotelsTours__sortingSelectors.__typeNumbers
+                option(value="Любой") Любой тип питания
+                option(value="Тип1") Тип 1
+                option(value="Тип2") Тип 2
+                option(value="Тип3") Тип 3
+              ul
+            .hotelsTours__sortingSelectors.__typeNumbers.selectbox
               label(for="test2") 
                 svg
                   use(xlink:href='#caret-down')
               select(name="test2")
-                option Любой тип номера
-                option test2
-                option test3
-                option test4
-            .hotelsTours__sortingSelectors.__airCompanie
+                option(value="Любой") Любой тип номера
+                option(value="Тип1") Тип 1
+                option(value="Тип2") Тип 2
+                option(value="Тип3") Тип 3
+              ul
+            .hotelsTours__sortingSelectors.__airCompanie.selectbox
               label(for="test3") 
                 svg
                   use(xlink:href='#caret-down')
               select(name="test3")
-                option Авиакомпания
-                option test2
-                option test3
-                option test4
+                option(value="Авиакомпания1") Авиакомпания1
+                option(value="Авиакомпания2") Авиакомпания2
+                option(value="Авиакомпания3") Авиакомпания3
+                option(value="Авиакомпания4") Авиакомпания4
+              ul
             .hotelsTours__sortingSwitch
               //- .catalog-sort__desctop.holidayCreate__sort-inner
               span.hotelsTours__sortingTitle Сортировать по:
