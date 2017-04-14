@@ -24,6 +24,9 @@
     & ^[0]-tourist:first-of-type
       margin-top: 54px
 
+      +b(mobile)
+        margin-top: 20px
+
   &__orders
     display: block
     margin-bottom: 65px
@@ -150,11 +153,18 @@
     display: block
     margin-bottom: 50px
 
+    +b(mobile)
+      margin-bottom: 20px
+
     &-content
       margin-bottom: 40px
       padding: 54px 0
       border-top: 1px solid #b9b9b9
       border-bottom: 1px solid #b9b9b9
+
+      +b(mobile)
+        margin-bottom: 20px
+        padding: 20px 0
 
     &-add
       display: block
@@ -259,9 +269,16 @@
       flex-direction: column
       align-items: flex-start
 
+      +b(mobile)
+        &:not(:last-child)
+          margin-bottom: 18px !important
+
       & ^[0]__label
         margin-bottom: 10px
         flex: 1
+
+        +b(mobile)
+          margin-bottom: 0
 
     &_labelless
       padding-left: 225px
@@ -304,10 +321,96 @@
     height: 170px
     padding: 12px
 
+.personal-area-nav-mobile
+  position: fixed
+  display: none
+  bottom: 0
+  left: 0
+  z-index: 100
+  width: 100%
+  height: 30px
+  box-shadow: 0 0 3.8px .2px rgba(35, 41, 50, .3)
+
+  +b(mobile)
+    display: flex
+
+  &__item
+    display: block
+    background-color: #24b3fd
+    flex: 1
+
+    &:not(:last-child)
+      border-right: 1px solid #fff
+
+    &_active
+      border: 0
+      background-color: #ffffff
+
+      & ^[0]__icon
+        fill: #24b3fd
+
+        & > *
+          fill: #24b3fd
+
+      & ^[0]__icon_heart
+        fill: transparent
+        stroke: #24b3fd
+
+        & > *
+          fill: transparent
+          stroke: #24b3fd
+
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 2px 0
+    width: 100%
+    height: 100%
+    text-decoration: none
+
+  &__icon
+    fill: #fff
+
+    & > *
+      fill: #fff
+
+    &_bag
+      width: 23px
+      height: 19px
+
+    &_heart
+      width: 21px
+      height: 18px
+
+      & > *
+        fill: transparent
+        stroke: #fff
+        stroke-width: 1
+
+    &_list
+      width: 16px
+      height: 29px
+
+    &_user
+      width: 17px
+      height: 20px
+
+    &_users
+      width: 23px
+      height: 23px
+
+    &_percent
+      width: 24px
+      height: 24px
+
 .personal-area-nav
   position: relative
   display: block
   width: 100%
+
+  +b(mobile)
+    display: none
 
   &::after
     content: ''
@@ -410,11 +513,17 @@
   display: block
   margin-top: 63px
 
+  +b(mobile)
+    margin-top: 25px
+
   &__header
     position: relative
     justify-content: center
     align-items: flex-end
     display: flex
+
+    +b(mobile)
+      flex-direction: column
 
   &__back
     position: absolute
@@ -425,6 +534,15 @@
     text-decoration: none
     transition: .25s ease-in-out
 
+    +b(mobile)
+      position: static
+      margin-bottom: 18px
+      padding: 0 15px
+      width: calc(100% + 30px)
+      height: 40px
+      background-color: #f4f4f4
+      transform: translateX(15px)
+
     &:hover
       opacity: .8
 
@@ -434,6 +552,10 @@
       fill: #748893
       transform: rotate(90deg)
 
+      +b(mobile)
+        width: 14px
+        height: 8px
+
     &-text
       padding-left: 11px
       font-family: "Open Sans Light", "Open Sans", sans-serif
@@ -441,12 +563,23 @@
       font-size: 1em
       color: #999999
 
+      +b(mobile)
+        font-size: em(16px, 14px)
+        color: #677e8a
+        font-family: "Open Sans", sans-serif
+        font-weight: 400
+
   &__heading
     display: block
     font-size: em(25px, 14px)
     font-weight: 700
     color: #07405e
     text-align: center
+
+    +b(mobile)
+      width: 100%
+      text-align: left
+      font-size: em(18px, 14px)
 
     &_align_left
       text-align: left
@@ -460,6 +593,9 @@
 
   &:not(:last-of-type)
     margin-bottom: 54px
+
+    +b(mobile)
+      margin-bottom: 40px
 
   &__header
     display: flex
@@ -530,6 +666,10 @@
     box-shadow: 0 0 3.8px 0.2px rgba(35, 41, 50, .3)
     border-radius: 10px
 
+    +b(mobile)
+      padding: 0
+      box-shadow: none
+
     .personal-area__field
       margin-bottom: 0
 
@@ -540,8 +680,14 @@
     display: flex
     justify-content: space-between
 
+    +b(mobile)
+      flex-direction: column
+
     &:not(:last-child)
       margin-bottom: 18px
+
+      +b(mobile)
+        margin-bottom: 0
 
   &__text
     display: block
@@ -676,6 +822,12 @@
     border-radius: 10px
     overflow: hidden
 
+    +b(mobile)
+      margin-top: 20px
+      border-radius: 0
+      width: calc(100% + 30px)
+      transform: translateX(-15px)
+
   &__image
     position: absolute
     top: 0
@@ -698,11 +850,20 @@
     z-index: 1
     color: #fff
 
+    +b(mobile)
+      flex-direction: column
+      padding: 30px 14px
+
   &__column
     display: flex
     justify-content: center
     align-items: center
     flex: 1
+
+    +b(mobile)
+      justify-content: flex-start
+      align-items: flex-start
+      flex-direction: column
 
     &_align_left
       justify-content: flex-start
@@ -711,19 +872,34 @@
       flex: 0 0 488px
       border-right: 1px solid #fff
 
+      +b(mobile)
+        flex: 0
+        width: 100%
+        border-right: 0
+        border-bottom: 1px solid #fff
+
   &__price
     display: block
+
+    +b(mobile)
+      margin-bottom: 15px
 
     &-heading
       display: block
       font-size: 1em
       line-height: 1
 
+      +b(mobile)
+        margin-bottom: 5px
+
     &-sum
       display: block
       font-size: em(60px, 14px)
       font-weight: 700
       line-height: 1
+
+      +b(mobile)
+        font-size: em(30px, 14px)
 
   &__detail
     display: flex
@@ -732,15 +908,39 @@
     flex-direction: column
     justify-content: space-between
 
+    +b(mobile)
+      padding-bottom: 0
+
+    &-text::not(:first-child)
+      +b(mobile)
+        padding-top: 0
+
+    &-text::not(:last-child)
+      margin-bottom: 5px
+
+      +b(mobile)
+        margin: 0
+
     &_default
       justify-content: flex-start
       height: auto
 
+      +b(mobile)
+        width: 100%
+        flex-direction: column
+
       &:first-child
         margin-left: 63px
+
+        +b(mobile)
+          margin: 0
 
       &:not(:last-child)
         margin-right: 95px
 
+        +b(mobile)
+          margin: 0
+
       & ^[0]__detail-text:not(:last-child)
-        margin-bottom: 24px
+        +b(mobile)
+          margin-bottom: 10px

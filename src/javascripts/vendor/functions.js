@@ -2314,6 +2314,8 @@ $(".footer__scrolltop").click(function(e){
 });
 
 
+
+
   sliderNumbers();
   sliderNumber();
   sliderHotelsAround();
