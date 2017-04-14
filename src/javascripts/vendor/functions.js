@@ -1790,7 +1790,13 @@ $("#checkoutTabs").submit(function(e){
     });
   }
   $('.numbersSlider__form').click(function(){
+    $(this).parent().siblings().find('.numbersSlider__checkbox').removeClass('checkboxActive');
     $(this).find('.numbersSlider__checkbox').toggleClass('checkboxActive');
+    if ( $('.numbersSlider__checkbox').hasClass('checkboxActive') ) {
+      $('.numberResult').addClass('active');
+    } else {
+      $('.numberResult').removeClass('active');
+    }
   });
 
 

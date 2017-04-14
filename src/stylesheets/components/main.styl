@@ -398,7 +398,7 @@
     &_stars
       margin-bottom: 15px
 
-  +b(tablet)
+  +b(mobile)
     &__back {
       display: block;
     }
@@ -704,6 +704,9 @@
       .search__item
         background-color #eaecec
         width: 33.33333%
+        height 40px
+        &--people
+          padding 0 15px 6px
         &_location
           display: none
         +b(mobile)
@@ -712,6 +715,12 @@
           border 1px solid #d1d1d1
           &:first-child
             border-left 1px solid #d1d1d1
+      .search__button
+        height 40px
+        line-height 40px
+        padding 0 10px
+      input.search__input
+        line-height 40px
   &__items
     display: flex
     flex-grow: 1

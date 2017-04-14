@@ -32,7 +32,7 @@
       right 0
         
 .calendar-price
-  margin 30px 0
+  margin 50px 0 16px
 
   +b(mobile)
     display none
@@ -70,7 +70,7 @@
   border-radius:12px
 
 .hotelsTabs
-  margin-top: 35px
+  margin-top: 31px
 
   +b(mobile)
     margin-top: 22px
@@ -457,7 +457,7 @@
       border-radius 8px !important
     
 .holidayCreate
-  margin-top: 300px
+  margin-top: 70px
 
   +b(mobile)
     margin-top 18px
@@ -469,6 +469,23 @@
       font-size: 22px
       line-height: 1.35em
       padding: 0 35px
+      
+  & > .section__title .pick-up
+    +b(mobile)
+      display: block
+      margin: 0
+      padding: 0
+      color: #677e8a
+      font-size: 22px
+      line-height: 27px
+
+    .dropdown__box
+      padding: 10px
+      text-align: center
+
+      +b(mobile)
+        min-width: calc(100% - 30px)
+        margin-left: 15px
 
   &__filterMob, .hotelsTours__filterMob
     position fixed
@@ -531,7 +548,7 @@
       position: relative
       display: block
       padding-top: 17px
-      padding-bottom: 17px
+      padding-bottom: 5px
       z-index: 3
 
       & > .filter__box-shadow
@@ -544,13 +561,20 @@
 
   &__selectors
     display flex
-    width 50%
-    margin 20px auto 20px
+    justify-content space-between
+    width 49%
+    margin 25px auto 29px
+    &_tour
+      width 100%
+      .holidayCreate__selectors-item
+        width 23.1%
 
   &__selectors-item
     position relative
     col(1/2)
     float none
+    margin-right 0
+    width 47.5%
     
     & > label
       position absolute
@@ -601,13 +625,13 @@
       display block
   &__slider
     position relative
-    margin-top 20px
-    margin-bottom 30px
-    min-height 700px
+    margin-top 30px
+    margin-bottom 10px
+    min-height 650px
     +b(mobile)
       min-height auto
       margin-top 22px
-      margin-bottom 0
+      margin-bottom 20px
 
     &__arrow
       position absolute
@@ -846,6 +870,16 @@
   align-items center
   min-height: 230px
   width: 100%
+  
+  &.active
+    .numberResult__image-wrapper
+      background-color: #1c0d00
+    .numberResult__image
+      filter grayscale(0)
+    .numberResult__start-text
+      display none
+    .numberResult__sum
+      display inline-block
 
   &__image
     position: absolute
@@ -860,6 +894,7 @@
     object-fit: cover
     opacity: .2
     z-index: 2
+    filter grayscale(1)
 
     &-wrapper
       position: absolute
@@ -868,7 +903,7 @@
       display: block
       width: 100%
       height: 100%
-      background-color: #1c0d00
+      background-color: #07405e
       z-index: 1
 
       &::after
@@ -889,6 +924,18 @@
     z-index: 3
     +below(1220px)
       width: 95%
+  
+  &__start-text
+    color #fff
+    width 225px
+    display inline-block
+    vertical-align middle
+    padding 0
+    font-size 30px
+    font-weight 600
+    text-transform uppercase
+    +b(tablet)
+      width 27%
 
   &__sumBonus, &__paymentMethods
     display: flex
@@ -896,7 +943,7 @@
   &__sum
     color #fff
     width 225px
-    display inline-block
+    display none
     vertical-align middle
     +b(tablet)
       width 27%
@@ -936,7 +983,7 @@
     line-height 18px
     width 440px
     +b(tablet)
-      width 50%
+      width 48%
       padding-left 1%
       margin-left 2% 
     &Link
@@ -965,10 +1012,13 @@
     vertical-align middle
     +b(tablet)
       width 20%
+      margin-left 2%
     &Button 
       color #fff
       margin-left 45px
       width 260px
+      line-height 45px
+      font-size 28px
       +b(tablet)
         width 100%
         margin-left 0
@@ -1225,7 +1275,7 @@
   +b(mobile)
     display none
   &__title
-    margin-bottom 50px
+    margin-bottom 30px
 .sliderHotelsAround
   position relative
   height 357px
@@ -1236,7 +1286,7 @@
   .slick-dots
     bottom: auto
     top: 100%
-    margin-top: 15px
+    margin-top: 3px
     button
       width: 16px
       height: 16px
@@ -1356,12 +1406,12 @@
             min-height: 194px
 
 .hotelsSimilar
-  margin-top 40px
+  margin-top 105px
   margin-bottom 40px
   +b(mobile)
     display none
   &__title
-    margin-bottom 50px
+    margin-bottom 27px
 .sliderHotelsSimilar
   position relative
   height 415px
@@ -1468,12 +1518,12 @@
             
 .hotelsArticle
   position relative
-  margin-top 40px
+  margin-top 86px
   margin-bottom 40px
   +b(mobile)
     display none
   &__title
-    margin-bottom 50px
+    margin-bottom 36px
   &__wrapper
     position relative
   &__blockOpacity
@@ -1486,7 +1536,7 @@
     background: linear-gradient(to bottom, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.87) 86%, rgba(255,255,255,1) 100%)
   &__content
     position relative
-    max-height 210px
+    max-height 300px
     overflow hidden
     transition all 0.6s ease-in-out
     &.__history
@@ -1524,9 +1574,9 @@
   display inline-block
   vertical-align middle
   fill #24b3fd
-  width 25px
-  height 25px
-  margin-right: 20px
+  width 22px
+  height 22px
+  margin-right: 10px
   +b(tablet)
     margin-right 8%
     width 18px
@@ -1607,7 +1657,7 @@
   margin-top 4px
   cursor pointer
 .hotelsHeader
-  padding 30px 0 10px
+  padding 20px 0 10px
 
   +b(mobile)
     padding: 20px 0 10px
@@ -1619,6 +1669,7 @@
       width 20%
       font-size 12px
       color #666666
+      padding-top 5px
       +b(mobile)
         display none  
     &.__title
@@ -1692,6 +1743,7 @@
     font-weight 300
     color #acadaf
     font-size 14px
+    margin-top 4px
     +b(mobile)
       font-size 12px
   &__priceMob
