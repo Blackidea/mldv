@@ -2375,6 +2375,25 @@ $(document).ready(function(){
 });
 
 
+// Проверка email
+$("form.short-form button").click(function(e){
+  e.preventDefault();
+  function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+  if ( isEmail($(this).siblings('input[name="email"]').val()) === false || !$(this).siblings('input[name="email"]').val() ) {
+    return false;
+  } else {
+    $(this).siblings('.subscribe-button').click();
+    setTimeout(function(){
+      $(this).parent().submit();
+    }, 3000);
+  }
+});
+
+
+
 
 
   sliderNumbers();

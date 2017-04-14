@@ -598,13 +598,14 @@ block content
                         a(href='#').card__tag экономичный отдых
 
             li.product__list-item
-              form.help-card.help-card--subscribe
+              .help-card.help-card--subscribe
                 img(src='images/help-card-img/help-card-img-04.jpg', alt='')
                 .help-card__content
                   .help-card__title ХОТИТЕ СЛЕДИТЬ ЗА ЛУЧШИМИ ПРЕДЛОЖЕНИЯМИ ?
-                  .short-form
+                  form.short-form
                     input(type='email', name='email' placeholder='Ваш E-mail')
-                    button.subscribe-button(type='submit', data-href='#subscribe-popup') Хочу!
+                    button(type='submit') Хочу!
+                    a.subscribe-button(href="#", data-href='#subscribe-popup')
       section.section.restoffer
         .section__title
           h1 Подобрать отдых на 
