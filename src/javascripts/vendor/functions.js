@@ -2287,6 +2287,26 @@ function countryTabs(){
         });
   }
 
+//Открытие второго попапа
+$('.modal-popup [data-modal-popup]').click(function(){
+  $(this).parents('.modal-popup').hide();
+});
+
+// Вход из ЛК
+$('.signup-or-signin-popup__form button').click(function(e){
+  e.stopPropagation();
+  $(this).parents('.modal-popup').hide();
+  $('.nav__sign-enter').hide();
+  $('.nav__sign-entered').show();
+});
+
+// Выход из ЛК
+$('.nav__sign-link--exit').click(function(e){
+  e.preventDefault();
+  $('.nav__sign-entered').hide();
+  $('.nav__sign-enter').show();
+});
+
 
   sliderNumbers();
   sliderNumber();

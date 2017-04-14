@@ -211,12 +211,12 @@ header.header
                   a.nav__compare-link Сравнение
                 .nav__sign
                   span.nav__sign-enter
-                    a.nav__sign-link(href='#')
+                    a.nav__sign-link.js-open-modal-popup(href='#', data-modal-popup='.js-signup-or-signin-popup')
                       svg.nav__sign-icon
                         use(xlink:href='#user')
                       span.hide Войти в личный кабинет
                   span.nav__sign-entered
-                    a.nav__sign-link(href='#')
+                    a.nav__sign-link.js-open-modal-popup(href='#', data-modal-popup='.js-change-password-popup')
                       img(src='images/icons/svg/user-entered.svg', alt='@@', width='22')
                       span.hide Konstantinova Valentina
                     a.nav__sign-link.nav__sign-link--exit.hide(href='#') Выход

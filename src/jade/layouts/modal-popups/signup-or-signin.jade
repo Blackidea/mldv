@@ -38,7 +38,7 @@ include ../icon-input
                                 path(d='M420.72,419.74l-22.8-22.8a12.22,12.22,0,0,0-17.28,17.28l22.8,22.8a12.22,12.22,0,1,0,17.28-17.28Z')
                 .signup-or-signin-popup__field.signup-or-signin-popup__field_aligned.signup-or-signin-popup__field_wrap_mobile
                     button(type='submit').signup-or-signin-popup__button.signup-or-signin-popup__button_signin Войти
-                    a(href='#').signup-or-signin-popup__link.signup-or-signin-popup__link_small Забыли пароль?
+                    a(href='#', data-modal-popup='.js-create-a-password-popup').signup-or-signin-popup__link.signup-or-signin-popup__link_small.js-open-modal-popup Забыли пароль?
 
             .signup-or-signin-popup__social
                 span.signup-or-signin-popup__social-title Войти через соц. сети
@@ -110,7 +110,7 @@ include ../icon-input
                     input(type='checkbox').signup-or-signin-popup__checkbox
                     span.signup-or-signin-popup__label.signup-or-signin-popup__label_checkbox я согласен с условиями публичной оферты
 
-                button(type='submit').signup-or-signin-popup__button Сохранить
+                button(type='submit', data-modal-popup='.js-thanks-for-registration-popup').signup-or-signin-popup__button.js-open-modal-popup Сохранить
 
             .signup-or-signin-popup__social
                 span.signup-or-signin-popup__social-title Регистрация через соц. сети
