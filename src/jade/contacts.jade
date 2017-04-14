@@ -48,6 +48,6 @@ block content
               label(for="message") Сообщение:
               textarea(name="message", cols="30", rows="10" placeholder="Напишите текст Вашего сообщения")
           .contactForm__row
-            button.contactForm__button Отправить
+            button.contactForm__button(data-modal-popup='.js-thankyou-popup').js-open-modal-popup Отправить
            
     include layouts/footer.jade
