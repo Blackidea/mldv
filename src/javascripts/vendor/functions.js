@@ -2307,6 +2307,12 @@ $('.nav__sign-link--exit').click(function(e){
   $('.nav__sign-enter').show();
 });
 
+// Кнопка скролла вверх в мобиле
+$(".footer__scrolltop").click(function(e){
+   e.preventDefault();
+    $("html, body").animate({ scrollTop: "0"}, 1000);
+});
+
 
   sliderNumbers();
   sliderNumber();
