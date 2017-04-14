@@ -112,10 +112,17 @@
     &-image-grid
       width: 360px
 
+      +b(mobile)
+        display: none
+
     &-tour
       display: block
       margin-top: 100px
       width: 295px
+
+      +b(mobile)
+        width: 100%
+        margin-top: 10px
 
     &-heading
       font-family: "Roboto", "Open Sans", sans-serif
@@ -123,6 +130,10 @@
       line-height: .84
       color: #252525
       text-align: center
+
+      +b(mobile)
+        padding: 0 15px
+        font-size: em(22px, 14px)
 
       &::after
         content: ''
@@ -142,6 +153,12 @@
       min-height: 85px
       font-size: em(30px, 14px)
       font-weight: 700
+
+      +b(mobile)
+        margin-top: 30px
+        width: 100%
+        min-height: 40px
+        font-size: em(16px, 14px)
 
   &__favorites
     display: flex
@@ -608,7 +625,6 @@
 
     +b(mobile)
       width: 100%
-      text-align: left
       font-size: em(18px, 14px)
 
     &_align_left
@@ -735,6 +751,9 @@
   display: flex
   width: 100%
   flex-direction: column
+
+  +b(mobile)
+    display: none
 
   &__row
     display: flex
