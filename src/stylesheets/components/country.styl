@@ -34,6 +34,12 @@
 
     .filterCountry__options
       display: none
+      
+    .filter__buttonMob
+      pointer-events none
+      
+    .contactForm
+      margin 0 !important
 
 .countryTabs
   &__layout
@@ -49,7 +55,7 @@
 
   &__nav
     padding 18px 0
-    margin-bottom 50px
+    margin-bottom 39px
     border-top 1px solid #9f9fa0
     border-bottom 1px solid #9f9fa0
 
@@ -107,8 +113,7 @@
             transform translate(-50%, 50%)
             background #fff
   &__sorting
-    +b(mobile)
-      display: none
+    padding-left 6px
 
     &Title
       display inline-block
@@ -119,9 +124,14 @@
     &List
       display inline-block
       vertical-align middle
+      +b(mobile)
+        display block
     &ListItem
       display inline-block
-      vertical-align middle     
+      vertical-align middle 
+      margin-left 23px
+      &:first-child
+        margin-left 0
       & > a
         text-decoration none
         color #999
@@ -130,6 +140,17 @@
       &.active > a
         background #f4f4f4
         color #000
+      +b(mobile)
+        display block
+        margin-top 15px
+        margin-left 0
+        
+  &__excursion
+    display none
+    margin-top 30px
+    &.active
+      display block
+    
 .historyTab
   &__item
     clearfix()
@@ -165,21 +186,74 @@
     +b(mobile)
       margin-top: 20px
       col(1)
+        
+.excursion
+  &__toptext
+    line-height 1.6em
+    padding-bottom 35px
+        
 .excursionTab
   margin-top 60px
+  &:first-child
+    margin-top 0
   +b(mobile)
     margin-top: 0
   &__item
     border-bottom 1px solid #999
     margin-bottom 20px    
-    clearfix()    
+    clearfix()
+    &_type1
+      border-radius 10px
+      box-shadow 0px 0px 3.8px 0.2px rgba(35, 41, 50, 0.3)
+      border-bottom 0
+      margin-bottom 30px
+      overflow hidden
+      .excursionTab__image
+        border-radius 0
+        +b(mobile)
+          height 100px
+      .excursionTab__description
+        min-height 230px
+        padding-top 10px
+        padding-bottom 10px
+        display flex
+        flex-direction column
+        justify-content center
+        +b(mobile)
+          margin-top 15px
+          padding 0 22px
+      .excursionTab__descriptionTitle
+        +b(mobile)
+          margin-bottom 0
+    &_type3
+      margin-bottom 24px
+      .excursionTab__description
+        padding-right 0
+        padding-bottom 25px
+      .excursionTab__descriptionTitle
+        margin-top 0
+        margin-bottom 13px
+      .hotelsDescription__list
+        margin-top 0
+        margin-bottom 0
+      .hotelsDescription__li
+        margin-top 10px
+        padding-left 30px
+        
+
     &.__type-2
       overflow: hidden;
       box-shadow 1px 1px 3px #999,
                   -1px -1px 3px #999
       border-radius 12px
+      
+    .hotelsDescription__li:first-of-type
+      +b(mobile)
+        margin-top 10px
+      
   &__image
-    col(3/12)    
+    col(3/12)
+    border-radius 10px
     overflow hidden
 
     +b(mobile)
@@ -208,7 +282,7 @@
       
   &__description
     col(9/12)
-    padding-right 6%
+    padding-right 4%
     margin-right 0
     +b(mobile)
       col(1)
@@ -224,6 +298,15 @@
       +b(mobile)
         margin-top: 0
         margin-bottom: 15px
+        font-size 18px
+        
+    &Info
+      margin-top 14px
+      font-weight 600
+      letter-spacing 0.02em
+      padding-bottom 0
+      & + .excursionTab__descriptionInfo
+        margin-top 2px
 
     &SubTitle
       margin-top 10px

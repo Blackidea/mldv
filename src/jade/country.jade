@@ -94,125 +94,214 @@ block content
               span.countryTabs__sortingTitle Показать:
               ul.countryTabs__sortingList.js-sort
                 li.countryTabs__sortingListItem.active
-                  a.countryTabs__sortingLink(href='#') однодневные
+                  a.countryTabs__sortingLink(href='#', data-exctab="1") однодневные
                 li.countryTabs__sortingListItem
-                  a.countryTabs__sortingLink(href='#') многодневные
+                  a.countryTabs__sortingLink(href='#', data-exctab="2") многодневные
                 li.countryTabs__sortingListItem
-                  a.countryTabs__sortingLink(href='#') все
+                  a.countryTabs__sortingLink(href='#', data-exctab="3") все
+                  
+            .countryTabs__excursion.active(data-excursion="1")
+              p.excursion__toptext Все экскурсии на Мальдивских островах организуются отелями, и набор экскурсий отеля<br> может отличаться, в зависимости от расположения острова.<br> Проведение некоторых экскурсий зависит от погоды и набора группы.<br> Рекомендуем планировать экскурсии в первые дни пребывания в отеле, чтобы не пропустить интересующую вас экскурсию.<br> Всю информацию об экскурсиях можно найти на демонстрационных стендах отеля, расположенных рядом со стойкой ресепшена.
+              
+              .excursionTab__item.excursionTab__item_type1
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Рыбалка/Fishing
+                  p.excursionTab__descriptionInfo Рыбалка на местной лодке дони (dhoni) 2-3 часа.
+                  p.excursionTab__descriptionInfo Средняя стоимость экскурсии $ 20-30
+                  .excursionTab__descriptionText
+                    |  Цена включает барбекю из пойманной рыбы в этот или на следующий день. окруженные концентрическими линиями, а также такие необычные для Мальдив мотивы, как цветы подсолнечника и лотоса, указывают на то, что их авторами были представители самых древних цивилизаций.
+                    
+              .excursionTab__item.excursionTab__item_type1
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Экскурсия по островам/Island Hopping
+                  p.excursionTab__descriptionInfo Продолжительность - ½ дня, целый день.
+                  p.excursionTab__descriptionInfo Средняя стоимость экскурсии $ 35-50.
+                  .excursionTab__descriptionText
+                    |  Обычно включает в себя посещение четырёх островов - 2 соседних острова-отеля, рыбацкую деревушку, необитаемый остров.
+                    
+              .excursionTab__item.excursionTab__item_type1
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Рыбалка/Fishing
+                  p.excursionTab__descriptionInfo Рыбалка на местной лодке дони (dhoni) 2-3 часа.
+                  p.excursionTab__descriptionInfo Средняя стоимость экскурсии $ 20-30
+                  .excursionTab__descriptionText
+                    |  Цена включает барбекю из пойманной рыбы в этот или на следующий день. окруженные концентрическими линиями, а также такие необычные для Мальдив мотивы, как цветы подсолнечника и лотоса, указывают на то, что их авторами были представители самых древних цивилизаций.
+                    
+              .excursionTab__item.excursionTab__item_type1
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Экскурсия по островам/Island Hopping
+                  p.excursionTab__descriptionInfo Продолжительность - ½ дня, целый день.
+                  p.excursionTab__descriptionInfo Средняя стоимость экскурсии $ 35-50.
+                  .excursionTab__descriptionText
+                    |  Обычно включает в себя посещение четырёх островов - 2 соседних острова-отеля, рыбацкую деревушку, необитаемый остров.<br> окруженные концентрическими линиями, а также такие необычные для Мальдив мотивы, как цветы подсолнечника и лотоса, указывают на то, что их авторами были представители самых древних цивилизаций.
 
-            .hotelsArticle__wrapper.excursionTab
-              .hotelsArticle__content
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionTitle test
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 1
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 2
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 3
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .hotelsArticle__blockOpacity
-              button.hotelsArticle__button Подробнее
-
-            .hotelsArticle__wrapper.excursionTab
-              .hotelsArticle__content
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionTitle test
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 1
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 2
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .excursionTab__item
-                  .excursionTab__image
-                    img(src="images/country/country.jpg", alt="")
-                  .excursionTab__description
-                    .excursionTab__descriptionSubTitle day 3
-                    .excursionTab__descriptionText
-                      |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
-                    ul.hotelsDescription__list
-                      .hotelsDescription__name В отеле:
-                      li.hotelsDescription__li завтраки, обеды, ужины;
-                      li.hotelsDescription__li закуски;
-                      li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
-                      li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
-                .hotelsArticle__blockOpacity
-              button.hotelsArticle__button Подробнее
+            .countryTabs__excursion(data-excursion="2")
+              .hotelsArticle__wrapper.excursionTab
+                .hotelsArticle__content
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionTitle test
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 1
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 2
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 3
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .hotelsArticle__blockOpacity
+                button.hotelsArticle__button Подробнее
+  
+              .hotelsArticle__wrapper.excursionTab
+                .hotelsArticle__content
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionTitle test
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 1
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 2
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .excursionTab__item
+                    .excursionTab__image
+                      img(src="images/country/country.jpg", alt="")
+                    .excursionTab__description
+                      .excursionTab__descriptionSubTitle day 3
+                      .excursionTab__descriptionText
+                        |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus molestiae ipsa atque nobis facilis, eligendi suscipit porro similique quis corrupti earum adipisci error aspernatur eos praesentium, iste recusandae architecto molestias magnam. Similique rerum doloribus hic voluptate, molestias fuga debitis veniam, molestiae a qui praesentium quas commodi sint tempore distinctio consequatur.
+                      ul.hotelsDescription__list
+                        .hotelsDescription__name В отеле:
+                        li.hotelsDescription__li завтраки, обеды, ужины;
+                        li.hotelsDescription__li закуски;
+                        li.hotelsDescription__li столовое вино, крепкий алкоголь, коктейли, пиво, безалкогольные напитки и пакетированные соки, бутылированная вода, чай и кофе;
+                        li.hotelsDescription__li тренажерный зал, бадминтон, настольный теннис, бильярд, пляжный волейбол, сквош.
+                  .hotelsArticle__blockOpacity
+                button.hotelsArticle__button Подробнее
+                
+            .countryTabs__excursion(data-excursion="3")
+              .excursionTab__item.excursionTab__item_type3
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Остров Джеймс Бонда в Тайланде
+                  .excursionTab__descriptionText
+                    |  В 1982 г., основываясь на записках британского комиссара на Цейлоне Х. Белла (1879) и американского антрополога К. Мэлони ("Население Мальдивских островов", 1980), Тур Хейердал приступил к исследованию истории Мальдив.<br> К тому времени уже было известно, что мальдивская культура появилась значительно раньше V в. до н.э., времени, когда на островах появились буддисты.
+                  .excursionTab__descriptionText
+                    |  Раскопки, предпринятые Хейердалом на атоллах Хуваду и Адду, позволили сделать вывод, что на островах существовала более древняя цивилизация, вероятно арийского происхождения, родившаяся в долине реки Инд приблизительно за 2000 лет до н.э. Хейердал дает новую интерпретацию "хавиттам", обнаруженным в XIX в. Х. Беллом. Он полагает, что эти курганы, сложенные из коралловых блоков, являлись культовыми святынями народа, поклонявшегося Солнцу. Камни, 
+                    
+              .excursionTab__item.excursionTab__item_type3
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Экскурсия в пещеру Пханг Нга
+                  .excursionTab__descriptionText
+                    |  В 1982 г., основываясь на записках британского комиссара на Цейлоне Х. Белла (1879) и американского антрополога К. Мэлони ("Население Мальдивских островов", 1980), Тур Хейердал приступил к исследованию истории Мальдив.<br> К тому времени уже было известно, что мальдивская культура появилась значительно раньше V в. до н.э., времени, когда на островах появились буддисты.
+                  ul.hotelsDescription__list
+                    .hotelsDescription__name Включено:
+                    li.hotelsDescription__li Транспорт;
+                    li.hotelsDescription__li Трансферы из отеля и в отель;
+                    li.hotelsDescription__li Прохладительные напитки;
+                    li.hotelsDescription__li Услуги русскоговорящего гида.
+                    
+              .excursionTab__item.excursionTab__item_type3
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Велосипед на Краби
+                  .excursionTab__descriptionText
+                    |  В 1982 г., основываясь на записках британского комиссара на Цейлоне Х. Белла (1879) и американского антрополога К. Мэлони ("Население Мальдивских островов", 1980), Тур Хейердал приступил к исследованию истории Мальдив.<br> К тому времени уже было известно, что мальдивская культура появилась значительно раньше V в. до н.э., времени, когда на островах появились буддисты.
+                  .excursionTab__descriptionText
+                    |  Раскопки, предпринятые Хейердалом на атоллах Хуваду и Адду, позволили сделать вывод, что на островах существовала более древняя цивилизация, вероятно арийского происхождения, родившаяся в долине реки Инд приблизительно за 2000 лет до н.э. Хейердал дает новую интерпретацию "хавиттам", обнаруженным в XIX в. Х. Беллом. Он полагает, что эти курганы, сложенные из коралловых блоков, являлись культовыми святынями народа, поклонявшегося Солнцу. Камни, окруженные концентрическими линиями, а также такие необычные для Мальдив мотивы, как цветы подсолнечника и лотоса, указывают на то, что их авторами были представители самых древних цивилизаций.
+                    
+              .excursionTab__item.excursionTab__item_type3
+                .excursionTab__image
+                  img(src="images/country/country.jpg", alt="")
+                .excursionTab__description
+                  .excursionTab__descriptionTitle Пейнтбол на Самуи
+                  .excursionTab__descriptionText
+                    |  В 1982 г., основываясь на записках британского комиссара на Цейлоне Х. Белла (1879) и американского антрополога К. Мэлони ("Население Мальдивских островов", 1980), Тур Хейердал приступил к исследованию истории Мальдив.<br> К тому времени уже было известно, что мальдивская культура появилась значительно раньше V в. до н.э., времени, когда на островах появились буддисты.
+                  .excursionTab__descriptionText
+                    |  Раскопки, предпринятые Хейердалом на атоллах Хуваду и Адду, позволили сделать вывод, что на островах существовала более древняя цивилизация, вероятно арийского происхождения, родившаяся в долине реки Инд приблизительно за 2000 лет до н.э. Хейердал дает новую интерпретацию "хавиттам", обнаруженным в XIX в. Х. Беллом. Он полагает, что эти курганы, сложенные из коралловых блоков, являлись культовыми святынями народа, поклонявшегося Солнцу. Камни,
 
           p.mobShow.hotelsDescription__accordTitle.js-countryTabs Статьи
           #countryTabs-1.countryTabs__block

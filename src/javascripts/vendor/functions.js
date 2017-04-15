@@ -2724,6 +2724,16 @@ $('.js-personal-area-tourists').on('click', '.js-personal-area-tourist__button_d
 });
 
 
+// Экскурсии
+$('.countryTabs__sortingLink').click(function(e){
+  e.preventDefault();
+  var exctab = $(this).data('exctab');
+  var excursion = $('.countryTabs__excursion[data-excursion="'+exctab+'"]');
+  excursion.siblings('.countryTabs__excursion').removeClass('active');
+  excursion.addClass('active');
+});
+
+
 
   cloneTouristForm();
   sliderNumbers();
