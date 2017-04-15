@@ -3,7 +3,6 @@ include layouts/interactive-stars
 
 
 block content
-
   .wrapper.personal-area
     include layouts/header.jade
     h2.dNews__h2 Личный кабинет
@@ -59,18 +58,16 @@ block content
       .personal-area-section
         h2.personal-area-section__heading Оставить заявку
         .personal-area-section__content
-
           form.personal-area__request
             label.personal-area__field
               span.personal-area__label Телефон:
               input(value='+7 (925) 123 23 55').personal-area__text-field
-            label.personal-area__field
+            div.personal-area__field
               span.personal-area__label Куда:
               .personal-area__select.selectbox(data-selectbox-scrollable='true' data-items-to-show='8')
                 select.personal-area__select-field
                   - for (var i = 1; i <= 10; i++)
                     option(value=i) Текст #{i}
-
                 svg.personal-area__select-icon.select-arrow
                   use(xlink:href='#caret-down')
             // TODO ПО КЛИКУ НА ПОЛЕ ДОЛЖЕН ОТКРЫВАТЬСЯ НЕ СЕЛЕКТ, А КАЛЕНДАРЬ.
