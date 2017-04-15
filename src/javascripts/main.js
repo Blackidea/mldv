@@ -37,3 +37,64 @@ new Swiper('.js-otherRegions__slider', {
     nextButton: '.js-otherRegions__button_next',
     prevButton: '.js-otherRegions__button_prev'
 });
+$(function() {
+
+    /* Выпадающие списки */
+    $(".selectbox").each(function(){
+        var wrapper = "<ul></ul>";
+
+        // scrollable
+        var data =  $(this).data();
+
+        $(this).find('select').after(wrapper);
+        $(this).find("option").each(function(){
+            var ttext = $(this).text();
+            var vval = $(this).val();
+            var li = "<li data-val="+vval+">"+ttext+"</li>";
+            $(this).parents(".selectbox").find("ul").append(li);
+        });
+
+        $(this).find("ul li").click(function(){
+            var newval = $(this).data("val");
+            $(this).parent().parent().find("select").val(newval);
+            var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
+            $(this).parent().parent().find("input").val(inputval);
+        });
+
+        $(this).find("select").on("mousedown click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            this.blur();
+            window.focus();
+            $(this).parents(".selectbox").addClass("active");
+
+            if (data.selectboxScrollable) {
+                var itemsToShow = +data.itemsToShow || 10;
+                var offsetHeight = 0;
+
+                $(this).parent().find('li').slice(0, itemsToShow).each(function() {
+                    offsetHeight += $(this).height();
+                });
+
+                var panel = $(this).parent().find('ul');
+
+                panel.css({
+                    overflow: 'hidden',
+                    height: offsetHeight + 'px'
+                });
+
+                panel.addClass('scroll-pane');
+            }
+
+        });
+
+        $(this).find("ul").click(function(){
+            $(this).removeClass("active");
+        });
+
+        $("html").click(function(){
+            $(".selectbox").removeClass("active");
+        });
+    });
+
+});

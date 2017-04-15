@@ -2544,40 +2544,38 @@ $("form.short-form button").click(function(e){
   }
 });
 
-/* Выпадающие списки */
-$(".selectbox").each(function(){
-    var ul = "<ul></ul>";
-    $(this).find('select').after(ul);
-    $(this).find("option").each(function(){
-        var ttext = $(this).text();
-        var vval = $(this).val();
-        var li = "<li data-val="+vval+">"+ttext+"</li>";
-        $(this).parents(".selectbox").find("ul").append(li);
-    });
-
-    $(this).find("ul li").click(function(){
-        var newval = $(this).data("val");
-        $(this).parent().parent().find("select").val(newval);
-		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
-		$(this).parent().parent().find("input").val(inputval);
-    });
-
-    $(this).find("select").on("mousedown click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        this.blur();
-        window.focus();
-        $(this).parents(".selectbox").addClass("active");
-    });
-
-    $(this).find("ul").click(function(){
-        $(this).removeClass("active");
-    });
-
-    $("html").click(function(){
-        $(".selectbox").removeClass("active");
-    });
-});
+// /* Выпадающие списки */
+// $(".selectbox").each(function(){
+//     $(this).find("option").each(function(){
+//         var ttext = $(this).text();
+//         var vval = $(this).val();
+//         var li = "<li data-val="+vval+">"+ttext+"</li>";
+//         $(this).parents(".selectbox").find("ul").append(li);
+//     });
+//
+//     $(this).find("ul li").click(function(){
+//         var newval = $(this).data("val");
+//         $(this).parent().parent().find("select").val(newval);
+// 		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
+// 		$(this).parent().parent().find("input").val(inputval);
+//     });
+//
+//     $(this).find("select").on("mousedown click", function(e){
+//         e.preventDefault();
+//         e.stopPropagation();
+//         this.blur();
+//         window.focus();
+//         $(this).parents(".selectbox").addClass("active");
+//     });
+//
+//     $(this).find("ul").click(function(){
+//         $(this).removeClass("active");
+//     });
+//
+//     $("html").click(function(){
+//         $(".selectbox").removeClass("active");
+//     });
+// });
 
 
 
@@ -2628,64 +2626,6 @@ function unfixscreen() {
 }
 
 
-
-// INTERACTIVE STARS
-$('.js-interactive-stars').on('click', '.js-interactive-stars__star', function() {
-    var star = $(this),
-        activeStar = star.parent().children('.interactive-stars__star_checked');
-
-    $(activeStar).removeClass('interactive-stars__star_checked');
-
-    star.addClass('interactive-stars__star_checked');
-    star.children('.js-interactive-stars__field')[0].checked = true;
-});
-
-// TOURIST FORM, ENABLE SAVE BUTTON
-$('.js-personal-area-tourists').on('change', 'form', function() {
-    var saveBtn = $(this).parent().find('.js-personal-area-tourist__button_save');
-
-    if (saveBtn.prop('disabled')) {
-        saveBtn.prop('disabled', false);
-    }
-});
-
-// TOURIST FORM, SAVE
-$('.js-personal-area-tourists').on('click', '.js-personal-area-tourist__button_save', function(e) {
-    e.preventDefault();
-
-    var saveBtn = $(this),
-        deleteBtn = saveBtn.closest('.js-personal-area-tourist').find('.js-personal-area-tourist__button_delete'),
-        form = saveBtn.closest('.js-personal-area-tourist').find('form');
-
-    // VALIDATION
-    var emptyInputs = form.find('input').filter(function() {
-        return !this.value;
-    });
-
-    if (emptyInputs.length > 0) {
-        return false;
-    }
-
-    // AJAX REQUEST
-    alert('saved');
-
-    // ENABLE DELETE BUTTON
-    deleteBtn.prop('disabled', false);
-
-    // DISABLE SAVE BUTTON
-    saveBtn.prop('disabled', true);
-});
-
-// TOURIST FORM, DELETE
-$('.js-personal-area-tourists').on('click', '.js-personal-area-tourist__button_delete', function(e) {
-    e.preventDefault();
-    var tourist = $(this).closest('.js-personal-area-tourist');
-
-    // AJAX REQUEST
-
-    // HIDE ELEMENT
-    tourist.hide(500);
-});
 
   cloneTouristForm();
   sliderNumbers();
