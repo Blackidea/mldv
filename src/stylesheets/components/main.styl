@@ -12,6 +12,8 @@
   +b(tablet)
     margin: 0;
     padding: 0;
+  +b(mobile)
+    overflow visible
 // catalog-page
 //----------------------------------------------------//
 .hide-mobile
@@ -235,6 +237,7 @@
   float: left
   box-shadow: 0px 0px 3.8px 0.2px rgba(35, 41, 50, 0.3)
   border-radius: 8px
+  overflow hidden
 
   +b(mobile)
     margin-top: 0
@@ -398,7 +401,7 @@
     &_stars
       margin-bottom: 15px
 
-  +b(tablet)
+  +b(mobile)
     &__back {
       display: block;
     }
@@ -697,13 +700,61 @@
     overflow hidden
     +b(mobile)
       flex-direction: column
-    &_hotels
-      border-radius: 5px 0 0 5px
+    &_three-fields
       .search__item
-        background-color #eaecec
         width: 33.33333%
         &_location
+          display none
+    &_hotels
+      border-radius: 5px 0 0 5px
+      +b(mobile)
+        border-radius 0
+      .search__item
+        background-color #eaecec
+        height 40px
+        &--people
+          padding 0 15px 6px
+        &_location
           display: none
+        +b(mobile)
+          background-color #fff
+          border 1px solid #d1d1d1
+          &:first-child
+            border-left 1px solid #d1d1d1
+      .search__button
+        height 40px
+        line-height 40px
+        padding 0 10px
+      input.search__input
+        line-height 40px !important
+    &_catalog
+      margin 0
+      .search__item
+        +b(mobile)
+          border 1px solid #d1d1d1
+          &:first-child
+            border-left 1px solid #d1d1d1
+      .search__item_direction
+        width 41%
+      .search__item--people
+        width 31%
+        padding 0 15px
+      .search__item--lg
+        width 28%
+      input.search__input
+        line-height 30px
+        font-weight 400
+        +b(mobile)
+          line-height 40px !important
+    &_catalog-tour
+      .search__item_direction
+        width 21.5%
+      .search__item--people
+        width 31%
+      .search__item--lg
+        width 28%
+      .search__item_location
+        width 19.5%
   &__items
     display: flex
     flex-grow: 1
@@ -713,7 +764,6 @@
     width: 25%
     position: relative
     border-left: 1px solid #dcdcdc
-    height: 50px
     background-color #fff
     &:first-child
       border-left: none
@@ -748,9 +798,7 @@
     font-size: 20px
   &__label
     width: 86px
-    float: left
-    margin-left: -100%
-    line-height: 27px
+    line-height: 30px
   &__controls
     display: none
     text-align: center
@@ -857,30 +905,18 @@
     &:after
       transform: rotate(90deg)
   &--sm
-    padding-top: 10px
-    margin-bottom: 13px
-    .search__items
-      padding-right: 0
-      padding-left: 86px
-    .search__item
-      padding-top: 0
-      padding-bottom: 0
-      height: auto
-      &:last-child
-        padding-right: 0
-        .search__arrow
-          right: 0
-    input.search__input
-      font-weight: 400
-      padding-top: 2px
-      padding-bottom: 2px
+    margin-top 19px
+    margin-bottom: 6px
+    +b(mobile)
+      margin-top 0
+    
   +b(mobile)
     background-color: rgba(0, 0, 0, 0.5);
     padding: 15px 15px 0;
 
     &__item {
       float: none;
-      width: 100%;
+      width: 100% !important;
       margin-bottom: 10px;
       background-color: #fff;
       border-left: none;
@@ -965,10 +1001,6 @@
         transform: translateX(0);
       }
 
-      .search__items {
-        padding-left: 0;
-      }
-
       .search__arrow {
         width: 9px;
         height: 5px;
@@ -989,9 +1021,6 @@
       }
 
       input.search__input {
-        border: 1px solid #dddddd;
-        padding-top: 14px;
-        padding-bottom: 14px;
         font-weight: 700;
       }
     }
@@ -2299,9 +2328,35 @@ input.calendar__nights
 //catalog list ---------
 
 .catalog-page
+  .contactForm
     +b(mobile)
-        .main
-            overflow visible
+      margin -10px -15px 0
+  .contactForm__inner
+    margin-left 10%
+    margin-right 10%
+    +b(mobile)
+      margin-left 0
+      margin-right 0
+      padding-top 30px
+  .contactForm__textTitle > span:after
+    margin 30px auto 18px
+    +b(mobile)
+      margin 17px auto
+  .contactForm__description
+    margin-bottom 33px
+    +b(mobile)
+      line-height 1.5em
+      margin-bottom 11px
+      br
+        display none
+  .contactForm__input
+    width 25.4%
+    margin-right 11.9%
+    +b(mobile)
+      width 100%
+      margin-right 0
+  .contactForm__textarea > textarea
+    padding 11px 14px
 
 .catalog
   &__list
@@ -2581,7 +2636,11 @@ input.calendar__nights
 //catalog list end --------------
 //catalog sort ------------------
 .catalog-sort
-  padding-bottom: 10px
+  border-top 1px solid #e5e5e5
+  border-bottom 1px solid #e5e5e5
+  padding 9px 0
+  +b(mobile)
+    padding 0
 
   clearfix()
   &__title
@@ -3121,6 +3180,18 @@ input.calendar__nights
   margin-top 30px
   margin-bottom 30px
   display flex
+  >a
+    float left
+    width 100%
+    > img
+        width 100%
+        float left
+        
+  &.non-mobile-banner
+      +above(960px)
+        display block
+      +b(mobile)
+          display none
   +b(mobile)
       margin-top 0
   +below(480px)
@@ -3179,6 +3250,8 @@ input.calendar__nights
     -webkit-appearance none
     -moz-appearance none
     appearance none
+  .select-arrow
+    transition all .25s ease-in-out
   ul
     position absolute
     left 0
@@ -3188,11 +3261,60 @@ input.calendar__nights
     pointer-events none
     transition all .25s ease-in-out
     z-index 3
-    overflow hidden
+    background-color #fff
+    border-radius 10px
+    box-shadow 0 0 3.8px 0.2px rgba(35,41,50,0.3)
+    &:before
+      content ""
+      position absolute
+      left 0
+      right 0
+      top 0
+      margin auto
+      width 24px
+      height 12px
+      background-color #fff
+      z-index 2
+    &:after
+      content ""
+      position absolute
+      left 0
+      right 0
+      top -6px
+      margin auto
+      box-shadow 0 0 3.8px 0.2px rgba(35,41,50,0.3)
+      width 12px
+      height 12px
+      transform rotate(45deg) skew(10deg, 10deg)
+      background-color #fff
   li
     cursor pointer
     transition all .25s ease-in-out
+    position relative
+    z-index 3
+    padding 5px 10px
+    &:hover
+      color #24b3fd
   &.active 
     ul
       opacity 1
       pointer-events all
+    .select-arrow
+      transform rotate(180deg)
+  &_form
+    ul
+      border-radius 5px
+      color #fff
+      background rgba(9,60,87,0.9)
+      border 1px solid #fff
+      overflow hidden
+      &:before, &:after
+        display none
+    li
+      font-size 14px
+      line-height 40px
+      height 40px
+      padding 0 10px
+      &:hover
+        background rgba(9,60,87,1)
+        color #fff

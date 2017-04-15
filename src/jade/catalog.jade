@@ -332,7 +332,133 @@ block content
                 .filter__buttons
                   button.filter__button.button(type='submit') Найдено 146
                   a.filter__reset.js-reset-filter(href='#') Сбросить фильтр
-          .tabs__content(data-content='3') 3
+          .tabs__content(data-content='3')
+            .filter
+              a.filter__back.back.js-close-mobile-screen(href='#')
+                svg.icon-arrow-left
+                  use(xlink:href='#arrow-left')
+                | Назад
+              form.filter__form(action='#')
+                .filter__scroll
+                  .filter__inner
+                    fieldset.filter__item
+                      strong.filter__title Цена
+                      .filter__content
+                        .filter__range.range
+                          .range__slider.js-init-range(data-min='0', data-max='1000000', data-value1='1000', data-value2='900000', data-step='10000')
+                          .range__values
+                            span.range__value
+                              span.js-range-min
+                              |  руб.
+                            span.range__value
+                              span.js-range-max
+                              |  руб.
+                    fieldset.filter__item
+                      strong.filter__title Рейтинг отеля
+                      .filter__content
+                        .filter__range.range
+                          .range__slider.js-init-range(data-min='0', data-max='10', data-value1='3.7', data-value2='10.0', data-step='0.1')
+                          .range__values
+                            span.range__value
+                              span.js-range-min
+                            span.range__value
+                              span.js-range-max
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Категория отеля
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            - for (var i = 1; i <= 5; i++)
+                              li.filter__li.filter__li_stars
+                                input.checkbox--star-icon(type='checkbox' id='h-star-#{i}')
+                                label(for='h-star-#{i}')
+                                  span.stars-icons
+                                    - for (var j = 0; j < i; j++)
+                                        svg.icon-star
+                                          use(xlink:href='#star-fill')
+
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Питание
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-food-1.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-1')
+                                span.icon-wrap
+                                  svg.icon-no-food
+                                    use(xlink:href='#no-food')
+                                |                           Без питания
+                            li.filter__li
+                              input#h-food-2.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-2')
+                                span.icon-wrap
+                                  svg.icon-breakfest
+                                    use(xlink:href='#breakfest')
+                                |                           Только завтраки
+                            li.filter__li
+                              input#h-food-3.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-3')
+                                span.icon-wrap
+                                  svg.icon-lunch-alternative
+                                    use(xlink:href='#lunch-alternative')
+                                |                           Завтрак и ужин
+                            li.filter__li
+                              input#h-food-4.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-4')
+                                span.icon-wrap
+                                  svg.icon-lunch
+                                    use(xlink:href='#lunch')
+                                |                           Завтрак, обуд, ужин (без алкоголя)
+                            li.filter__li
+                              input#h-food-5.checkbox--has-icon(type='checkbox')
+                              label(for='h-food-5')
+                                span.icon-wrap
+                                  svg.icon-coctail
+                                    use(xlink:href='#coctail')
+                                |                           Все включено
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Типо номера
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-number-1.checkbox(type='checkbox')
+                              label(for='h-number-1') одноместный
+                            li.filter__li
+                              input#h-number-2.checkbox(type='checkbox')
+                              label(for='h-number-2') 2-местный
+                            li.filter__li
+                              input#h-number-3.checkbox(type='checkbox')
+                              label(for='h-number-3') стандарт
+                            li.filter__li
+                              input#h-number-4.checkbox(type='checkbox')
+                              label(for='h-number-4') люкс
+                      fieldset.filter__item.filter__item_dropdown.filter__item_dropdown_active.js-filter__item_dropdown
+                        strong.filter__title.js-filter__title Виды отдыха
+                          svg.filter__title-icon
+                            use(xlink:href='#caret-down')
+                        .filter__content.js-filter__content
+                          ul.filter__list
+                            li.filter__li
+                              input#h-rest-1(type='checkbox')
+                              label(for='h-rest-1') Все включено
+                            li.filter__li
+                              input#h-rest-2(type='checkbox')
+                              label(for='h-rest-2') Пляж
+                            li.filter__li
+                              input#h-rest-3(type='checkbox')
+                              label(for='h-rest-3') Город
+                            li.filter__li
+                              input#h-rest-4(type='checkbox')
+                              label(for='h-rest-4') Семейныхq
+                .filter__buttons
+                  button.filter__button.button(type='submit') Найдено 146
+                  a.filter__reset.js-reset-filter(href='#') Сбросить фильтр
+                  
         .main
           .value
             a.value__edit.js-call-mobile-screen(href='.search')
@@ -357,31 +483,69 @@ block content
               svg.icon-arrow-left
                 use(xlink:href='#arrow-left')
               | Назад
-            form(action='')
+            form.search__form.search__form_three-fields.search__form_catalog(action='')
+              strong.search__label Вы искали:
               .search__items
-                .search__item
+                .search__item.search__item_direction
                   svg.search__icon.icon-compass
                     use(xlink:href='#compass')
                   input.search__input.js-init-autocomplete(type='text', placeholder='Куда', data-source='places')
-                .search__item.search__item--lg.search__item--people
-                  svg.search__icon.icon-people
-                    use(xlink:href='#people')
-                  input.search__input.js-init-people(type='text', readonly='true', placeholder='2 взрослых 0 детей')
-                  svg.search__arrow
-                    use(xlink:href='#caret-down')
+                  
+                .search__item.search__item--people
+                  input.search__hidden(type='text', name='adults')
+                  input.search__hidden(type='text', name='babies')
+                  .search__chosen-count
+                    .search__people.search__people_adult
+                      svg.search__people-icon
+                        use(xlink:href='#man')
+                      span.search__people-delete
+                    .search__people.search__people_adult
+                      svg.search__people-icon
+                        use(xlink:href='#man')
+                      span.search__people-delete
+                    .search__people.search__people_baby
+                      span.search__baby-count 4
+                      svg.search__people-icon.search__people-icon_baby
+                        use(xlink:href='#baby')
+                      span.search__people-delete
+                  .search__add-count
+                    .search__people.search__people_adult
+                      span.search__people-add
+                      svg.search__people-icon
+                        use(xlink:href='#man')
+                    .search__people.search__people_baby
+                      input.search__baby-age.js-init-autocomplete(type='text' data-source='babyage')
+                      span.search__people-add
+                      svg.search__people-icon.search__people-icon_baby
+                        use(xlink:href='#baby')
+                        
                 .search__item.search__item--lg
                   svg.search__icon.icon-calendar
                     use(xlink:href='#calendar')
-                  input.search__input.js-init-calendar(type='text', readonly='true', placeholder='Выберите дату')
+                  input.search__input.search__input_calendar.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
                   svg.search__arrow
                     use(xlink:href='#caret-down')
-                .search__item
+                    
+                .search__item.search__item_location
                   svg.search__icon.icon-location
                     use(xlink:href='#location')
-                  input.search__input.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
+                  input.search__input.search__input_location.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
                   svg.search__arrow
                     use(xlink:href='#caret-down')
-              strong.search__label Вы искали:
+                    
+                .search__item.search__item_mobile
+                  svg.search__icon.icon-man
+                    use(xlink:href='#man')
+                  input.search__input.search__input_adults.js-init-autocomplete(type='text', placeholder='Взрослые', data-source='adults')
+                  svg.search__arrow
+                    use(xlink:href='#caret-down')
+                .search__item.search__item_mobile
+                  svg.search__icon.icon-baby
+                    use(xlink:href='#baby')
+                  input.search__input.search__input_babies.js-init-autocomplete(type='text', placeholder='Дети', data-source='babies')
+                  svg.search__arrow
+                    use(xlink:href='#caret-down')
+              
               .search__controls
                 button.search__control.button.js-close-mobile-screen(type='submit') Найдено 146
                 a.search__reset(href='#') Сбросить фильтр
@@ -464,6 +628,44 @@ block content
                       textarea(name="message", cols="30", rows="10" placeholder="Напишите текст Вашего сообщения")
                   .contactForm__row
                     button.contactForm__button Отправить
+                    
+      .featuresHoliday
+        .section__title.featuresHoliday__title
+          h2.h2 Преимущества Мальдивы
+        .container
+          .featuresHoliday__column
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#aircraft")
+              .featuresHoliday__description 99% вылетов без задержек
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#starsfeatures")
+              .featuresHoliday__description Ведущее место в рейтинге<br/>туроператоров России
+          .featuresHoliday__column
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#blankfeatures")
+              .featuresHoliday__description Все туры застрахованы
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#shipfeatures")
+              .featuresHoliday__description Яхта «Мальдивиана» с 2009 г.<br/>признана лучшей сафари-яхтой Азии
+          .featuresHoliday__column
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#giftfeatures")
+              .featuresHoliday__description Многолетняя помощь <br/>Благотворительному фонду<br/><strong>ПОДАРИ ЖИЗНЬ</strong>
+            .featuresHoliday__item
+              .featuresHoliday__icon
+                svg
+                  use(xlink:href="#airflotfeatures")
+              .featuresHoliday__description Официальный представитель<br/>а/к Аэрофлот на мальдивах
     //- // MAIN CONTENT [END]
   //- // FOOTER FIX [END]
   //- FOOTER

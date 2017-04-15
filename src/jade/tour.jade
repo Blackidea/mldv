@@ -8,7 +8,7 @@ block content
   //- include layouts/about.jade
   //- include layouts/consultate.jade
   
-  .wrapper
+  .wrapper.tour-page
     //- // HEADER
     include layouts/header.jade
     .popup__wishlist
@@ -53,7 +53,7 @@ block content
               use(xlink:href='#compare' )
             span В сравнение
         .hotelsHeader__column.__title
-          .hotelsHeader__nameHotel  Sol Cayo Largo 4*
+          .hotelsHeader__nameHotel  Тур в отель Sol Cayo Largo 4*
           .hotelsHeader__geo  Мальдивы, Атолл Фелиху
           .hotelsHeader__priceMob от 5 500 $
         .hotelsHeader__column.__rating
@@ -284,7 +284,22 @@ block content
 
     .holidayCreate
       .section__title
-        h2.h2 Создай свой идеальный отдых
+          h2.h2 Туры с вылетом из 
+          .pick-up
+            | Москвы
+            svg.pick-up__icon
+              use(xlink:href='#caret-down')
+            .dropdown__box
+              span.dropdown__triangle
+              ul.dropdown__list
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Шри-Ланка
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Доминикана
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Сейшелы
+                li.dropdown__list-item
+                  a.dropdown__link(href='#') Маврикий
 
       .holidayCreate__filter
         img(src='images/bg/filter-hotels.jpg' alt='@').holidayCreate__filter-image
@@ -350,7 +365,7 @@ block content
                   use(xlink:href='#caret-down')
             button.search__button.button(type='submit') Поиск
 
-          .holidayCreate__selectors
+          .holidayCreate__selectors.holidayCreate__selectors_tour
             .holidayCreate__selectors-item.selectbox.selectbox_form
               label.select-arrow(for="test")
                 svg
@@ -369,6 +384,15 @@ block content
                 option(value='Тип1') Тип 1
                 option(value='Тип2') Тип 2
                 option(value='Тип3') Тип 3
+            .holidayCreate__selectors-item.selectbox.selectbox_form
+              label.select-arrow(for="test")
+                svg
+                  use(xlink:href='#caret-down')
+              select(name="test")
+                option(value='Авиакомпания') Авиакомпания
+                option(value='Авиакомпания2') Авиакомпания 2
+                option(value='Авиакомпания3') Авиакомпания 3
+                option(value='Авиакомпания4') Авиакомпания 4
           .holidayCreate__sort
             .container
               .catalog-sort.js-mobile-screen
@@ -461,7 +485,6 @@ block content
             .numberResult__image-wrapper
               img(src='images/numbers/bg-result.jpg' alt='').numberResult__image
             .numberResult__content
-              //- block 1
               p.numberResult__start-text Выберите тур
               .numberResult__sum
                 .numberResult__sumTitle Сумма
@@ -490,163 +513,6 @@ block content
               .numberResult__buy
                 button.numberResult__buyButton Купить
 
-      .hotelsTours
-        .section__title
-          h2.h2 Туры с вылетом из 
-          .pick-up
-            | Москвы
-            svg.pick-up__icon
-              use(xlink:href='#caret-down')
-            .dropdown__box
-              span.dropdown__triangle
-              ul.dropdown__list
-                li.dropdown__list-item
-                  a.dropdown__link(href='#') Шри-Ланка
-                li.dropdown__list-item
-                  a.dropdown__link(href='#') Доминикана
-                li.dropdown__list-item
-                  a.dropdown__link(href='#') Сейшелы
-                li.dropdown__list-item
-                  a.dropdown__link(href='#') Маврикий
-
-        .container
-          button.hotelsToursfilter__buttonMob Фильтр
-
-          .hotelsTours__sorting
-            .hotelsTours__sortingSelectors.__food.selectbox
-              label(for="test") 
-                svg
-                  use(xlink:href='#caret-down')
-              select(name="test")
-                option(value="Любой") Любой тип питания
-                option(value="Тип1") Тип 1
-                option(value="Тип2") Тип 2
-                option(value="Тип3") Тип 3
-            .hotelsTours__sortingSelectors.__typeNumbers.selectbox
-              label(for="test2") 
-                svg
-                  use(xlink:href='#caret-down')
-              select(name="test2")
-                option(value="Любой") Любой тип номера
-                option(value="Тип1") Тип 1
-                option(value="Тип2") Тип 2
-                option(value="Тип3") Тип 3
-            .hotelsTours__sortingSelectors.__airCompanie.selectbox
-              label(for="test3") 
-                svg
-                  use(xlink:href='#caret-down')
-              select(name="test3")
-                option(value="Авиакомпания1") Авиакомпания1
-                option(value="Авиакомпания2") Авиакомпания2
-                option(value="Авиакомпания3") Авиакомпания3
-                option(value="Авиакомпания4") Авиакомпания4
-            .hotelsTours__sortingSwitch
-              //- .catalog-sort__desctop.holidayCreate__sort-inner
-              span.hotelsTours__sortingTitle Сортировать по:
-              ul.hotelsTours__sortingList.js-sort
-                li.hotelsTours__sortingListItem.active
-                  a.hotelsTours__sortingLink(href='#') цене
-                li.hotelsTours__sortingListItem
-                  a.hotelsTours__sortingLink(href='#') дате
-                li.hotelsTours__sortingListItem
-                  a.hotelsTours__sortingLink(href='#') названию
-
-        .hotelsTours__filterMob(style="display:none;")
-          a.filter__back.back.js-close-hotelsTours__filterMob(href='#')
-            svg.icon-arrow-left
-              use(xlink:href='#arrow-left')
-            | Назад
-
-          .container
-            .hotelsTours__sortingMob
-              .hotelsTours__sortingSelectors.__food
-                label(for="test")
-                  svg
-                    use(xlink:href='#caret-down')
-                select(name="test")
-                  option Любой тип питания
-                  option test2
-                  option test3
-                  option test4
-              .hotelsTours__sortingSelectors.__typeNumbers
-                label(for="test2")
-                  svg
-                    use(xlink:href='#caret-down')
-                select(name="test2")
-                  option Любой тип номера
-                  option test2
-                  option test3
-                  option test4
-              .hotelsTours__sortingSelectors.__airCompanie
-                label(for="test3")
-                  svg
-                    use(xlink:href='#caret-down')
-                select(name="test3")
-                  option Авиакомпания
-                  option test2
-                  option test3
-                  option test4
-              //- .catalog-sort__desctop.holidayCreate__sort-inner
-              span.hotelsTours__sortingMobTitle Сортировать по:
-              ul.hotelsTours__sortingMobList
-                li
-                  input#countryOption-1.checkbox--inline(type='checkbox')
-                  label(for='countryOption-1') Цене
-                li
-                  input#countryOption-2.checkbox--inline(type='checkbox')
-                  label(for='countryOption-2') Дате
-                li
-                  input#countryOption-3.checkbox--inline(type='checkbox')
-                  label(for='countryOption-3') Названию
-
-        .container
-          .hotelsTours__tableMob
-            include layouts/slider__catalog.jade
-
-          .hotelsTours__table
-            .hotelsTours__tableTitles
-              .hotelsTours__tableTitle.__tour Тур
-              .hotelsTours__tableTitle.__duration Продолжительность
-              .hotelsTours__tableTitle.__numbers Номер в отеле
-              .hotelsTours__tableTitle.__food Питание
-              .hotelsTours__tableTitle.__airCompanie Авиакомпания
-              .hotelsTours__tableTitle.__price Цена
-            .hotelsTours__tableCells
-              .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour
-                  a(href="") Мальдивские острова Qatar Airways
-                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Стандартный номер
-                .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Emirates
-                .hotelsTours__tableCell.__price 1360 $
-
-              .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour
-                  a(href="") Мальдивские острова Qatar Airways
-                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Полулюкс
-                .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Аэрофлот
-                .hotelsTours__tableCell.__price 1270 $
-
-              .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour
-                  a(href="") Мальдивские острова Qatar Airways
-                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Стандартный номер
-                .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Qatar Airways
-                .hotelsTours__tableCell.__price 1360 $
-
-              .hotelsTours__tableRow
-                .hotelsTours__tableCell.__tour
-                  a(href="") Мальдивские острова Qatar Airways
-                .hotelsTours__tableCell.__duration 12 дн. / 10 н.
-                .hotelsTours__tableCell.__numbers Аэрофлот
-                .hotelsTours__tableCell.__food Все включено
-                .hotelsTours__tableCell.__airCompanie Аэрофлот
-                .hotelsTours__tableCell.__price 1270 $
       .hotelsAround
         .section__title.hotelsAround__title
           h2.h2 Отели рядом
@@ -655,7 +521,7 @@ block content
 
       .hotelsSimilar
         .section__title.hotelsSimilar__title
-          h2.h2 Похожие места
+          h2.h2 Похожие туры
         .container
           include layouts/slider__catalog.jade
 
