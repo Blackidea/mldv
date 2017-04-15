@@ -110,6 +110,9 @@
       &:first-child
         margin-right: 55px
 
+        +b(tablet)
+          margin-right: 15px
+
       &:last-child
         margin-left: auto
         margin-right: 0
@@ -916,6 +919,14 @@
     display: flex
     width: 555px
     min-height: 292px
+
+    +b(tablet)
+
+      &:first-child
+        margin-right: 15px
+        flex-shrink: 1
+        flex-grow: 0
+        width: auto
 
     +b(mobile)
       width: 100%
