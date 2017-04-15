@@ -88,7 +88,8 @@ block content
                           input.search__input.search__input_calendar.js-init-calendar(type='text', placeholder='Выберите дату', readonly='true')
                           svg.search__arrow
                             use(xlink:href='#caret-down')
-                        .search__item
+                            
+                        .search__item.search__item_location
                           svg.search__icon.icon-location
                             use(xlink:href='#location')
                           input.search__input.search__input_location.js-init-autocomplete(type='text', placeholder='Из Москвы', data-source='from')
