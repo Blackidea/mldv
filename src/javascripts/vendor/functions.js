@@ -1360,6 +1360,13 @@ $(document).on('ready', function() {
 });
 
 
+$('.js-focus-calendar-field').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $(this).find('input').focus();
+});
+
 $(document).ready(function(){
   // $('.sliderMain').slick({
   //   slidesToShow: 1,
