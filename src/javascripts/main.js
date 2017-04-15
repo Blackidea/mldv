@@ -37,14 +37,3 @@ new Swiper('.js-otherRegions__slider', {
     nextButton: '.js-otherRegions__button_next',
     prevButton: '.js-otherRegions__button_prev'
 });
-
-// INTERACTIVE STARS
-$('.js-interactive-stars').on('click', '.js-interactive-stars__star', function() {
-    var star = $(this),
-        activeStar = star.parent().children('.interactive-stars__star_checked');
-
-    $(activeStar).removeClass('interactive-stars__star_checked');
-
-    star.addClass('interactive-stars__star_checked');
-    star.children('.js-interactive-stars__field')[0].checked = true;
-});
